@@ -8,9 +8,8 @@ import { CargarscriptsService } from 'src/assets/cargarscripts.service';
 })
 export class HeaderComponent {
 
-
   constructor(
-    private _CargarScri: CargarscriptsService,
+    private _CargarScripts: CargarscriptsService,
 
 
 
@@ -18,7 +17,7 @@ export class HeaderComponent {
 
   {
     {
-      _CargarScri.carga(["scrollHeaderBlock"])
+      _CargarScripts.carga(["scrollHeaderBlock"])
     }
   }
 }
