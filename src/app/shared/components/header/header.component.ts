@@ -9,7 +9,7 @@ import { CargarscriptsService } from 'src/assets/cargarscripts.service';
 export class HeaderComponent {
 
   constructor(
-    private _CargarScripts: CargarscriptsService,
+    private _CargarScripts2: CargarscriptsService,
 
 
 
@@ -17,7 +17,11 @@ export class HeaderComponent {
 
   {
     {
-      _CargarScripts.carga(["scrollHeaderBlock"])
+      _CargarScripts2.carga2(["scrollHeaderBlock"])
+      _CargarScripts2.carga2(["carruselcarros"])
+      
+      
     }
   }
+  
 }

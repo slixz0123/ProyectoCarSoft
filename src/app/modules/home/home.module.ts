@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { WelcomeHomeComponent } from './welcome-home/welcome-home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CargarscriptsService } from './services/cargarjs.service';
 
 
 @NgModule({
@@ -16,5 +17,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     HomeRoutingModule,
     SharedModule
   ]
+  
 })
 export class HomeModule { }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { CargascripsjsService } from 'src/app/shared/services/cargascripsjs.service';
+
+import { CargarscriptsService } from '../../../services/cargarjs.service';
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -8,13 +10,16 @@ import { CargascripsjsService } from 'src/app/shared/services/cargascripsjs.serv
 export class HomepageComponent {
 
   constructor(
-    private Cargascrip: CargascripsjsService
- 
+    private car: CargarscriptsService,
 
 
-  ) {
+
+  )
+
+  {
     {
-      Cargascrip.carga(["main"])
+      
+      car.cargacarrousel (["carruselcarros"])
     }
   }
 

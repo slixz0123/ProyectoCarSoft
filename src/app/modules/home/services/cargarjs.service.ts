@@ -7,7 +7,7 @@ export class CargarscriptsService {
 
   constructor() { }
 
-  carga(archivos: string[]) {
+  cargacarrousel(archivos: string[]) {
     
     for (let archivo of archivos) {
       let script = document.createElement("script");
