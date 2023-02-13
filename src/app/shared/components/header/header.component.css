@@ -4,19 +4,19 @@
     background: #555;
     color: #f1f1f1;
   }
-  
+
   /* Page content */
   .content {
     padding: 16px;
   }
-  
+
   /* The sticky class is added to the header with JS when it reaches its scroll position */
   .sticky {
     position: fixed;
     top: 0;
     width: 100%
   }
-  
+
   /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
   .sticky + .content {
     padding-top: 102px;
@@ -84,20 +84,20 @@ button {
       background-color: var(--bgcolor);
       text-align: center;
     }
-  
+
     .nav-bar.responsive {
       display: block;
     }
-  
+
     .nav-bar a {
       display: block;
     }
-  
+
     .menu-icon {
       display: block;
       z-index: 1;
     }
-  
+
     button {
       padding: 0.4rem;
     }
@@ -105,9 +105,9 @@ button {
       font-size: 1.4rem;
     }
   }
-  
-  
-  
+
+
+
 
   nav ul
 {
@@ -134,8 +134,7 @@ nav .btn
     text-decoration: none;
     border: 1px solid #fff;
     padding: 10px 30px;
-    border-radius: 30px;
+
     margin-right: 7%;
 }
 
- 
