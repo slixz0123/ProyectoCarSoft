@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CargarscriptsService } from 'src/assets/cargarscripts.service';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,4 +9,21 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
+  constructor(
+    private car: CargarscriptsService,
+
+
+
+  )
+
+  {
+    {
+
+      car.carga(["sidebar"]);
+
+    }
+  }
+
 }
+
+
