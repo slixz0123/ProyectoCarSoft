@@ -11,12 +11,17 @@ import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [
     HomepageComponent
+
   ],
   imports: [
     CommonModule,
     HomepageRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+
+
+
+
   ],
   exports:[
  HomepageComponent

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 import { CargarscriptsService } from '../../../services/cargarjs.service';
 
 @Component({
@@ -18,8 +19,9 @@ export class HomepageComponent {
 
   {
     {
-      
-      car.cargacarrousel (["carruselcarros"])
+
+      car.cargacarrousel (["swiper-bundle.min"])
+
     }
   }
 
