@@ -1,0 +1,154 @@
+
+
+
+
+
+button,
+input {
+  border: 0;
+  width: 100%;
+  height: 60px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+@keyframes clouds {
+  100% {
+    translate: -50vw -55%;
+    scale: 1 1.1;
+  }
+}
+
+
+
+.signup {
+
+
+
+  height: 65%;
+  padding-top:150px ;
+  width: 70%;
+  max-width: 460px;
+  padding: 70px 40px;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 19px );
+  -webkit-backdrop-filter: blur( 19px );
+  border-radius: 15px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup > h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: rgb(255 255 255 / 96%);
+}
+
+.signup > h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 30px;
+  color: rgb(255 255 255 / 40%);
+}
+
+.form {
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.textbox {
+  position: relative;
+
+}
+
+.textbox span {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  left: 0;
+  font-size: 22px;
+  pointer-events: none;
+  color: rgb(255 255 255 / 40%);
+}
+
+.textbox input {
+  padding: 0 24px 0 36px;
+  border-bottom: 2px solid #2b3442;
+  color: rgb(255, 255, 255);
+  height: 72px;
+}
+
+:is(input:focus, input:valid) ~ label {
+  translate: -40px -40px;
+  scale: 0.875;
+}
+
+input:focus ~ label {
+  color: #e72121;
+}
+
+input:focus {
+  border-color:#e72121;
+}
+
+:is(input:focus, input:valid) ~ span {
+  color: rgb(255 255 255 / 96%);
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  translate: 0 -50%;
+  color: rgb(255 255 255 / 40%);
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.form button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 24px;
+  border-radius: 6px;
+  background: #e72121;
+  color: #f9f9f9;
+  border: 0;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.signup p {
+  margin: 0 0 22px;
+  color: #778395;
+}
+
+.signup p > a {
+  color: #e72121;
+  text-decoration: none;
+}
+
+#imglog{
+  width: 100%;
+  position: fixed;
+}
+
+#logo{
+  max-width: 100%;
+  height: auto;
+}
+
