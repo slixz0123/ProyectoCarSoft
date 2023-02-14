@@ -289,6 +289,36 @@ text-align: center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   background-image: url("https://previews.123rf.com/images/everyonensk/everyonensk1905/everyonensk190500728/123584220-texture-of-crumpled-black-paper-close-up-black-background-of-crumpled-cardboard-under-color-red-and-.jpg");
 }
+.caru2{
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  width: 100%;
+  background: #000000;
+  border-radius: 12px;
+  padding: 30px;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-padding: 30px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  background-image: url("https://thumbs.dreamstime.com/b/texture-crumpled-black-paper-texture-crumpled-black-paper-close-up-black-background-crumpled-cardboard-under-color-blue-148490015.jpg");
+
+}
+.caru3{
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  width: 100%;
+  background: #000000;
+  border-radius: 12px;
+  padding: 30px;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-padding: 30px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  background-image: url("https://images.squarespace-cdn.com/content/v1/609701bc21f2ee5734517421/1655173326922-MJCM6CH41GLZXWUTU02F/Red+Black+Smoke+Seamless+Cover+WM+1.jpg?format=1500w");
+
+}
 .container-caru .card2 {
   display: flex;
   flex: 0 0 100%;
@@ -302,6 +332,7 @@ text-align: center;
 
 
 }
+
 .card2 .image {
   height: 150px;
   width: 150px;
