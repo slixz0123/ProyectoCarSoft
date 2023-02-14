@@ -18,10 +18,10 @@ export class HeaderComponent {
   {
     {
       _CargarScripts2.carga2(["scrollHeaderBlock"])
-      _CargarScripts2.carga2(["carruselcarros"])
-      
-      
+      _CargarScripts2.carga2(["header"])
+
+
     }
   }
-  
+
 }

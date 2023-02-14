@@ -3,8 +3,7 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+
   color: #5a5a5a;
 }
 
@@ -20,13 +19,15 @@ body {
   display: flex;
   align-items:center;
 
+
+
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
 
   z-index: 15;
 padding-bottom: 290px;
-  text-align: center;
+text-align: center;
 
 
 }
@@ -45,11 +46,16 @@ padding-bottom: 290px;
 .marketing .col-lg-4 {
   margin-bottom: 1.5rem;
   text-align: center;
+  border-inline: 15px;
+
+
 }
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
+
+
 }
 /* rtl:end:ignore */
 
@@ -138,24 +144,187 @@ padding-bottom: 290px;
   align-content: center;
   color: azure;
   border-radius: 15px;
+
 }
 
-#btntesla{
+#btnnes{
   background-color: rgb(218, 211, 211);
   border-bottom-color: rgb(2, 2, 2);
   border-color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 25px;
 }
 
-#btntesla:hover,
-#btntesla:focus {
+#btnnes:hover,
+#btnnes:focus {
   color:black ;
   border-bottom-color: rgb(8, 8, 8);
 
   border-color: black;
-  background-color:  rgb(13, 243, 166);
+  background-color:  rgb(243, 13, 13);
 
 }
 
-#imageb{
+.center-img {
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px;
+  background-color: #000000;
+
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  padding-bottom: 50px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal con espacio entre cada tarjeta */
+}
+/* Estilos base de las tarjetas */
+.card {
+  width: 30%;
+  margin-right: 20px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Cambia la dirección del flexbox a column */
+  }
+
+  .card {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-right: 0; /* Remueve el margen derecho */
+    margin-bottom: 20px; /* Agrega un margen inferior */
+    position: relative;
+  }
+}
+
+/* Estilos del botón */
+.card-button {
+  background-color: #fdfdfd;
+  color: #000000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave del color */
+  align-items: center;
+
+
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px; /* Ajusta la posición vertical del botón */
+  left: 50%; /* Centra el botón horizontalmente */
+  transform: translateX(-50%);
+  padding-right:  150px;
+  padding-left:  150px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+}
+
+.card-button:hover {
+  background-color: #ff0000; /* Color de fondo al pasar el mouse */
+  color: #fdfdfd;
+}
+
+.card-button .fa {
+  margin-left: 5px; /* Espacio entre el texto y el icono */
+}
+
+#imgcar{
+  border-radius: 15px;
+  height: 250px;
+  width: 550px;
+}
+
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color:  rgb(243, 13, 13);
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+.container-caru {
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  width: 100%;
+  background: #000000;
+  border-radius: 12px;
+  padding: 30px;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-padding: 30px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  background-image: url("https://previews.123rf.com/images/everyonensk/everyonensk1905/everyonensk190500728/123584220-texture-of-crumpled-black-paper-close-up-black-background-of-crumpled-cardboard-under-color-red-and-.jpg");
+}
+.container-caru .card2 {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 12px;
+   background: #ffffff;
+  scroll-snap-align: start;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+
+
+}
+.card2 .image {
+  height: 150px;
+  width: 150px;
+  padding: 4px;
+  background: #111112;
+  border-radius: 50%;
+}
+.image img {
+
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.card2 h2 {
+  margin-top: 25px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+}
+.card2 p {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
 }
