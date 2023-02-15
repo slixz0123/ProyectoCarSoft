@@ -1,1 +1,153 @@
-<p>catalogo-renta-cliente works!</p>
+
+<!DOCTYPE html>
+<html lang="en" title="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catalogo</title>
+    <link rel="stylesheet" href="catalogo-renta-cliente.component.css">
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Catalogo</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Buscar...">
+                <img src="https://cdn-icons-png.flaticon.com/512/5868/5868370.png" alt="">
+            </div>
+            <div>
+                <button id="btn-abrir-popup" class="card-button">Crear</button>
+            </div>
+        </section>
+
+
+
+        <section class="contenido">
+            <div class="mostrador" id="mostrador">
+                <div class="fila">
+                    <div class="item" onclick="cargar(this)">
+                        <div class="contenedor-foto">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg" alt="">
+                        </div>
+                        <p class="descripcion">LAMBORGHINI URUS</p>
+                        <span class="precio">$ 1.300</span>
+                    </div>
+                    <div class="item" onclick="cargar(this)">
+                        <div class="contenedor-foto">
+                            <img src="https://www.km77.com/images/medium/3/0/0/5/lamborghini-urus-s.363005.jpg" alt="">
+                        </div>
+                        <p class="descripcion" id>LAMBORGHINI HURACAN </p>
+                        <span class="precio">$ 1.800</span>
+                    </div>
+                    <div class="item" onclick="cargar(this)">
+                        <div class="contenedor-foto">
+                            <img src="https://img.remediosdigitales.com/f51e87/av1/840_560.jpg" alt="">
+                        </div>
+                        <p class="descripcion">LAMBORGHINI VENENO</p>
+                        <span class="precio">$ 3.600</span>
+                    </div>
+                    
+                </div> 
+                <div class="fila">
+                    <div class="item" onclick="cargar(this)">
+                        <div class="contenedor-foto">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg" alt="">
+                        </div>
+                        <p class="descripcion">LAMBORGHINI URUS</p>
+                        <span class="precio">$ 1.300</span>
+                    </div>
+                    <div class="item" onclick="cargar(this)">
+                        <div class="contenedor-foto">
+                            <img src="https://www.km77.com/images/medium/3/0/0/5/lamborghini-urus-s.363005.jpg" alt="">
+                        </div>
+                        <p class="descripcion" id>LAMBORGHINI HURACAN  </p>
+                        <span class="precio">$ 1.800</span>
+                    </div>
+                    <div class="item" onclick="cargar(this)">
+                        <div class="contenedor-foto">
+                            <img src="https://img.remediosdigitales.com/f51e87/av1/840_560.jpg" alt="">
+                        </div>
+                        <p class="descripcion">LAMBORGHINI VENENO</p>
+                        <span class="precio">$ 3.600</span>
+                    </div>
+                    
+                </div> 
+                
+            </div>
+    
+            
+            <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+            <div class="seleccion" id="seleccion">
+                <div class="cerrar" onclick="cerrar()">
+                    
+                </div>
+                <div class="info">
+                    <img src="img/1.png" alt="" id="img">
+                    <h2 id="modelo">NIKE MODEL 1</h2>
+                    <p id="descripcion">Descripción Modelo 1</p>
+    
+                    <span class="precio" id="precio">$ 130</span>
+    
+                    <div class="fila">
+                        
+                        <button id="btn-abrir-popup" class="card-button">Alquilar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="catalogo-renta-cliente.component.ts"></script>
+
+
+
+
+
+
+
+        </section> 
+    </main>
+
+</body>
+<script>
+    let mostrador = document.getElementById("mostrador");
+let seleccion = document.getElementById("seleccion");
+let imgSeleccionada = document.getElementById("img");
+let modeloSeleccionado = document.getElementById("modelo");
+let descripSeleccionada = document.getElementById("descripcion");
+let precioSeleccionado = document.getElementById("precio");
+
+function cargar(item){
+    quitarBordes();
+    mostrador.style.width = "60%";
+    seleccion.style.width = "40%";
+    seleccion.style.opacity = "1";
+    item.style.border = "2px solid red";
+
+    imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
+
+    modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
+
+    descripSeleccionada.innerHTML = "Descripción del modelo ";
+
+    precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
+
+
+}
+function cerrar(){
+    mostrador.style.width = "100%";
+    seleccion.style.width = "0%";
+    seleccion.style.opacity = "0";
+    quitarBordes();
+}
+function quitarBordes(){
+    var items = document.getElementsByClassName("item");
+    for(i=0;i <items.length; i++){
+        items[i].style.border = "none";
+    }
+}
+    
+    </script>
+
+</html>
