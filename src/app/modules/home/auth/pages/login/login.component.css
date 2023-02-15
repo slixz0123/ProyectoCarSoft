@@ -152,3 +152,14 @@ input:focus {
   height: auto;
 }
 
+.contenedor {
+  background-image: url("https://wallpapercave.com/dwp2x/wp7146225.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

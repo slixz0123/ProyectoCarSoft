@@ -13,10 +13,24 @@ const routes: Routes = [
 
   },
   {
+    path : 'register-usr',
+    loadChildren:() => import("./register-usr/register-usr.module").then(m => m.RegisterUsrModule)
+
+  },
+  {
     path : 'catalogo-home',
     loadChildren:() => import("./catalogo-home/catalogo-home.module").then(m => m.CatalogoHomeModule)
 
+  },
+  {
+    path : 'servicios',
+    loadChildren:() => import("./servicios-home/servicios-home.module").then(m => m.ServiciosHomeModule)
+
   }
+
+
+
+
 
 
 ];

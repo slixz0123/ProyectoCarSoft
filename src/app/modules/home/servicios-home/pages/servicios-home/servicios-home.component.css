@@ -1,0 +1,89 @@
+.container {
+  max-width: 960px;
+}
+
+/*
+ * Dummy devices (replace them with your own or something else entirely!)
+ */
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #ffffff;
+  border-radius: 21px;
+  transform: rotate(30deg);
+  background-image: url("https://wallpapercave.com/dwp2x/wp7146225.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    flex: 1;
+  }
+}
+
+#cont{
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 19px );
+  -webkit-backdrop-filter: blur( 19px );
+  border-radius: 15px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#logo{
+  max-width: 100%;
+  height: auto;
+align-items: center;
+
+}
+#contenido1{
+  background-image: url("https://www.toyocosta.com/wp-content/uploads/2022/08/hilux_1.jpg");
+  border-radius: 15px;
+}
+#co{
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#contenido2{
+  background-image: url("https://www.mazda.ph/wp-content/uploads/2022/06/cx-5-video-banner.jpeg");
+  border-radius: 15px;
+}
+
+

@@ -288,6 +288,7 @@ text-align: center;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   background-image: url("https://previews.123rf.com/images/everyonensk/everyonensk1905/everyonensk190500728/123584220-texture-of-crumpled-black-paper-close-up-black-background-of-crumpled-cardboard-under-color-red-and-.jpg");
+
 }
 .caru2{
   display: flex;
@@ -358,4 +359,8 @@ text-align: center;
   font-weight: 400;
   color: #000000;
   text-align: center;
+}
+
+.marketing{
+  padding-bottom: 25px;
 }

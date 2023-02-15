@@ -11,11 +11,11 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
 
-  
+
     HeaderComponent,
         SidebarComponent,
         FooterComponent,
-        
+
   ],
   imports: [
     CommonModule,
@@ -23,9 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   exports:[
     HeaderComponent,
-        SidebarComponent,
-        FooterComponent
-        
+     SidebarComponent,
+    FooterComponent
+
   ]
 })
 export class SharedModule { }
