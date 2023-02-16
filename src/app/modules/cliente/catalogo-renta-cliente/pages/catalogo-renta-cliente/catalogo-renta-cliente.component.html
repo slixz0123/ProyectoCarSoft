@@ -1,104 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Catalogo de Autos</title>
 
-<!DOCTYPE html>
-<html lang="en" title="">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Catalogo</title>
-    <link rel="stylesheet" href="catalogo-renta-cliente.component.css">
-</head>
-
-<body>
-    <main class="table">
-        <section class="table__header">
-            <h1>Catalogo</h1>
-            <div class="input-group">
-                <input type="search" placeholder="Buscar...">
-                <img src="https://cdn-icons-png.flaticon.com/512/5868/5868370.png" alt="">
-            </div>
-            <div>
-                <button id="btn-abrir-popup" class="card-button">Crear</button>
-            </div>
-        </section>
-
-
-
-        <section class="contenido">
-            <div class="mostrador" id="mostrador">
-                <div class="fila">
-                    <div class="item" onclick="cargar(this)">
-                        <div class="contenedor-foto">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg" alt="">
-                        </div>
-                        <p class="descripcion">LAMBORGHINI URUS</p>
-                        <span class="precio">$ 1.300</span>
-                    </div>
-                    <div class="item" onclick="cargar(this)">
-                        <div class="contenedor-foto">
-                            <img src="https://www.km77.com/images/medium/3/0/0/5/lamborghini-urus-s.363005.jpg" alt="">
-                        </div>
-                        <p class="descripcion" id>LAMBORGHINI HURACAN </p>
-                        <span class="precio">$ 1.800</span>
-                    </div>
-                    <div class="item" onclick="cargar(this)">
-                        <div class="contenedor-foto">
-                            <img src="https://img.remediosdigitales.com/f51e87/av1/840_560.jpg" alt="">
-                        </div>
-                        <p class="descripcion">LAMBORGHINI VENENO</p>
-                        <span class="precio">$ 3.600</span>
-                    </div>
-                    
-                </div> 
-                <div class="fila">
-                    <div class="item" onclick="cargar(this)">
-                        <div class="contenedor-foto">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg" alt="">
-                        </div>
-                        <p class="descripcion">LAMBORGHINI URUS</p>
-                        <span class="precio">$ 1.300</span>
-                    </div>
-                    <div class="item" onclick="cargar(this)">
-                        <div class="contenedor-foto">
-                            <img src="https://www.km77.com/images/medium/3/0/0/5/lamborghini-urus-s.363005.jpg" alt="">
-                        </div>
-                        <p class="descripcion" id>LAMBORGHINI HURACAN  </p>
-                        <span class="precio">$ 1.800</span>
-                    </div>
-                    <div class="item" onclick="cargar(this)">
-                        <div class="contenedor-foto">
-                            <img src="https://img.remediosdigitales.com/f51e87/av1/840_560.jpg" alt="">
-                        </div>
-                        <p class="descripcion">LAMBORGHINI VENENO</p>
-                        <span class="precio">$ 3.600</span>
-                    </div>
-                    
-                </div> 
-                
-            </div>
+  </head>
+  <body>
     
-            
-            <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-            <div class="seleccion" id="seleccion">
-                <div class="cerrar" onclick="cerrar()">
-                    
+<header>
+
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Album</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5" style="">
+      <div class="col-lg-6 col-md-8 mx-auto ">
+        <h1 class="fw-light" style="font-size: 50px; margin-block-end: 50px;">CarSoft-Catalogo</h1>
+        <p class="lead text-muted"style="margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2" style="margin-right: 50px;">Conoce mas sobre nosotros</a>
+          <a href="#" class="btn btn-secondary my-2">Registrarte</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Imagen</text></svg>
+            <div class="card-body">
+              <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
                 </div>
-                <div class="info">
-                    <img src="img/1.png" alt="" id="img">
-                    <h2 id="modelo">NIKE MODEL 1</h2>
-                    <p id="descripcion">Descripción Modelo 1</p>
-    
-                    <span class="precio" id="precio">$ 130</span>
-    
-                    <div class="fila">
-                        
-                        <button id="btn-abrir-popup" class="card-button">Alquilar</button>
-                    </div>
-                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
             </div>
-        </section>
-        <script src="catalogo-renta-cliente.component.ts"></script>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Imagen</text></svg>
+            <div class="card-body">
+              <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Imagen</text></svg>
+            <div class="card-body">
+              <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Imagen</text></svg>
+            <div class="card-body">
+              <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -106,48 +116,22 @@
 
 
 
-        </section> 
-    </main>
-
-</body>
-<script>
-    let mostrador = document.getElementById("mostrador");
-let seleccion = document.getElementById("seleccion");
-let imgSeleccionada = document.getElementById("img");
-let modeloSeleccionado = document.getElementById("modelo");
-let descripSeleccionada = document.getElementById("descripcion");
-let precioSeleccionado = document.getElementById("precio");
-
-function cargar(item){
-    quitarBordes();
-    mostrador.style.width = "60%";
-    seleccion.style.width = "40%";
-    seleccion.style.opacity = "1";
-    item.style.border = "2px solid red";
-
-    imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
-
-    modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
-
-    descripSeleccionada.innerHTML = "Descripción del modelo ";
-
-    precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
+        
+      </div>
+    </div>
+  </div>
 
 
-}
-function cerrar(){
-    mostrador.style.width = "100%";
-    seleccion.style.width = "0%";
-    seleccion.style.opacity = "0";
-    quitarBordes();
-}
-function quitarBordes(){
-    var items = document.getElementsByClassName("item");
-    for(i=0;i <items.length; i++){
-        items[i].style.border = "none";
-    }
-}
-    
-    </script>
+</main>
 
+<div>
+  
+  
+
+</div>
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>  
+  </body>
+
+  
 </html>

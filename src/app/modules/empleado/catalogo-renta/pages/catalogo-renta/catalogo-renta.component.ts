@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CargarscriptsService } from 'src/assets/cargarscripts.service';
 
 @Component({
   selector: 'app-catalogo-renta',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./catalogo-renta.component.css']
 })
 export class CatalogoRentaComponent {
+
+  constructor(
+    private caro: CargarscriptsService,
+
+
+
+  )
+
+  {
+    {
+
+      caro.carga(["Catalogo"]);
+
+    }
+  }
+  
 
 }

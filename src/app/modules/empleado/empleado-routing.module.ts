@@ -14,6 +14,12 @@ const routes: Routes = [
     path: 'list-client',
     loadChildren: () => import("./list-client/list-client.module").then(m => m.ListClientModule)
   },
+  {
+    path: 'catalogo-client',
+    loadChildren: () => import("./catalogo-renta/catalogo-renta-routing.module").then(m => m.CatalogoRentaRoutingModule)
+  },
+  
+
 ];
 
 @NgModule({
