@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'catalogo-client',
     loadChildren: () => import("./catalogo-renta/catalogo-renta-routing.module").then(m => m.CatalogoRentaRoutingModule)
   },
+  {
+    path: 'crear-renta',
+    loadChildren: () => import("./create-renta/create-renta-routing.module").then(m => m.CreateRentaRoutingModule)
+  },
+  
   
 
 ];
