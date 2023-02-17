@@ -50,3 +50,23 @@
         -webkit-overflow-scrolling: touch;
       }
 
+      .fondobanner{
+  
+  
+        font-size: 1.125rem;
+        background-image: url(https://cdn.mos.cms.futurecdn.net/jRfTsFPhiGPSAfpCS7bQmJ.jpg);
+         background-size: 1450px 750px;
+         width: 100%;
+         color: white;
+        
+      
+      
+      }
+      .logo {
+        text-align: center;
+        font-size: 3em;
+      }
+      
+      .logo span {
+        color: #B70E21;
+      }
