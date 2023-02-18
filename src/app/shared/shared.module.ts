@@ -5,6 +5,7 @@ import { CargascripsjsService } from './services/cargascripsjs.service';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderlogsidebarComponent } from './components/headerlogsidebar/headerlogsidebar.component';
 
 
 
@@ -15,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
         SidebarComponent,
         FooterComponent,
+        HeaderlogsidebarComponent,
 
   ],
   imports: [
@@ -24,7 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
   exports:[
     HeaderComponent,
      SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderlogsidebarComponent
 
   ]
 })
