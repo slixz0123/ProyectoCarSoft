@@ -1,311 +1,270 @@
 
-
-
-
-
-button,
-input {
-  border: 0;
-  width: 100%;
-  height: 60px;
-  background: transparent;
-  font-family: inherit;
-  font-size: 20px;
-  outline: none;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-@keyframes clouds {
-  100% {
-    translate: -50vw -55%;
-    scale: 1 1.1;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
 }
 
-
-
-
-
-.form {
-  margin: 0;
-  display: grid;
-  gap: 16px;
-  height: 80%;
-
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
-
-
-
-
-
-:is(input:focus, input:valid) ~ label {
-  translate: -40px -40px;
-  scale: 0.875;
-}
-
-input:focus ~ label {
-  color: #e72121;
-}
-
-input:focus {
-  border-color:#e72121;
-}
-
-:is(input:focus, input:valid) ~ span {
-  color: rgb(255 255 255 / 96%);
-}
-
-
-
-
-
-#imglog{
-  width: 100%;
-  position: fixed;
-}
-
-#logo{
-  max-width: 100%;
-  height: auto;
-}
-
-/* ===== Google Font Import - Poppins ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
-.container{
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    border-radius: 6px;
-    padding: 30px;
-    margin: 0 15px;
-    background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    padding: 50px;
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 80%;
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 19px );
-  -webkit-backdrop-filter: blur( 19px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-
-
-
-}
-.container header{
-    position: relative;
-    font-size: 30px;
-    font-weight: 600;
-    color: #fff;
-
-
-
-}
-.container header::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    height: 3px;
-    width: 27px;
-    border-radius: 8px;
-    background-color: #ff0b0b;
-
-}
-.container form{
-    position: relative;
-    margin-top: 16px;
-    min-height: 490px;
-    background-color: #fff;
-    overflow: hidden;
-
-    background:transparent;
-
-
-
-
-}
-.container form .form{
-    position: absolute;
-
-    transition: 0.3s ease;
-
-
-
-}
-.container form .form.second{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-
-}
-form.secActive .form.second{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-form.secActive .form.first{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
-
-}
-.container form .title{
-    display: block;
-    margin-bottom: 8px;
-    font-size: 20px;
-    font-weight: 500;
-    margin: 6px 0;
-    color: #ffffff;
-}
-.container form .fields{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-form .fields .input-field{
-    display: flex;
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-
-}
-.input-field label{
-    font-size: 20px;
-    font-weight: 500;
-    color: #fdfdfd;
-}
-.input-field input, select{
-    outline: none;
-    font-size: 18px;
-    font-weight: 400;
-    color: #f0f0f0;
-    border-radius: 5px;
-    border: 1px solid #ff0303;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
-}
-.input-field input :focus,
-.input-field select:focus{
-    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
-}
-.input-field select,
-.input-field input[type="date"]{
-    color: #ffffff;
-}
-
-.input-field input[type="date"]:valid{
-    color: #ffffff;
-}
-.input-field input[type="text"]:valid{
-  color: #ffffff;
-}
-.container form button, .backBtn{
-
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-
-    background-color: #ff0000;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    top: 55%;
-    left: 50%;
-border-radius: 25px;
-
-
-
-
-
-}
-.container form .btnText{
-    font-size: 20px;
-    font-weight: 400;
-
-}
-form button:hover{
-    background-color: #ff0000;
-}
-form button i,
-form .backBtn i{
-    margin: 0 6px;
-}
-form .backBtn i{
-    transform: rotate(180deg);
-}
-form .buttons{
-    display: flex;
-    align-items: center;
-
-}
-form .buttons button , .backBtn{
-    margin-right: 14px;
-
-}
-
-@media (max-width: 750px) {
-    .container form{
-        overflow-y: scroll;
-    }
-    .container form::-webkit-scrollbar{
-       display: none;
-    }
-    form .fields .input-field{
-        width: calc(100% / 2 - 15px);
-    }
-}
-
-@media (max-width: 550px) {
-    form .fields .input-field{
-        width: 100%;
-    }
-}
-
-.details{
-  padding: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.contenedor{
-  background-image: url("https://wallpapercave.com/dwp2x/wp7146225.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
   height: 100vh;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#logo{
-  max-width: 100%;
-  height: auto;
 }
 
-#contenedorform{
-  width: 80%;
-  height: 600px;
-  margin: 0 auto;
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
 }
 
-.nextBtn{
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: 'Quicksand', sans-serif;
+  background-attachment: fixed; 
+  background-size: cover
+
+}
+.glass{
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.06);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.3px);
+-webkit-backdrop-filter: blur(3.3px);
+}
+
+
+
+
+
+
+
+.container {
+  width: 30rem;
+  height: 20rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  
+
+}
+
+.container:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(10px);
+  margin: -20px;
+
+  
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.logo {
+  text-align: center;
+  font-size: 3em;
+}
+
+.logo span {
+  color: #B70E21;
+}
+
+.contact-wrapper {
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contact-wrapper > * {
+  padding: 1em;
+}
+
+.contact-form {
+  /* background: #222222; */
+  /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3); */
+
+  border-radius: 15px;
+
+
+/* From https://css.glass */
+background: rgba(23, 21, 21, 0.56);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(23, 21, 21, 0.3);
+
+}
+
+.contact-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form label {
+  display: block;
+  
+}
+
+.contact-form form p {
+  margin: 0;
+  padding: 1em;
+}
+
+.contact-form form .block {
+  grid-column: 1 / 3;
+}
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background: none;
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid #d63031;
+  border-radius: 15px;
+}
+
+.contact-form form button {
+  background: #B70E21;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+  background: #d63031;
+  color: #fff;
+  transition: background-color 1s ease-out;
+  outline: 0;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  background: #000;
+  
+}
+
+.contact-info h4, .contact-info ul, .contact-info p {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 700px) {
+  body {
+      padding: 0 4em;
+  }
+  .contact-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+  }
+  .contact-wrapper > * {
+      padding: 2em;
+  }
+  .contact-info h4,
+  .contact-info ul,
+  .contact-info p {
+      text-align: left;
+  }
+}
+
+.fondobanner{
+  
+  
+  font-size: 1.125rem;
+  background-image: url(https://cdn.mos.cms.futurecdn.net/jRfTsFPhiGPSAfpCS7bQmJ.jpg);
+   background-size: 1450px 750px;
+   width: 100%;
+   color: white;
+  
+
+
+}
+
+
+#btnnes{
+  background-color: rgb(218, 211, 211);
+  border-bottom-color: rgb(2, 2, 2);
+  border-color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 25px;
+}
+
+#btnnes:hover,
+#btnnes:focus {
+  color:black ;
+  border-bottom-color: rgb(8, 8, 8);
+
+  border-color: black;
+  background-color:  rgb(243, 13, 13);
+
+}
+
+.panel{
+  background-color: white; 
+  color: #000;
+  border-radius: 15px; /* para crear bordes redondeados */
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  padding: 20px; 
+
+}
+.bodyx2{
+    background-image: url(https://images.unsplash.com/photo-1599721489452-b71f4375428b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1239&q=80); 
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed; 
+    background-size: cover
 
 }

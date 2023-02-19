@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'crear-renta',
     loadChildren: () => import("./create-renta/create-renta-routing.module").then(m => m.CreateRentaRoutingModule)
   },
+  {
+    path: 'aprovee-renta',
+    loadChildren: () => import("./aprovee-renta/aprovee-renta-routing.module").then(m => m.AproveeRentaRoutingModule)
+  },
   
   
 

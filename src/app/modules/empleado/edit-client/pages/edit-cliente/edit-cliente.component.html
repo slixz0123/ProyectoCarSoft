@@ -1,116 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Signup 2</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0"
-    />
-
-  </head>
-  <body>
-<!--
-  https://wallpapercave.com/wp/wp7146319.jpg
-ttps://www.mercedes-benz.com/en/vehicles/passenger-cars/concept-cars/_jcr_content/image/MQ6-12-image-20200908114040/00-mercedes-benz-eq-concept-cars-2560x1440.jpeg
-https://wallpapercave.com/dwp2x/wp7146225.jpg
-
-
--->
-<div class="contenedor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a contact Form 01</title>
+    <link rel="stylesheet" href="edit-cliente.component.css">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
 
 
-    <div class="container wrapper">
-      <a class="logo" href="/"><img src="http://images.squarespace-cdn.com/content/v1/56ae96aa859fd0b23b9aef2f/1555001641303-P290TUKFD5XW00F6ZK0C/Red+Eyes+Dragon+Boat+logo.png" alt="logo" style="height: 100px; width: 100px;"></a>
-      <header>Editar Usuario</header>
- <div id="contenedorform" >
-      <form action="#">
 
-            <div class="details personal">
-                  
-
-                  <div class="fields">
-                      <div class="input-field">
-                          <label>Nombres Completo</label>
-                          <input type="text" placeholder="Nombre..." required>
-                      </div>
-                      <div class="input-field">
-                          <label>Apellidos Completos</label>
-                          <input type="text" placeholder="Apellido..." required>
-                      </div>
-                      <div class="input-field">
-                        <label>Cedula</label>
-                        <input type="text" placeholder="Cedula..." required>
-                     </div>
-                     <div class="input-field">
-                        <label>Direccion</label>
-                        <input type="text" placeholder="Direccion..." required>
-                    </div>
-                    <div class="input-field">
-                        <label>Numero Telefonico</label>
-                        <input type="Text" placeholder="Telefono..." required>
-                    </div>
-
-                      <div class="input-field">
-                          <label>Email</label>
-                          <input type="text" placeholder="Email..." required>
-                      </div>
-
-                      <div class="input-field">
-                          <label>Genero</label>
-                          <select required>
-                              <option disabled selected>Selecciona tu Genero</option>
-                              <option>Masculino</option>
-                              <option>Femenino</option>
-                              <option>Otros</option>
-                          </select>
-                      </div>
-
-                      <div class="input-field">
-                        <label>Provincia </label>
-                        <input type="text" placeholder="Provincia..." required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Ciudad</label>
-                        <input type="text" placeholder="Ciudad..." required>
-                    </div>
-
-                    
-
-                
-
-                      
-                  </div>
-              </div>
-              <div class="details ID">
-                  
-
-       
-                
-                  </div>
+<body style="margin-top: 20px;">
+ <div class="panel panel-default">
+    <div class="fondobanner">
+        <div style="padding: 50px; ;">
+            <h1 class="logo" style="margin-block-end: 15px;">Ediccion  <span>Usuario </span></h1>
+            <div class="col-lg-6 col-md-8 mx-auto ">
+              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
               
-              <div class="details ID">
+              <div>
+                <p style="text-align: center;">
                   
-                <button class="nextBtn">
-                    <span class="btnText">Editar</span>
-                    <i ></i>
-                 </button>
-                 <button class="nextBtn" style="margin-left: 80px;">
-                    <span class="btnText">Cancelar</span>
-                    <i ></i>
-                 </button>
-                 
-                  </div>
-
-                    
-
-
-
-
-      </form>
+                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
+                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
+              </div>
+            </div>
+             </div>
     </div>
-  </div>
-</div>
-  </body>
+    <body class="bodyx2" style="padding: 50px;">
+        <div class="content">
+               <div class="contact-form animated bounceInUp">
+                   <div>
+                       <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
+                   </div>
+                   
+                   <form action="">
+                       <p>
+                           <label>Nombre:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                       <p>
+                           <label>Apellido:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                       <p>
+                           <label>Cedula:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                       <p>
+                           <label> Email:</label>
+                           <input type="email" name="email">
+                       </p>
+                       <p>
+                           <label>Telefono :</label>
+                           <input type="tel" name="phone">
+                       </p>
+                       <p>
+                           <label>Edad:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                       <p>
+                           <label> Usuario:</label>
+                           <input type="email" name="email">
+                       </p>
+                        <p>
+                           <label>Genero:</label>
+                           <input type="text" name="affair">
+                       </p>
+                       <p>
+                           <label>Ciudad:</label>
+                           <input type="text" name="affair">
+                       </p>
+                       <p>
+                           <label>Ciudad:</label>
+                           <input type="text" name="affair">
+                       </p>
+                       <button>Editar </button>
+                       <button>Cancelar </button>
+                       
+                       
+                   </form>
+               </div>
+            </div>  
+   <div>
+
+   </div>
+     
+       </body>
+   </div>
+</body>
+
+
 </html>
