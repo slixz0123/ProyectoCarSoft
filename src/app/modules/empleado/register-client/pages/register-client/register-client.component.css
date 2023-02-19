@@ -55,20 +55,55 @@
 }
 
 body {
-  background: #181818;
+  background-image: url(https://images.unsplash.com/photo-1599721489452-b71f4375428b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1239&q=80);
   color: #fff;
-  line-height: 1.6;
   font-family: 'Quicksand', sans-serif;
-  padding: 0 1.5em;
+  background-attachment: fixed; 
+  background-size: cover
+
 }
+.glass{
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.06);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.3px);
+-webkit-backdrop-filter: blur(3.3px);
+}
+
+
+
+
+
+
 
 .container {
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.5em;
+  width: 30rem;
+  height: 20rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  
+
 }
 
+.container:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(10px);
+  margin: -20px;
+
+  
+}
 ul {
   list-style: none;
   padding: 0;
@@ -92,8 +127,19 @@ ul {
 }
 
 .contact-form {
-  background: #222222;
-  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+  /* background: #222222; */
+  /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3); */
+
+  border-radius: 15px;
+
+
+/* From https://css.glass */
+background: rgba(23, 21, 21, 0.56);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(23, 21, 21, 0.3);
 
 }
 
@@ -104,6 +150,7 @@ ul {
 
 .contact-form form label {
   display: block;
+  
 }
 
 .contact-form form p {
@@ -125,6 +172,7 @@ ul {
   outline: 0;
   color: #fff;
   border-bottom: 1px solid #d63031;
+  border-radius: 15px;
 }
 
 .contact-form form button {
@@ -145,6 +193,7 @@ ul {
 /* CONTACT INFO */
 .contact-info {
   background: #000;
+  
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {
@@ -189,4 +238,32 @@ ul {
   
 
 
+}
+
+
+#btnnes{
+  background-color: rgb(218, 211, 211);
+  border-bottom-color: rgb(2, 2, 2);
+  border-color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 25px;
+}
+
+#btnnes:hover,
+#btnnes:focus {
+  color:black ;
+  border-bottom-color: rgb(8, 8, 8);
+
+  border-color: black;
+  background-color:  rgb(243, 13, 13);
+
+}
+
+.panel{
+  background: white; 
+  box-shadow: 0 0 20px 0 rgba(17, 17, 17, 0.3); 
+  color: #000;
+  border-radius: 50px;
+  margin: 50px;  
 }
