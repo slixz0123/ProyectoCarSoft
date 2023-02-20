@@ -3,22 +3,22 @@
             <a class="logo" href="/"><img src="http://images.squarespace-cdn.com/content/v1/56ae96aa859fd0b23b9aef2f/1555001641303-P290TUKFD5XW00F6ZK0C/Red+Eyes+Dragon+Boat+logo.png" alt="logo" style="height: 100px; width: 100px;"></a>
             <nav>
                 <ul class="nav__links">
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Catalogo</a></li>
+                    <li><a   (click)="goToServicos($event)" >Servicios</a></li>
+                    <li><a   (click)="goToNosotros($event)">Nosotros</a></li>
+                    <li><a   (click)="goToCatalogo($event)">Catalogo</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#">Iniciar Sesion</a>
+            <a class="cta"   (click)="goToLogin($event)">Iniciar Sesion</a>
             <p class="menu cta">Menu</p>
         </header>
         <div class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">
-                <a href="#">Services</a>
-                <a href="#">Projects</a>
-                <a href="#">About</a>
+                <a   (click)="goToServicos($event)">Servicios</a>
+                <a   (click)="goToNosotros($event)">Nosotros</a>
+                <a   (click)="goToCatalogo($event)">Catalogo</a>
             </div>
         </div>
-        <script type="text/javascript" src="mobile.js"></script>
+
 
 

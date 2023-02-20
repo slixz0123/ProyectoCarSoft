@@ -4,7 +4,7 @@ export class Usuario {
 
   id: number = 0;
   email: string = "";
-  nombre_usuario: string = "";
+  nombreUsuario: string = "";
   password: string = "";
   //estado: boolean = false;
  // foto?: string;

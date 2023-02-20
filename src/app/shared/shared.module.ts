@@ -17,6 +17,7 @@ import { HeaderlogsidebarComponent } from './components/headerlogsidebar/headerl
         SidebarComponent,
         FooterComponent,
         HeaderlogsidebarComponent,
+        HeaderComponent
 
   ],
   imports: [
