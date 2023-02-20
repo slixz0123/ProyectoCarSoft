@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>RegistroCar</title>
-    <link
-      rel="stylesheet"
-      href="registercar.component.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a contact Form 01</title>
+    <link rel="stylesheet" href="registercar.component.css">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
 
 
-  </head>
-  <body>
 
 
-<div class="contenedor">
+ <div class="panel panel-default">
+    <div class="fondobanner">
+        <div style="padding: 50px; ;">
+            <h1 class="logo" style="margin-block-end: 15px;">Registro  <span>Automovil </span></h1>
+            <div class="col-lg-6 col-md-8 mx-auto ">
+              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
+              
+              <div>
+                <p style="text-align: center;">
+                  
+                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
+                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
+              </div>
+            </div>
+             </div>
+    </div>
 
+        <div class="content">
+               <div class="contact-form animated bounceInUp">
+                   <div>
+                       <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
+                   </div>
+                   
+                   <form action="">
+                       <p>
+                           <label>Numero de placa:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                       
 
-
-
-    <div class="container wrapper">
-      <a class="logo" href="/"><img src="http://images.squarespace-cdn.com/content/v1/56ae96aa859fd0b23b9aef2f/1555001641303-P290TUKFD5XW00F6ZK0C/Red+Eyes+Dragon+Boat+logo.png" alt="logo" style="height: 100px; width: 100px;"></a>
-      <header>Registro de autos</header>
- <div id="contenedorform" >
-      <form action="#">
-
-
-            <div class="details personal">
-                  <span class="title">Datos del automovil</span>
-
-
-                  <div class="fields">
-                      <div class="input-field">
-                          <label>Número de placa</label>
-                          <input type="text" placeholder="Número de Placa" required>
-                      </div>
-                      <div class="input-field">
+                       <div class="input-field">
                         <label>Tipo de vehiculo</label>
                         <select required>
                             <option disabled selected>Selecciona Tipo</option>
@@ -42,68 +56,44 @@
                             <option>Tipo C</option>
                         </select>
                     </div>
-
-
-                      <div class="input-field">
-                          <label>Modelo</label>
-                          <input type="text" placeholder="Ingrese el Modelo" required>
-                      </div>
-
-
-                      <div class="input-field">
-                          <label>Color</label>
-                          <input type="text" placeholder="Ingrese el Color" required>
-                      </div>
-
-
-                      <div class="input-field">
-                          <label>Año</label>
-                          <input type="Text" placeholder="Ingrese el año" required>
-                      </div>
-
-
-                     
-
-
-                      <div class="input-field">
+                       <p>
+                           <label>Modelo:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                       <p>
+                           <label> Color:</label>
+                           <input type="email" name="email">
+                       </p>
+                       <div class="input-field">
                         <label>Estado</label>
                         <select required>
                             <option disabled selected>Selecciona Tipo</option>
-                            <option>Alto</option>
-                            <option>Bajo</option>
-                            <option>Medio</option>
+                            <option>Tipo A</option>
+                            <option>Tipo B</option>
+                            <option>Tipo C</option>
                         </select>
                     </div>
+                       <p>
+                           <label>Marca:</label>
+                           <input type="text" name="fullname">
+                       </p>
+                           <button>
+                               Crear
+                           </button>
+                           <button>
+                            Cancelar
+                        </button>
+                       
+                   </form>
+               </div>
+            </div>  
+   <div>
 
+   </div>
+     
 
-                      <div class="input-field">
-                          <label>Marca</label>
-                          <input type="text" placeholder="Ingrese la Marca" required>
-                      </div>
-                  </div>
-              </div>
-
-
-              <div class="details ID">
-                  <span class="title"></span>
-
-
-
-
-                    <button class="nextBtn">
-                      <span class="btnText">Registrar</span>
-                      <i class="uil uil-navigator"></i>
-                   </button>
-             </div>
-
-
+   </div>
 
 
 
-
-      </form>
-    </div>
-  </div>
-</div>
-  </body>
 </html>
