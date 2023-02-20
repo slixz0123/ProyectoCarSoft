@@ -27,7 +27,7 @@ const routes: Routes = [
       loadChildren: () => import("./edit-empleado/edit-empleado.module").then(m => m.EditEmpleadoModule)
     },
     {
-      path: 'list-employee',
+      path: 'list-employees',
       loadChildren: () => import("./list-empleado/list-empleado.module").then(m => m.ListEmpleadoModule)
     },
 

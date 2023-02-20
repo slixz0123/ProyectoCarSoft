@@ -76,30 +76,14 @@ backdrop-filter: blur(3.3px);
 
 
 .container {
-  width: 30rem;
-  height: 20rem;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-  border-radius: 5px;
-  position: relative;
-  z-index: 1;
-  background: inherit;
-  overflow: hidden;
+
+  margin: 10px;
   
 
 }
 
 .container:before {
-  content: "";
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  filter: blur(10px);
-  margin: -20px;
+
 
   
 }
@@ -342,4 +326,72 @@ border: 1px solid rgba(23, 21, 21, 0.3);
   color: #B70E21;
 }
 
+
+
+.table__header {
+  width: 100%;
+  height: 10%;
+  background: rgba(255, 255, 255, 0.06);
+  padding: .8rem 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table__header .input-group {
+  width: 35%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0 .8rem;
+  border-radius: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: .2s;
+}
+
+.table__header .input-group:hover {
+  width: 45%;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.table__header .input-group input {
+  width: 100%;
+  padding: 0 .5rem 0 .3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+
+
+.card-button {
+  background-color: white;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave del color */
+  align-items: center;
+
+}
+
+.card-button:hover {
+  background-color: #ff0000; /* Color de fondo al pasar el mouse */
+  color: #fdfdfd;
+}
+
+.card-button .fa {
+  margin-left: 5px; /* Espacio entre el texto y el icono */
+}
 

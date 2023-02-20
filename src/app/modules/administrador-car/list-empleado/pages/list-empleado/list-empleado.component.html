@@ -1,65 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" title="">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vistas Empleado</title>
+    <title>Website with a contact Form 01</title>
     <link rel="stylesheet" href="list-empleado.component.css">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 
-<body>
-    <main class="table">
-        <section class="table__header">
-            <h1>Listado Empleados</h1>
-            <div class="input-group">
-                <input type="search" placeholder="Buscar...">
-                <img src="https://cdn-icons-png.flaticon.com/512/5868/5868370.png" alt="">
-            </div>
-            <div>
-                <button id="btn-abrir-popup" class="card-button">Crear</button>
-            </div>
-        </section>
-        <section class="table__body">
-            <table>
-                <thead>
-                    <tr>
-                        <th> id <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nombre  <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Apellido<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Cedula <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Telefono <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td> 1 </td>
-                        <td> Jose</td>
-                        <td> Naula</td>
-                        <td> 0151145315</td>
-                        <td> 2320115</td>
-                        <td> davicho896@gmail.com</td>
-                        <td> 12</td>
-                        <td>
-                            <button id="btn-abrir-popup" class="card-button">Editar</button>
-                            
-                        </td>
-                    </tr> 
-                    
-                </tbody>
-            </table>
-        </section>
 
 
-       
+<body style="margin-top: 20px;">
+ <div class="panel panel-default">
+    <div class="fondobanner">
+        <div style="padding: 50px; ;">
+            <h1 class="logo" style="margin-block-end: 15px;">Lista <span>Empleados </span></h1>
+            <div class="col-lg-6 col-md-8 mx-auto ">
+              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
+              
+              <div>
+                <p style="text-align: center;">
+                  
+                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
+                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
+              </div>
+            </div>
+             </div>
+    </div>
+    <body class="bodyx2" style="padding: 50px;">
+
+        <main class="table">
+            <section class="table__header">
+                <h1><strong>Listado Empleados</strong> </h1>
+
+                <div class="input-group">
+                    <input type="search" placeholder="Buscar...">
+                </div>
+                <div>
+                    <button id="btn-abrir-popup" class="card-button">Crear</button>
+                </div>
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Nombre  <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Apellido<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Cedula <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Telefono <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                        <tr>
+                            <td> 1 </td>
+                            <td> Jose</td>
+                            <td> Naula</td>
+                            <td> 0151145315</td>
+                            <td> 2320115</td>
+                            <td> davicho896@gmail.com</td>
+                            <td> 12</td>
+                            <td>
+                                <button id="btn-abrir-popup" class="card-button">Editar</button>
+                                
+                            </td>
+                        </tr> 
+                        
+                        
+                    </tbody>
+                </table>
+            </section> 
+        </main>
         
-    </main>
-
+               
+     
+       </body>
+   </div>
 </body>
+
 
 </html>

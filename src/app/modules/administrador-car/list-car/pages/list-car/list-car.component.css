@@ -1,39 +1,294 @@
 
-
-* {
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    background: url(https://img.freepik.com/fotos-premium/pieza-vista-delantera-primer-moderno-negro-coche-fondo-negro-detalle-linternas_34008-337.jpg?w=900) center / cover;
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed; 
+    background-size: cover
+  
+  }
+  .glass{
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.3px);
+  -webkit-backdrop-filter: blur(3.3px);
+  }
+  
+  
+  
+  
+  
+  
+  
+  .container {
+    width: 30rem;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    
+  
+  }
+  
+  .container:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+  
+    
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .logo {
+    text-align: center;
+    font-size: 3em;
+  }
+  
+  .logo span {
+    color: #B70E21;
+  }
+  
+  .contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+  }
+  
+  .contact-wrapper > * {
+    padding: 1em;
+  }
+  
+  .contact-form {
+    /* background: #222222; */
+    /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3); */
+  
+    border-radius: 15px;
+  
+  
+  /* From https://css.glass */
+  background: rgba(23, 21, 21, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(23, 21, 21, 0.3);
+  
+  }
+  
+  .contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .contact-form form label {
+    display: block;
+    
+  }
+  
+  .contact-form form p {
+    margin: 0;
+    padding: 1em;
+  }
+  
+  .contact-form form .block {
+    grid-column: 1 / 3;
+  }
+  
+  .contact-form form button,
+  .contact-form form input,
+  .contact-form form textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #d63031;
+    border-radius: 15px;
+  }
+  
+  .contact-form form button {
+    background: #B70E21;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+  }
+  
+  .contact-form form button:hover,
+  .contact-form form button:focus {
+    background: #d63031;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+  }
+  
+  /* CONTACT INFO */
+  .contact-info {
+    background: #000;
+    
+  }
+  
+  .contact-info h4, .contact-info ul, .contact-info p {
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+  
+  /* LARGE SIZE */
+  @media(min-width: 700px) {
+    body {
+        padding: 0 4em;
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+  }
+  
+  .fondobanner{
+    
+    
+    font-size: 1.125rem;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/jRfTsFPhiGPSAfpCS7bQmJ.jpg);
+     background-size: 1450px 750px;
+     width: 100%;
+     color: white;
+    
+  
+  
+  }
+  
+  
+  #btnnes{
+    background-color: rgb(218, 211, 211);
+    border-bottom-color: rgb(2, 2, 2);
+    border-color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+  }
+  
+  #btnnes:hover,
+  #btnnes:focus {
+    color:black ;
+    border-bottom-color: rgb(8, 8, 8);
+  
+    border-color: black;
+    background-color:  rgb(243, 13, 13);
+  
+  }
+  
+  .panel{
+    background-color: white; 
+    color: #000;
+    border-radius: 15px; /* para crear bordes redondeados */
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    padding: 20px; 
+  
+  }
+  .bodyx2{
+      background-image: url(https://images.unsplash.com/photo-1599721489452-b71f4375428b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1239&q=80); 
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      background-attachment: fixed; 
+      background-size: cover
+  
+  }
+
+  
+
+
+
 
 main.table {
     width: 82vw;
     height: 90vh;
-    background-color: #fff5;
-
-
+    background: rgba(255, 255, 255, 0.06);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: .8rem;
-
     overflow: hidden;
 }
 
 .table__header {
     width: 100%;
     height: 10%;
-    background-color: #fff4;
+    background: rgba(255, 255, 255, 0.06);
     padding: .8rem 1rem;
-
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +297,7 @@ main.table {
 .table__header .input-group {
     width: 35%;
     height: 100%;
-    background-color: #fff5;
+    background: rgba(255, 255, 255, 0.06);
     padding: 0 .8rem;
     border-radius: 2rem;
 
@@ -55,7 +310,7 @@ main.table {
 
 .table__header .input-group:hover {
     width: 45%;
-    background-color: #fff8;
+    background: rgba(255, 255, 255, 0.06);
     box-shadow: 0 .1rem .4rem #0002;
 }
 
@@ -75,11 +330,10 @@ main.table {
 .table__body {
     width: 95%;
     max-height: calc(89% - 1.6rem);
-    background-color: #fffb;
-
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
     margin: .8rem auto;
     border-radius: .6rem;
-
     overflow: auto;
     overflow: overlay;
 }
@@ -87,17 +341,21 @@ main.table {
 .table__body::-webkit-scrollbar{
     width: 0.5rem;
     height: 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    
 }
 
 .table__body::-webkit-scrollbar-thumb{
     border-radius: .5rem;
-    background-color: #0004;
+    background-color: rgba(255, 255, 255, 0.06);
     visibility: hidden;
 }
 
 .table__body:hover::-webkit-scrollbar-thumb{ 
     visibility: visible;
+    background-color: rgba(255, 255, 255, 0.06);
 }
+
 
 table {
     width: 100%;
@@ -108,7 +366,6 @@ td img {
     height: 36px;
     margin-right: .5rem;
     border-radius: 50%;
-
     vertical-align: middle;
 }
 
@@ -116,24 +373,26 @@ table, th, td {
     border-collapse: collapse;
     padding: 1rem;
     text-align: left;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 thead th {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #7c7c7c;
+    background: rgba(255, 255, 255, 0.06);
     cursor: pointer;
     text-transform: capitalize;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #0000000b;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 tbody tr {
     --delay: .1s;
-    transition: .5s ease-in-out var(--delay), background-color 0s;
+    transition: .5s ease-in-out var(--delay);
+    background-color: rgba(255, 255, 255, 0.06);;
 }
 
 tbody tr.hide {
@@ -142,7 +401,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-    background-color: #fff6 !important;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 tbody tr td,
@@ -171,7 +430,7 @@ tbody tr.hide td img {
 }
 
 .status.delivered {
-    background-color:#2E4053  ;
+    background-color:#B70E21  ;
     color: #fff;
 }
 
@@ -199,15 +458,15 @@ thead th span.icon-arrow {
 }
 
 thead th:hover span.icon-arrow{
-    border: 1.4px solid #2E4053;
+    border: 1.4px solid #B70E21;
 }
 
 thead th:hover {
-    color: #2E4053;
+    color: #B70E21;
 }
 
 thead th.active span.icon-arrow{
-    background-color: #2E4053;
+    background-color: #B70E21;
     color: #fff;
 }
 
@@ -216,7 +475,7 @@ thead th.asc span.icon-arrow{
 }
 
 thead th.active,tbody td.active {
-    color: #2E4053;
+    color: #B70E21;
 }
 
 .export__file {
@@ -226,18 +485,15 @@ thead th.active,tbody td.active {
 
 /* Estilos del botón */
 .card-button {
-    background-color: #2E4053;
-    color: #fff;
+    background-color: white;
+    color: #000;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Transición suave del color */
     align-items: center;
-  
-  
-    
-  
+
   }
   
   .card-button:hover {

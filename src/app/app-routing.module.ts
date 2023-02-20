@@ -29,6 +29,12 @@ const routes: Routes = [
     component: WelcomeEmpleadoComponent,
     loadChildren: () => import('./modules/invitado/invitado.module').then(m => m.InvitadoModule) // se importa un modulo que tiene routing es decir ruta
 
+  },
+  {
+    path: 'client-carsoft',
+    component: WelcomeEmpleadoComponent,
+    loadChildren: () => import('./modules/cliente/cliente-routing.module').then(m => m.ClienteRoutingModule) // se importa un modulo que tiene routing es decir ruta
+
   }
 ]
 
