@@ -14,6 +14,7 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
   styleUrls: ['./register-usr.component.css']
 })
 export class RegisterUsrComponent {
+ /*
   rol: Rol = new Rol;
 
   persona: Persona = new Persona;
@@ -159,5 +160,5 @@ export class RegisterUsrComponent {
       )
     }
   }
-
+*/
 }
