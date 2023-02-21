@@ -38,6 +38,7 @@ export class HeaderlogsidebarComponent {
       _CargarScripts2.carga18(["wNumb.min"])
       _CargarScripts2.carga19(["google-maps"])
       _CargarScripts2.carga20(["header2"])
+      _CargarScripts2.carga12(["sid"])
 
 
 
