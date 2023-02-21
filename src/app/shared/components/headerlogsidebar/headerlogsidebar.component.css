@@ -8,19 +8,23 @@
 @media (min-width: 1025px) {
   .pc-header[class*="bg-"] .pc-head-link, .pc-header.dark-header .pc-head-link {
       color: #fff;
+      border-radius: 25px;
   }
 
   .pc-header[class*="bg-"] .pc-head-link i, .pc-header.dark-header .pc-head-link i {
       color: #fff;
+      border-radius: 25px;
   }
 
   .pc-header[class*="bg-"] .pc-head-link.active, .pc-header[class*="bg-"] .pc-head-link:active, .pc-header[class*="bg-"] .pc-head-link:focus, .pc-header[class*="bg-"] .pc-head-link:hover, .pc-header.dark-header .pc-head-link.active, .pc-header.dark-header .pc-head-link:active, .pc-header.dark-header .pc-head-link:focus, .pc-header.dark-header .pc-head-link:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
   }
 
   .pc-header[class*="bg-"] .pc-head-link .user-desc, .pc-header.dark-header .pc-head-link .user-desc {
       color: rgba(255, 255, 255, 0.7);
+      border-radius: 25px;
   }
 }
 
@@ -52,14 +56,18 @@
 .pc-sidebar.light-sidebar .pc-item:hover > .pc-link,
 .pc-sidebar.light-sidebar .pc-item.active > .pc-link {
   color: #7267EF;
+
 }
 
 .pc-sidebar.light-sidebar .pc-navbar > .pc-item.active .pc-link, .pc-sidebar.light-sidebar .pc-navbar > .pc-item:focus .pc-link, .pc-sidebar.light-sidebar .pc-navbar > .pc-item:hover .pc-link {
-  background: rgb(0, 0, 0);
+ background: transparent;
+
+
 }
 
 .pc-sidebar.light-sidebar .pc-navbar > .pc-item.active > .pc-link, .pc-sidebar.light-sidebar .pc-navbar > .pc-item:focus > .pc-link, .pc-sidebar.light-sidebar .pc-navbar > .pc-item:hover > .pc-link {
-  background: #000000;
+  background: transparent;
+
 }
 
 .pc-horizontal .topbar.light-sidebar {
@@ -77,6 +85,7 @@
 
 .creative-layout .pc-sidebar.light-sidebar .pc-navbar > .pc-item + .pc-item > .pc-link {
   border-top: 1px solid rgba(28, 35, 47, 0.1);
+
 }
 
 .auth-wrapper ~ .pct-customizer {
@@ -91,15 +100,30 @@
 
 /* ================================    Blockquote End  ===================== */
 .pc-sidebar {
+
   background: rgb(0,0,6);
 
-  background: linear-gradient(180deg, rgba(0,0,6,1) 69%, rgba(121,9,9,1) 85%, rgba(255,0,0,1) 100%);
+
+
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   width: 280px;
   position: fixed;
   top: 0;
   bottom: 0;
   z-index: 1026;
+
+ border-radius: 25px;
+  margin-bottom: 15px;
+  margin-top: 95px;
+  margin-left: 10px;
+  /* https://i.pinimg.com/originals/0c/2d/06/0c2d06d5d80482483a518d1156106e10.jpg
+   https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80
+ https://wallpapercave.com/wp/wp5055252.jpg
+ http://papers.co/wallpaper/papers.co-bg86-car-lamborghini-car-dark-road-drive-art-winter-34-iphone6-plus-wallpaper.jpg
+  */
+
+  background-image: url("https://wallpapercave.com/wp/wp5055252.jpg");
+
 }
 
 .pc-sidebar ul {
@@ -111,10 +135,11 @@
 .pc-sidebar .pc-caption {
   color: #ff0000;
   display: block;
-  padding: 25px 30px 10px;
+  padding: 25px 10px 10px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  font-size: 11px;
+
+
   font-weight: 600;
 }
 
@@ -187,8 +212,12 @@
   align-items: center;
   padding: 15px 30px;
   background: #000000;
-}
 
+}
+.navbar-content .ps{
+
+
+}
 .pc-sidebar .m-header .logo-sm {
   display: none;
 }
@@ -197,8 +226,11 @@
   position: relative;
   height: calc(100vh - 70px);
 
-}
 
+}
+.navbar-wrapper {
+
+}
 .pc-sidebar .pc-submenu {
   display: none;
 }
@@ -217,6 +249,8 @@
 .pc-sidebar .pc-item.active > .pc-link, .pc-sidebar .pc-item:focus > .pc-link, .pc-sidebar .pc-item:hover > .pc-link {
   color: #ffffff;
   margin: 10px;
+  font-size: 20px;
+
 }
 
 .pc-sidebar .pc-item.active > .pc-link .pc-micon i,
@@ -224,13 +258,14 @@
   .pc-sidebar .pc-item:focus > .pc-link .pc-micon svg, .pc-sidebar .pc-item:hover > .pc-link .pc-micon i,
   .pc-sidebar .pc-item:hover > .pc-link .pc-micon svg {
   color: #000000;
+  font-size: 20px;
 }
 
 /*   cuando el mause esta encima del btn */
 .pc-sidebar .pc-navbar > .pc-item.active > .pc-link, .pc-sidebar .pc-navbar > .pc-item:focus > .pc-link, .pc-sidebar .pc-navbar > .pc-item:hover > .pc-link {
   background: #ff0202;
   border-radius: 15px;
-  margin: 10px;
+
 }
 
 .pc-sidebar .pc-hasmenu.pc-trigger > .pc-submenu {
@@ -259,6 +294,7 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-item:before {
   border-radius: 50%;
   z-index: 1;
   opacity: 0.7;
+  font-size: 20px;
 }
 
 body:not(.minimenu) .pc-sidebar .pc-submenu .pc-item.active:before {
@@ -336,16 +372,20 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
 
 .minimenu .pc-sidebar .pc-item:hover > .pc-link {
   width: calc(200px + 70px);
-  background: #161c25;
+  background: transparent;
   color: #fff;
+
+
 }
 
 .minimenu .pc-sidebar .pc-item:hover > .pc-link .pc-micon {
   margin-right: 40px;
+
 }
 
 .minimenu .pc-sidebar .pc-item:hover > .pc-link .pc-micon i {
   color: #fff;
+
 }
 
 .minimenu .pc-sidebar .pc-item:hover > .pc-link .pc-mtext {
@@ -355,11 +395,14 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
 .minimenu .pc-sidebar .pc-item:hover > .pc-submenu {
   display: block;
   width: 200px;
+
 }
 
 .minimenu .pc-sidebar .pc-item .pc-item:hover > .pc-link {
   width: 200px;
   background: #1c232f;
+
+
 }
 
 .minimenu .pc-sidebar .pc-item .pc-item:hover > .pc-submenu {
@@ -370,6 +413,7 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
   .navbar-overlay .pc-sidebar.pc-over-menu-active .navbar-wrapper {
       position: relative;
       z-index: 5;
+      border-radius: 25px;
   }
 
   .navbar-overlay .pc-sidebar:not(.pc-over-menu-active) {
@@ -383,34 +427,45 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
       left: -280px;
       box-shadow: none;
       transition: all 0.15s ease-in-out;
+      border-radius: 25px;
   }
 
   .pc-sidebar {
       left: 0;
       box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+      border-radius: 25px;
   }
 
   .pc-sidebar .navbar-wrapper {
       position: relative;
       z-index: 5;
       background: inherit;
+      border-radius: 25px;
   }
 
   .minimenu .pc-container {
       margin-left: 0;
+      border-radius: 25px;
   }
 }
 
 .pc-header {
-  background: #fff;
+  background: #000000;
   box-shadow: 0 1px 0 0 #f1f1f1;
   color: #1c232f;
   min-height: 70px;
   position: fixed;
-  left: 280px;
+  left: 1px;
   right: 0;
   z-index: 1025;
   overflow: hidden;
+  width: 100;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+
+
 }
 
 .pc-header ul {
@@ -420,12 +475,12 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
 
 .pc-header .header-wrapper {
   display: flex;
-  padding: 0 30px;
+
   overflow: hidden;
   background: rgb(0,0,6);
 
   background: rgb(0,0,6);
-  background: linear-gradient(90deg, rgba(0,0,6,1) 69%, rgba(121,9,9,1) 85%, rgba(255,0,0,1) 100%);
+border-bottom-right-radius: 25px;
   color: white;
 }
 
@@ -435,6 +490,7 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
   align-items: center;
   position: relative;
   overflow: hidden;
+  margin-right: 15px;
 }
 
 .pc-header .pc-head-link {
@@ -945,3 +1001,73 @@ body:not(.minimenu) .pc-sidebar .pc-submenu .pc-submenu > .pc-item:before {
 
 
 
+
+/* 2 css */
+
+#cliente{
+  font-size: 20px;
+}
+#bienvenida{
+  font-size: 20px;
+}
+#auto{
+  font-size: 20px;
+}
+
+#auto,#bienvenida,#cliente {
+  background: transparent;
+  border-bottom-color: rgb(2, 2, 2);
+  border-color: black;
+
+  font-size: 20px;
+
+ margin: 10px;
+
+
+
+
+}
+
+#auto:hover,#bienvenida:hover,#bienvenida:focus,#cliente:hover,#cliente:focus
+#auto:focus {
+  color: rgb(255, 255, 255);
+  border-bottom-color: rgb(8, 8, 8);
+
+  border-color: black;
+  background-color: rgb(250, 3, 3);
+  border-color: white;
+  border-width: 1px;
+}
+
+.titulo{
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.fondobanner{
+
+
+  font-size: 1.125rem;
+  background-image: url(https://cdn.mos.cms.futurecdn.net/jRfTsFPhiGPSAfpCS7bQmJ.jpg);
+   background-size: 1450px 750px;
+   width: 100%;
+   color: white;
+   border-radius: 25px;
+   margin-bottom: 15px;
+
+
+
+}
+
+.logo {
+  text-align: center;
+  font-size: 2em;
+
+}
+
+.logo span {
+  color: #ff1212;
+
+}

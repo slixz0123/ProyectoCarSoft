@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderlogsidebarComponent } from './components/headerlogsidebar/headerlogsidebar.component';
+import { Headerlogsidebar2Component } from './components/headerlogsidebar2/headerlogsidebar2.component';
 
 
 
@@ -17,7 +18,8 @@ import { HeaderlogsidebarComponent } from './components/headerlogsidebar/headerl
         SidebarComponent,
         FooterComponent,
         HeaderlogsidebarComponent,
-        HeaderComponent
+        HeaderComponent,
+        Headerlogsidebar2Component
 
   ],
   imports: [
@@ -28,7 +30,8 @@ import { HeaderlogsidebarComponent } from './components/headerlogsidebar/headerl
     HeaderComponent,
      SidebarComponent,
     FooterComponent,
-    HeaderlogsidebarComponent
+    HeaderlogsidebarComponent,
+    Headerlogsidebar2Component
 
   ]
 })

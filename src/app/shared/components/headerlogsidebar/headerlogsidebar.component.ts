@@ -16,6 +16,7 @@ export class HeaderlogsidebarComponent {
 
   {
     {
+
       _CargarScripts2.carga(["bootstrap.min"])
       _CargarScripts2.carga2(["pcoded"])
       _CargarScripts2.carga3(["pcoded.min"])
@@ -36,7 +37,8 @@ export class HeaderlogsidebarComponent {
       _CargarScripts2.carga17(["prism"])
       _CargarScripts2.carga18(["wNumb.min"])
       _CargarScripts2.carga19(["google-maps"])
-      _CargarScripts2.carga19(["google-maps"])
+      _CargarScripts2.carga20(["header2"])
+
 
 
 
