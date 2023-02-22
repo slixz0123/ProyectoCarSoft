@@ -10,6 +10,7 @@ export interface Automovil{
    marca?:string;
    modelo?:string;
    tipo_vahiculo?:string;
+   foto?: string;
 
 
    //relacion

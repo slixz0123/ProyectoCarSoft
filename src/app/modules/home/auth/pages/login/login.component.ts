@@ -13,7 +13,7 @@ export class LoginComponent {
   usuario: Usuario = new Usuario;
   tipoUser: any;
   user: any;
-  empresa: any;
+  carro: any;
 
   usuarios: any[] = [
     { usu: 'Visita' }, { usu: 'Cliente' }, { usu: 'Empleado de empresa' }, { usu: 'Administrador de empresa' }, { usu: 'Administrador' }, { usu: 'Super administrador' },
@@ -34,9 +34,14 @@ export class LoginComponent {
 
           if (data.id) {
             this.usuario.id = data.id;
+            this.usuario.foto = data.foto;
 
 
-            location.replace('/admin-carsoft')
+            this.toastr.success("Bienvenido " + data.nombreUsuario, "Login");
+            localStorage.setItem('idUsuario', String(this.usuario.id));
+            localStorage.setItem('nameImagen', String(this.user));
+
+            location.replace('/client-carsoft')
           } else {
             this.toastr.warning("Usuario inhabilitado, no puede ingresar!", "Advertencia!");
             this.usuario = new Usuario;

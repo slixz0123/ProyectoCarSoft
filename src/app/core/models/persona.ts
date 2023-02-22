@@ -11,7 +11,7 @@ export class Persona {
   genero?: string;
   nombre?: string;
   telefono?: string;
-
+  foto?: string;
   //relacion
   usuario?: Usuario; // id   id de usuarios
 

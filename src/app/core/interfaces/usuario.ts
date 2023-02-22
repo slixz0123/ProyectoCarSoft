@@ -6,8 +6,9 @@ export interface Usuarios {
   email: string ;
   nombre_usuario: string ;
   password: string;
+  foto?: string;
   //estado: boolean = false;
- // foto?: string;
+
 
 
 

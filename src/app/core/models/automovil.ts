@@ -10,7 +10,7 @@ export class Automovil{
    marca?:string;
    modelo?:string;
    tipo_vahiculo?:string;
-
+   foto?: string;
 
    //relacion
    claseautomovil?: Claseautomovil; //id_clase

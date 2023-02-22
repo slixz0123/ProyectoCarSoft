@@ -32,6 +32,22 @@ const routes: Routes = [
     loadChildren:() => import("./nosotros-home/nosotros-home.module").then(m => m.NosotrosHomeModule)
 
   }
+,
+{
+  path : 'kia',
+  loadChildren:() => import("./kia/kia.module").then(m => m.KiaModule)
+
+},
+{
+  path : 'mazda',
+  loadChildren:() => import("./mazda/mazda.module").then(m => m.MazdaModule)
+
+},
+{
+  path : 'toyota',
+  loadChildren:() => import("./toyota/toyota.module").then(m => m.ToyotaModule)
+
+}
 
 
 
