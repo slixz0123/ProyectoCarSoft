@@ -394,5 +394,33 @@
   .card-button .fa {
     margin-left: 5px; /* Espacio entre el texto y el icono */
   }
+
+  .vistaprevia{
+    background: rgba(23, 21, 21, 0.56);
+    color: white;
+
+  }
+
+  #btnnesxd{
+    background-color: rgb(218, 211, 211);
+    border-bottom-color: rgb(2, 2, 2);
+    border-color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+  }
+  
+  #btnnesxd:hover,
+  #btnnesxd:focus {
+    color:black ;
+    border-bottom-color: rgb(8, 8, 8);
+  
+    border-color: black;
+    background-color:  rgb(243, 13, 13);
+  
+  }
+
+  
+
   
   

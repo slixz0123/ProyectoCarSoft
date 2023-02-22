@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
 </head>
-
-
 
 <body style="margin-top: 20px;">
  <div class="panel panel-default">
@@ -29,6 +28,7 @@
                   
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
                   <a id="btnnes" class="btn  "  href="#">Registrate</a>
+
               </div>
             </div>
              </div>
@@ -60,9 +60,8 @@
                             <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                               <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px; margin-right: 5px;">Ver</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px; margin-right: 5px;" data-toggle="modal" data-target="#dialogo1">Ver</button>
                                 <button type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px;">Alquilar</button>
-                                
 
                               </div>
                               <small class="text-muted">9 mins</small>
@@ -70,9 +69,6 @@
                           </div>
                         </div>
                       </div>
-
-
-                      
                     </div>
                   </div>
                  <div>
@@ -88,7 +84,45 @@
 
 
    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>  
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </body>
 
 
+<div class="container22"> 
+    
+
+  <div class="modal fade" id="dialogo1">
+    <div class="modal-dialog">
+      <div class="modal-content " style="background-color: black; color: white;">
+        <!-- cabecera del diálogo -->
+        <div class="modal-header">
+          <h4 class="modal-title">Vista Previa</h4>
+          <button type="button" class="close" data-dismiss="modal">X</button>
+        </div>
+        <!-- cuerpo del diálogo -->
+        <div class="modal-body">
+          <img src="https://media.revistagq.com/photos/5ca5e602944b834654eb8fe6/master/pass/los_10_coches_mas_caros_del_mundo_131086603.jpg" alt="" style="border-radius: 16px;">
+          <p><strong>Descripcion del Vehiculo</strong></p>
+          <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <!-- pie del diálogo -->
+        <div class="modal-footer">
+          <a id="btnnes" class="btn  "  href="#">Alquilar</a>
+        </div>
+  
+      </div>
+    </div>
+  </div> 
+
+</div>
+
+
+
+
 </html>
+
+
