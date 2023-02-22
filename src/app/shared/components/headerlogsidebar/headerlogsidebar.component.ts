@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CargarscriptsService } from 'src/assets/cargarscripts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-headerlogsidebar',
@@ -9,10 +10,15 @@ import { CargarscriptsService } from 'src/assets/cargarscripts.service';
 export class HeaderlogsidebarComponent {
   constructor(
     private _CargarScripts2: CargarscriptsService,
+    private router : Router,
 
 
 
   )
+
+  
+
+  
 
   {
     {
@@ -44,6 +50,61 @@ export class HeaderlogsidebarComponent {
 
 
     }
+
+
+    
   }
+
+  
+  ngOnInit(): void {
+  }
+   
+// metodo de redireccion de ruta
+goToLogin($event: any) :void{
+
+  this.router.navigate(['/Auth'])
+  console.log($event)
+
+ }
+ //Cliente
+
+ goToRegisterClient($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/register-client'])
+  console.log($event)
+
+ }
+ goToEdicionClient($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/edit-client'])
+  console.log($event)
+
+ }
+ goToListClient($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/list-client'])
+  console.log($event)
+
+ }
+
+ goToCatalogot($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/catalogo-client'])
+  console.log($event)
+
+ }
+ goToCrearRent($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/crear-renta'])
+  console.log($event)
+
+ }
+ goToAprovarRent($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/aprovee-renta'])
+  console.log($event)
+
+ }
+
 
 }

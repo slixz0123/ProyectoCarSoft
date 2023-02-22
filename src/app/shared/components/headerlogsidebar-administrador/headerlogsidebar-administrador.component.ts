@@ -33,19 +33,19 @@ export class HeaderlogsidebarAdministradorComponent {
 
  goToRegisterCar($event: any) :void{
 
-  this.router.navigate(['/register-car'])
+  this.router.navigate(['/admin-carsoft/register-car'])
   console.log($event)
 
  }
  goToEdicionCar($event: any) :void{
 
-  this.router.navigate(['/edit-car'])
+  this.router.navigate(['/admin-carsoft/edit-car'])
   console.log($event)
 
  }
  goToListCar($event: any) :void{
 
-  this.router.navigate(['/list-car'])
+  this.router.navigate(['/admin-carsoft/list-car'])
   console.log($event)
 
  }
@@ -55,19 +55,19 @@ export class HeaderlogsidebarAdministradorComponent {
 
  goToRegisterEmple($event: any) :void{
 
-  this.router.navigate(['/register-employee'])
+  this.router.navigate(['/admin-carsoft/register-employee'])
   console.log($event)
 
  }
  goToEdicionEmple($event: any) :void{
 
-  this.router.navigate(['/edit-employee'])
+  this.router.navigate(['/admin-carsoft/edit-employee'])
   console.log($event)
 
  }
  goToListEmple($event: any) :void{
 
-  this.router.navigate(['/list-employees'])
+  this.router.navigate(['/admin-carsoft/list-employees'])
   console.log($event)
 
  }
