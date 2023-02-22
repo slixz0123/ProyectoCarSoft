@@ -1,0 +1,294 @@
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: transparent;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius: 25px;
+  
+  }
+  
+  .bodyx2{
+  
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius: 25px;
+  
+  
+  
+  }
+  .glass{
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.3px);
+  -webkit-backdrop-filter: blur(3.3px);
+  }
+  
+  
+  
+  
+  
+  
+  
+  .container {
+    width: 30rem;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+  
+  
+  }
+  
+  .container:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+  
+  
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .logo {
+    text-align: center;
+    font-size: 3em;
+  }
+  
+  .logo span {
+    color: #B70E21;
+  }
+  
+  .contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+  }
+  
+  .contact-wrapper > * {
+    padding: 1em;
+  }
+  
+  .contact-form {
+  
+  border-radius: 15px;
+  background: rgba(23, 21, 21, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(23, 21, 21, 0.3);
+  color: white;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 25px;
+  text-align: left;
+  
+  
+  }
+  
+  .contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .contact-form form label {
+    display: block;
+  
+  }
+  
+  .contact-form form p {
+    margin: 0;
+    padding: 1em;
+  }
+  
+  .contact-form form .block {
+    grid-column: 1 / 3;
+  }
+  
+  .contact-form form button,
+  .contact-form form input,
+  .contact-form form textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #d63031;
+    border-radius: 15px;
+  }
+  
+  .contact-form form button {
+    background: #B70E21;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+    width: 450px;
+    height: 50px;
+    font-size: 16px;
+    margin: 25px;
+  
+    
+  }
+  
+  .contact-form form button:hover,
+  .contact-form form button:focus {
+    background: #d63031;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+    
+  }
+  
+  /* CONTACT INFO */
+  .contact-info {
+    background: #000;
+  
+  }
+  
+  .contact-info h4, .contact-info ul, .contact-info p {
+    text-align: ;
+    margin: 0 0 1rem 0;
+  }
+  
+  /* LARGE SIZE */
+  @media(min-width: 700px) {
+    body {
+        padding: 0 4em;
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+  }
+  
+  .fondobanner{
+  
+  
+    font-size: 1.125rem;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/jRfTsFPhiGPSAfpCS7bQmJ.jpg);
+    background-size: 1000px 750px;
+    width: 100%;
+    color: white;
+     border-radius: 25px;
+     margin-bottom: 15px;
+  
+  
+  
+  }
+  
+  
+  #btnnes{
+    background-color: rgb(218, 211, 211);
+    border-bottom-color: rgb(2, 2, 2);
+    border-color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+  
+  }
+  
+  #btnnes:hover,
+  #btnnes:focus {
+    color:black ;
+    border-bottom-color: rgb(8, 8, 8);
+    border-color: black;
+    background-color:  rgb(243, 13, 13);
+  
+  }
+  
+  .panel{
+    background-color: transparent;
+    color: #000;
+    border-radius: 15px; /* para crear bordes redondeados */
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    margin: 20px;
+  
+  
+  }
+  
+  

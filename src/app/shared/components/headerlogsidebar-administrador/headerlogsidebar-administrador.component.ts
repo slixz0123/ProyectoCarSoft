@@ -73,6 +73,29 @@ export class HeaderlogsidebarAdministradorComponent {
  }
 
 
+ goToRegisterClass($event: any) :void{
+
+  this.router.navigate(['/admin-carsoft/register-class'])
+  console.log($event)
+
+ }
+
+
+ goToEditClass($event: any) :void{
+
+  this.router.navigate(['/admin-carsoft/edit-class'])
+  console.log($event)
+
+ }
+
+ goTolistClass($event: any) :void{
+
+  this.router.navigate(['/admin-carsoft/list-class'])
+  console.log($event)
+
+ }
+
+
 
 
 
