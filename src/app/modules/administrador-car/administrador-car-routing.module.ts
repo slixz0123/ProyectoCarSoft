@@ -30,8 +30,20 @@ const routes: Routes = [
       path: 'list-employees',
       loadChildren: () => import("./list-empleado/list-empleado.module").then(m => m.ListEmpleadoModule)
     },
+    //CLASE
 
-
+    {
+      path: 'register-class',
+      loadChildren: () => import("./register-clase/register-clase.module").then(m => m.RegisterClaseModule)
+    },
+    {
+      path: 'edit-class',
+      loadChildren: () => import("./edit-clase/edit-clase.module").then(m => m.EditClaseModule)
+    },
+    {
+      path: 'list-class',
+      loadChildren: () => import("./list-clase/list-clase.module").then(m => m.ListClaseModule)
+    },
 
 ];
 
