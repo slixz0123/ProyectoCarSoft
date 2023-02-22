@@ -31,22 +31,26 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
                   <div class="fields">
                       <div class="input-field">
                           <label>Nombre Completo</label>
-                          <input type="text" placeholder="Ingrese Su Nombre" required>
+                          <input type="text" placeholder="Ingrese Su Nombre" required  class={{verfNombres}}
+                          [(ngModel)]="persona.nombre"  name="nombre" pInputText>
                       </div>
 
                       <div class="input-field">
                           <label>Apellidos Completos</label>
-                          <input type="text" placeholder="Ingrese Su Apellido" required>
+                          <input type="text" placeholder="Ingrese Su Apellido" required class={{verfApellidos}}
+                          [(ngModel)]="persona.apellido"  name="apellido" pInputText>
                       </div>
 
                       <div class="input-field">
                           <label>Email</label>
-                          <input type="text" placeholder="Ingrese su email" required>
+                          <input type="text" placeholder="Ingrese su email" required class={{verfCorreo}}
+                          [(ngModel)]="persona.correo" (ngModelChange)="validarCorreo()"  name="correp" pInputText>
                       </div>
 
                       <div class="input-field">
                           <label>Numero Telefonico</label>
-                          <input type="Text" placeholder="Ingrese su numero Telefonico" required>
+                          <input type="Text" placeholder="Ingrese su numero Telefonico" required  class={{verftelefono}}
+                          [(ngModel)]="persona.telefono"  name="telefono" pInputText>
                       </div>
 
                       <div class="input-field">
@@ -61,7 +65,8 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
 
                       <div class="input-field">
                           <label>Cedula</label>
-                          <input type="text" placeholder="Ingrese su Cedula" required>
+                          <input type="text" placeholder="Ingrese su Cedula" required  class={{verfcedula}}
+                          [(ngModel)]="persona.cedula"  name="cedula" pInputText>
                       </div>
                   </div>
               </div>
@@ -70,38 +75,42 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
                   <span class="title">Extras</span>
 
                   <div class="fields">
-                      <div class="input-field">
+
+                    <div class="input-field">
                           <label>Edad</label>
-                          <input type="text" placeholder="Ingrese su edad" required>
+                          <input type="text" placeholder="Ingrese su edad" required  class={{verfedad}}
+                          [(ngModel)]="persona.edad"  name="edad" pInputText>
                       </div>
 
                       <div class="input-field">
                           <label>Usario</label>
-                          <input type="text" placeholder="Ingrese su nombre de usuario" required>
+                          <input type="text" placeholder="Ingrese su nombre de usuario" required  class={{verfUsername}}
+                          [(ngModel)]="usuario.nombreUsuario"  name="nombreUsuario" pInputText>
                       </div>
 
                       <div class="input-field">
                           <label>Contraseña</label>
-                          <input type="password" placeholder="Ingrese su contraseña" required>
+                          <input type="password" placeholder="Ingrese su contraseña" required class={{verfPassword}}
+                          [(ngModel)]="usuario.password" name="password" >
                       </div>
 
-                      <div class="input-field">
-                          <label>Repetir Contraseña</label>
-                          <input type="password" placeholder="rRepita su contraseña" required>
-                      </div>
+
 
                       <div class="input-field">
-                          <label>Provincia </label>
-                          <input type="text" placeholder="Enter your issued date" required>
+                          <label>Ciudad </label>
+                          <input type="text" placeholder="Ingresa tu provincia" required class={{verfciudad}}
+                          [(ngModel)]="persona.ciudad"   name="ciudad">
                       </div>
-
                       <div class="input-field">
-                          <label>Ciudad</label>
-                          <input type="text" placeholder="Enter expiry date" required>
-                      </div>
+                        <label>direccion </label>
+                        <input type="text" placeholder="Ingresa tu provincia" required class={{verfdireccion}}
+                        [(ngModel)]="persona.direccion"   name="direccion">
+                    </div>
+
+
                   </div>
 
-                    <button class="nextBtn">
+                    <button class="nextBtn"   (click)="registrarUsuario()">
                       <span class="btnText">Registrar</span>
                       <i class="uil uil-navigator"></i>
                    </button>

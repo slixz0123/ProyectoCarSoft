@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterUsrRoutingModule } from './register-usr-routing.module';
 
 import { RegisterUsrComponent } from './pages/register-usr/register-usr.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RegisterUsrComponent } from './pages/register-usr/register-usr.componen
   ],
   imports: [
     CommonModule,
-    RegisterUsrRoutingModule
+    RegisterUsrRoutingModule,
+    FormsModule,
   ],
   exports:[
     RegisterUsrComponent

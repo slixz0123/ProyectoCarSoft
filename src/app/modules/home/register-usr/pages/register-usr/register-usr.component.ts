@@ -14,7 +14,7 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
   styleUrls: ['./register-usr.component.css']
 })
 export class RegisterUsrComponent {
- /*
+
   rol: Rol = new Rol;
 
   persona: Persona = new Persona;
@@ -25,6 +25,12 @@ export class RegisterUsrComponent {
   verfCorreo: any;
   verfUsername: any;
   verfPassword: any;
+
+  verfcedula: any;
+  verfciudad: any;
+  verfdireccion: any;
+  verftelefono: any;
+  verfedad: any;
 
   expCorreo: RegExp = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
   valCorreo: boolean = true;
@@ -46,7 +52,7 @@ export class RegisterUsrComponent {
     this.usuario.nombreUsuario = '';
     this.usuario.password = '';
     localStorage.removeItem('id');
-
+    this.mostrarNotificacion();
   }
 
   validarCorreo() {
@@ -81,15 +87,12 @@ export class RegisterUsrComponent {
       this.toastr.error("Campo direccion vacio!", "Error!");
     }
 
-    if (this.persona.edad ===0 || this.persona.edad === null) {
-      this.verfNombres = 'ng-invalid ng-dirty';
-      this.toastr.error("Campo edad vacio!", "Error!");
-    }
+   /*
     if (this.persona.genero ==='' || this.persona.genero === null) {
       this.verfNombres = 'ng-invalid ng-dirty';
       this.toastr.error("Campo edad vacio!", "Error!");
     }
-
+*/
 
     if (this.persona.nombre === '' || this.persona.nombre === null) {
       this.verfNombres = 'ng-invalid ng-dirty';
@@ -114,8 +117,7 @@ export class RegisterUsrComponent {
 
 
 
-    if (this.persona.apellido === '' ||this.persona.cedula === '' || this.persona.ciudad === '' || this.persona.correo === '' || this.persona.direccion === '' || this.persona.edad === 0 ||this.persona.genero === '' || this.persona.nombre === '' ||this.persona.telefono === ''  || this.usuario.nombreUsuario === '' || this.usuario.password === ''
-   || this.persona.apellido === null ||this.persona.cedula === null || this.persona.ciudad === null || this.persona.correo === null || this.persona.direccion === null || this.persona.edad === 0 ||this.persona.genero === null || this.persona.nombre === null ||this.persona.telefono === null  || this.usuario.nombreUsuario === null || this.usuario.password === null || !this.valCorreo) {
+    if (this.persona.apellido === '') {
 
       this.toastr.warning("Verifique que esten correctos los campos")
     } else {
@@ -129,7 +131,7 @@ export class RegisterUsrComponent {
                 this.usuario.persona = this.persona;
 
 
-                this.rolService.getByName('INVITADO').subscribe(
+                this.rolService.getByName('CLIENTE').subscribe(
                   data => {
                     console.log(data);
 
@@ -143,8 +145,10 @@ export class RegisterUsrComponent {
                         console.log(result);
                         this.usuario = result;
                         localStorage.setItem('idUsuario', String(this.usuario.nombreUsuario));
+                        this.mostrarNotificacion();
                         this.toastr.success('Usuario registrado correctamente', 'Bienvenido!')
-                        location.replace('/home');
+
+                        location.replace('/Auth');
                       }
                     )
                   }
@@ -160,5 +164,11 @@ export class RegisterUsrComponent {
       )
     }
   }
-*/
+  mostrarNotificacion() {
+    this.toastr.success('Mi mensaje', 'Mi título', {
+      positionClass: 'toast-top-right',
+      timeOut: 3000,
+    });
+  }
+
 }
