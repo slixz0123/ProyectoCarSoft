@@ -14,9 +14,9 @@ export interface Automovil{
 
 
    //relacion
-   claseautomovil?: Claseautomovil; //id_clase
-   seguro?:Seguro; //cod_seguro
-   usuario?:Usuario;// id id de suuario
+   claseautomovil: Claseautomovil []; //id_clase
+   seguro?:Seguro []; //cod_seguro
+   usuario?:Usuario [];// id id de suuario
 
 
 }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterCarRoutingModule } from './register-car-routing.module';
 import { RegistercarComponent } from './pages/registercar/registercar.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,9 @@ import { RegistercarComponent } from './pages/registercar/registercar.component'
   ],
   imports: [
     CommonModule,
-    RegisterCarRoutingModule
+    RegisterCarRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     RegistercarComponent

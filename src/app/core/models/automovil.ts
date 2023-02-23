@@ -13,7 +13,7 @@ export class Automovil{
    foto?: string;
 
    //relacion
-   claseautomovil?: Claseautomovil; //id_clase
+   claseautomovil?: Claseautomovil []; //id_clase
    seguro?:Seguro; //cod_seguro
    usuario?:Usuario;// id id de suuario
 

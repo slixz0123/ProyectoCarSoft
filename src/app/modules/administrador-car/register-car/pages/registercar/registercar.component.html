@@ -23,10 +23,10 @@
             <h1 class="logo" style="margin-block-end: 15px;">Registro  <span>Automovil </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
               <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección de registro de automóviles del establecimiento</p>
-              
+
               <div>
                 <p style="text-align: center;">
-                  
+
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
                   <a id="btnnes" class="btn  "  href="#">Registrate</a>
               </div>
@@ -39,15 +39,15 @@
                    <div>
                        <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
                    </div>
-                   
-                   <form action="">
+
+                   <form [formGroup]="AutomovilForm" (ngSubmit)="addProducto()" action="">
                        <p>
                            <label>Numero de placa:</label>
                            <input type="text" name="fullname">
                        </p>
-                       
 
-                       
+
+
                        <p>
                            <label>Modelo:</label>
                            <input type="text" name="fullname">
@@ -78,21 +78,21 @@
                             <option>Tipo C</option>
                         </select>
                     </div>
-                       
+
                            <button>
                                Crear
                            </button>
                            <button>
                             Cancelar
                         </button>
-                       
+
                    </form>
                </div>
-            </div>  
+            </div>
    <div>
 
    </div>
-     
+
 
    </div>
 
