@@ -56,15 +56,34 @@
 
                        <p>
                            <label>Modelo:</label>
-                           <input type="text" name="fullname">
+                           <input type="text" name="modelo"  #modelo formControlName="modelo"
+                           class="form-control" id="modelo" required [ngClass]="{
+                               'is-invalid':
+                                 formValues.Modelo.touched &&
+                                 formValues.Modelo.errors,
+                               'is-valid': formValues.Modelo.valid
+                             }" />
+
                        </p>
                        <p>
                            <label> Color:</label>
-                           <input type="email" name="email">
+                           <input type="email" name="color"  #color formControlName="color"
+                           class="form-control" id="color" required [ngClass]="{
+                               'is-invalid':
+                                 formValues.Color.touched &&
+                                 formValues.Color.errors,
+                               'is-valid': formValues.Color.valid
+                             }" />
                        </p>
                        <p>
                         <label>Marca:</label>
-                        <input type="text" name="fullname">
+                        <input type="text" name="marca"  #color formControlName="marca"
+                        class="form-control" id="marca" required [ngClass]="{
+                            'is-invalid':
+                              formValues.Marca.touched &&
+                              formValues.Marca.errors,
+                            'is-valid': formValues.Marca.valid
+                          }" />
                     </p>
                        <div class="input-field">
                         <label>Tipo de vehiculo</label>
@@ -84,8 +103,11 @@
                             <option>Tipo C</option>
                         </select>
                     </div>
+                    <label class="input-group-text" for="inputGroupFile01">Imagen</label>
+            <input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
+              class="form-control" id="inputGroupFile01" required />
 
-                           <button>
+                           <button  *ngIf="AutomovilForm.valid">
                                Crear
                            </button>
                            <button>

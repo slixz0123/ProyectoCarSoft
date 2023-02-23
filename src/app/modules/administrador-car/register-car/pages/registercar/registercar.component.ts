@@ -48,7 +48,7 @@ export class RegistercarComponent {
 
   clases$!: Claseautomovil[];
   loading: boolean = false;
-  AutomovilForm!: FormGroup;
+  AutomovilForm!: any;
 
   usuar = new Usuario();
   selectedPrice: any = [];
