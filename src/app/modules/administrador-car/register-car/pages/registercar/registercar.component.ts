@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertsService } from 'src/app/core/alerts/alerts.service';
+import { Automovil } from 'src/app/core/interfaces/automovil';
 
-import { Automovil } from 'src/app/core/models/automovil';
+
 import { Claseautomovil } from 'src/app/core/models/claseautomovil';
 
 import { Usuario } from 'src/app/core/models/usuario';
@@ -20,6 +21,7 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 export class RegistercarComponent {
 
   @Input() member: any = '';
+  automovil: any;
   constructor(
 
     private AutomovilService: AutomovilService,
@@ -47,7 +49,7 @@ export class RegistercarComponent {
   clases$!: Claseautomovil[];
   loading: boolean = false;
   AutomovilForm!: FormGroup;
-  automovil = new Automovil();
+
   usuar = new Usuario();
   selectedPrice: any = [];
   selectedUnidad: any = [];
@@ -55,11 +57,15 @@ export class RegistercarComponent {
   priceForm!: FormGroup;
   unidadesForm!: FormGroup;
   precios: any[] = [];
-  auto!: Automovil;
+
+
   public data: any;
   file: any = '';
   selectedId = 0;
   image!: any;
+  automoviles!: Automovil;
+
+
   values = [];
   listpreciosventa = Array<any>();
   listUnidadesMedidaauto = Array<any>();

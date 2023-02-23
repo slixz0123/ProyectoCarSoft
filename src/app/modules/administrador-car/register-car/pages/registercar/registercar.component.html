@@ -42,8 +42,14 @@
 
                    <form [formGroup]="AutomovilForm" (ngSubmit)="addProducto()" action="">
                        <p>
-                           <label>Numero de placa:</label>
-                           <input type="text" name="fullname">
+                           <label  for="placa" >Numero de placa:</label>
+                           <input id="placa" type="text" name="placa" #placa formControlName="placa"  required
+
+                           [ngClass]="{
+                    'is-invalid':
+                      formValues.placa.touched && formValues.placa.errors,
+                    'is-valid': formValues.placa.valid
+                  }" >
                        </p>
 
 
