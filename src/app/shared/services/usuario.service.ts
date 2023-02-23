@@ -27,11 +27,11 @@ export class UsuarioService {
   }
 
   updateUsuario(usuario: Usuario, idUsuario: any) {
-    return this.http.put<Usuario>(this.URL + `updateper/${idUsuario}`, usuario);
+    return this.http.put<Usuario>(this.URL + `actualizar/${idUsuario}`, usuario);
   }
 
   deleteUsuario(idUsuario: number) {
-    return this.http.delete<boolean>(this.URL + `deleteper/${idUsuario}`);
+    return this.http.delete<boolean>(this.URL + `eliminar/${idUsuario}`);
   }
 
   login(nombreUsuario: string, password: string) {

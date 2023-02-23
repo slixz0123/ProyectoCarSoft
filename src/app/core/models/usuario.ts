@@ -7,7 +7,7 @@ export class Usuario {
   nombreUsuario: string = "";
   password: string = "";
   //estado: boolean = false;
- // foto?: string;
+  foto?: string;
 
 
 
