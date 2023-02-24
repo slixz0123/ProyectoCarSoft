@@ -40,54 +40,29 @@
                        <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
                    </div>
 
-                   <form [formGroup]="AutomovilForm" (ngSubmit)="addProducto()" action="">
+                   <form  >
                        <p>
-                           <label  for="placa" >Numero de placa:</label>
-                           <input id="placa" type="text" name="placa" #placa formControlName="placa"  required
-
-                           [ngClass]="{
-                    'is-invalid':
-                      formValues.placa.touched && formValues.placa.errors,
-                    'is-valid': formValues.placa.valid
-                  }" >
+                           <label  >Numero de placa:</label>
+                           <input id="placa" type="text" name="num_placa"    [(ngModel)]="automovil.num_placa"    required>
                        </p>
 
 
 
                        <p>
                            <label>Modelo:</label>
-                           <input type="text" name="modelo"  #modelo formControlName="modelo"
-                           class="form-control" id="modelo" required [ngClass]="{
-                               'is-invalid':
-                                 formValues.Modelo.touched &&
-                                 formValues.Modelo.errors,
-                               'is-valid': formValues.Modelo.valid
-                             }" />
-
+                           <input type="text"   name="modelo"   [(ngModel)]="automovil.modelo"  >
                        </p>
                        <p>
                            <label> Color:</label>
-                           <input type="email" name="color"  #color formControlName="color"
-                           class="form-control" id="color" required [ngClass]="{
-                               'is-invalid':
-                                 formValues.Color.touched &&
-                                 formValues.Color.errors,
-                               'is-valid': formValues.Color.valid
-                             }" />
+                           <input type="email"   name="color"    [(ngModel)]="automovil.color">
                        </p>
                        <p>
                         <label>Marca:</label>
-                        <input type="text" name="marca"  #color formControlName="marca"
-                        class="form-control" id="marca" required [ngClass]="{
-                            'is-invalid':
-                              formValues.Marca.touched &&
-                              formValues.Marca.errors,
-                            'is-valid': formValues.Marca.valid
-                          }" />
+                        <input type="text"  name="marca"   [(ngModel)]="automovil.marca">
                     </p>
                        <div class="input-field">
                         <label>Tipo de vehiculo</label>
-                        <select required>
+                        <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vahiculo" required>
                             <option disabled selected>Selecciona Tipo</option>
                             <option>Tipo A</option>
                             <option>Tipo B</option>
@@ -96,20 +71,17 @@
                     </div>
                        <div class="input-field">
                         <label>Estado</label>
-                        <select required>
+                        <select name="estado" [(ngModel)]="automovil.estado"  required>
                             <option disabled selected>Selecciona Tipo</option>
                             <option>Tipo A</option>
                             <option>Tipo B</option>
                             <option>Tipo C</option>
                         </select>
                     </div>
-                    <label class="input-group-text" for="inputGroupFile01">Imagen</label>
-            <input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
-              class="form-control" id="inputGroupFile01" required />
 
-                           <button  *ngIf="AutomovilForm.valid">
-                               Crear
-                           </button>
+                    <button  (click)="registrarCarro()" >
+                      guardar
+                  </button>
                            <button>
                             Cancelar
                         </button>

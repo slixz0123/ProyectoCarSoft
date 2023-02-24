@@ -1,4 +1,4 @@
-import { Automovil } from "./automovil";
+//import { Automovil } from "./automovil";
 
 export class Registrar_danio{
   cod_rgd?:number;
@@ -9,5 +9,5 @@ export class Registrar_danio{
 
 
   //relacion
- automovil?:Automovil; // num_placa
+ //automovil?:Automovil; // num_placa
 }

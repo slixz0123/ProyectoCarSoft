@@ -1,8 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/app/core/enviroments/environment';
-import { Automovil } from 'src/app/core/models/automovil';
+import { Automovil } from 'src/app/core/interfaces/automovil';
 
 @Injectable({
   providedIn: 'root'
@@ -10,27 +10,49 @@ import { Automovil } from 'src/app/core/models/automovil';
 export class AutomovilService {
   private url = environment.baseUrl;
 
-  constructor(private http: HttpClient) {}
 
-    addAutomovil(Automovil: Automovil): Observable<Automovil> {
+  private URL = "http://localhost:8080/automovil";
+  private URL2 = "http://localhost:8080/automovil/crear";
 
-    return this.http.post<any>(
-      `${this.url}/`,
-      Automovil
+  constructor(private http: HttpClient) { }
+
+  getauto() {
+    return this.http.get<Automovil[]>(this.URL + '/listar');
+  }
+
+  getPorId(num_placa: string) {
+    return this.http.get<Automovil>(this.URL + num_placa);
+  }
+
+  postAutos(auto: Automovil): Observable<any> {
+    return this.http.post<any>(`${this.URL2}?`, auto).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error en la solicitud: ', error);
+        return throwError('Error al agregar el automóvil, intente nuevamente más tarde.');
+      })
     );
   }
 
-
-  getProduct(): Observable<Automovil[]> {
-    return this.http.get<Automovil[]>(`${this.url}/listar`);
-  }
-  updateProduct(producto: Automovil, num_placa: string): Observable<any> {
-    return this.http.put(`${this.url}/actualizar/${num_placa}`, producto);
+  updateAutos(auto: Automovil, num_placa: string) {
+    return this.http.put<Automovil>(this.URL + `actualizar/${num_placa}`, auto);
   }
 
-  getProductById(id: string): Observable<Automovil> {
-    return this.http.get<Automovil>(`${this.url}/${id}`);
+  deleteAutos(num_placa: string) {
+    return this.http.delete<boolean>(this.URL + `eliminar/${num_placa}`);
   }
+
+  save(auto: Automovil) {
+    return this.http.post(`${this.URL2}?`, auto);
+  }
+
+  listarAutos(): Observable<any> {
+    return this.http.get(`${this.URL}/listar`);
+  }
+  verfplaca(username: string) {
+    return this.http.get<boolean>(this.URL + `verplaca/${username}`)
+  }
+
+
 
 
 

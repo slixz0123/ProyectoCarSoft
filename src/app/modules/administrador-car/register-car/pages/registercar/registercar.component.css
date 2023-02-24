@@ -181,7 +181,7 @@ text-align: left;
   grid-column: 1 / 3;
 }
 
-.contact-form form button,
+.contact-form form ,
 .contact-form form input,
 .contact-form form textarea {
   width: 100%;
