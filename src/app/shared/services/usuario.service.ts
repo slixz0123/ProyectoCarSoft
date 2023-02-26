@@ -38,9 +38,9 @@ export class UsuarioService {
     return this.http.get<Usuario>(this.URL + `login/${nombreUsuario}/${password}`)
   }
 
-  verfUsername(username: string) {
-    return this.http.get<boolean>(this.URL + `porUsername/${username}`)
-  }
+   verfUsername(username: string) {
+     return this.http.get<boolean>(this.URL + `porUsername/${username}`)
+   }
 
 
 

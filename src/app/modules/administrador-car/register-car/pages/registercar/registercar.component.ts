@@ -39,7 +39,7 @@ export class RegistercarComponent {
     this.automovil.estado = '';
     this.automovil.marca = '';
     this.automovil.modelo = '';
-    this.automovil.tipo_vahiculo = '';
+    this.automovil.tipo_vehiculo = '';
     this.automovil.foto = '';
 
     localStorage.removeItem('num_placa');
@@ -56,7 +56,7 @@ export class RegistercarComponent {
           this.automovil = result;
           localStorage.setItem('num_placa', String(this.automovil.marca));
           this.mostrarNotificacion();
-          this.toastr.success('automovil registrado correctamente');
+          this.toastr.success('Automovil registrado correctamente');
         },
         error => {
           console.log(error);
