@@ -78,6 +78,12 @@
                             <option value="Tipo C">Tipo C</option>
                         </select>
                     </div>
+                    <div>
+                        <select style="background-color: darkblue;">
+                            <option selected style="color: aliceblue;">Selecciona la clase</option>
+                            <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
+                          </select>
+                    </div>
 
                     <button  (click)="registrarCarro()" >
                       guardar
