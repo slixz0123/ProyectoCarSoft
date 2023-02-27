@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterEmpleadoRoutingModule } from './register-empleado-routing.module';
 import { RegisterEmpleadoComponent } from './pages/register-empleado/register-empleado.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RegisterEmpleadoComponent } from './pages/register-empleado/register-em
   ],
   imports: [
     CommonModule,
-    RegisterEmpleadoRoutingModule
+    RegisterEmpleadoRoutingModule,
+    FormsModule,
   ],
   exports:[
     RegisterEmpleadoComponent
