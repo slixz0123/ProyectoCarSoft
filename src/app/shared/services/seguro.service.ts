@@ -6,12 +6,12 @@ import { Seguro } from 'src/app/core/models/seguro';
   providedIn: 'root'
 })
 export class SeguroService {
-  private URL = "http://localhost:8080/claseAutomovil/";
+  private URL = "http://localhost:8080/seguro/";
 	constructor(private http: HttpClient) { }
 
 
   getAll() {
-    return this.http.get<Seguro[]>(this.URL + 'listar');
+    return this.http.get<Seguro[]>(this.URL + 'listarseg');
   }
 
   getPorId(seguro: any) {
@@ -23,7 +23,7 @@ export class SeguroService {
   }
 
   update(seguro: Seguro, idseguro: any) {
-    return this.http.put<Seguro>(this.URL + `actualizar/${idseguro}`, seguro);
+    return this.http.put<Seguro>(this.URL + `actualizarseg/${idseguro}`, seguro);
   }
 
   delete( idseguro: any) {

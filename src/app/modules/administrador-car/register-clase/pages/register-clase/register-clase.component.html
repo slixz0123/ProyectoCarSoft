@@ -74,28 +74,20 @@
                 </div>
 
                 <form action="">
-                    <p>
-                        <label>Id Clase:</label>
-                        <input type="text" name="fullname">
-                    </p>
-
 
 
                     <p>
                         <label>Nombre:</label>
-                        <input type="text" name="fullname">
+                        <input type="text"   name="nom_seguro"    [(ngModel)]="seguro.nom_seguro">
                     </p>
                     <p>
-                        <label> Precio de Alquiler:</label>
-                        <input type="email" name="email">
-                    </p><p>
-                        <label> Precio de Alquiler:</label>
-                        <input type="email" name="email">
+                        <label> Precio del seguro:</label>
+                        <input type="text" name="precio_seguro"    [(ngModel)]="seguro.precio_seguro">
                     </p>
 
 
 
-                        <button>
+                        <button  (click)="registrarSeguro()">
                             Crear
                         </button>
                         <button>
