@@ -287,7 +287,7 @@ text-align: center;
   overflow-x: scroll;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-  background-image: url("https://previews.123rf.com/images/everyonensk/everyonensk1905/everyonensk190500728/123584220-texture-of-crumpled-black-paper-close-up-black-background-of-crumpled-cardboard-under-color-red-and-.jpg");
+  background-image: url("https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
 
 }
 .caru2{
@@ -302,7 +302,7 @@ text-align: center;
   overflow-x: scroll;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-  background-image: url("https://thumbs.dreamstime.com/b/texture-crumpled-black-paper-texture-crumpled-black-paper-close-up-black-background-crumpled-cardboard-under-color-blue-148490015.jpg");
+  background-image: url("https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
 
 }
 .caru3{
@@ -317,7 +317,7 @@ text-align: center;
   overflow-x: scroll;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-  background-image: url("https://images.squarespace-cdn.com/content/v1/609701bc21f2ee5734517421/1655173326922-MJCM6CH41GLZXWUTU02F/Red+Black+Smoke+Seamless+Cover+WM+1.jpg?format=1500w");
+  background-image: url("https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
 
 }
 .container-caru .card2 {
@@ -363,4 +363,13 @@ text-align: center;
 
 .marketing{
   padding-bottom: 25px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 4em;
+}
+
+.logo span {
+  color: #B70E21;
 }
