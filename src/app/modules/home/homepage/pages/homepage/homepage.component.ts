@@ -60,6 +60,27 @@ export class HomepageComponent {
         console.log($event)
 
         }
+        goToMazda($event: any) :void{
+
+          this.router.navigate(['/mazda'])
+          console.log($event)
+  
+          }
+
+          goToyota($event: any) :void{
+
+            this.router.navigate(['/toyota'])
+            console.log($event)
+    
+            }
+
+            goToKia($event: any) :void{
+
+              this.router.navigate(['/kia'])
+              console.log($event)
+      
+              }
+      
 
 
 }

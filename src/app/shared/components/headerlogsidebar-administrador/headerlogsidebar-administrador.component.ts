@@ -17,7 +17,7 @@ export class HeaderlogsidebarAdministradorComponent {
  
       // Datos xd
     }
-  }
+  } 
   ngOnInit(): void {
   }
 
