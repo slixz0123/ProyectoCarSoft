@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/core/models/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -55,11 +56,33 @@ export class LoginComponent implements OnInit {
           } else {
             this.toastr.warning("Usuario inhabilitado, no puede ingresar!", "Advertencia!");
             this.usuario = new Usuario;
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+              footer: '<a href="">Why do I have this issue?</a>'
+            })
           }
 
         } else {
           this.toastr.error("USERNAME O PASSWORD INCORRECTOS!", "Login");
           this.usuario = new Usuario;
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>',
+            width: 600,
+            padding: '3em',
+            color: 'red',
+            background: '#fff url(assets/images/cochenegro.jpg)',
+            backdrop: `
+            rgba( 255, 255, 255, 0.25 )
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
 
         }
 
