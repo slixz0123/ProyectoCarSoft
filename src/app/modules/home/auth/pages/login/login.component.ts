@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/core/models/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   usuario: Usuario = new Usuario;
   tipoUser: any;
   user: any;
   carro: any;
+
+  loginform = new FormGroup({
+    nombreUsuario: new FormControl('',Validators.required),
+    password: new FormControl('',Validators.required)
+  })
 
   usuarios: any[] = [
     { usu: 'Visita' }, { usu: 'Cliente' }, { usu: 'Empleado de empresa' }, { usu: 'Administrador de empresa' }, { usu: 'Administrador' }, { usu: 'Super administrador' },
@@ -25,8 +31,12 @@ export class LoginComponent {
     localStorage.removeItem('id');
 
   }
+  onlogin(form: any){
+    console.log(form)
+  }
 
-  login() {
+
+  login(form: any) {
     this.usuarioService.login(this.usuario.nombreUsuario, this.usuario.password).subscribe(
       data => {
         console.log(data);

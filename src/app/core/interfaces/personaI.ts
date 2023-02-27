@@ -1,5 +1,5 @@
 import { Usuario } from '../models/usuario';
-export interface Persona {
+export interface PersonaI {
 
   id_persona?: number;
   apellido?: string;

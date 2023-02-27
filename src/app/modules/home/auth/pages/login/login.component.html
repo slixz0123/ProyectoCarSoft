@@ -25,17 +25,17 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
       <a class="logo" href="/"><img src="http://images.squarespace-cdn.com/content/v1/56ae96aa859fd0b23b9aef2f/1555001641303-P290TUKFD5XW00F6ZK0C/Red+Eyes+Dragon+Boat+logo.png" alt="logo" style="height: 100px; width: 100px;"></a>
       <h2>Inicio de Sesion</h2>
       <h3>Escoge el auto que te guste y rentalo con Carsoft</h3>
-      <form class="form">
+      <form  [formGroup]="loginform"  (ngSubmit)="login(loginform.value)" class="form" >
 
         <div class="textbox">
           <input aria-describedby="username1-help" type="text" [(ngModel)]="usuario.nombreUsuario"
-           maxlength="30" minlength="3" pInputText  name="nombreUsuario" />
+           maxlength="30" minlength="3" pInputText formControlName="nombreUsuario"  />
 
           <label>Nombre de Usuario</label>
           <span class="material-symbols-outlined"> Email </span>
         </div>
         <div class="textbox">
-          <input type="password" [(ngModel)]="usuario.password"   name="password" required />
+          <input type="password" [(ngModel)]="usuario.password"   formControlName="password"   required />
           <label>Contraseña</label>
           <span class="material-symbols-outlined"> key </span>
         </div>
@@ -44,7 +44,7 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
           <a href="#">Registrate Aqui</a>
         </p>
 
-        <button type="submit"  (click)="login()">
+        <button type="submit" >
           Ingresar
           <span class="material-symbols-outlined"> arrow_forward </span>
           </button>

@@ -45,6 +45,12 @@ const routes: Routes = [
       loadChildren: () => import("./list-clase/list-clase.module").then(m => m.ListClaseModule)
     },
 
+    // seguro
+    {
+      path: 'list-seguro',
+      loadChildren: () => import("./list-seguro/list-seguro.module").then(m => m.ListSeguroModule)
+    },
+
 ];
 
 @NgModule({
