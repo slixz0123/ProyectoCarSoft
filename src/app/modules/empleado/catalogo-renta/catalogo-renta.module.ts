@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CatalogoRentaRoutingModule } from './catalogo-renta-routing.module';
 import { CatalogoRentaComponent } from './pages/catalogo-renta/catalogo-renta.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { CatalogoRentaComponent } from './pages/catalogo-renta/catalogo-renta.co
   ],
   imports: [
     CommonModule,
-    CatalogoRentaRoutingModule
+    CatalogoRentaRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports:[
     CatalogoRentaComponent

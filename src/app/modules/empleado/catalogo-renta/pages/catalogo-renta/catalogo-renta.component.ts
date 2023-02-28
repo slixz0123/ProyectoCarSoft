@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Automovil } from 'src/app/core/interfaces/automovil';
+import { AutomovilService } from 'src/app/shared/services/automovil.service';
 import { CargarscriptsService } from 'src/assets/cargarscripts.service';
 
 @Component({
@@ -8,9 +10,12 @@ import { CargarscriptsService } from 'src/assets/cargarscripts.service';
 })
 export class CatalogoRentaComponent {
 
+  autos?: Automovil[] = [] ;
+  selectedId = "";
+  utomovil = new Automovil();
   constructor(
     private caro: CargarscriptsService,
-
+  private automoviles: AutomovilService
 
 
   )
@@ -22,6 +27,20 @@ export class CatalogoRentaComponent {
 
     }
   }
-  
+
+  ngOnInit(): void {
+
+    this.automoviles.getauto().subscribe(
+      res => this.autos = res
+    )
+
+
+  }
+
+
+
+
+
+
 
 }

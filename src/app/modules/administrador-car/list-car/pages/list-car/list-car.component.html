@@ -23,10 +23,10 @@
             <h1 class="logo" style="margin-block-end: 15px;">Lista <span>Automoviles </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
               <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección del listado de automóviles registrados en el sistema</p>
-              
+
               <div>
                 <p style="text-align: center;">
-                  
+
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
                   <a id="btnnes" class="btn  "  href="#">Registrate</a>
               </div>
@@ -51,46 +51,45 @@
                         <thead>
                             <tr>
                                 <th> Foto <span class="icon-arrow">&UpArrow;</span></th>
-                                <th> id <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Placa  <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Modelo<span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Año <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Marca <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Clase <span class="icon-arrow">&UpArrow;</span></th>
-                                <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-                                
+
+
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            
-                            <tr>
-                                <td> :D </td>
-                                <td> 01</td>
-                                <td> ABC-124</td>
-                                <td> Ford</td>
-                                <td> 2022</td>
-                                <td> 4x4</td>
-                                <td> Clase A</td>
-                                
+
+
+                            <tr *ngFor="let automovil of auto">
+                              <td>{{ automovil.foto}} </td>
+                              <td>{{ automovil.num_placa}} </td>
+                              <td>{{ automovil.modelo}} </td>
+                              <td>{{ automovil.anio}} </td>
+                              <td>{{ automovil.marca}} </td>
+                              <td>{{ automovil.id_clase}} </td>
+
+
                                 <td>
                                     <button id="btn-abrir-popup" class="card-button">Editar</button>
-                                    
+
                                 </td>
-                            </tr> 
-                            
-                            
+                            </tr>
+
+
                         </tbody>
                     </table>
-                </section> 
+                </section>
             </main>
 
         </div>
 
-        
-        
-               
-     
+
+
+
+
 
 
 

@@ -60,6 +60,10 @@
                         <label>Marca:</label>
                         <input type="text"  name="marca"   [(ngModel)]="automovil.marca">
                     </p>
+                     <p>
+                      <label>Año del vehiculo:</label>
+                      <input type="text"  name="marca"   [(ngModel)]="automovil.anio">
+                  </p>
                        <div class="input-field">
                         <label>Tipo de vehiculo</label>
                         <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;">
@@ -73,6 +77,9 @@
                         <label>Estado</label>
                         <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
                             <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
+                            <option value="Tipo A">Excelente</option>
+                            <option value="Tipo B">Regular</option>
+                            <option value="Tipo C">Deteriorado</option>
                         </select>
                     </div>
                     <div>

@@ -12,7 +12,7 @@ export class PersonasService {
   constructor(private http: HttpClient) { }
 
   getPersonas() {
-    return this.http.get<Persona[]>(this.URL + '/listar');
+    return this.http.get<Persona[]>(this.URL + 'listar');
   }
 
   getPorId(idPersona: number) {
