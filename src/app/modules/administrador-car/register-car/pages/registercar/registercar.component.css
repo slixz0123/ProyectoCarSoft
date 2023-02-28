@@ -195,6 +195,7 @@ text-align: left;
 }
 
 .contact-form form button {
+  border-radius: 16PX;
   background: #B70E21;
   border: 0;
   text-transform: uppercase;
