@@ -123,10 +123,10 @@ export class RegistercarComponent {
   }
 
 
-getClasesAuto(){
-  this.ClasesCarro.getAll().subscribe(data => {
-    this.modelos = data;
-  });}
+  getClasesAuto(){
+    this.ClasesCarro.getAll().subscribe(data => {
+      this.modelos = data;
+    });}
 
 
 }

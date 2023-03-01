@@ -50,6 +50,15 @@ const routes: Routes = [
       path: 'list-seguro',
       loadChildren: () => import("./list-seguro/list-seguro.module").then(m => m.ListSeguroModule)
     },
+    //cliente
+    {
+      path: 'list-cliente',
+      loadChildren: () => import("./list-clientes/list-clientes.module").then(m => m.ListClientesModule)
+    },
+    {
+      path: 'register-cliente',
+      loadChildren: () => import("./register-clientes/register-clientes.module").then(m => m.RegisterClientesModule)
+    },
 
 ];
 

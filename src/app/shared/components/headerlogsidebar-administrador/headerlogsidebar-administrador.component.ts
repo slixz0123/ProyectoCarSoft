@@ -14,14 +14,14 @@ export class HeaderlogsidebarAdministradorComponent {
   )
   {
     {
- 
+
       // Datos xd
     }
-  } 
+  }
   ngOnInit(): void {
   }
 
-  
+
 // metodo de redireccion de ruta
   goToLogin($event: any) :void{
 
@@ -51,7 +51,7 @@ export class HeaderlogsidebarAdministradorComponent {
  }
 
  //Empleado
- 
+
 
  goToRegisterEmple($event: any) :void{
 
@@ -96,11 +96,23 @@ export class HeaderlogsidebarAdministradorComponent {
  }
 
 
+ goToRegistercliente($event: any) :void{
 
+  this.router.navigate(['/admin-carsoft/register-cliente'])
+  console.log($event)
+
+ }
+
+
+ goToListcliente($event: any) :void{
+
+  this.router.navigate(['/admin-carsoft/list-cliente'])
+  console.log($event)
+
+ }
 
 
 
 
 
 }
- 
