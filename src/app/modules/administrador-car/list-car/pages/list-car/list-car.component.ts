@@ -17,7 +17,7 @@ export class ListCarComponent {
 
   auto?: Automovil[];
   modelos: Claseautomovil[]= [];
-  automoviles: Automovil = new Automovil(); //Inicialice el objeto automovil.
+  automoviles: Automovil = new Automovil(0, '', '', '', '', '', '', '', '', 0); //Inicialice el objeto automovil.
   constructor( private automovil: AutomovilService ,
       private automovilService: AutomovilService,
       private car: CargarscriptsService,
@@ -48,7 +48,7 @@ export class ListCarComponent {
 
   }
   registrarCarro() {
-    if (this.automoviles.num_placa === '') {
+   /* if (this.automoviles.num_placa === '') {
       this.toastr.warning("Verifique que esten correctos los campos")
     } else {
       this.automovilService.save(this.automoviles).subscribe(
@@ -64,7 +64,7 @@ export class ListCarComponent {
           this.toastr.error('Error al registrar automóvil');
         }
       )
-    }
+    }*/
   }
 
   mostrarNotificacion() {

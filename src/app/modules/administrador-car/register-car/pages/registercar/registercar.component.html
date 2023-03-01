@@ -84,16 +84,16 @@
                     </div>
                     <div>
                         <label>Clase</label>
-                        <select style="background-color: black;color: white;  padding: 10PX;">
-                            <option selected style="color: aliceblue;">Selecciona la clase</option>
+                        <select [(ngModel)]="automovil.id_clase" style="background-color: black;color: white;  padding: 10PX;">
+                            <option selected style="color: aliceblue;" >Selecciona la clase</option>
                             <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
                           </select>
                     </div>
-                    <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                    <button  (click)="crearAutomovil()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
                         <strong>Subir Foto   ⇩</strong>
                     </button>
 
-                    <button  (click)="registrarCarro()" >
+                    <button  (click)="crearAutomovil()" >
                       Guardar
                   </button>
                            <button>
