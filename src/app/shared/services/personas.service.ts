@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Persona } from 'src/app/core/models/persona';
+import { Rol } from 'src/app/core/models/rol';
 
 @Injectable({
   providedIn: 'root'
@@ -36,10 +37,10 @@ export class PersonasService {
   }
 
   listarPersona(): Observable<any> {
-    return this.http.get(`${this.URL}/listar`);
+    return this.http.get(`${this.URL}listarpersona`);
   }
 
-  getPorCedula(cedula: any) {
-    return this.http.get<Persona>(this.URL + `byCedula/${cedula}`);
+  getPorCedula(id_persona: any) {
+    return this.http.get<Persona>(this.URL + `buscarpersona/${id_persona}`);
   }
 }

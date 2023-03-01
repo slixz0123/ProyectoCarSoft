@@ -44,7 +44,13 @@ export class UsuarioService {
 
    verfUsername(username: string) {
      return this.http.get<boolean>(this.URL + `porUsername/${username}`)
+
    }
+
+   getPorusr(id_rol: any) {
+    //http://localhost:8080/usuario/bus
+    return this.http.get<Usuario>(this.URL + `bus/${id_rol}`);
+  }
 
 
 
