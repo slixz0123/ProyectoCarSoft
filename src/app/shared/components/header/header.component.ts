@@ -13,7 +13,7 @@ export class HeaderComponent {
     private _CargarSc: CargarscriptsService,
     private router : Router
 
- 
+
   )
 
   {

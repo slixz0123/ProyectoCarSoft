@@ -58,7 +58,7 @@
                           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                            focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" >Imagen</text></svg> -->
                            <img src="https://media.revistagq.com/photos/5ca5e602944b834654eb8fe6/master/pass/los_10_coches_mas_caros_del_mundo_131086603.jpg" alt="" style="border-radius: 16px;">
-                           <div class="card-body" *ngFor="let automovil of autos" >
+                           <div class="card-body" *ngFor="let automovil of autos" [class.selected]="automovil.num_placa === selectedId" >
                             <p class="card-text" style="margin-block-end: 10px; color: black;">
 
                               {{ automovil.num_placa }}

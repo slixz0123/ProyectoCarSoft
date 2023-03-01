@@ -46,6 +46,7 @@
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
                     </div>
                 </section>
+
                 <section class="table__body">
                     <table>
                         <thead>
@@ -73,15 +74,103 @@
 
 
                                 <td>
-                                    <button id="btn-abrir-popup" class="card-button">Editar</button>
+                                    <button id="btn-abrir-popup" class="hero__cta" >Editar</button>
+                                    <section class="modal">
+                                      <div class="modal__container">
+                                          <img src="" class="modal__img">
+                                          <h2 class="modal__title">¡Bienvenido al sitio!</h2>
 
+                                          <div class="contact-form animated bounceInUp">
+                                            <div>
+                                                <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
+                                            </div>
+
+                                            <form  >
+                                                <p>
+                                                    <label  >Numero de placa:</label>
+                                                    <input id="placa" type="text" name="num_placa"    [(ngModel)]="automovil.num_placa"    required>
+                                                </p>
+
+
+
+                                                <p>
+                                                    <label>Modelo:</label>
+                                                    <input type="text"   name="modelo"   [(ngModel)]="automovil.modelo"  >
+                                                </p>
+                                                <p>
+                                                    <label> Color:</label>
+                                                    <input type="email"   name="color"    [(ngModel)]="automovil.color">
+                                                </p>
+                                                <p>
+                                                 <label>Marca:</label>
+                                                 <input type="text"  name="marca"   [(ngModel)]="automovil.marca">
+                                             </p>
+                                              <p>
+                                               <label>Año del vehiculo:</label>
+                                               <input type="text"  name="marca"   [(ngModel)]="automovil.anio">
+                                           </p>
+                                                <div class="input-field">
+                                                 <label>Tipo de vehiculo</label>
+                                                 <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;">
+                                                     <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                                     <option value="Tipo A">Tipo A</option>
+                                                     <option value="Tipo B">Tipo B</option>
+                                                     <option value="Tipo C">Tipo C</option>
+                                                 </select>
+                                             </div>
+                                                <div class="input-field">
+                                                 <label>Estado</label>
+                                                 <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                                                     <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
+                                                     <option value="Tipo A">Excelente</option>
+                                                     <option value="Tipo B">Regular</option>
+                                                     <option value="Tipo C">Deteriorado</option>
+                                                 </select>
+                                             </div>
+                                             <div>
+                                                 <label>Clase</label>
+                                                 <select style="background-color: black;color: white;  padding: 10PX;">
+                                                     <option selected style="color: aliceblue;">Selecciona la clase</option>
+                                                     <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
+                                                   </select>
+                                             </div>
+                                             <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                                                 <strong>Subir Foto   ⇩</strong>
+                                             </button>
+
+                                             <button  (click)="registrarCarro()" >
+                                               Guardar
+                                           </button>
+                                                    <button>
+                                                     Cancelar
+                                                 </button>
+
+                                            </form>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                                          <a href="#" class="modal__close">Cerrar Modal</a>
+                                      </div>
+                                  </section>
                                 </td>
                             </tr>
 
 
                         </tbody>
+
                     </table>
+
                 </section>
+
             </main>
 
         </div>

@@ -204,7 +204,7 @@ text-align: left;
   font-size: 16px;
   margin: 25px;
 
-  
+
 }
 
 .contact-form form button:hover,
@@ -213,7 +213,7 @@ text-align: left;
   color: #fff;
   transition: background-color 1s ease-out;
   outline: 0;
-  
+
 }
 
 /* CONTACT INFO */
@@ -223,7 +223,7 @@ text-align: left;
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {
-  text-align: ;
+
   margin: 0 0 1rem 0;
 }
 
@@ -361,7 +361,7 @@ main.table {
     width: 0.5rem;
     height: 0.5rem;
     background-color: rgba(0, 0, 0, .1);
-    
+
 }
 
 .table__body::-webkit-scrollbar-thumb{
@@ -370,7 +370,7 @@ main.table {
     visibility: hidden;
 }
 
-.table__body:hover::-webkit-scrollbar-thumb{ 
+.table__body:hover::-webkit-scrollbar-thumb{
     visibility: visible;
     background-color: rgba(0, 0, 0, .1);
 }
@@ -469,10 +469,10 @@ thead th span.icon-arrow {
   height: 1.3rem;
   border-radius: 50%;
   border: 1.4px solid transparent;
-  
+
   text-align: center;
   font-size: 1rem;
-  
+
   margin-left: .5rem;
   transition: .2s ease-in-out;
 }
@@ -524,3 +524,203 @@ thead th.active,tbody td.active {
 .card-button .fa {
   margin-left: 5px; /* Espacio entre el texto y el icono */
 }
+
+/* tercer css */
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s .9s;
+  --transform: translateY(-100vh);
+  --transition: transform .8s;
+}
+
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0);
+  --transition: transform .8s .8s;
+}
+
+.modal__container{
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition:var(--transition);
+}
+
+.modal__title{
+  font-size: 2.5rem;
+}
+
+.modal__paragraph{
+  margin-bottom: 10px;
+}
+
+.modal__img{
+  width: 90%;
+  max-width: 300px;
+}
+
+.modal__close{
+  text-decoration: none;
+  color: #fff;
+  background-color: #F26250;
+  padding: 1em 3em;
+  border: 1px solid ;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color .3s;
+}
+
+.modal__close:hover{
+  color: #F26250;
+  background-color: #fff;
+}
+
+
+@media (max-width:800px) {
+  .nav__list{
+      display: none;
+  }
+
+  .nav__menu{
+      display: block;
+  }
+
+  .hero__main{
+      grid-template-columns: 1fr;
+      grid-template-rows:max-content max-content ;
+      text-align: center;
+  }
+
+  .hero__picture{
+      grid-row: 1/2;
+  }
+
+  .hero__img{
+      max-width: 500px;
+      display: block;
+      margin: 0 auto;
+  }
+
+  .modal__container{
+      padding: 2em 1.5em;
+  }
+
+  .modal__title{
+      font-size: 2rem;
+  }
+}
+.hero__cta{
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 60px;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 500;
+  transition: background-color .3s;
+}
+
+.hero__cta:hover{
+  background-color: #fff;
+  color: #1e3c72;
+}
+
+
+
+
+/* cuarto css */
+.contact-form {
+
+  border-radius: 15px;
+  background: rgba(23, 21, 21, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(23, 21, 21, 0.3);
+  color: white;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 25px;
+  text-align: left;
+
+
+  }
+
+  .contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form form label {
+    display: block;
+
+  }
+
+  .contact-form form p {
+    margin: 0;
+    padding: 1em;
+  }
+
+  .contact-form form .block {
+    grid-column: 1 / 3;
+  }
+
+  .contact-form form ,
+  .contact-form form input,
+  .contact-form form textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #d63031;
+    border-radius: 15px;
+  }
+
+  .contact-form form button {
+    border-radius: 16PX;
+    background: #B70E21;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+    width: 450px;
+    height: 50px;
+    font-size: 16px;
+    margin: 25px;
+
+
+  }
+
+  .contact-form form button:hover,
+  .contact-form form button:focus {
+    background: #d63031;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+
+  }
