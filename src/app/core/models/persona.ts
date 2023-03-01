@@ -1,3 +1,4 @@
+import { Rol } from './rol';
 import { Usuario } from './usuario';
 export class Persona {
 
@@ -12,8 +13,10 @@ export class Persona {
   nombre?: string;
   telefono?: string;
   foto?: string;
+  id_rol?: number;
   //relacion
   usuario?: Usuario; // id   id de usuarios
+  rol?: Rol;
 
 
 }

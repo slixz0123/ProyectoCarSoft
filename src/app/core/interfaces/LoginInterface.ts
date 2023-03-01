@@ -1,4 +1,4 @@
 export interface LoginI{
-  nombreusuario:String
-  password: String
+  nombreUsuario: string;
+  password: string;
 }

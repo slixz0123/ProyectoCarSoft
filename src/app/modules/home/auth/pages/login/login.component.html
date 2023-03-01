@@ -26,16 +26,13 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
       <h2>Inicio de Sesion</h2>
       <h3>Escoge el auto que te guste y rentalo con Carsoft</h3>
       <form  [formGroup]="loginform"  (ngSubmit)="login(loginform.value)" class="form" >
-
         <div class="textbox">
-          <input aria-describedby="username1-help" type="text" [(ngModel)]="usuario.nombreUsuario"
-           maxlength="30" minlength="3" pInputText formControlName="nombreUsuario"  />
-
+          <input aria-describedby="username1-help" type="text" maxlength="30" minlength="3" pInputText formControlName="nombreUsuario"  />
           <label>Nombre de Usuario</label>
           <span class="material-symbols-outlined"> Email </span>
         </div>
         <div class="textbox">
-          <input type="password" [(ngModel)]="usuario.password"   formControlName="password"   required />
+          <input type="password" formControlName="password" required  />
           <label>Contraseña</label>
           <span class="material-symbols-outlined"> key </span>
         </div>
@@ -43,12 +40,13 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
           No te has registrado?
           <a href="#">Registrate Aqui</a>
         </p>
-
-        <button type="submit" >
+        <button type="submit">
           Ingresar
           <span class="material-symbols-outlined"> arrow_forward </span>
-          </button>
+        </button>
       </form>
+
+
     </div>
   </div>
   </body>

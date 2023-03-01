@@ -2,7 +2,7 @@ import { Persona } from './persona';
 import { Rol } from './rol';
 export class Usuario {
 
-  id: number = 0;
+  id?: number = 0;
   email: string = "";
   nombreUsuario: string = "";
   password: string = "";

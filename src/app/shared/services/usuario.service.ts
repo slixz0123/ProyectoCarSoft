@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from 'src/app/core/models/usuario';
+import { Observable } from 'rxjs';
+import { LoginI } from 'src/app/core/interfaces/LoginInterface';
+import { ResponseI } from 'src/app/core/interfaces/responseI';
 
 
 @Injectable({
@@ -35,12 +38,15 @@ export class UsuarioService {
   }
 
   login(nombreUsuario: string, password: string) {
+    // http://localhost:8080/usuario/login/
     return this.http.get<Usuario>(this.URL + `login/${nombreUsuario}/${password}`)
   }
 
    verfUsername(username: string) {
      return this.http.get<boolean>(this.URL + `porUsername/${username}`)
    }
+
+
 
 
 

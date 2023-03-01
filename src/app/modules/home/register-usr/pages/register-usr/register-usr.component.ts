@@ -137,6 +137,8 @@ export class RegisterUsrComponent {
 
                     this.rol.id_rol = data.id_rol;
                     this.rol.nombre_rol = data.nombre_rol;
+                    this.usuario.id = this.rol.id_rol;
+
 
                     this.usuario.rol = this.rol;
 
