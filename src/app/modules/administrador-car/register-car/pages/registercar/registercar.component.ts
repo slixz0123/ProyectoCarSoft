@@ -37,6 +37,7 @@ export class RegistercarComponent implements OnInit{
   values = [];
 
   ngOnInit(): void {
+
     // this.automovil.num_placa = '';
     // this.automovil.color = '';
     // this.automovil.estado = '';
@@ -45,6 +46,17 @@ export class RegistercarComponent implements OnInit{
     // this.automovil.tipo_vehiculo = '';
     // this.automovil.foto = '';
     // this.automovil.id_clase;
+
+    this.automovil.num_placa = '';
+    this.automovil.color = '';
+    this.automovil.estado = '';
+    this.automovil.marca = '';
+    this.automovil.modelo = '';
+    this.automovil.tipo_vehiculo = '';
+    this.automovil.foto = '';
+    this.automovil.id_clase;
+    this.automovil.anio='';
+
 
     // localStorage.removeItem('num_placa');
     // this.mostrarNotificacion();
