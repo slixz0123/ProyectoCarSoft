@@ -20,3 +20,11 @@ closeModal.addEventListener('click', (e)=>{
     e.preventDefault();
     modal.classList.remove('modal--show');
 });
+
+//no le paremos vola a esto
+const Modal = document.querySelector('.modal');
+const showModalButton = document.querySelector('.show-modal-button');
+
+showModalButton.addEventListener('click', function() {
+  modal.classList.remove('modal--hidden');
+});

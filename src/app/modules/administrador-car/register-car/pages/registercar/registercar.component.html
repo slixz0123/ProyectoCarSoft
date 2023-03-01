@@ -66,7 +66,7 @@
                   </p>
                        <div class="input-field">
                         <label>Tipo de vehiculo</label>
-                        <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;">
+                        <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                             <option selected style="color: aliceblue;">Selecciona el tipo</option>
                             <option value="Tipo A">Tipo A</option>
                             <option value="Tipo B">Tipo B</option>
@@ -75,7 +75,7 @@
                     </div>
                        <div class="input-field">
                         <label>Estado</label>
-                        <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                        <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                             <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
                             <option value="Tipo A">Excelente</option>
                             <option value="Tipo B">Regular</option>
@@ -84,12 +84,12 @@
                     </div>
                     <div>
                         <label>Clase</label>
-                        <select style="background-color: black;color: white;  padding: 10PX;">
+                        <select style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                             <option selected style="color: aliceblue;">Selecciona la clase</option>
                             <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
                           </select>
                     </div>
-                    <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                    <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                         <strong>Subir Foto   ⇩</strong>
                     </button>
 
