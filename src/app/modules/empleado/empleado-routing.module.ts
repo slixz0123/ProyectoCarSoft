@@ -26,8 +26,17 @@ const routes: Routes = [
     path: 'aprovee-renta',
     loadChildren: () => import("./aprovee-renta/aprovee-renta-routing.module").then(m => m.AproveeRentaRoutingModule)
   },
-  
-  
+  // auto
+  {
+    path: 'register-auto',
+    loadChildren: () => import("./register-auto/register-auto.module").then(m => m.RegisterAutoModule)
+  },
+
+  {
+    path: 'list-auto',
+    loadChildren: () => import("./list-auto/list-auto.module").then(m => m.ListAutoModule)
+  },
+
 
 ];
 
