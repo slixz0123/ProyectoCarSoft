@@ -16,9 +16,8 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 export class RegisterUsrComponent {
 
   rol: Rol = new Rol;
-  nuevaPersona: Persona
-  nuevoUsuario: Usuario
-  role: Rol;
+
+
 
   persona: Persona = new Persona;
   usuario: Usuario = new Usuario;
@@ -39,12 +38,6 @@ export class RegisterUsrComponent {
   valCorreo: boolean = true;
 
   constructor(private toastr: ToastrService, private personaService: PersonasService, private usuarioService: UsuarioService, private rolService: RolesService, private router: Router) {
-    this.nuevaPersona = new Persona();
-    this.nuevoUsuario = new Usuario();
-    this.role = new Rol();
-
-
-
 
 
   }
@@ -71,9 +64,6 @@ export class RegisterUsrComponent {
     localStorage.removeItem('id');
     this.mostrarNotificacion();
 
-    this.usuarioService.getUsuarios().subscribe(
-      lista => this.listausuarios = lista
-    );
 
 
 
@@ -148,33 +138,37 @@ export class RegisterUsrComponent {
       this.usuarioService.verfUsername(this.usuario.nombreUsuario).subscribe(
         data => {
           if (!data) {
+            if (this.persona.usuario?.id) {
+              this.persona.usuario.id =  this.usuario.id ;
+            }else{
+              console.log("error :");
+            }
             this.personaService.postPersona(this.persona).subscribe(
               data => {
                 console.log(data);
-                console.log(data.id_persona);
-
-                this.persona.id_persona = data.id_persona;
-
                 const id_persona = data.id_persona;
-               // this.persona.usuario?.id=id_persona
+
+
+               // this.persona.id_usuario= this.persona.id_persona
                 this.rolService.getByName('CLIENTE').subscribe(
                   data => {
                     console.log(data);
 
-                    this.rol.id_rol = data.id_rol;
-                    this.rol.nombre_rol = data.nombre_rol;
+                   // this.rol.id_rol = data.id_rol;
+                   // this.rol.nombre_rol = data.nombre_rol;
                      const rolId = data.id_rol;
 
 
-                     this.usuario.rol.id_rol = rolId;
-                     this.usuario.persona.id_persona= id_persona
+                     this.usuario.rol.id_rol = rolId; //asignacion de id
+
+                     this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
 
                     this.usuarioService.postUsuario(this.usuario).subscribe(
                       result => {
                         console.log(result);
-                        this.usuario.persona.id_persona = this.persona.id_persona
+                       // this.usuario.persona.id_persona  = id_persona;
 
-                        this.usuario.rol.id_rol = rolId; //añadimos el id
+
 
                         this.usuario = result;
                         localStorage.setItem('idUsuario', String(this.usuario.nombreUsuario));

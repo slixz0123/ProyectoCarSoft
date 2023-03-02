@@ -127,7 +127,7 @@ export class RegisterClientesComponent {
               data => {
                 console.log(data);
                 this.persona.id_persona = data.id_persona;
-                this.usuario.persona = this.persona;
+          //      this.usuario.persona = this.persona;
 
 
                 this.rolService.getByName('CLIENTE').subscribe(
