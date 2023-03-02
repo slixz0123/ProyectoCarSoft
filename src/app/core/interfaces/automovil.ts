@@ -3,7 +3,7 @@ import { Seguro } from "../models/seguro";
 import { Usuario } from "../models/usuario";
 
 export class Automovil {
-   idauto: number | undefined;
+   idauto?: number;
    num_placa?: string;
    anio?: string;
    color?: string;
