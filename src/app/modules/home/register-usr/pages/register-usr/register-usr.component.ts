@@ -151,9 +151,12 @@ export class RegisterUsrComponent {
             this.personaService.postPersona(this.persona).subscribe(
               data => {
                 console.log(data);
+                console.log(data.id_persona);
 
+                this.persona.id_persona = data.id_persona;
 
-
+                const id_persona = data.id_persona;
+               // this.persona.usuario?.id=id_persona
                 this.rolService.getByName('CLIENTE').subscribe(
                   data => {
                     console.log(data);
@@ -164,10 +167,14 @@ export class RegisterUsrComponent {
 
 
                      this.usuario.rol.id_rol = rolId;
+                     this.usuario.persona.id_persona= id_persona
 
                     this.usuarioService.postUsuario(this.usuario).subscribe(
                       result => {
                         console.log(result);
+                        this.usuario.persona.id_persona = this.persona.id_persona
+
+                        this.usuario.rol.id_rol = rolId; //añadimos el id
 
                         this.usuario = result;
                         localStorage.setItem('idUsuario', String(this.usuario.nombreUsuario));

@@ -10,7 +10,7 @@ export class Usuario {
 
 
   //realcion
-  persona?: Persona; //id_persona herencia
+  persona: Persona = new Persona; //id_persona herencia
   rol: Rol = new Rol; //id_rol herencia
 
 
