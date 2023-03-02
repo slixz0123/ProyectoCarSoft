@@ -3,10 +3,9 @@ import { Rol } from '../models/rol';
 export interface Usuarios {
 
   id: number ;
-  email: string ;
   nombre_usuario: string ;
   password: string;
-  foto?: string;
+
   //estado: boolean = false;
 
 
@@ -14,7 +13,7 @@ export interface Usuarios {
 
   //realcion
   persona?: Persona; //id_persona herencia
-  rol?:Rol; //id_rol herencia
+  Rol?:Rol | undefined; //id_rol herencia
 
 
 

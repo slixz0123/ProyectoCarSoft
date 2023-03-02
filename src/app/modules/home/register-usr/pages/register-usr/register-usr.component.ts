@@ -16,10 +16,13 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 export class RegisterUsrComponent {
 
   rol: Rol = new Rol;
+  nuevaPersona: Persona
+  nuevoUsuario: Usuario
+  role: Rol;
 
   persona: Persona = new Persona;
   usuario: Usuario = new Usuario;
-
+  listausuarios:Usuario []=[];
   verfNombres: any;
   verfApellidos: any;
   verfCorreo: any;
@@ -35,7 +38,21 @@ export class RegisterUsrComponent {
   expCorreo: RegExp = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
   valCorreo: boolean = true;
 
-  constructor(private toastr: ToastrService, private personaService: PersonasService, private usuarioService: UsuarioService, private rolService: RolesService, private router: Router) { }
+  constructor(private toastr: ToastrService, private personaService: PersonasService, private usuarioService: UsuarioService, private rolService: RolesService, private router: Router) {
+    this.nuevaPersona = new Persona();
+    this.nuevoUsuario = new Usuario();
+    this.role = new Rol();
+
+
+
+
+
+  }
+
+
+
+
+
 
   ngOnInit(): void {
     this.persona.apellido = '';
@@ -53,6 +70,13 @@ export class RegisterUsrComponent {
     this.usuario.password = '';
     localStorage.removeItem('id');
     this.mostrarNotificacion();
+
+    this.usuarioService.getUsuarios().subscribe(
+      lista => this.listausuarios = lista
+    );
+
+
+
   }
 
   validarCorreo() {
@@ -127,8 +151,7 @@ export class RegisterUsrComponent {
             this.personaService.postPersona(this.persona).subscribe(
               data => {
                 console.log(data);
-                this.persona.id_persona = data.id_persona;
-                this.usuario.persona = this.persona;
+
 
 
                 this.rolService.getByName('CLIENTE').subscribe(
@@ -137,18 +160,21 @@ export class RegisterUsrComponent {
 
                     this.rol.id_rol = data.id_rol;
                     this.rol.nombre_rol = data.nombre_rol;
+                     const rolId = data.id_rol;
 
-                    this.usuario.rol = this.rol;
+
+                     this.usuario.rol.id_rol = rolId;
 
                     this.usuarioService.postUsuario(this.usuario).subscribe(
                       result => {
                         console.log(result);
+
                         this.usuario = result;
                         localStorage.setItem('idUsuario', String(this.usuario.nombreUsuario));
                         this.mostrarNotificacion();
                         this.toastr.success('Usuario registrado correctamente', 'Bienvenido!')
 
-                        location.replace('/Auth');
+                       //location.replace('/df');
                       }
                     )
                   }
@@ -172,3 +198,64 @@ export class RegisterUsrComponent {
   }
 
 }
+
+
+
+
+// public loginUser(): void {
+
+
+//   if (this.login.username.trim() == '' || this.login.username.trim() == null) {
+//     this.snack.open('El nombre de usuario es requerido !!', 'Aceptar', {
+//       duration: 3000
+//     })
+//     return;
+//   }
+
+//   if (this.login.password.trim() == '' || this.login.password.trim() == null) {
+//     this.snack.open('La contraseña es requerida !!', 'Aceptar', {
+//       duration: 3000
+//     })
+//     return;
+//   }
+
+//   this.loginService.generateToken(this.login).subscribe(
+//     (data: any) => {
+//       console.log(data);
+//       this.loginService.loginUser(data.token);
+//       this.loginService.getCurrentUser().subscribe((user: any) => {
+//         this.loginService.setUser(user);
+//         console.log(user);
+
+//         if (this.loginService.getUserRole() == 'COORDINADOR') {
+//           this.router.navigate(['/cordPrac']);
+//           this.loginService.loginStatusSubjec.next(true);
+//         }
+//         else if (this.loginService.getUserRole() == 'ESTUDIANTE') {
+//           this.router.navigate(['/estudiante']);
+//           this.loginService.loginStatusSubjec.next(true);
+//         }
+//         else if (this.loginService.getUserRole() == 'DOCENTE TUTOR') {
+//           this.router.navigate(['/tutorAc']);
+//           this.loginService.loginStatusSubjec.next(true);
+//         }
+//         else if (this.loginService.getUserRole() == 'RESPONSABLE PRACTICAS') {
+//           this.router.navigate(['/representante']);
+//           this.loginService.loginStatusSubjec.next(true);
+//         }
+//         else if (this.loginService.getUserRole() == 'RESPONSABLE EMPRESA') {
+//           this.router.navigate(['/tutorEm']);
+//           this.loginService.loginStatusSubjec.next(true);
+//         }
+//         else {
+//           this.loginService.logout();
+//         }
+//       })
+//     }, (error) => {
+//       console.log(error);
+//       this.snack.open('Detalles inválidos , vuelva a intentar !!', 'Aceptar', {
+//         duration: 3000
+//       })
+//     }
+//   )
+// }
