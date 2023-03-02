@@ -1,75 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Website with a contact Form 01</title>
-    <link rel="stylesheet" href="registercar.component.css">
+    <link rel="stylesheet" href="registercar.component.css" />
     <!-- GOOGLE FONTs -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand"
+      rel="stylesheet"
+    />
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <!-- ANIMATE CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+  </head>
 
-
-
-
- <div class="panel panel-default">
+  <div class="panel panel-default">
     <div class="fondobanner">
-        <div style="padding: 50px; ;">
-            <h1 class="logo" style="margin-block-end: 15px;">Registro  <span>Automovil </span></h1>
-            <div class="col-lg-6 col-md-8 mx-auto ">
-              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección de registro de automóviles del establecimiento</p>
+      <div style="padding: 50px ;">
+        <h1 class="logo" style="margin-block-end: 15px">
+          Registro <span>Automovil </span>
+        </h1>
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <p
+            style="text-align: center; font-size: 15px; margin-block-end: 15px"
+          >
+            Sección de registro de automóviles del establecimiento
+          </p>
 
-              <div>
-                <p style="text-align: center;">
-
-                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
-                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
-              </div>
-            </div>
-             </div>
+          <div>
+            <p style="text-align: center">
+              <a id="btnnes" class="btn" href="#" style="margin-right: 25px"
+                >Menú Principal</a
+              >
+              <a id="btnnes" class="btn" href="#">Registrate</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="content">
       <div class="contact-form animated bounceInUp">
         <div>
-          <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong></p>
+          <p style="padding: 20px; font-size: 20px">
+            <strong>Ingresar los siguientes datos:</strong>
+          </p>
         </div>
 
         <form>
           <p>
             <label>Numero de placa:</label>
-            <input id="placa" type="text" name="num_placa" [(ngModel)]="automovil.num_placa" required>
+            <input
+              id="placa"
+              type="text"
+              name="num_placa"
+              [(ngModel)]="automovil.num_placa"
+              required
+            />
           </p>
 
           <p>
             <label>Modelo:</label>
-            <input type="text" name="modelo" [(ngModel)]="automovil.modelo">
+            <input type="text" name="modelo" [(ngModel)]="automovil.modelo" />
           </p>
 
           <p>
             <label>Color:</label>
-            <input type="email" name="color" [(ngModel)]="automovil.color">
+            <input type="email" name="color" [(ngModel)]="automovil.color" />
           </p>
 
           <p>
             <label>Marca:</label>
-            <input type="text" name="marca" [(ngModel)]="automovil.marca">
+            <input type="text" name="marca" [(ngModel)]="automovil.marca" />
           </p>
 
           <p>
             <label>Año del vehiculo:</label>
-            <input type="text" name="anio" [(ngModel)]="automovil.anio">
+            <input type="text" name="anio" [(ngModel)]="automovil.anio" />
           </p>
 
           <div class="input-field">
             <label>Tipo de vehiculo</label>
-            <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
-              <option selected style="color: aliceblue;">Selecciona el tipo</option>
+            <select
+              name="tipo_vahiculo"
+              [(ngModel)]="automovil.tipo_vehiculo"
+              required
+              style="
+                background-color: black;
+                color: white;
+                padding: 10px;
+                width: 500px;
+                border-radius: 16px;
+              "
+            >
+              <option selected style="color: aliceblue">
+                Selecciona el tipo
+              </option>
               <option value="Tipo A">Tipo A</option>
               <option value="Tipo B">Tipo B</option>
               <option value="Tipo C">Tipo C</option>
@@ -78,8 +115,20 @@
 
           <div class="input-field">
             <label>Estado</label>
-            <select name="estado" [(ngModel)]="automovil.estado" style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
-              <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
+            <select
+              name="estado"
+              [(ngModel)]="automovil.estado"
+              style="
+                background-color: black;
+                color: white;
+                padding: 10px;
+                width: 500px;
+                border-radius: 16px;
+              "
+            >
+              <option disabled selected style="color: aliceblue">
+                Selecciona el estado
+              </option>
               <option value="Excelente">Excelente</option>
               <option value="Regular">Regular</option>
               <option value="Deteriorado">Deteriorado</option>
@@ -88,40 +137,46 @@
 
           <div>
             <label>Clase</label>
-            <select [(ngModel)]="automovil.id_clase" style="background-color: black;color: white;  padding: 10PX;">
-              <option selected style="color: aliceblue;">Selecciona la clase</option>
-              <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
+            <select
+              [(ngModel)]="automovil.id_clase"
+              style="background-color: black; color: white; padding: 10px"
+            >
+              <option selected style="color: aliceblue">
+                Selecciona la clase
+              </option>
+              <option *ngFor="let clases of clase" [value]="clases.id_clase">
+                {{ clases.nombre }}
+              </option>
             </select>
           </div>
 
+          <button
+            style="
+              background-color: black;
+              color: white;
+              padding: 10px;
+              width: 500px;
+              border-radius: 16px;
+            "
+          >
+            <strong>Subir Foto ⇩</strong>
+          </button>
 
+          <button  style="
+          background-color: black;
+          color: white;
+          padding: 10px;
+          width: 500px;
+          border-radius: 16px;" (click)="crearAutomovil()">Guardar</button>
 
-
-                        <button (click)="crearAutomovil()" style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
-                            <strong>Subir Foto   ⇩</strong>
-                        </button>
-
-                        <button (click)="crearAutomovil()">
-                            Guardar
-                        </button>
-                        <button>
-                            Cancelar
-                        </button>
-
-                        </form>
-
-
-               </div>
-
-            </div>
-
-   <div>
-
-   </div>
-
-
-   </div>
-
-
-
+          <button style="
+          background-color: black;
+          color: white;
+          padding: 10px;
+          width: 500px;
+          border-radius: 16px;" >Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </html>

@@ -17,17 +17,12 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 @Component({
   selector: 'app-registercar',
   templateUrl: './registercar.component.html',
-  styleUrls: ['./registercar.component.css'],
-  template:`
-  <select>
-    <option *ngFor="let clase of claseauto">{{clase}}</option>
-  </select>
-`,
+  styleUrls: ['./registercar.component.css']
 })
 export class RegistercarComponent implements OnInit{
 
   automovil: Automovil = new Automovil(); //Inicialice el objeto automovil.
-  modelos: Claseautomovil[]= [];
+  clase: Claseautomovil[]= [];
   constructor(private automovilService: AutomovilService,
     private fotoService: FotoService, private toastr: ToastrService, private ClasesCarro:ClasesCarroService) {}
 
@@ -46,23 +41,12 @@ export class RegistercarComponent implements OnInit{
     // this.automovil.tipo_vehiculo = '';
     // this.automovil.foto = '';
     // this.automovil.id_clase;
-
-    this.automovil.num_placa = '';
-    this.automovil.color = '';
-    this.automovil.estado = '';
-    this.automovil.marca = '';
-    this.automovil.modelo = '';
-    this.automovil.tipo_vehiculo = '';
-    this.automovil.foto = '';
-    this.automovil.id_clase;
-    this.automovil.anio='';
-
-
     // localStorage.removeItem('num_placa');
     // this.mostrarNotificacion();
     this.getClasesAuto();
   }
   crearAutomovil(): void {
+   
     this.automovilService.crearAutomovil(this.automovil)
       .subscribe(automovil => {
         console.log('Se creó el automóvil', automovil);
@@ -144,7 +128,7 @@ export class RegistercarComponent implements OnInit{
 
 getClasesAuto(){
   this.ClasesCarro.getAll().subscribe(data => {
-    this.modelos = data;
+    this.clase = data;
   });}
 
 

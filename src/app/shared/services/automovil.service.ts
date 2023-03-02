@@ -17,8 +17,9 @@ export class AutomovilService {
   constructor(private http: HttpClient) { }
 
   crearAutomovil(automovil: Automovil): Observable<Automovil> {
-    return this.http.post<Automovil>(`${this.URL}/guardarAuto`, automovil);
+    return this.http.post<Automovil>(`${this.URL}/crear`, automovil);
   }
+
   getauto() {
     return this.http.get<Automovil[]>(this.URL + '/listarauto');
   }
