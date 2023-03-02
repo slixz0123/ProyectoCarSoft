@@ -105,6 +105,12 @@ goToLogin($event: any) :void{
   console.log($event)
 
  }
+ goToCrearAuto($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/register-auto'])
+  console.log($event)
+
+ }
 
 
 }
