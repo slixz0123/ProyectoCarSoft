@@ -17,69 +17,82 @@
 
 
 
- <div class="panel panel-default">
+
     <div class="fondobanner">
         <div style="padding: 50px; ;">
-            <h1 class="logo" style="margin-block-end: 15px;">Solicitud   <span>Renta </span></h1>
+            <h1 class="logo" style="margin-block-end: 15px;">Lista <span>Clientes </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
-              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
+              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección del listado de clientes registrados en el sistema</p>
               
               <div>
                 <p style="text-align: center;">
                   
-                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
+                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
                   <a id="btnnes" class="btn  "  href="#">Registrate</a>
               </div>
             </div>
              </div>
     </div>
-    
+
+
+
         <div class="content">
-               <div class="contact-form animated bounceInUp">
-                   <div>
-                       <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
-                   </div>
-                   
-                   <form action="">
+            <main class="table">
+                <section class="table__header">
+                    <div class="input-group">
+                        <input type="search" placeholder="Buscar...">
+                    </div>
+                    <div>
+                        <button id="btn-abrir-popup" class="card-button">Crear</button>
+                    </div>
+                </section>
+                <section class="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> Id Alquiler <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Cédula <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> N° Dias  <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Fecha de Reservación<span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Código de Reservación <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Fecha de Entrega <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            
+                            <tr>
+                                <td> :D </td>
+                                <td> 01</td>
+                                <td> ABC-124</td>
+                                <td> For</td>
+                                <td> 2022</td>
+                                <td> 4x4</td>
+                                <td> Pendiente..</td>
+                                
+                                <!-- <td>
+                                    <button id="btn-abrir-popup" class="card-button">Editar</button>
+                                    
+                                </td> -->
+                            </tr> 
+                            
+                            
+                        </tbody>
+                    </table>
+                </section> 
+            </main>
 
-                    <p>
-                        <label>Nombre:</label>
-                        <input type="text" name="fullname">
-                    </p>
-                    <p>
-                        <label>Apellido</label>
-                        <input type="text" name="fullname">
-                    </p>
-                       <p>
-                           <label>Id Alquiler:</label>
-                           <input type="text" name="fullname">
-                       </p>
-                       <p>
-                           <label>Codigo de Reservacion:</label>
-                           <input type="text" name="fullname">
-                       </p>
-                       <p>
-                           <label>Cedula:</label>
-                           <input type="text" name="fullname">
-                       </p>
-                       <p>
-                        <label>Cedula:</label>
-                        <input type="text" name="fullname">
-                    </p>
-                    
-                       <button>Solicitar </button>
-                       <button>Cancelar </button>
-                       
-                       
-                   </form>
-               </div>
-            </div>  
-   <div>
+        </div>
 
-   </div>
+        
+        
+               
      
 
-   </div>
+
+
 
 
 </html>
