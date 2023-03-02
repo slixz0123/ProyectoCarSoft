@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
           if (data.id) {
             this.usuario.id = data.id;
-            this.usuario.foto = data.foto;
+
 
 
             this.toastr.success("Bienvenido " + data.nombreUsuario, "Login");
