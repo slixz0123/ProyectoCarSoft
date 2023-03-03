@@ -50,7 +50,7 @@ export class UsuarioService {
 
    getPorusr(id_rol: any) {
     //http://localhost:8080/usuario/bus
-    return this.http.get<Usuario>(this.URL + `bus/${id_rol}`);
+    return this.http.get<Usuario>(this.URL + `${id_rol}`);
   }
 
 

@@ -15,7 +15,7 @@ export class PersonasService {
   constructor(private http: HttpClient) { }
 
   getPersonas() {
-    return this.http.get<Persona[]>(this.URL + 'listaper');
+    return this.http.get<Persona[]>(`${this.URL}listaper`);
   }
 
   getPorId(idPersona: number) {
@@ -39,7 +39,7 @@ export class PersonasService {
   }
 
   listarPersona(): Observable<any> {
-    return this.http.get(`${this.URL}listarpersona`);
+    return this.http.get(`${this.URL}listaper`);
   }
 
   getPorCedula(id_persona: any) {
