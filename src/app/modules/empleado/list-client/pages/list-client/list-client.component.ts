@@ -14,7 +14,7 @@ export class ListClientComponent implements OnInit{
   personas:Persona[]=[];
   usuarios:Usuario[]=[];
   roles:Rol[]=[];
-
+  buscar='';
 constructor(private personaService: PersonasService, private usuarioService: UsuarioService, private rolService: RolesService) { }
 
   ngOnInit(): void {

@@ -46,6 +46,9 @@
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
                     </div>
                 </section>
+                <div>
+                <input class="posbus" type="text" placeholder="Buscar" [(ngModel)]="buscar">
+            </div>
                 <section class="table__body">
                     <table>
                         <thead>
@@ -65,13 +68,17 @@
 
 
                             <tr>
-                              <tr *ngFor="let persona of person">
+                              <tr *ngFor="let persona of person | search:buscar">
                                 <td>{{ persona.nombre}} </td>
                                 <td>{{ persona.apellido}} </td>
                                 <td>{{ persona.cedula}} </td>
                                 <td>{{ persona.edad}} </td>
                                 <td>{{ persona.direccion}} </td>
-
+                                <td *ngFor="let rol of roles">
+                                    <div *ngIf="rol.id_rol === persona.id_rol">
+                                      {{ rol.nombre_rol }}
+                                    </div>
+                                  </td>
                                 <td>
                                     <button id="btn-abrir-popup" class="card-button">Editar</button>
 
