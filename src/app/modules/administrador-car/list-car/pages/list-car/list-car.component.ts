@@ -61,7 +61,16 @@ export class ListCarComponent {
     });}
 
 
+editarauto(){
+  this.automovilService.updateAutos(this.automoviles,this.automoviles.num_placa).subscribe(
+    data=>{
+      console.log(data);
 
+
+      this.automoviles = data;
+    }
+  )
+}
 
 
 }

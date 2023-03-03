@@ -1,6 +1,6 @@
 
 export class Seguro {
-  cod_seguro: number=0;
+  cod_seguro?: number;
   nom_seguro: string ="";
-  precio_seguro: number =0;
+  precio_seguro?: number ;
 }

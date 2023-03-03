@@ -167,7 +167,7 @@ export class RegisterUsrComponent {
                         this.mostrarNotificacion();
                         this.toastr.success('Usuario registrado correctamente', 'Bienvenido!')
 
-                       //location.replace('/df');
+                       location.replace('/Auth');
                       }
 
                     )

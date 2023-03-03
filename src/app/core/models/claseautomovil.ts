@@ -1,6 +1,6 @@
 export class Claseautomovil{
- id_clase:number=0;
+ id_clase?:number;
  nombre: string ="";
- precio_alquler_dia:number =0;
+ precio_alquiler_dia?:number ;
 
 }

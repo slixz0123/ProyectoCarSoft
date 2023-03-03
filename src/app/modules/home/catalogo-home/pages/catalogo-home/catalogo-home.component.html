@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    
+
 </head>
 
 <body style="margin-top: 20px;">
@@ -22,10 +22,10 @@
             <h1 class="logo" style="margin-block-end: 15px;">Catalogo  <span>SofCart </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
               <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
-              
+
               <div>
                 <p style="text-align: center;">
-                  
+
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
                   <a id="btnnes" class="btn  "  href="#">Registrate</a>
 
@@ -47,43 +47,81 @@
 
                 </div>
 
-                
+
                   <div class="container">
-                    
+
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
                       <div class="col"style="margin-block-end: 25px;">
                         <div class="card shadow-sm" style="border-radius: 16px;">
                           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                            focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" >Imagen</text></svg> -->
                            <img src="https://media.revistagq.com/photos/5ca5e602944b834654eb8fe6/master/pass/los_10_coches_mas_caros_del_mundo_131086603.jpg" alt="" style="border-radius: 16px;">
-                           <div class="card-body" >
-                            <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px; margin-right: 5px;" data-toggle="modal" data-target="#dialogo1">Ver</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px;">Alquilar</button>
 
-                              </div>
-                              <small class="text-muted">9 mins</small>
+                           <div class="row g-3" style="position: relative">
+                            <div *ngIf="!loaded" style="height: 50vh; width: 50px ; margin: 15px;">
+
+                                    <p style="color: #212529">Buscando productos...</p>
+
                             </div>
-                          </div>
+
+                            <div id="tarjetascontenedor" class="row row-cols-auto row-cols-md-3 g-3">
+                                <div class="" *ngFor="let automovil of aut" [class.selected]="automovil.num_placa">
+
+                                        <div class="product-card">
+                                            <div class="logo-cart">
+                                                <img  src="https://www.pngall.com/wp-content/uploads/5/Infinity-Symbol-PNG-Free-Image.png" width="30px" height="30px">
+                                              <i class='bx bx-shopping-bag'></i>
+                                            </div>
+
+                                            <div class="shoe-details">
+                                                <img imageLoader [src]="'http://localhost:8080/image/images/' + automovil.foto" class="rounded mx-auto d-bloc card-img-top" alt="..."/>
+
+                                                <span class="shoe_name">{{ automovil.modelo }}</span>
+
+                                                <p class="card-text" >
+                                                    {{ automovil.color }}
+
+                                            </div>
+
+                                            <div id="btnsedittbl" class="button">
+                                              <div class="button-layer"></div>
+
+                                            </div>
+                                          </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
                         </div>
                       </div>
                     </div>
                   </div>
                  <div>
                 </div>
-               </div>  
-             </div>  
+               </div>
+             </div>
              <div>
 
            </div>
-     
+
        </body>
      </div>
 
 
-   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>  
+   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -92,8 +130,8 @@
 </body>
 
 
-<div class="container22"> 
-    
+<div class="container22">
+
 
   <div class="modal fade" id="dialogo1">
     <div class="modal-dialog">
@@ -113,10 +151,10 @@
         <div class="modal-footer">
           <a id="btnnes" class="btn  "  href="#">Alquilar</a>
         </div>
-        
+
       </div>
     </div>
-  </div> 
+  </div>
 
 </div>
 

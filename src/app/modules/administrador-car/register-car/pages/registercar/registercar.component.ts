@@ -13,6 +13,7 @@ import { ClasesCarroService } from 'src/app/shared/services/clases-carro.service
 import { FotoService } from 'src/app/shared/services/foto.service';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registercar',
@@ -76,6 +77,11 @@ export class RegistercarComponent {
           this.automovil = result;
           localStorage.setItem('num_placa', String(this.automovil.marca));
           this.mostrarNotificacion();
+          Swal.fire(
+            'Exito!',
+            'Registro carro',
+            'success'
+          )
           this.toastr.success('Automovil registrado correctamente');
         },
         error => {
@@ -101,13 +107,18 @@ export class RegistercarComponent {
                // const id_persona = data.id_persona;
               //  const id_u = data.usuario?.id
 
-                  this.automovil.claseautomovil.id_clase = data.claseautomovil
+               //  this.automovil.claseautomovil.id_clase = data.claseautomovil
+                  Swal.fire(
+                    'Exito!',
+                    'Registro clase',
+                    'success'
+                  )
                   const clas = data.claseautomovil
                 this.ClasesCarro.getPorId(clas).subscribe(
                   result => {
                     console.log(result);
                     const clasId = result.id_clase;
-                     this.automovil.claseautomovil.id_clase = clasId; //asignacion de id
+                  //   this.automovil.claseautomovil.id_clase = clasId; //asignacion de id
                     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
 
 

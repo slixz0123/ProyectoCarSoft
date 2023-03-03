@@ -4,7 +4,7 @@ import { Usuario } from "../models/usuario";
 
 export class Automovil{
 
-   num_placa?:string;
+   num_placa:string="";
    anio?:string;
    color?:string;
    estado?:string;
