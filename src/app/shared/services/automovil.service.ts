@@ -13,6 +13,7 @@ export class AutomovilService {
 
   private URL = "http://localhost:8080/automovil";
   private URL2 = "http://localhost:8080/automovil/crear";
+  private URL3 ='http:///localhost:8080/actualizar/{num_placa}'
 
   constructor(private http: HttpClient) { }
 
@@ -25,8 +26,13 @@ export class AutomovilService {
   }
 
   getPorId(num_placa: string) {
-    return this.http.get<Automovil>(this.URL + num_placa);
+    return this.http.get<Automovil>(this.URL +"/" +num_placa);
   }
+
+  editar(auto: Automovil) {
+    return this.http.put<Automovil>(this.URL+"/"+ auto.num_placa,auto);
+  }
+
 
   postAutos(auto: Automovil): Observable<any> {
     return this.http.post<any>(`${this.URL2}?`, auto).pipe(
@@ -48,6 +54,10 @@ export class AutomovilService {
   save(auto: Automovil) {
     return this.http.post(`${this.URL2}?`, auto);
   }
+
+  
+
+
 
   listarAutos(): Observable<any> {
     return this.http.get(`${this.URL}/listarauto`);

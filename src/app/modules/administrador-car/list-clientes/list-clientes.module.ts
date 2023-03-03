@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { ListClientesRoutingModule } from './list-clientes-routing.module';
 import { ListClientesComponent } from './pages/list-clientes/list-clientes.component';
 import { BuscarPipe } from './buscar.pipe';
+<<<<<<< Updated upstream
 
+=======
+import { FormsModule } from '@angular/forms';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [

@@ -54,6 +54,7 @@ export class RegistercarComponent implements OnInit{
       });
   }
 
+<<<<<<< Updated upstream
   // registrarCarro() {
   //   if (this.automovil.num_placa === '') {
   //     this.toastr.warning("Verifique que esten correctos los campos")
@@ -73,6 +74,81 @@ export class RegistercarComponent implements OnInit{
   //     )
   //   }
   // }
+=======
+  registrarCarro() {
+    if (this.automovil.num_placa === '') {
+      this.toastr.warning("Verifique que esten correctos los campos")
+    } else {
+
+      this.automovilService.postAutos(this.automovil).subscribe(
+        result => {
+
+          console.log(result);
+
+          this.automovil = result;
+          localStorage.setItem('num_placa', String(this.automovil.marca));
+          this.mostrarNotificacion();
+          this.toastr.success('Automovil registrado correctamente');
+        },
+        error => {
+          console.log(error);
+          this.toastr.error('Error al registrar automóvil');
+        }
+      )
+
+    }
+  }
+
+
+
+  registrarUsuario() {
+
+           // this.persona.usuario?.id = this.usuario.id;
+
+            this.automovilService.postAutos(this.automovil).subscribe(
+              data => {
+                console.log(data);
+                console.log( data.claseautomovil);
+
+               // const id_persona = data.id_persona;
+              //  const id_u = data.usuario?.id
+
+                  this.automovil.claseautomovil.id_clase = data.claseautomovil
+                  const clas = data.claseautomovil
+                this.ClasesCarro.getPorId(clas).subscribe(
+                  result => {
+                    console.log(result);
+                    const clasId = result.id_clase;
+                     this.automovil.claseautomovil.id_clase = clasId; //asignacion de id
+                    // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+
+
+                  }
+                )
+
+              }
+
+            )
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
 
   mostrarNotificacion() {
     this.toastr.success('Mi mensaje', 'Mi título', {

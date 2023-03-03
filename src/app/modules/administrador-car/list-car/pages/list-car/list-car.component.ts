@@ -78,7 +78,30 @@ export class ListCarComponent {
       this.modelos = data;
     });}
 
-
+  /*editarCarro() {
+      if (this.automovil.num_placa === '') {
+        this.toastr.warning("Verifique que esten correctos los campos")
+      } else {
+  
+        this.automovilService.editar(this.automovil).subscribe(
+          result => {
+  
+            console.log(result);
+  
+            this.automovil = result;
+            localStorage.setItem('num_placa', String(this.automovil.marca));
+            this.mostrarNotificacion();
+            this.toastr.success('Automovil registrado correctamente');
+          },
+          error => {
+            console.log(error);
+            this.toastr.error('Error al registrar automóvil');
+          }
+        )
+  
+      }
+    }*/
+  
 
 
 
