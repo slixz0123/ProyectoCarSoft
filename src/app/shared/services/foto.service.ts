@@ -10,7 +10,7 @@ export class FotoService {
     private http: HttpClient
   ) { }
 
-  private urlApiFoto: string = 'http://localhost:5000/image';
+  private urlApiFoto: string = 'http://localhost:8080/image';
 
   // NUEVOS METODOS
   guararImagenes(file: File) {

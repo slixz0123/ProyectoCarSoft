@@ -135,53 +135,50 @@ export class RegisterUsrComponent {
 
       this.toastr.warning("Verifique que esten correctos los campos")
     } else {
+
       this.usuarioService.verfUsername(this.usuario.nombreUsuario).subscribe(
         data => {
           if (!data) {
-            if (this.persona.usuario?.id) {
-              this.persona.usuario.id =  this.usuario.id ;
-            }else{
-              console.log("error :");
-            }
+
+           // this.persona.usuario?.id = this.usuario.id;
+
             this.personaService.postPersona(this.persona).subscribe(
               data => {
                 console.log(data);
                 const id_persona = data.id_persona;
+                const id_u = data.usuario?.id
 
 
-               // this.persona.id_usuario= this.persona.id_persona
                 this.rolService.getByName('CLIENTE').subscribe(
                   data => {
                     console.log(data);
-
-                   // this.rol.id_rol = data.id_rol;
-                   // this.rol.nombre_rol = data.nombre_rol;
                      const rolId = data.id_rol;
-
-
                      this.usuario.rol.id_rol = rolId; //asignacion de id
-
                      this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
 
-                    this.usuarioService.postUsuario(this.usuario).subscribe(
+                     this.usuarioService.postUsuario(this.usuario).subscribe(
                       result => {
                         console.log(result);
-                       // this.usuario.persona.id_persona  = id_persona;
 
-
+                          console.log(  result.id)
 
                         this.usuario = result;
                         localStorage.setItem('idUsuario', String(this.usuario.nombreUsuario));
                         this.mostrarNotificacion();
                         this.toastr.success('Usuario registrado correctamente', 'Bienvenido!')
 
-                       //location.replace('/df');
+                       location.replace('/Auth');
                       }
+
                     )
                   }
                 )
+
               }
+
             )
+
+
           } else {
             this.toastr.error("El username que eligio ya está en uso!", "Error");
             this.verfUsername = 'ng-invalid ng-dirty';
@@ -191,6 +188,21 @@ export class RegisterUsrComponent {
       )
     }
   }
+
+
+
+
+  // metodo 2
+
+
+
+
+
+
+
+
+
+
   mostrarNotificacion() {
     this.toastr.success('Mi mensaje', 'Mi título', {
       positionClass: 'toast-top-right',

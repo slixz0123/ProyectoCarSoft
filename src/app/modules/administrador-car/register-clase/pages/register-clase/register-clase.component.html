@@ -28,7 +28,6 @@
                 <p style="text-align: center;">
 
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
-                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
               </div>
             </div>
              </div>
@@ -44,13 +43,14 @@
 
 
                        <p>
-                           <label>Nombre:</label>
+                           <label>Nombre Clase:</label>
                            <input type="text"  name="nombre"    [(ngModel)]="claseautomovil.nombre">
                        </p>
-                      <p>
-                           <label> Precio de Alquiler:</label>
-                           <input type="text"  name="id_clase"    [(ngModel)]="claseautomovil.precio_alquler_dia">
-                       </p>
+
+                       <p>
+                        <label>Precio Clase:</label>
+                        <input type="text"  name="precio_alquiler_dia"    [(ngModel)]="claseautomovil.precio_alquiler_dia">
+                    </p>
 
 
 
@@ -77,14 +77,13 @@
 
 
                     <p>
-                        <label>Nombre:</label>
-                        <input type="text"   name="nom_seguro"    [(ngModel)]="seguro.nom_seguro">
+                        <label>Nombre Seguro:</label>
+                        <input type="text"   name="nom_seguro"  [(ngModel)]="seguro.nom_seguro">
                     </p>
                     <p>
-                        <label> Precio del seguro:</label>
-                        <input type="text" name="precio_seguro"    [(ngModel)]="seguro.precio_seguro">
-                    </p>
-
+                      <label>Precio Seguro:</label>
+                      <input type="text"   name="precio_seguro"  [(ngModel)]="seguro.precio_seguro">
+                  </p>
 
 
                         <button  (click)="registrarSeguro()">

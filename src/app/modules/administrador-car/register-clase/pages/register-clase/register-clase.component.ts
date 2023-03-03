@@ -5,6 +5,7 @@ import { Seguro } from 'src/app/core/models/seguro';
 
 import { ClasesCarroService } from 'src/app/shared/services/clases-carro.service';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-clase',
@@ -21,10 +22,9 @@ export class RegisterClaseComponent {
   ngOnInit(): void {
     this.claseautomovil.id_clase = 0;
     this.claseautomovil.nombre = '';
-    this.claseautomovil.precio_alquler_dia = 0;
-    this.seguro.cod_seguro= 0;
-    this.seguro.nom_seguro= '';
-    this.seguro.precio_seguro= '';
+    this.claseautomovil.precio_alquiler_dia = 0;
+
+
 
 
 
@@ -41,8 +41,12 @@ export class RegisterClaseComponent {
         result => {
           console.log(result);
           this.claseautomovil = result;
-          localStorage.setItem('id_clase', String(this.claseautomovil.id_clase));
 
+          Swal.fire(
+            'Exito!',
+            'Registro clase',
+            'success'
+          )
           this.toastr.success('seguro registrado correctamente');
         },
         error => {

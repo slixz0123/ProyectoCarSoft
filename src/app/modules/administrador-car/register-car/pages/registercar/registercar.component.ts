@@ -13,6 +13,7 @@ import { ClasesCarroService } from 'src/app/shared/services/clases-carro.service
 import { FotoService } from 'src/app/shared/services/foto.service';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registercar',
@@ -26,8 +27,10 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 })
 export class RegistercarComponent {
 
-  automovil: Automovil = new Automovil(); //Inicialice el objeto automovil.
-  modelos: Claseautomovil[]= [];
+  automovil: Automovil = new Automovil();
+  clasesau: Claseautomovil = new Claseautomovil(); //Inicialice el objeto automovil.
+  clase: Claseautomovil[]= [];
+
   constructor(private automovilService: AutomovilService,
     private fotoService: FotoService, private toastr: ToastrService, private ClasesCarro:ClasesCarroService) {}
 
@@ -35,6 +38,7 @@ export class RegistercarComponent {
   selectedId = 0;
   image!: any;
   values = [];
+
 
   ngOnInit(): void {
     this.automovil.num_placa = '';
@@ -44,23 +48,40 @@ export class RegistercarComponent {
     this.automovil.modelo = '';
     this.automovil.tipo_vehiculo = '';
     this.automovil.foto = '';
-    this.automovil.id_clase;
+    this.automovil.claseautomovil;
 
     localStorage.removeItem('num_placa');
     this.mostrarNotificacion();
     this.getClasesAuto();
+
+
+
+
+
   }
 
   registrarCarro() {
     if (this.automovil.num_placa === '') {
       this.toastr.warning("Verifique que esten correctos los campos")
     } else {
-      this.automovilService.save(this.automovil).subscribe(
+
+
+
+
+      this.automovilService.postAutos(this.automovil).subscribe(
         result => {
+
           console.log(result);
+
+
           this.automovil = result;
           localStorage.setItem('num_placa', String(this.automovil.marca));
           this.mostrarNotificacion();
+          Swal.fire(
+            'Exito!',
+            'Registro carro',
+            'success'
+          )
           this.toastr.success('Automovil registrado correctamente');
         },
         error => {
@@ -68,8 +89,64 @@ export class RegistercarComponent {
           this.toastr.error('Error al registrar automóvil');
         }
       )
+
     }
   }
+
+
+
+  registrarUsuario() {
+
+           // this.persona.usuario?.id = this.usuario.id;
+
+            this.automovilService.postAutos(this.automovil).subscribe(
+              data => {
+                console.log(data);
+                console.log( data.claseautomovil);
+
+               // const id_persona = data.id_persona;
+              //  const id_u = data.usuario?.id
+
+               //  this.automovil.claseautomovil.id_clase = data.claseautomovil
+                  Swal.fire(
+                    'Exito!',
+                    'Registro clase',
+                    'success'
+                  )
+                  const clas = data.claseautomovil
+                this.ClasesCarro.getPorId(clas).subscribe(
+                  result => {
+                    console.log(result);
+                    const clasId = result.id_clase;
+                  //   this.automovil.claseautomovil.id_clase = clasId; //asignacion de id
+                    // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+
+
+                  }
+                )
+
+              }
+
+            )
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   mostrarNotificacion() {
     this.toastr.success('Mi mensaje', 'Mi título', {
@@ -124,9 +201,9 @@ export class RegistercarComponent {
 
 
   getClasesAuto(){
-    this.ClasesCarro.getAll().subscribe(data => {
-      this.modelos = data;
-    });}
+    this.ClasesCarro.getAll().subscribe(
+     claseL =>this.clase = claseL
+    );}
 
 
 }

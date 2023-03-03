@@ -36,7 +36,7 @@ export class ListCarComponent {
     this.automoviles.modelo = '';
     this.automoviles.tipo_vehiculo = '';
     this.automoviles.foto = '';
-    this.automoviles.id_clase;
+    this.automoviles.claseautomovil;
 
     localStorage.removeItem('num_placa');
     this.mostrarNotificacion();
@@ -47,25 +47,7 @@ export class ListCarComponent {
 
 
   }
-  registrarCarro() {
-    if (this.automoviles.num_placa === '') {
-      this.toastr.warning("Verifique que esten correctos los campos")
-    } else {
-      this.automovilService.save(this.automoviles).subscribe(
-        result => {
-          console.log(result);
-          this.automoviles = result;
-          localStorage.setItem('num_placa', String(this.automoviles.marca));
-          this.mostrarNotificacion();
-          this.toastr.success('Automovil registrado correctamente');
-        },
-        error => {
-          console.log(error);
-          this.toastr.error('Error al registrar automóvil');
-        }
-      )
-    }
-  }
+
 
   mostrarNotificacion() {
     this.toastr.success('Mi mensaje', 'Mi título', {
@@ -79,7 +61,16 @@ export class ListCarComponent {
     });}
 
 
+editarauto(){
+  this.automovilService.updateAutos(this.automoviles,this.automoviles.num_placa).subscribe(
+    data=>{
+      console.log(data);
 
+
+      this.automoviles = data;
+    }
+  )
+}
 
 
 }

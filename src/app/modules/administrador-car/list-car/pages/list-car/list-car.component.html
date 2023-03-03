@@ -28,7 +28,6 @@
                 <p style="text-align: center;">
 
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
-                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
               </div>
             </div>
              </div>
@@ -70,15 +69,15 @@
                               <td>{{ automovil.modelo}} </td>
                               <td>{{ automovil.anio}} </td>
                               <td>{{ automovil.marca}} </td>
-                              <td>{{ automovil.id_clase}} </td>
+                              <td>{{ automovil.claseautomovil}} </td>
 
 
                                 <td>
                                     <button id="btn-abrir-popup" class="hero__cta" >Editar</button>
                                     <section class="modal">
+
                                       <div class="modal__container">
-                                          <img src="" class="modal__img">
-                                          <h2 class="modal__title">¡Bienvenido al sitio!</h2>
+                                        <h1 class="logo" style="margin-block-end: 15px;">Edición <span>Vehiculo </span></h1>
 
                                           <div class="contact-form animated bounceInUp">
                                             <div>
@@ -88,7 +87,7 @@
                                             <form  >
                                                 <p>
                                                     <label  >Numero de placa:</label>
-                                                    <input id="placa" type="text" name="num_placa"    [(ngModel)]="automovil.num_placa"    required>
+                                                    <input id="placa" type="text" name="num_placa" [(ngModel)]="automovil.num_placa"    required>
                                                 </p>
 
 
@@ -107,11 +106,11 @@
                                              </p>
                                               <p>
                                                <label>Año del vehiculo:</label>
-                                               <input type="text"  name="marca"   [(ngModel)]="automovil.anio">
+                                               <input type="text"  name="Año"   [(ngModel)]="automovil.anio">
                                            </p>
                                                 <div class="input-field">
                                                  <label>Tipo de vehiculo</label>
-                                                 <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;">
+                                                 <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                                                      <option selected style="color: aliceblue;">Selecciona el tipo</option>
                                                      <option value="Tipo A">Tipo A</option>
                                                      <option value="Tipo B">Tipo B</option>
@@ -120,7 +119,7 @@
                                              </div>
                                                 <div class="input-field">
                                                  <label>Estado</label>
-                                                 <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                                                 <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                                                      <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
                                                      <option value="Tipo A">Excelente</option>
                                                      <option value="Tipo B">Regular</option>
@@ -129,36 +128,50 @@
                                              </div>
                                              <div>
                                                  <label>Clase</label>
-                                                 <select style="background-color: black;color: white;  padding: 10PX;">
+                                                 <select style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                                                      <option selected style="color: aliceblue;">Selecciona la clase</option>
                                                      <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
                                                    </select>
                                              </div>
-                                             <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+
+                                             <div class="botonnncentro">
+                                             <button   style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px; ">
+                                                <strong>Subir Foto   ⇩</strong>
+                                            </button>
+                                            </div>
+                                            <div></div>
+
+
+
+                                                <button (click)="editarauto()"  >
+                                                    Guardar
+                                                </button>
+                                                         <button href="#" class="modal__close" style="margin-block-end: 200px;">
+                                                          Cancelar
+                                                      </button>
+
+
+
+
+
+
+
+                                             <button  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
                                                  <strong>Subir Foto   ⇩</strong>
                                              </button>
 
-                                             <button  (click)="registrarCarro()" >
+                                             <button   >
                                                Guardar
                                            </button>
                                                     <button>
                                                      Cancelar
                                                  </button>
 
+
                                             </form>
                                         </div>
 
 
-
-
-
-
-
-
-
-
-
-                                          <a href="#" class="modal__close">Cerrar Modal</a>
                                       </div>
                                   </section>
                                 </td>
