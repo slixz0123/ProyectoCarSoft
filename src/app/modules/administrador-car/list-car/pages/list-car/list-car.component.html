@@ -70,13 +70,13 @@
                               <td>{{ automovil.modelo}} </td>
                               <td>{{ automovil.anio}} </td>
                               <td>{{ automovil.marca}} </td>
-                              <td>{{ automovil.id_clase}} </td>
+                              <td>{{ automovil.claseautomovil}} </td>
 
 
                                 <td>
                                     <button id="btn-abrir-popup" class="hero__cta" >Editar</button>
                                     <section class="modal">
-           
+
                                       <div class="modal__container">
                                         <h1 class="logo" style="margin-block-end: 15px;">Edición <span>Vehiculo </span></h1>
 
@@ -134,27 +134,40 @@
                                                      <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
                                                    </select>
                                              </div>
+
                                              <div class="botonnncentro">
-                                             <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px; ">
+                                             <button   style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px; ">
                                                 <strong>Subir Foto   ⇩</strong>
                                             </button>
                                             </div>
                                             <div></div>
-                                             
 
-                                             
-                                                <button  (click)="registrarCarro()" >
+
+
+                                                <button   >
                                                     Guardar
                                                 </button>
                                                          <button href="#" class="modal__close" style="margin-block-end: 200px;">
                                                           Cancelar
                                                       </button>
-                                             
-
-                                             
 
 
-                                          
+
+
+
+
+
+                                             <button  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                                                 <strong>Subir Foto   ⇩</strong>
+                                             </button>
+
+                                             <button   >
+                                               Guardar
+                                           </button>
+                                                    <button>
+                                                     Cancelar
+                                                 </button>
+
 
                                             </form>
                                         </div>
