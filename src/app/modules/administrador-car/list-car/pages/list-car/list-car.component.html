@@ -70,7 +70,7 @@
                               <td>{{ automovil.modelo}} </td>
                               <td>{{ automovil.anio}} </td>
                               <td>{{ automovil.marca}} </td>
-                              <td>{{ automovil.id_clase}} </td>
+                              <td>{{ automovil.claseautomovil}} </td>
 
 
                                 <td>
@@ -134,6 +134,7 @@
                                                      <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
                                                    </select>
                                              </div>
+<<<<<<< Updated upstream
                                              <div class="botonnncentro">
                                              <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px; ">
                                                 <strong>Subir Foto   ⇩</strong>
@@ -155,6 +156,18 @@
 
 
                                           
+=======
+                                             <button  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                                                 <strong>Subir Foto   ⇩</strong>
+                                             </button>
+
+                                             <button   >
+                                               Guardar
+                                           </button>
+                                                    <button>
+                                                     Cancelar
+                                                 </button>
+>>>>>>> Stashed changes
 
                                             </form>
                                         </div>

@@ -84,13 +84,18 @@
                     </div>
                     <div>
                         <label>Clase</label>
+<<<<<<< Updated upstream
                         <select style="background-color: black;color: white;  padding: 10PX; width: 550px;border-radius: 16px;">
+=======
+                        <select name="claseautomovil"  [(ngModel)]="automovil.claseautomovil"   style="background-color: black;color: white;  padding: 10PX;" >
+>>>>>>> Stashed changes
                             <option selected style="color: aliceblue;">Selecciona la clase</option>
-                            <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option>
+                            <option *ngFor="let claseL of clase" [value]="claseL.id_clase">{{ claseL.nombre }}</option>
                           </select>
                     </div>
     
 
+<<<<<<< Updated upstream
              
                    
 
@@ -112,6 +117,17 @@
 
                     
 
+=======
+                    <button  (click)="  registrarUsuario()" >
+                      Guardar
+                  </button>
+                           <button>
+                            Cancelar
+                        </button>
+                        <pre>
+                          {{automovil |  json}}
+                       </pre>
+>>>>>>> Stashed changes
                    </form>
                </div>
             </div>
