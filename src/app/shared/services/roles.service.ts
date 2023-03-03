@@ -11,7 +11,7 @@ export class RolesService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Rol[]>(this.URL + 'listar')
+    return this.http.get<Rol[]>(this.URL + 'listarol')
   }
 
   getById(idRol: number) {
