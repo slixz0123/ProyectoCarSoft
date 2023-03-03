@@ -15,6 +15,6 @@ function calcularDias() {
         const dias = Math.round(diferenciaMs / (1000 * 60 * 60 * 24));
     
         // Mostrar el resultado en un elemento <p>
-        document.getElementById('resultado').textContent = `Hay ${dias} días entre las fechas.`;
+        document.getElementById('resultado').textContent = ` ${dias}`;
       }
     }

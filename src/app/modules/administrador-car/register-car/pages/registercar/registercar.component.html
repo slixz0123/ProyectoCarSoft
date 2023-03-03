@@ -28,7 +28,6 @@
                 <p style="text-align: center;">
 
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
-                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
               </div>
             </div>
              </div>
@@ -75,7 +74,7 @@
                     </div>
                        <div class="input-field">
                         <label>Estado</label>
-                        <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+                        <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px; margin-right: 20px;">
                             <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
                             <option value="Tipo A">Excelente</option>
                             <option value="Tipo B">Regular</option>
@@ -84,15 +83,17 @@
                     </div>
                     <div>
                         <label>Clase</label>
-                        <select name="claseautomovil"  [(ngModel)]="automovil.claseautomovil"   style="background-color: black;color: white;  padding: 10PX;" >
+                        <select name="claseautomovil"  [(ngModel)]="automovil.claseautomovil"   style="background-color: black;color: white;  padding: 10PX;border-radius: 16px;" >
                             <option selected style="color: aliceblue;">Selecciona la clase</option>
                             <option *ngFor="let claseL of clase" [value]="claseL.id_clase">{{ claseL.nombre }}</option>
                           </select>
                     </div>
+                    
 
                     <div class="input-group mb-3 mt-3">
-                      <label class="input-group-text" for="inputGroupFile01">Imagen</label>
-                      <input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
+                        
+
+                      <input  #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
                         class="form-control" id="inputGroupFile01" required />
                     </div>
                     <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
@@ -106,7 +107,7 @@
                             Cancelar
                         </button>
                         <pre>
-                          {{automovil |  json}}
+                          <!-- {{automovil |  json}} -->
                        </pre>
                    </form>
                </div>
