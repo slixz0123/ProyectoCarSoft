@@ -7,6 +7,7 @@ import { Seguro } from 'src/app/core/models/seguro';
 })
 export class SeguroService {
   private URL = "http://localhost:8080/seguro/";
+  private URL2 = "http://localhost:8080/seguro/crear";
 	constructor(private http: HttpClient) { }
 
 
@@ -19,7 +20,7 @@ export class SeguroService {
   }
 
   post(seguro: Seguro) {
-    return this.http.post<Seguro>(this.URL + '?', seguro);
+    return this.http.post<Seguro>(this.URL2 + '?', seguro);
   }
 
   update(seguro: Seguro, idseguro: any) {

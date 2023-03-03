@@ -22,9 +22,8 @@ export class RegisterClaseComponent {
     this.claseautomovil.id_clase = 0;
     this.claseautomovil.nombre = '';
     this.claseautomovil.precio_alquler_dia = 0;
-    this.seguro.cod_seguro= 0;
-    this.seguro.nom_seguro= '';
-    this.seguro.precio_seguro= '';
+
+
 
 
 
@@ -34,14 +33,14 @@ export class RegisterClaseComponent {
 
   }
   registrarClase() {
-    if (this.claseautomovil.nombre === '') {
+    if (this.claseautomovil.nombre === '' || isNaN(this.claseautomovil.precio_alquler_dia) || this.claseautomovil.precio_alquler_dia === null) {
       this.toastr.warning("Verifique que esten correctos los campos")
     } else {
       this.ClasesCarro.post(this.claseautomovil).subscribe(
         result => {
           console.log(result);
           this.claseautomovil = result;
-          localStorage.setItem('id_clase', String(this.claseautomovil.id_clase));
+         // localStorage.setItem('id_clase', String(this.claseautomovil.id_clase));
 
           this.toastr.success('seguro registrado correctamente');
         },

@@ -47,10 +47,11 @@
                            <label>Nombre:</label>
                            <input type="text"  name="nombre"    [(ngModel)]="claseautomovil.nombre">
                        </p>
-                      <p>
-                           <label> Precio de Alquiler:</label>
-                           <input type="text"  name="id_clase"    [(ngModel)]="claseautomovil.precio_alquler_dia">
-                       </p>
+
+                       <p>
+                        <label>Nombre:</label>
+                        <input type="text"  name="precio_alquler_dia"    [(ngModel)]="claseautomovil.precio_alquler_dia">
+                    </p>
 
 
 
@@ -78,13 +79,12 @@
 
                     <p>
                         <label>Nombre:</label>
-                        <input type="text"   name="nom_seguro"    [(ngModel)]="seguro.nom_seguro">
+                        <input type="text"   name="nom_seguro"  [(ngModel)]="seguro.nom_seguro">
                     </p>
                     <p>
-                        <label> Precio del seguro:</label>
-                        <input type="text" name="precio_seguro"    [(ngModel)]="seguro.precio_seguro">
-                    </p>
-
+                      <label>Nombre:</label>
+                      <input type="text"   name="precio_seguro"  [(ngModel)]="seguro.precio_seguro">
+                  </p>
 
 
                         <button  (click)="registrarSeguro()">
