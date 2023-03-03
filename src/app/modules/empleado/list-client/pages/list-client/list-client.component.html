@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Website with a contact Form 01</title>
-    <link rel="stylesheet" href="list-client.component.css">
+
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <!-- FONT AWESOME -->
@@ -23,10 +23,10 @@
             <h1 class="logo" style="margin-block-end: 15px;">Lista <span>Clientes </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
               <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección del listado de clientes registrados en el sistema</p>
-              
+
               <div>
                 <p style="text-align: center;">
-                  
+
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
               </div>
             </div>
@@ -46,6 +46,7 @@
                     </div>
                 </section>
                 <section class="table__body">
+   
                     <table>
                         <thead>
                             <tr>
@@ -57,42 +58,38 @@
                                 <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Direccion <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            
+
+
                             <tr>
-                                <td> :D </td>
-                                <td> 01</td>
-                                <td> ABC-124</td>
-                                <td> For</td>
-                                <td> 2022</td>
-                                <td> 4x4</td>
-                                <td> Clase A</td>
+                              <tr *ngFor="let persona of personas">
                                 
+                                <td>{{ persona.nombre}} </td>
+                                <td>{{ persona.apellido}} </td>
+                                <td>{{ persona.cedula}} </td>
+                                <td>{{ persona.edad}} </td>
+                                <td>{{ persona.direccion}} </td>
+                                <td *ngFor="let rol of roles">
+                                    <div *ngIf="rol.id_rol === persona.id_rol">
+                                      {{ rol.nombre_rol }}
+                                    </div>
+                                  </td>
                                 <td>
                                     <button id="btn-abrir-popup" class="card-button">Editar</button>
-                                    
+
                                 </td>
-                            </tr> 
-                            
-                            
+                                
+                            </tr>
+
+
                         </tbody>
                     </table>
-                </section> 
+                </section>
             </main>
 
         </div>
-
-        
-        
-               
-     
-
-
-
-
 
 </html>

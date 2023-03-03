@@ -9,11 +9,13 @@ import { Claseautomovil } from 'src/app/core/models/claseautomovil';
 export class ClasesCarroService {
   private URL = "http://localhost:8080/claseAutomovil/";
   private URL2 = "http://localhost:8080/claseAutomovil/buscar";
+  private URL = "http://localhost:8080/clasea/";
+
 	constructor(private http: HttpClient) { }
 
 
   getAll() {
-    return this.http.get<Claseautomovil[]>(this.URL + 'listar');
+    return this.http.get<Claseautomovil[]>(this.URL + 'listarclase');
   }
 
   getPorId(claseAutomovil: any) {
@@ -25,11 +27,11 @@ export class ClasesCarroService {
   }
 
   update(claseAutomovil: Claseautomovil, idClase: any) {
-    return this.http.put<Claseautomovil>(this.URL + `actualizar/${idClase}`, claseAutomovil);
+    return this.http.put<Claseautomovil>(this.URL + `updateclase/${idClase}`, claseAutomovil);
   }
 
   delete( idClase: any) {
-    return this.http.delete<boolean>(this.URL + `eliminar/${idClase}`);
+    return this.http.delete<boolean>(this.URL + `borrarclase/${idClase}`);
   }
 
 

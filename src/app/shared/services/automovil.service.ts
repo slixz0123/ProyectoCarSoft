@@ -16,8 +16,12 @@ export class AutomovilService {
 
   constructor(private http: HttpClient) { }
 
+  crearAutomovil(automovil: Automovil): Observable<Automovil> {
+    return this.http.post<Automovil>(`${this.URL}/crear`, automovil);
+  }
+
   getauto() {
-    return this.http.get<Automovil[]>(this.URL + '/listar');
+    return this.http.get<Automovil[]>(this.URL + '/listarauto');
   }
 
   getPorId(num_placa: string) {
@@ -34,11 +38,11 @@ export class AutomovilService {
   }
 
   updateAutos(auto: Automovil, num_placa: string) {
-    return this.http.put<Automovil>(this.URL + `actualizar/${num_placa}`, auto);
+    return this.http.put<Automovil>(this.URL + `updateauto/${num_placa}`, auto);
   }
 
   deleteAutos(num_placa: string) {
-    return this.http.delete<boolean>(this.URL + `eliminar/${num_placa}`);
+    return this.http.delete<boolean>(this.URL + `borrarAuto/${num_placa}`);
   }
 
   save(auto: Automovil) {
@@ -46,7 +50,7 @@ export class AutomovilService {
   }
 
   listarAutos(): Observable<any> {
-    return this.http.get(`${this.URL}/listar`);
+    return this.http.get(`${this.URL}/listarauto`);
   }
   verfplaca(username: string) {
     return this.http.get<boolean>(this.URL + `verplaca/${username}`)

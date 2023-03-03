@@ -290,10 +290,12 @@ text-align: left;
   margin: 20px;
 
 
+}.modal__container {
+  overflow-y: scroll;
+  height: 500px; /* ajusta la altura según tus necesidades */
 }
 
 .buttons-container {
   display: flex;
   justify-content: space-between;
 }
-

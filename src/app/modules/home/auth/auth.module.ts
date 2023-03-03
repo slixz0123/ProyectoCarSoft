@@ -21,7 +21,8 @@ LoginComponent
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
 
 
 

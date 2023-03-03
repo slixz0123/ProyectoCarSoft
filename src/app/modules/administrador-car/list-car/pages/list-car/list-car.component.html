@@ -75,7 +75,6 @@
                                 <td>
                                     <button id="btn-abrir-popup" class="hero__cta" >Editar</button>
                                     <section class="modal">
-
                                       <div class="modal__container">
                                         <h1 class="logo" style="margin-block-end: 15px;">Edición <span>Vehiculo </span></h1>
 
@@ -136,12 +135,12 @@
 
                                              <div class="botonnncentro">
                                              <button   style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px; ">
+                                             <div class="botonnncentro">
+                                             <button  (click)="registrarCarro()" style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px; ">
                                                 <strong>Subir Foto   ⇩</strong>
                                             </button>
                                             </div>
                                             <div></div>
-
-
 
                                                 <button (click)="editarauto()"  >
                                                     Guardar
@@ -165,8 +164,14 @@
                                            </button>
                                                     <button>
                                                      Cancelar
-                                                 </button>
-
+                                                 </button>                                        
+                                             
+                                                <button  (click)="registrarCarro()" >
+                                                    Guardar
+                                                </button>
+                                                         <button href="#" class="modal__close" style="margin-block-end: 200px;">
+                                                          Cancelar
+                                                      </button>
 
                                             </form>
                                         </div>
