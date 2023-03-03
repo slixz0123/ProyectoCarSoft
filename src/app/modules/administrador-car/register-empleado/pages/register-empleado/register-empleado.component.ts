@@ -7,6 +7,7 @@ import { Usuario } from 'src/app/core/models/usuario';
 import { PersonasService } from 'src/app/shared/services/personas.service';
 import { RolesService } from 'src/app/shared/services/roles.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-empleado',
@@ -150,6 +151,11 @@ export class RegisterEmpleadoComponent {
                         this.usuario = result;
                         localStorage.setItem('idUsuario', String(this.usuario.nombreUsuario));
                         this.mostrarNotificacion();
+                        Swal.fire(
+                          'Exito!',
+                          'Registro clase',
+                          'success'
+                        )
                         this.toastr.success('Usuario registrado correctamente', 'Bienvenido!')
 
                        //location.replace('/df');
