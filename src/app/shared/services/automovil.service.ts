@@ -21,7 +21,7 @@ export class AutomovilService {
   }
 
   getauto() {
-    return this.http.get<Automovil[]>(this.URL + '/listarauto');
+    return this.http.get<Automovil[]>(this.URL + '/listar');
   }
 
   getPorId(num_placa: string) {
@@ -50,7 +50,7 @@ export class AutomovilService {
   }
 
   listarAutos(): Observable<any> {
-    return this.http.get(`${this.URL}/listarauto`);
+    return this.http.get(`${this.URL}/listar`);
   }
   verfplaca(username: string) {
     return this.http.get<boolean>(this.URL + `verplaca/${username}`)

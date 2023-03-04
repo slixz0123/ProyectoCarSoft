@@ -155,15 +155,8 @@ export class RegisterUsrComponent {
                      const rolId = data.id_rol;
                      this.usuario.rol.id_rol = rolId; //asignacion de id
                      this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+
                      this.usuarioService.postUsuario(this.usuario).subscribe(
-                    this.rol.id_rol = data.id_rol;
-                    this.rol.nombre_rol = data.nombre_rol;
-                    this.usuario.id = this.rol.id_rol;
-
-
-                    this.usuario.rol = this.rol;
-
-                    this.usuarioService.postUsuario(this.usuario).subscribe(
                       result => {
                         console.log(result);
 

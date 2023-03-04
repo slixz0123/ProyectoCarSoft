@@ -6,7 +6,6 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,39 +16,25 @@ export class LoginComponent implements OnInit {
   tipoUser: any;
   user: any;
   carro: any;
-  errorStatus:boolean = false;
-  errorMsj:any = "";
 
   loginform = new FormGroup({
     nombreUsuario: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
   })
 
-
-
- usuarios: any[] = [
-   { usu: 'Visita' }, { usu: 'Cliente' }, { usu: 'Empleado de empresa' }, { usu: 'Administrador de empresa' }, { usu: 'Administrador' }, { usu: 'Super administrador' },
-];
+  usuarios: any[] = [
+    { usu: 'Visita' }, { usu: 'Cliente' }, { usu: 'Empleado de empresa' }, { usu: 'Administrador de empresa' }, { usu: 'Administrador' }, { usu: 'Super administrador' },
+  ];
 
   constructor(private toastr: ToastrService, private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
     localStorage.removeItem('id');
 
-
   }
-  // onLogin(form:any){
-  //   this.usuarioService.logimai(form).subscribe(data =>{
-  //       let dataResponse:ResponseI = data;
-  //       if(dataResponse.status == "ok"){
-  //         localStorage.setItem("token",dataResponse.result.token);
-  //         this.router.navigate(['dashboard']);
-  //       }else{
-  //          this.errorStatus = true;
-  //          this.errorMsj = dataResponse.result.error_msg;
-  //       }
-  //   })
-  // }
+  onlogin(form: any){
+    console.log(form)
+  }
 
 
   login(form: any) {
@@ -67,24 +52,42 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('idUsuario', String(this.usuario.id));
             localStorage.setItem('nameImagen', String(this.user));
 
-            location.replace('/client-carsoft')
+            location.replace('/admin-carsoft')
           } else {
             this.toastr.warning("Usuario inhabilitado, no puede ingresar!", "Advertencia!");
             this.usuario = new Usuario;
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+              footer: '<a href="">Why do I have this issue?</a>'
+            })
           }
 
         } else {
           this.toastr.error("USERNAME O PASSWORD INCORRECTOS!", "Login");
           this.usuario = new Usuario;
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>',
+            width: 600,
+            padding: '3em',
+            color: 'red',
+            background: '#fff url(assets/images/cochenegro.jpg)',
+            backdrop: `
+            rgba( 255, 255, 255, 0.25 )
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
 
         }
 
       }
     )
-  }
-
-  onSubmit() {
-    console.log(this.loginform.value);
   }
 
 }

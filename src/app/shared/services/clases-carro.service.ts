@@ -9,13 +9,13 @@ import { Claseautomovil } from 'src/app/core/models/claseautomovil';
 export class ClasesCarroService {
   private URL = "http://localhost:8080/claseAutomovil/";
   private URL2 = "http://localhost:8080/claseAutomovil/buscar";
-  private URL = "http://localhost:8080/clasea/";
+  private URL3 = "http://localhost:8080/clasea/";
 
 	constructor(private http: HttpClient) { }
 
 
   getAll() {
-    return this.http.get<Claseautomovil[]>(this.URL + 'listarclase');
+    return this.http.get<Claseautomovil[]>(this.URL + 'listar');
   }
 
   getPorId(claseAutomovil: any) {
