@@ -36,6 +36,13 @@ export class LoginComponent implements OnInit {
     console.log(form)
   }
 
+  goToRegister($event: any) :void{
+
+    this.router.navigate(['/register-usr'])
+    console.log($event)
+
+   }
+
 
   login(form: any) {
     this.usuarioService.login(this.usuario.nombreUsuario, this.usuario.password).subscribe(
