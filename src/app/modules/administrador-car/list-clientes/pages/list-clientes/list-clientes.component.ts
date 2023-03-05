@@ -13,13 +13,14 @@ export class ListClientesComponent implements OnInit {
   person?: Persona[];
   personas:Persona[]=[];
   roles:Rol[]=[];
+  idrol?:number;
   buscar='';
-  constructor( private persona: PersonasService, private rolService: RolesService){}
+  constructor( private personaser: PersonasService, private rolService: RolesService){}
   ngOnInit(): void {
-
-    this.persona.getPersonas().subscribe(
-      res => this.person = res
-    )
+    this.idrol=1;
+    this.personaser.getPersonas().subscribe((res: Persona[])=>{
+    this.person = res;
+  });
 
       this.listaRol();
   }

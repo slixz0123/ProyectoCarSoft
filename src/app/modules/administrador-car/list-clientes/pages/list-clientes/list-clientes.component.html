@@ -73,10 +73,8 @@
                                 <td>{{ persona.cedula}} </td>
                                 <td>{{ persona.edad}} </td>
                                 <td>{{ persona.direccion}} </td>
-                                <td *ngFor="let rol of roles">
-                                    <div *ngIf="rol.id_rol === persona.id_rol">
-                                      {{ rol.nombre_rol }}
-                                    </div>
+                                <td *ngIf="persona.id_rol==idrol">
+                                      Cliente
                                   </td>
                                 <td>
                                     <button id="btn-abrir-popup" class="card-button">Editar</button>
