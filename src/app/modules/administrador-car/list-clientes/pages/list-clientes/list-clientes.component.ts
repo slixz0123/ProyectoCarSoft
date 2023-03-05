@@ -12,33 +12,15 @@ import { Usuario } from 'src/app/core/models/usuario';
   styleUrls: ['./list-clientes.component.css']
 })
 export class ListClientesComponent implements OnInit {
-  persona?: Persona[];
-  user?:Usuario[];
-  personas:Persona[]=[];
-  roles:Rol[]=[];
-  usuarios:Usuario[]=[];
-  idrol?:number;
+
+  usuariosFiltrados: Usuario[]=[];
   buscar='';
   constructor( private personaser: PersonasService, private rolService: RolesService, private userService:UsuarioService){}
   ngOnInit(): void {
-    this.idrol=1;
-    this.personaser.getPersonas().subscribe((res: Persona[])=>{
-    this.personas = res;
-  });
-
-      this.listaRol();
-      this.listaUser();
+    this.userService.getUsuarios().subscribe(usuarios => {
+      this.usuariosFiltrados = usuarios.filter(usuario => usuario.rol.id_rol === 1)
+    });
   }
 
-  listaRol(){
-    this.rolService.getAll().subscribe(
-      listrol=>this.roles=listrol
-    );
-  }
 
-  listaUser(){
-    this.userService.getUsuarios().subscribe(
-      listus=>this.usuarios=listus
-    );
-  }
 }

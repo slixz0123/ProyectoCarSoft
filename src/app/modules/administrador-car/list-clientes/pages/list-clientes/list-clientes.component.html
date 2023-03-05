@@ -39,15 +39,13 @@
             <main class="table">
                 <section class="table__header">
                     <div class="input-group">
-                        <input type="search" placeholder="Buscar...">
+                        <input type="search" placeholder="Buscar..." [(ngModel)]="buscar">
                     </div>
                     <div>
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
                     </div>
                 </section>
-                <div>
-                <input class="posbus" type="text" placeholder="Buscar" [(ngModel)]="buscar">
-            </div>
+   
                 <section class="table__body">
                     <table>
                         <thead>
@@ -67,15 +65,13 @@
 
 
                             <tr>
-                              <tr *ngFor="let persona of personas; let usuario of user | search:buscar">
-                                <td>{{ persona.nombre}} </td>
-                                <td>{{ persona.apellido}} </td>
-                                <td>{{ persona.cedula}} </td>
-                                <td>{{ persona.edad}} </td>
-                                <td>{{ persona.direccion}} </td>
-                                <td *ngIf="  usuario.rol?.id_rol===idrol">
-                                      Cliente
-                                  </td>
+                              <tr *ngFor="let user of usuariosFiltrados | search:buscar">
+                                <td>{{ user.persona.nombre}} </td>
+                                <td>{{ user.persona.apellido}} </td>
+                                <td>{{ user.persona.cedula}} </td>
+                                <td>{{ user.persona.edad}} </td>
+                                <td>{{ user.persona.direccion}} </td>
+                                <td>Cliente</td>
                                 <td>
                                     <button id="btn-abrir-popup" class="card-button">Editar</button>
 

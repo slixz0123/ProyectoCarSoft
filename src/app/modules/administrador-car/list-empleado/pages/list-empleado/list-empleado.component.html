@@ -39,7 +39,7 @@
         <main class="table">
             <section class="table__header">
                 <div class="input-group">
-                    <input type="search" placeholder="Buscar...">
+                    <input type="search" placeholder="Buscar..." [(ngModel)]="buscar">
                 </div>
                 <div>
                     <button id="btn-abrir-popup" class="card-button">Crear</button>
@@ -53,9 +53,9 @@
                             <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Apellido  <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Cedula<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Telefono <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Direccion <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Rol <span class="icon-arrow">&UpArrow;</span></th>
 
 
                         </tr>
@@ -64,14 +64,14 @@
 
 
                         <tr>
-                          <tr *ngFor="let persona of person">
-                            <td>{{ persona.nombre}} </td>
-                            <td>{{ persona.apellido}} </td>
-                            <td>{{ persona.cedula}} </td>
-                            <td>{{ persona.edad}} </td>
-                            <td>{{ persona.direccion}} </td>
-
-
+                            <tr *ngFor="let user of usuariosFiltrados | buscare:buscar">
+                              <td>{{ user.persona.nombre}} </td>
+                              <td>{{ user.persona.apellido}} </td>
+                              <td>{{ user.persona.cedula}} </td>
+                              <td>{{ user.persona.edad}} </td>
+                              <td>{{ user.persona.direccion}} </td>
+                              <!-- <td>{{ user.rol.nombre_rol}} </td> -->
+                              <td>Empleado</td>
                             <td>
                                 <button id="btn-abrir-popup" class="card-button">Editar</button>
 

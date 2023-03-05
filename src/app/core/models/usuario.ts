@@ -9,7 +9,7 @@ export class Usuario {
 
 
 
-  //realcion
+  //relacion
   persona: Persona = new Persona; //id_persona herencia
   rol: Rol = new Rol; //id_rol herencia
 

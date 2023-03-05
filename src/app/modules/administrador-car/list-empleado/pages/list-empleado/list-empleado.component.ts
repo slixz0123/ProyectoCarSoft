@@ -13,26 +13,13 @@ import { Rol } from 'src/app/core/models/rol';
 export class ListEmpleadoComponent {
 
 
-  person?: Persona[];
-  usuario?: Usuario;
-  user?:Usuario[];
-  personas:Persona[]=[];
-  roles:Rol[]=[];
-  usuarios:Usuario[]=[];
-  idrol?:number;
+  usuariosFiltrados: Usuario[]=[];
   buscar='';
 
   constructor( private persona: PersonasService,private  usu:UsuarioService){}
   ngOnInit(): void {
-
-    this.usu.getPorusr(2).subscribe(
-      res => this.usuario = res
-    )
-    this.persona.listarPersona().subscribe(
-      res => this.persona = res
-    )
-
-
-
+    this.usu.getUsuarios().subscribe(usuarios => {
+      this.usuariosFiltrados = usuarios.filter(usuario => usuario.rol.id_rol === 2)
+    });
   }
 }
