@@ -3,6 +3,7 @@ import { Persona } from 'src/app/core/models/persona';
 import { Usuario } from 'src/app/core/models/usuario';
 import { PersonasService } from 'src/app/shared/services/personas.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { Rol } from 'src/app/core/models/rol';
 
 @Component({
   selector: 'app-list-empleado',
@@ -12,20 +13,13 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 export class ListEmpleadoComponent {
 
 
-  person?: Persona[];
-  usuario?: Usuario;
+  usuariosFiltrados: Usuario[]=[];
+  buscar='';
 
   constructor( private persona: PersonasService,private  usu:UsuarioService){}
   ngOnInit(): void {
-
-    this.usu.getPorusr(2).subscribe(
-      res => this.usuario = res
-    )
-    this.persona.listarPersona().subscribe(
-      res => this.persona = res
-    )
-
-
-
+    this.usu.getUsuarios().subscribe(usuarios => {
+      this.usuariosFiltrados = usuarios.filter(usuario => usuario.rol.id_rol === 2)
+    });
   }
 }

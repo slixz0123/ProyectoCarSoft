@@ -11,7 +11,7 @@ export class Automovil{
    marca?:string;
    modelo?:string;
    tipo_vehiculo?:string;
-   foto?: string;
+   foto: string = "";
 
 
 

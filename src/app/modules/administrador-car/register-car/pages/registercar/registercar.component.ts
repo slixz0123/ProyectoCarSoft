@@ -42,7 +42,7 @@ seleccionarId(event: any) {
 
   file: any = '';
 
-  image!: any;
+  foto!: any;
   values = [];
 
 
@@ -165,7 +165,7 @@ onSelectChange(eventTarget: EventTarget | null) {
   public imageSelected(event: any) {
     this.selectedFile = event.target.files[0];
 
-    this.image = this.selectedFile;
+    this.foto = this.selectedFile;
     const reader = new FileReader();
     reader.readAsDataURL(this.selectedFile);
     reader.onload = () => {

@@ -1,5 +1,7 @@
 import { Comprobante } from "./comprobante";
 import { Reserva } from "./reserva";
+import { Rol } from "./rol";
+import { Seguro } from "./seguro";
 import { Usuario } from "./usuario";
 
 
@@ -12,8 +14,8 @@ export class Alquiler{
 
 
   //relacion
-  usuario?: Usuario; // id de usuario
-  comprobante?: Comprobante; ///cod_comp codigo comprobante
-  reserva?: Reserva; // cod_resv codigo de reserva
+  usuario: Usuario = new Usuario(); // id de usuario
+  rol: Rol = new Rol(); ///cod_comp codigo comprobante
+  Seguro: Seguro= new Seguro(); // cod_resv codigo de reserva
 
 }
