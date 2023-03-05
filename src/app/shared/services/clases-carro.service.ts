@@ -8,7 +8,7 @@ import { Claseautomovil } from 'src/app/core/models/claseautomovil';
 })
 export class ClasesCarroService {
   private URL = "http://localhost:8080/claseAutomovil/";
-  private URL2 = "http://localhost:8080/claseAutomovil/buscar";
+  private URL2 = "http://localhost:8080/claseAutomovil/crear";
   private URL3 = "http://localhost:8080/clasea/";
 
 	constructor(private http: HttpClient) { }
@@ -23,7 +23,7 @@ export class ClasesCarroService {
   }
 
   post(claseAutomovil: Claseautomovil) {
-    return this.http.post<Claseautomovil>(this.URL + '?', claseAutomovil);
+    return this.http.post<Claseautomovil>(this.URL2 + '?', claseAutomovil);
   }
 
   update(claseAutomovil: Claseautomovil, idClase: any) {
