@@ -50,64 +50,37 @@
 
                   <div class="container">
 
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
-                      <div class="col"style="margin-block-end: 25px;">
-                        <div class="card shadow-sm" style="border-radius: 16px;">
-                          <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
-                           focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" >Imagen</text></svg> -->
-                           <img src="https://media.revistagq.com/photos/5ca5e602944b834654eb8fe6/master/pass/los_10_coches_mas_caros_del_mundo_131086603.jpg" alt="" style="border-radius: 16px;">
-
-                           <div class="row g-3" style="position: relative">
-                            <div *ngIf="!loaded" style="height: 80px; width: 50px ; margin: 15px;">
-
-                              <p><Strong>Datos:</Strong></p>
-                            </div>
-
                             <div id="tarjetascontenedor" class="row row-cols-auto row-cols-md-3 g-3">
-                                <div class="" *ngFor="let automovil of aut" [class.selected]="automovil.num_placa">
+                              <div class="" *ngFor="let aut of automoviles" [class.selected]="aut.num_placa ">
 
-                                        <div class="product-card">
-                                            <div class="logo-cart">
-                                                <img  src="https://www.pngall.com/wp-content/uploads/5/Infinity-Symbol-PNG-Free-Image.png" width="30px" height="30px">
-                                              <i class='bx bx-shopping-bag'></i>
-                                            </div>
-
-                                            <div class="shoe-details">
-                                                <img imageLoader [src]="'http://localhost:8080/image/images/' + automovil.foto" class="rounded mx-auto d-bloc card-img-top" alt="..."/>
-
-                                                <span class="shoe_name">{{ automovil.modelo }}</span>
-
-                                                <p class="card-text" >
-                                                    {{ automovil.color }}
-
-                                            </div>
-
-                                            <div id="btnsedittbl" class="button">
-                                              <div class="button-layer"></div>
-                            
-
-                                            </div>
+                                      <div class="product-card">
+                                          <div class="logo-cart">
+                                              <img  src="https://www.pngall.com/wp-content/uploads/5/Infinity-Symbol-PNG-Free-Image.png" width="30px" height="30px">
+                                            <i class='bx bx-shopping-bag'></i>
                                           </div>
 
+                                          <div class="shoe-details">
+                                              <img imageLoader [src]="'http://localhost:8080/image/images/' + aut.foto" class="rounded mx-auto d-bloc card-img-top" alt="..."/>
+
+                                              <span class="shoe_name">{{ aut.modelo }}</span>
+
+                                              <p class="card-text" >
+                                                  {{ aut.claseAutomovil.precio_alquiler_dia }}
+
+                                          </div>
+
+                                          <div id="btnsedittbl" class="button">
+                                            <div class="button-layer"></div>
+                                            <button  [routerLink]="['/empresa-adm/producto/detalle-producto', aut.num_placa]" class="btn btn-success" >Editar</button>
+                                          </div>
+                                        </div>
+
+                              </div>
+                          </div>
 
 
-                                </div>
 
 
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-                        </div>
-                      </div>
-                    </div>
                   </div>
                  <div>
                 </div>

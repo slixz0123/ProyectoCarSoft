@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { finalize } from 'rxjs';
 import { Automovil } from 'src/app/core/interfaces/automovil';
 import { AutomovilService } from 'src/app/shared/services/automovil.service';
+import { FotoService } from 'src/app/shared/services/foto.service';
+import { UsuarioService } from 'src/app/shared/services/usuario.service';
 
 @Component({
   selector: 'app-catalogo-home',
@@ -14,18 +16,18 @@ export class CatalogoHomeComponent {
 
   loading: boolean = true;
   arraySelected:any;
-  automovil = new Automovil();
+  aut = new Automovil();
   arrayExcel:any;
   loaded = false;
-  aut: Automovil[] = [];
+  automoviles: Automovil[] = [];
   selectedId = 0;
   showMe!: boolean;
 
-  constructor(private automovilservice: AutomovilService){
+  constructor(private automovilservice: AutomovilService, private fotoService: FotoService,private usuariosService: UsuarioService){
 
   }
   ngOnInit(): void {
-    this.obtenerProdctos();
+    this.obtenercaros();
     // // nuevo
     // this.productos.forEach(producto => {
     //   console.log("OLA JAJA")
@@ -35,13 +37,18 @@ export class CatalogoHomeComponent {
 
 
   }
-  obtenerProdctos() {
+
+
+  obtenercaros() {
     this.automovilservice
     .listarAutos() .subscribe({
         next: (aut) =>
-          this.automovil = aut,
+
+          this.automoviles = aut,
+
         error: (err) => {
           console.log(err.message);
+          console.log("hola")
         },
       });
   }

@@ -12,7 +12,7 @@ export interface Alquiler{
 
 
   //relacion
-  usuario?: Usuario; // id de usuario
+  usuario: Usuario; // id de usuario
   comprobante?: Comprobante; ///cod_comp codigo comprobante
   reserva?: Reserva; // cod_resv codigo de reserva
 
