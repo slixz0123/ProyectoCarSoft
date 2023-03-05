@@ -67,13 +67,13 @@
 
 
                             <tr>
-                              <tr *ngFor="let persona of person | search:buscar">
+                              <tr *ngFor="let persona of personas; let usuario of user | search:buscar">
                                 <td>{{ persona.nombre}} </td>
                                 <td>{{ persona.apellido}} </td>
                                 <td>{{ persona.cedula}} </td>
                                 <td>{{ persona.edad}} </td>
                                 <td>{{ persona.direccion}} </td>
-                                <td *ngIf="persona.id_rol==idrol">
+                                <td *ngIf="usuario.id_persona===persona.id_persona && usuario.rol?.id_rol===idrol">
                                       Cliente
                                   </td>
                                 <td>

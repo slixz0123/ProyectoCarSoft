@@ -73,7 +73,7 @@
                                 <td>{{ persona.edad}} </td>
                                 <td>{{ persona.direccion}} </td>
                                 <td *ngFor="let rol of roles">
-                                    <div *ngIf="rol.id_rol === persona.id_rol">
+                                    <div *ngIf="rol.id_rol === persona.rol?.id_rol">
                                       {{ rol.nombre_rol }}
                                     </div>
                                   </td>

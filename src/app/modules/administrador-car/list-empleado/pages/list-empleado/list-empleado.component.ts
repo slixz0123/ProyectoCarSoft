@@ -3,6 +3,7 @@ import { Persona } from 'src/app/core/models/persona';
 import { Usuario } from 'src/app/core/models/usuario';
 import { PersonasService } from 'src/app/shared/services/personas.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { Rol } from 'src/app/core/models/rol';
 
 @Component({
   selector: 'app-list-empleado',
@@ -14,6 +15,12 @@ export class ListEmpleadoComponent {
 
   person?: Persona[];
   usuario?: Usuario;
+  user?:Usuario[];
+  personas:Persona[]=[];
+  roles:Rol[]=[];
+  usuarios:Usuario[]=[];
+  idrol?:number;
+  buscar='';
 
   constructor( private persona: PersonasService,private  usu:UsuarioService){}
   ngOnInit(): void {
