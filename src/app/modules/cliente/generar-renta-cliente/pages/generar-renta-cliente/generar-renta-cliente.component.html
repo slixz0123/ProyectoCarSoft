@@ -41,15 +41,6 @@
                    </div>
 
                    <form action="">
-                    <p>
-                        <label>Nombre:</label>
-                        <input type="text" name="fullname">
-                    </p>
-                    <p>
-                        <label>Apellido</label>
-                        <input type="text" name="fullname">
-                    </p>
-                       
                        <p>
                            <label>Código de Reservación:</label>
                            <input type="text" name="fullname">
@@ -74,22 +65,22 @@
                         <input type="date" id="fecha-final" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
                         
                     </p>
-
-                    <div style="color: white;">
-                        <label>Número de dias:</label>
-                        <p id="resultado" style="color: white; "></p>
-
-                    </div>
-
-                        
-                        
-                    <div>
+                        <div style="color: white;">
+                            <label>Número de dias:</label>
+                            <p id="resultado" style="color: white; "></p>
+    
+                        </div>
+                              
                         <p>
-                            <label >El total a pagar es:</label>
-                            <label  style="font-size: 80PX; color: red;">$500</label>
-                            <!-- <button style="background-color: white; color: black;">Subir Archivo. </button> -->
+                            <label>Tipo de Seguro</label>
+                            <select name="tipo_vahiculo"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;">
+                                <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                <option value="Tipo A">Tipo A</option>
+                                <option value="Tipo B">Tipo B</option>
+                                <option value="Tipo C">Tipo C</option>
+                            </select>
                         </p>
-                    </div>
+                    
 
                     <button style="background-color: white; color: black;"> <strong> Calcular Precio </strong> </button>
                     
