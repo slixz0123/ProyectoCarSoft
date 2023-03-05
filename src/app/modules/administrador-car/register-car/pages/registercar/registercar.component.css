@@ -299,3 +299,24 @@ text-align: left;
   display: flex;
   justify-content: space-between;
 }
+
+
+
+#x2{
+  background-color: rgb(218, 211, 211);
+  border-bottom-color: rgb(2, 2, 2);
+  border-color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 25px;
+
+}
+
+#x2:hover,
+#x2:focus {
+  color:black ;
+  border-bottom-color: rgb(8, 8, 8);
+  border-color: black;
+  background-color:  rgb(243, 13, 13);
+
+}

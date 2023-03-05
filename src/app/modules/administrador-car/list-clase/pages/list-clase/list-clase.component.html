@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>  
+
+
 </head>
-
-
-
-
-
+<body>
     <div class="fondobanner">
         <div style="padding: 50px; ;">
             <h1 class="logo" style="margin-block-end: 15px;">Lista Clase <span>Automoviles </span></h1>
@@ -65,7 +66,18 @@
                                
                                 
                                 <td>
-                                    <button id="btn-abrir-popup" class="card-button">Editar</button>
+                                    <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Editar</button>
+                                    
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> 01</td>
+                                <td> Clase A</td>
+                                <td> 50</td>
+                               
+                                
+                                <td>
+                                    <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Editar</button>
                                     
                                 </td>
                             </tr> 
@@ -77,6 +89,60 @@
             </main>
 
         </div>
+                <div class="modal fade" id="Employee" style="color: white;">  
+                    <div class="modal-dialog">  
+                        <div class="modal-content" style="background-color: rgba(0, 0, 0, .1);">  
+                            <form id="needs-validation" novalidate>  
+                                <div class="modal-header">  
+                                    <h5 class="modal-title text-uppercase text-center"><strong>Editar Clase</strong>  </h5>  
+                                </div>  
+                                <div class="modal-body">  
+          
+                                    <div class="form-row">  
+                                        <div class="col-sm-6 col-md-6 col-xs-12">  
+                                            <label for="firstName">Id de la Clase</label>  
+                                            <input id="firstName" type="text" placeholder="Ingrese el id clase..." class="form-control" aria-describedby="inputGroupPrepend" required  />  
+                                            <div class="invalid-feedback">  
+                                                Ingrese el id clase... 
+                                            </div>  
+                                        </div>  
+                 
+                                    </div>  
+                                    <div class="form-row">  
+                                        <div class="col-sm-6 col-md-6 col-xs-12">  
+                                            <label for="firstName">Id de la Clase</label>  
+                                            <input id="firstName" type="text" placeholder="Ingrese el id clase..." class="form-control" aria-describedby="inputGroupPrepend" required  />  
+                                            <div class="invalid-feedback">  
+                                                Ingrese el id clase... 
+                                            </div>  
+                                        </div>  
+                 
+                                    </div>  
+                                    <div class="form-row">  
+                                        <div class="col-sm-6 col-md-6 col-xs-12">  
+                                            <label for="firstName">Id de la Clase</label>  
+                                            <input id="firstName" type="text" placeholder="Ingrese el id clase..." class="form-control" aria-describedby="inputGroupPrepend" required  />  
+                                            <div class="invalid-feedback">  
+                                                Ingrese el id clase... 
+                                            </div>  
+                                        </div>  
+                 
+                                    </div>  
+                            
+                                    
+                                </div>  
+                                <div class="modal-footer">  
+                                    <button style="color: black;border-bottom: 16px;" id="btnnes" type="button" class="btn btn-danger rounded-0" data-dismiss="modal">Cancelar</button>  
+                                    <button style="color: black; "id="btnnes" type="submit" class="btn btn-primary rounded-0">Editar</button>  
+                                </div>  
+                            </form>  
+                        </div>  
+                    </div>  
+                </div>  
+ 
+        </body>
+
+        
 
         
         

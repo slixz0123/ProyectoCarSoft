@@ -525,3 +525,63 @@
     margin-left: 5px; /* Espacio entre el texto y el icono */
   }
   
+  #Employee{
+    background-color: rgba(0, 0, 0, .1);
+
+  }
+
+  #needs-validation{
+    border-radius: 15px;
+    background: rgba(23, 21, 21, 0.56);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(23, 21, 21, 0.3);
+    color: white;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius: 25px;
+    text-align: left;
+
+  }
+
+  #firstName{
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: rgba(23, 21, 21, 0.56);
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #d63031;
+    border-radius: 15px;
+    margin-block-end: 25px;
+  }
+
+
+  #x2{
+    background-color: rgb(218, 211, 211);
+    border-bottom-color: rgb(2, 2, 2);
+    border-color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+  
+  }
+  
+  #x2:hover,
+  #x2:focus {
+    color:black ;
+    border-bottom-color: rgb(8, 8, 8);
+    border-color: black;
+    background-color:  solid #d63031;
+  
+  }
+  
+
+
+
+  
+  
