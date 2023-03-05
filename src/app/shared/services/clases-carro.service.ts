@@ -19,7 +19,7 @@ export class ClasesCarroService {
   }
 
   getPorId(claseAutomovil: any) {
-    return this.http.get<Claseautomovil>(this.URL2 + claseAutomovil);
+    return this.http.get<Claseautomovil>(this.URL + claseAutomovil);
   }
 
   post(claseAutomovil: Claseautomovil) {

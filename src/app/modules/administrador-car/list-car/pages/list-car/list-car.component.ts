@@ -36,7 +36,7 @@ export class ListCarComponent {
     this.automoviles.modelo = '';
     this.automoviles.tipo_vehiculo = '';
     this.automoviles.foto = '';
-    this.automoviles.claseautomovil;
+    this.automoviles.claseAutomovil;
 
     localStorage.removeItem('num_placa');
     this.mostrarNotificacion();

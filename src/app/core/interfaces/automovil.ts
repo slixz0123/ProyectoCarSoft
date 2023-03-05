@@ -16,7 +16,8 @@ export class Automovil{
 
 
    //relacion
-   claseautomovil: Claseautomovil = new Claseautomovil; //id_clase
+
+   claseAutomovil: Claseautomovil = new Claseautomovil; //id_clase
    seguro?:Seguro [] | undefined; //cod_seguro
 
 
