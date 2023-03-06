@@ -29,11 +29,8 @@ export class LoginComponent implements OnInit {
   constructor(private toastr: ToastrService, private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
-    localStorage.removeItem('id');
+   // localStorage.removeItem('id');
 
-  }
-  onlogin(form: any){
-    console.log(form)
   }
 
   goToRegister($event: any) :void{
@@ -56,10 +53,10 @@ export class LoginComponent implements OnInit {
 
 
             this.toastr.success("Bienvenido " + data.nombreUsuario, "Login");
-            localStorage.setItem('idUsuario', String(this.usuario.id));
+            localStorage.setItem('id', String(this.usuario.id));
             localStorage.setItem('nameImagen', String(this.user));
 
-            location.replace('/admin-carsoft')
+           location.replace('/admin-carsoft')
           } else {
             this.toastr.warning("Usuario inhabilitado, no puede ingresar!", "Advertencia!");
             this.usuario = new Usuario;

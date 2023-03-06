@@ -53,22 +53,22 @@
                        </p>
                        <p>
                         <label> Email:</label>
-                        <input type="text" placeholder="Ingrese su email" required class={{verfCorreo}}
+                        <input type="email" placeholder="Ingrese su email" required class={{verfCorreo}}
                         [(ngModel)]="persona.correo" (ngModelChange)="validarCorreo()"  name="correp" pInputText>
                        </p>
                        <p>
                            <label>Cédula:</label>
-                           <input type="text" onkeypress="numeros()" placeholder="Ingrese su Cédula" required  class={{verfcedula}}
+                           <input type="text" onkeypress="numeros()" maxlength="10"  placeholder="Ingrese su Cédula" required  class={{verfcedula}}
                            [(ngModel)]="persona.cedula"  name="cédula" pInputText>
                        </p>
                        <p>
                            <label>Teléfono :</label>
-                           <input type="Text" onkeypress="numeros()" placeholder="Ingrese su número Telefónico" required  class={{verftelefono}}
+                           <input type="Text" onkeypress="numeros()"  maxlength="11" placeholder="Ingrese su número Telefónico" required  class={{verftelefono}}
                            [(ngModel)]="persona.telefono"  name="teléfono" pInputText>
                        </p>
 
                        <p>
-                        <label>Genero:</label>
+                        <label>Género:</label>
                           <select required  style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
                           <option disabled selected>Seleccione</option>
                           <option>Masculino</option>
@@ -78,7 +78,7 @@
                     </p>
                        <p>
                            <label>Edad:</label>
-                           <input type="text" onkeypress="numeros()" placeholder="Ingrese su edad" required  class={{verfedad}}
+                           <input type="number"   maxlength="2" min="18" max="99" placeholder="Ingrese su edad" required  class={{verfedad}}
                            [(ngModel)]="persona.edad"  name="edad" pInputText>
                        </p>
                        <p>
@@ -88,7 +88,7 @@
                        </p>
                        <p>
                         <label> Contraseña:</label>
-                        <input type="password" placeholder="Ingrese su contraseña" required class={{verfPassword}}
+                        <input type="password" minlength="8" placeholder="Ingrese su contraseña" required class={{verfPassword}}
                         [(ngModel)]="usuario.password" name="password" >
                     </p>
                        <p>
