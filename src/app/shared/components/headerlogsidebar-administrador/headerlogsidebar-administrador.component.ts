@@ -140,10 +140,10 @@ this.obtenerUsuario();
         this.isLogin = true;
 
         this.nombreUsuario = data.persona?.nombre + ' ' + data.persona?.apellido;
-        this.nombreRol = data.rol?.nombre_rol
+        this.nombreRol = data.rol?.nombre_Rol
         console.log("Found the user => " + this.nombreFoto);
 
-        switch (data.rol?.nombre_rol) {
+        switch (data.rol?.nombre_Rol) {
 
           case 'CLIENTE':
 
@@ -171,6 +171,11 @@ this.obtenerUsuario();
 }
   verificarCargosClientAdmin(id: any) {
     throw new Error('Method not implemented.');
+  }
+  cerrarSesion() {
+
+    localStorage.removeItem('id');
+    location.replace('/login-usr');
   }
 
 

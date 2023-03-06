@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   tipoUser: any;
   user: any;
   carro: any;
-
+ iRol: String = "";
   loginform = new FormGroup({
     nombreUsuario: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
@@ -33,14 +33,31 @@ export class LoginComponent implements OnInit {
 
   }
 
-  goToRegister($event: any) :void{
+  goToRegister($event : any) :void{
 
     this.router.navigate(['/register-usr'])
-    console.log($event)
+
 
    }
 
+   goToadmin() :void{
 
+    this.router.navigate(['/admin-carsoft'])
+
+
+   }
+   goTocliente() :void{
+
+    this.router.navigate(['/client-carsoft'])
+
+
+   }
+   goToempleado() :void{
+
+    this.router.navigate(['/employee-carsoft'])
+
+
+   }
   login(form: any) {
     this.usuarioService.login(this.usuario.nombreUsuario, this.usuario.password).subscribe(
       data => {
@@ -56,7 +73,19 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('id', String(this.usuario.id));
             localStorage.setItem('nameImagen', String(this.user));
 
-           location.replace('/admin-carsoft')
+              this.iRol = data.rol.nombre_Rol;
+
+              if(this.iRol == "ADMINISTRADOR"){
+               this.goToadmin()
+              }
+              else if(this.iRol == "CLIENTE"){
+                this.goTocliente()
+              }
+              else if(this.iRol == "EMPLEADO"){
+               this.goToempleado()
+              }
+
+        //   location.replace('/admin-carsoft')
           } else {
             this.toastr.warning("Usuario inhabilitado, no puede ingresar!", "Advertencia!");
             this.usuario = new Usuario;
