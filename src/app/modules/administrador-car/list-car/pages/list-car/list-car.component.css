@@ -540,11 +540,11 @@ thead th.active,tbody td.active {
   border: 1px solid rgba(23, 21, 21, 0.3);
   color: white;
   color: #fff;
-  font-family: 'Quicksand', sans-serif;
   background-attachment: fixed;
   background-size: cover;
   border-radius: 25px;
   text-align: left;
+
 
 }
 
@@ -558,6 +558,11 @@ thead th.active,tbody td.active {
   border-bottom: 1px solid #d63031;
   border-radius: 15px;
   margin-block-end: 25px;
+}
+
+
+#modFade{
+  padding-top: 150px;
 }
 
 
