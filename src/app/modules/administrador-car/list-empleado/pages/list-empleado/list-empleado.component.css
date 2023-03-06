@@ -524,3 +524,46 @@ thead th.active,tbody td.active {
 .card-button .fa {
   margin-left: 5px; /* Espacio entre el texto y el icono */
 }
+
+#Employee{
+  background-color: rgba(0, 0, 0, .1);
+
+}
+
+#needs-validation{
+  border-radius: 15px;
+  background: rgba(23, 21, 21, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(23, 21, 21, 0.3);
+  color: white;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 25px;
+  text-align: left;
+
+}
+
+#firstName{
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background: rgba(23, 21, 21, 0.56);
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid #d63031;
+  border-radius: 15px;
+  margin-block-end: 25px;
+}
+
+
+
+
+
+
+
+
