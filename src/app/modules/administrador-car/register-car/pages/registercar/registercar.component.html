@@ -89,6 +89,26 @@
                     <div>
                         <label>Imagen</label>
                     <div class="input-group mb-3 mt-3">
+                        
+
+<input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
+  class="form-control" id="inputGroupFile01" required />
+</div>
+
+</div>
+
+
+
+<!-- <button  (click)="registrarclase()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+  <strong>Subir Foto   ⇩</strong>
+</button> -->
+<div>
+<label class="input-group-text" for="inputGroupFile01">Imagen</label>
+<input [(ngModel)]="automovil.foto"  #foto formControlName="foto" (change)="imageSelected($event)" name="foto" type="file"
+  class="form-control" id="inputGroupFile01" required />
+</div>
+
+
 
                     <button  (click)="  registrarclase()" >
                       Guardar
