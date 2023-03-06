@@ -545,6 +545,9 @@ thead th.active,tbody td.active {
   background-size: cover;
   border-radius: 25px;
   text-align: left;
+  width: 100%;
+  height: 100%;
+
 
 }
 
@@ -677,7 +680,6 @@ text-align: left;
 
 #dialogo{
 
-  padding: 5000px;
 
 }
 
