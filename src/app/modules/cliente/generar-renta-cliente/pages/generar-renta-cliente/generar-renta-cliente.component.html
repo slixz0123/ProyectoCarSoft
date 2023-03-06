@@ -43,20 +43,20 @@
                    <form action="">
                        <p>
                            <label>Código de Reservación:</label>
-                           <input type="text" name="fullname">
+                           <input type="text" placeholder="Ingrese el Código de Reservación"  name="fullname">
                        </p>
                        <p>
                            <label>Cédula:</label>
-                           <input type="text" name="fullname">
+                           <input type="text" placeholder="Ingrese la Cédula"   name="fullname">
                        </p>
                        <p>
-                        <label>Código Com:</label>
-                        <input type="text" name="fullname">
+                        <label>Código Comprobante:</label>
+                        <input type="text"  placeholder="Ingrese el Código Comprobante"  name="fullname">
                     </p>
                        
                     <p>
                         <label for="fecha-inicial">Fecha:</label>
-                        <input type="date" id="fecha-inicial" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
+                        <input type="date" placeholder="Ingrese el Nº de Placa"   id="fecha-inicial" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
                         
                     </p>
                     
@@ -67,7 +67,7 @@
                     </p>
                         <div style="color: white;">
                             <label>Número de dias:</label>
-                            <p id="resultado" style="color: white; "></p>
+                            <p  id="resultado" style="color: white;font-size: 25px; "></p>
     
                         </div>
                               
@@ -82,8 +82,9 @@
                         </p>
                     
 
-                    <button style="background-color: white; color: black;"> <strong> Calcular Precio </strong> </button>
+                    <button style="background-color: white; color: black; "> <strong> Calcular Precio </strong> </button>
                     
+                  
                        <button>Reserva </button>
                        <button>Cancelar </button>
 
