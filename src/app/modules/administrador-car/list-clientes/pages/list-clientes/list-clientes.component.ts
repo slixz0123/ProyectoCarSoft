@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from 'src/app/core/models/persona';
 import { PersonasService } from 'src/app/shared/services/personas.service';
-import { Rol } from 'src/app/core/models/rol';
 import { RolesService } from 'src/app/shared/services/roles.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
 import { Usuario } from 'src/app/core/models/usuario';

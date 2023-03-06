@@ -39,7 +39,7 @@
             <main class="table">
                 <section class="table__header">
                     <div class="input-group">
-                        <input type="search" placeholder="Buscar...">
+                        <input type="search" placeholder="Buscar..." [(ngModel)]="buscar">
                     </div>
                     <div>
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
@@ -50,33 +50,29 @@
                     <table>
                         <thead>
                             <tr>
-                                <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Apellido  <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Cedula<span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Telefono <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Direccion <span class="icon-arrow">&UpArrow;</span></th>
-                                <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-
+                                <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Acción <span class="icon-arrow">&UpArrow;</span></th>
                             </tr>
                         </thead>
                         <tbody>
 
 
                             <tr>
-                              <tr *ngFor="let persona of personas">
+                              <tr *ngFor="let user of usuariosFiltrados | buscar:buscar">
                                 
-                                <td>{{ persona.nombre}} </td>
-                                <td>{{ persona.apellido}} </td>
-                                <td>{{ persona.cedula}} </td>
-                                <td>{{ persona.edad}} </td>
-                                <td>{{ persona.direccion}} </td>
-                                <td *ngFor="let rol of roles">
-                                    <div *ngIf="rol.id_rol === persona.rol?.id_rol">
-                                      {{ rol.nombre_rol }}
-                                    </div>
-                                  </td>
+                                <td>{{ user.persona.nombre}} </td>
+                                <td>{{ user.persona.apellido}} </td>
+                                <td>{{ user.persona.cedula}} </td>
+                                <td>{{ user.persona.telefono}} </td>
+                                <td>{{ user.persona.edad}} </td>
+                                <td> {{ user.persona.direccion}}</td>
+                                <td> {{ user.persona.correo}}</td>
                                 <td>
                                     <button id="btn-abrir-popup" class="card-button">Editar</button>
 
