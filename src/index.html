@@ -45,6 +45,20 @@
 
 </head>
 <body>
+  <!-- Validaciones -->
+  <script>
+    function letras() {
+    if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+    event.returnValue = false;
+    }
+    </script>
+    
+    <script>
+      function numeros() {
+      if (event.keyCode < 45 || event.keyCode > 57)
+      event.returnValue = false;
+      }
+      </script>
   <app-root></app-root>
 </body>
 </html>

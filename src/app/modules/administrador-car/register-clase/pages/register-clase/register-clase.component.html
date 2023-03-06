@@ -49,7 +49,7 @@
 
                        <p>
                         <label>Precio Clase:</label>
-                        <input type="text" placeholder="Ingrese el Precio de la Clase"  name="precio_alquiler_dia"    [(ngModel)]="claseautomovil.precio_alquiler_dia">
+                        <input type="text" onkeypress="numeros()" placeholder="Ingrese el Precio de la Clase"  name="precio_alquiler_dia"    [(ngModel)]="claseautomovil.precio_alquiler_dia">
                     </p>
 
 
@@ -80,7 +80,7 @@
                     </p>
                     <p>
                       <label>Precio Seguro:</label>
-                      <input type="text"   placeholder="Ingrese el Precio del Seguro"   name="precio_seguro"  [(ngModel)]="seguro.precio_seguro">
+                      <input type="text" onkeypress="numeros()" placeholder="Ingrese el Precio del Seguro"   name="precio_seguro"  [(ngModel)]="seguro.precio_seguro">
                   </p>
 
 

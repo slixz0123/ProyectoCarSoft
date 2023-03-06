@@ -59,7 +59,7 @@
                     </p>
                      <p>
                       <label>Año del vehiculo:</label>
-                      <input type="text" placeholder="Ingrese el Año del Vehiculo"  name="anio"   [(ngModel)]="automovil.anio">
+                      <input onkeypress="numeros()" type="text" placeholder="Ingrese el Año del Vehiculo"  name="anio"   [(ngModel)]="automovil.anio">
                   </p>
                        <div class="input-field">
                         <label>Tipo de vehiculo</label>

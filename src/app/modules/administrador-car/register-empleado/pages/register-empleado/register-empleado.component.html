@@ -58,12 +58,12 @@
                        </p>
                        <p>
                            <label>Cédula:</label>
-                           <input type="text" placeholder="Ingrese su Cédula" required  class={{verfcedula}}
+                           <input type="text" onkeypress="numeros()" placeholder="Ingrese su Cédula" required  class={{verfcedula}}
                            [(ngModel)]="persona.cedula"  name="cédula" pInputText>
                        </p>
                        <p>
                            <label>Teléfono :</label>
-                           <input type="Text" placeholder="Ingrese su número Telefónico" required  class={{verftelefono}}
+                           <input type="Text" onkeypress="numeros()" placeholder="Ingrese su número Telefónico" required  class={{verftelefono}}
                            [(ngModel)]="persona.telefono"  name="teléfono" pInputText>
                        </p>
 
@@ -78,7 +78,7 @@
                     </p>
                        <p>
                            <label>Edad:</label>
-                           <input type="text" placeholder="Ingrese su edad" required  class={{verfedad}}
+                           <input type="text" onkeypress="numeros()" placeholder="Ingrese su edad" required  class={{verfedad}}
                            [(ngModel)]="persona.edad"  name="edad" pInputText>
                        </p>
                        <p>
