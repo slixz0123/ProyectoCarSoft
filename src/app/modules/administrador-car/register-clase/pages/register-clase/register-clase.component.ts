@@ -33,6 +33,7 @@ export class RegisterClaseComponent {
 
 
   }
+
   registrarClase() {
     if (this.claseautomovil.nombre === '') {
       this.toastr.warning("Verifique que esten correctos los campos")

@@ -35,6 +35,7 @@ export class GenerarRentaClienteComponent {
     {
 
       car.carga2(["Calculardias"]);
+      car.carga3(["Calculardias"]);
 
     }
   }
@@ -91,7 +92,7 @@ export class GenerarRentaClienteComponent {
     selectedId: Claseautomovil = new Claseautomovil();
     auto!: Auto;
     clase : Claseautomovil[]=[]
-  seleccionarId(event: any) {
+    seleccionarId(event: any) {
     this.selectedId = event.target?.value ?? 0;
   }
     automovil: Automovil = new Automovil;
