@@ -44,7 +44,7 @@
             <li class="pc-item">
               <a id="cliente"  (click)="goToGenerarRent($event)" class="pc-link "><i data-feather="edit-2"></i><span class="pc-mtext">Generar Alquiler</span></a>
               <a id="cliente"  (click)="goToSoli($event)" class="pc-link "><i data-feather="edit"></i><span class="pc-mtext">Solicitud Renta</span></a>
-             
+
              </li>
             <!-- 3 -->
 
@@ -144,8 +144,8 @@
 						<a class="pc-head-link dropdown-toggle arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
 							<img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
 							<span>
-								<span class="user-name">Joseph William</span>
-								<span class="user-desc">Administrador</span>
+                <span class="user-name">{{nombreUsuario}}</span>
+								<span class="user-desc">{{nombreRol}}</span>
 							</span>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right pc-h-dropdown">
