@@ -35,7 +35,6 @@ export class GenerarRentaClienteComponent {
     {
 
       car.carga2(["Calculardias"]);
-      car.carga3(["Calculardias"]);
 
     }
   }
