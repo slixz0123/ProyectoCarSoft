@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { Persona } from 'src/app/core/models/persona';
 import { Usuario } from 'src/app/core/models/usuario';
 import { PersonasService } from 'src/app/shared/services/personas.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
-import { Rol } from 'src/app/core/models/rol';
 
 @Component({
   selector: 'app-list-empleado',
