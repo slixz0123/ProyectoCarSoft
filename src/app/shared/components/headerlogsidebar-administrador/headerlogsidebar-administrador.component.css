@@ -1011,10 +1011,10 @@ border-bottom-right-radius: 25px;
   font-size: 20px;
 }
 #bienvenida{
-  font-size: 20px;
+  font-size: 15px;
 }
 #auto{
-  font-size: 20px;
+  font-size: 15px;
 }
 
 #auto,#bienvenida,#cliente {
@@ -1022,9 +1022,8 @@ border-bottom-right-radius: 25px;
   border-bottom-color: rgb(2, 2, 2);
   border-color: black;
 
-  font-size: 20px;
+  font-size: 15px;
 
- margin: 10px;
 
 
 
@@ -1035,10 +1034,9 @@ border-bottom-right-radius: 25px;
 #auto:focus {
   color: rgb(255, 255, 255);
   border-bottom-color: rgb(8, 8, 8);
-
   border-color: black;
-  background-color: rgb(250, 3, 3);
-  border-color: white;
+  background-color:  rgba(23, 21, 21, 0.56);
+  border-color: #d63031;
   border-width: 1px;
 }
 
