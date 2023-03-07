@@ -12,7 +12,12 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-list-car',
   templateUrl: './list-car.component.html',
-  styleUrls: ['./list-car.component.css']
+  styleUrls: ['./list-car.component.css'],
+  template:`
+  <select>
+    <option *ngFor="let clase of claseauto">{{clase}}</option>
+  </select>
+`,
 })
 export class ListCarComponent {
 
@@ -24,6 +29,8 @@ export class ListCarComponent {
   selectedId: Claseautomovil = new Claseautomovil();
   clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
   clase : Claseautomovil[]=[]
+
+  formData: any = {};
 seleccionarId(event: any) {
   this.selectedId = event.target?.value ?? 0;
 }
@@ -89,13 +96,15 @@ console.log(result)
     this.automovil.foto = '';
 
     this.clasesau.id_clase=0;
-
+    this.getClasescombo()
     localStorage.removeItem('num_placa');
     this.mostrarNotificacion();
     this.getClasesAuto();
     this.verclase();
     this.automovilserv.listarAutos().subscribe(
       res => this.auto = res
+
+
     )
 
 
@@ -179,8 +188,17 @@ console.log(result)
       this.modelos = data;
     });}
 
+    getClasescombo(){
+      this.ClasesCarro.getAll().subscribe(
+       claseL =>this.clase = claseL
+      );}
 
-editarauto(){
+
+
+editopen(automovil:any){
+  this.formData = automovil;
+}
+editarauto(automovil:any){
   this.automovilService.updateAutos(this.automovil,this.automovil.num_placa).subscribe(
     data=>{
       console.log(data);
@@ -190,6 +208,7 @@ editarauto(){
     }
   )
 }
+
 
 eliminar(num_placa: string){
  // this.automovilService.getPorId()

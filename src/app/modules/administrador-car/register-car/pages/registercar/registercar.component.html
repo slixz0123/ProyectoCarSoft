@@ -43,7 +43,7 @@
                    <form  >
                        <p>
                            <label >Numero de placa:</label>
-                           <input id="num_placa"  maxlength="8" placeholder="Ingrese el Nº de Placa" type="text" name="num_placa"    [(ngModel)]="matricula"  (input)="convertir($event)"  required>
+                           <input id="num_placa"  maxlength="8" placeholder="Ingrese el Nº de Placa" type="text" name="num_placa"    [(ngModel)]="automovil.num_placa"  (input)="convertir($event)"  required>
                        </p>
                        <p>
                            <label>Modelo:</label>
@@ -57,6 +57,10 @@
                         <label>Marca:</label>
                         <input type="text" placeholder="Ingrese la Marca"  name="marca"   [(ngModel)]="automovil.marca">
                     </p>
+                  <p>
+                      <label>Numero de Matricula :</label>
+                      <input type="text" placeholder="Ingrese la matricula"  name="matricula"   [(ngModel)]="automovil.matricula">
+                  </p>
                      <p>
                       <label>Año del vehiculo:</label>
                       <input onkeypress="numeros()" type="text" placeholder="Ingrese el Año del Vehiculo"  name="anio"   [(ngModel)]="automovil.anio">
@@ -65,9 +69,9 @@
                         <label>Tipo de vehiculo</label>
                         <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
                             <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                            <option value="Tipo A">Tipo A</option>
-                            <option value="Tipo B">Tipo B</option>
-                            <option value="Tipo C">Tipo C</option>
+                            <option value="Tipo A">4x4</option>
+                            <option value="Tipo B">Deportivo</option>
+                            <option value="Tipo C">Familiar</option>
                         </select>
                     </div>
                        <div class="input-field">
@@ -89,7 +93,7 @@
                     <div>
                         <label>Imagen</label>
                     <div class="input-group mb-3 mt-3">
-                        
+
 
 <input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
   class="form-control" id="inputGroupFile01" required />
