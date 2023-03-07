@@ -42,7 +42,7 @@ export class AutomovilService {
   }
 
   updateAutos(auto: Automovil, num_placa: string) {
-    return this.http.put<Automovil>(this.URL + `updateauto/${num_placa}`, auto);
+    return this.http.put<Automovil>(this.URL+ `/actualizar/${num_placa}`, auto);
   }
 
   deleteAutos(num_placa: string) {

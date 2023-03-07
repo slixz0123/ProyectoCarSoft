@@ -84,7 +84,7 @@
 
 
                                 <td>
-                                  <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="seleccionarPersona(automovil)" >Editar</button>
+                                  <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="seleccionarCarro(automovil,automovil.num_placa)" >Editar</button>
 
                                   <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary" (click)="eliminar(automovil.num_placa)"   data-target="#Employee">Eliminar</button>
 
@@ -168,7 +168,7 @@
                             </div>
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Clase del Vehiculo::</label>
-                                <select  (change)="onSelectChange($event.target)" name="claseAutomovil"  [(ngModel)]="automovil.claseAutomovil"   style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;" >
+                                <select  (change)="onSelectChange($event.target)" name="claseAutomovil"  [(ngModel)]="CarroSeleccionada.claseAutomovil.id_clase"   style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;" >
                                   <option selected style="color: aliceblue;">Selecciona la clase</option>
                                   <option  [(ngModel)]="CarroSeleccionada.claseAutomovil" *ngFor="let claseL of clase" [value]="claseL.id_clase">{{ claseL.nombre }} </option>
                                 </select>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                     <div  class="modal-footer">
-                        <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Editar</button>
+                        <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal" (click)="editarauto(CarroSeleccionada,CarroSeleccionada.num_placa)">Editar</button>
 
                         <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>

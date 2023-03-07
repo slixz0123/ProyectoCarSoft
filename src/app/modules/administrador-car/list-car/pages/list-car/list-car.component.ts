@@ -152,8 +152,14 @@ console.log(result)
 
 CarroSeleccionada: Automovil  | undefined;
 
-seleccionarPersona(auti: Automovil) {
+seleccionarCarro(auti: Automovil,num_placa:string) {
   this.CarroSeleccionada = auti;
+  this.automovil.num_placa = this.automovil.num_placa
+  this.automovilserv.getPorId(num_placa).subscribe(
+    data =>{
+      console.log(data)
+    }
+  )
 }
 
 
@@ -202,15 +208,39 @@ editopen(automovil:any){
   this.formData = automovil;
 }
 
-editarauto(automovil:any){
-  this.automovilService.updateAutos(this.automovil,this.automovil.num_placa).subscribe(
-    data=>{
-      console.log(data);
+editarauto(automovil:Automovil,num_placa:string){
 
 
-      this.automovil = data;
+
+  this.automovilserv.getPorId(num_placa).subscribe(
+    data =>{
+      console.log(data)
+      this.automovil.claseAutomovil = this.selectedId
+     this.automovilService.updateAutos(automovil,num_placa).subscribe(
+       data=>{
+         console.log(data);
+
+         this.automovil.color = data.color
+         this.automovil.anio = data.anio
+         this.automovil.estado = data.estado
+         this.automovil.foto = data.foto
+         this.automovil.marca = data.marca
+         this.automovil.matricula = data.matricula
+         this.automovil.modelo = data.modelo
+         this.automovil.tipo_vehiculo = data.tipo_vehiculo
+         this.automovil = data;
+       },
+       error => {
+        console.error(error);
+      }
+     )
+    },
+    error => {
+      console.error(error);
     }
+
   )
+
 }
 
 
