@@ -60,6 +60,7 @@
                         <tbody>
 
 
+                            
                             <tr>
                                 <td> 01</td>
                                 <td> Clase A</td>
@@ -67,18 +68,9 @@
 
 
                                 <td>
-                                    <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Editar</button>
+                                    <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee">Editar</button>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 01</td>
-                                <td> Clase A</td>
-                                <td> 50</td>
-
-
-                                <td>
-                                    <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Editar</button>
+                                    <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee">Eliminar</button>
 
                                 </td>
                             </tr>
@@ -94,7 +86,7 @@
                 <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
                     <form id="needs-validation" novalidate>
                         <div class="modal-header" style="text-align: center;">
-                            <h1 class="logo" style="margin-block-end: 15px;">Edit<span>Automoviles </span></h1>
+                            <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Clases </span></h1>
                         </div>
                         <div class="modal-body">
                             <div class="form-row">
@@ -103,6 +95,7 @@
                                     <input id="firstName" type="text" placeholder="Ingrese el id Clase" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                     <div class="invalid-feedback">Ingrese el id clase</div>
                                 </div>
+                                
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-6 col-md-6 col-xs-12">
@@ -119,9 +112,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button style="color: black;border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger rounded-0" data-dismiss="modal">Cancelar</button>
-                            <button style="color: black; border-radius: 25px;"id="btnnes" type="submit" class="btn btn-primary rounded-0">Editar</button>
+                        <div  class="modal-footer">
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Editar</button>
+
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -129,6 +123,15 @@
         </div>
 
         </body>
+
+
+
+
+
+
+
+
+
 
 
 

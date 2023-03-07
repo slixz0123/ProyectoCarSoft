@@ -73,8 +73,10 @@
                                
                                 
                                 <td>
-                                    <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Editar</button>
-                                    
+                                    <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee">Editar</button>
+
+                                    <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee">Eliminar</button>
+
                                 </td>
                             </tr> 
 
@@ -102,57 +104,104 @@
         </div>
 
 
-        <div class="modal fade" id="Employee" style="color: white;">  
-            <div  id="modFade" class="modal-dialog">  
-                <div class="modal-content" style="background-color: rgba(0, 0, 0, .1);">  
-                    <form id="needs-validation" novalidate>  
-                        <div class="modal-header">  
-                            <h5 class="modal-title text-uppercase text-center"><strong>Editar Clase</strong>  </h5>  
-                        </div>  
-                        <div class="modal-body">  
-  
-                            <div class="form-row">  
-                                <div class="col-sm-6 col-md-6 col-xs-12">  
-                                    <label for="firstName">Id de la Clase</label>  
-                                    <input id="firstName" type="text" placeholder="Ingrese el id clase..." class="form-control" aria-describedby="inputGroupPrepend" required  />  
-                                    <div class="invalid-feedback">  
-                                        Ingrese el id clase... 
-                                    </div>  
-                                </div>  
-         
-                            </div>  
-                            <div class="form-row">  
-                                <div class="col-sm-6 col-md-6 col-xs-12">  
-                                    <label for="firstName">Id de la Clase</label>  
-                                    <input id="firstName" type="text" placeholder="Ingrese el id clase..." class="form-control" aria-describedby="inputGroupPrepend" required  />  
-                                    <div class="invalid-feedback">  
-                                        Ingrese el id clase... 
-                                    </div>  
-                                </div>  
-         
-                            </div>  
-                            <div class="form-row">  
-                                <div class="col-sm-6 col-md-6 col-xs-12">  
-                                    <label for="firstName">Id de la Clase</label>  
-                                    <input id="firstName" type="text" placeholder="Ingrese el id clase..." class="form-control" aria-describedby="inputGroupPrepend" required  />  
-                                    <div class="invalid-feedback">  
-                                        Ingrese el id clase... 
-                                    </div>  
-                                </div>  
-         
-                            </div>  
-                    
-                            
-                        </div>  
-                        <div class="modal-footer">  
-                            <button style="color: black;border-bottom: 16px;" id="btnnes" type="button" class="btn btn-danger rounded-0" data-dismiss="modal">Cancelar</button>  
-                            <button style="color: black; "id="btnnes" type="submit" class="btn btn-primary rounded-0">Editar</button>  
-                        </div>  
-                    </form>  
-                </div>  
-            </div>  
-        </div>
+        <div class="modal fade" id="Employee" style="color: white;">
+            <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
+                <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
+                    <form id="needs-validation" novalidate>
+                        <div class="modal-header" style="text-align: center;">
+                            <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Clientes </span></h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Nombre:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese el Nombre" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Nº de Placa</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Apellido:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese el Apellido" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Modelo</div>
+                                </div>
+                                
+                            </div>
+                            <div class="form-row">
+                                
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Email:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese el Email" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Color</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Cedula:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese la Cedula" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Telefono:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese el Telefono" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Genero del Cliente:</label>
+                                    <select name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                        <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                        <option value="Tipo A">Masculino</option>
+                                        <option value="Tipo B">Femenino</option>
+                                        <option value="Tipo C">Otros</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Edad del cliente:</label>
+                                    <input type="number"  maxlength="2" max="99" min="18" placeholder="Ingrese su edad" required 
+                                      name="edad" pInputText>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Usuario:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese el Usuario" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
 
+                                
+                                
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Contraseña:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese la Contraseña" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Ciudad:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese la Ciudad" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Dirección:</label>
+                                    <input id="firstName" type="text" placeholder="Ingrese la Dirección" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div  class="modal-footer">
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Editar</button>
+    
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
 

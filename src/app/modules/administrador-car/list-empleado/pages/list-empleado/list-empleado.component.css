@@ -1,4 +1,3 @@
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -204,7 +203,7 @@ text-align: left;
   font-size: 16px;
   margin: 25px;
 
-  
+
 }
 
 .contact-form form button:hover,
@@ -213,7 +212,7 @@ text-align: left;
   color: #fff;
   transition: background-color 1s ease-out;
   outline: 0;
-  
+
 }
 
 /* CONTACT INFO */
@@ -223,7 +222,7 @@ text-align: left;
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {
-  text-align: ;
+
   margin: 0 0 1rem 0;
 }
 
@@ -266,6 +265,7 @@ text-align: left;
   background-color: rgb(218, 211, 211);
   border-bottom-color: rgb(2, 2, 2);
   border-color: black;
+  color: black;
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 25px;
@@ -361,7 +361,7 @@ main.table {
     width: 0.5rem;
     height: 0.5rem;
     background-color: rgba(0, 0, 0, .1);
-    
+
 }
 
 .table__body::-webkit-scrollbar-thumb{
@@ -370,7 +370,7 @@ main.table {
     visibility: hidden;
 }
 
-.table__body:hover::-webkit-scrollbar-thumb{ 
+.table__body:hover::-webkit-scrollbar-thumb{
     visibility: visible;
     background-color: rgba(0, 0, 0, .1);
 }
@@ -469,10 +469,10 @@ thead th span.icon-arrow {
   height: 1.3rem;
   border-radius: 50%;
   border: 1.4px solid transparent;
-  
+
   text-align: center;
   font-size: 1rem;
-  
+
   margin-left: .5rem;
   transition: .2s ease-in-out;
 }
@@ -540,13 +540,11 @@ thead th.active,tbody td.active {
   border: 1px solid rgba(23, 21, 21, 0.3);
   color: white;
   color: #fff;
-  font-family: 'Quicksand', sans-serif;
   background-attachment: fixed;
   background-size: cover;
   border-radius: 25px;
   text-align: left;
-  width: 100%;
-  height: 100%;
+
 
 
 }
@@ -561,58 +559,24 @@ thead th.active,tbody td.active {
   border-bottom: 1px solid #d63031;
   border-radius: 15px;
   margin-block-end: 25px;
+  width: 350px;
 }
 
 
-
-
-.contact-wrapper {
-  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
-}
-
-.contact-wrapper > * {
-  padding: 1em;
-}
-
-.contact-form {
-
-border-radius: 15px;
-background: rgba(23, 21, 21, 0.56);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(23, 21, 21, 0.3);
-color: white;
-color: #fff;
-font-family: 'Quicksand', sans-serif;
-background-attachment: fixed;
-background-size: cover;
-border-radius: 25px;
-text-align: left;
-
+#modFade{
+  padding-top: 150px;
 
 }
 
-.contact-form form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
 
-.contact-form form label {
-  display: block;
+    /* Ajustar el tamaño del modal */
+    .modal-dialog {
+        max-width: 800px; /* El ancho máximo deseado */
+        margin: 0 auto; /* Centrar horizontalmente */
+    }
 
-}
 
-.contact-form form p {
-  margin: 0;
-  padding: 1em;
-}
-
-.contact-form form .block {
-  grid-column: 1 / 3;
-}
-
+    
 .contact-form form button,
 .contact-form form input,
 .contact-form form textarea {
@@ -636,7 +600,7 @@ text-align: left;
   font-size: 16px;
   margin: 25px;
 
-  
+
 }
 
 .contact-form form button:hover,
@@ -645,52 +609,6 @@ text-align: left;
   color: #fff;
   transition: background-color 1s ease-out;
   outline: 0;
-  
-}
-
-/* CONTACT INFO */
-.contact-info {
-  background: #000;
 
 }
-
-.contact-info h4, .contact-info ul, .contact-info p {
-  text-align: ;
-  margin: 0 0 1rem 0;
-}
-
-/* LARGE SIZE */
-@media(min-width: 700px) {
-  body {
-      padding: 0 4em;
-  }
-  .contact-wrapper {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-  }
-  .contact-wrapper > * {
-      padding: 2em;
-  }
-  .contact-info h4,
-  .contact-info ul,
-  .contact-info p {
-      text-align: left;
-  }
-}
-
-#dialogo{
-
-
-}
-
-
-#modFade{
-  padding-top: 150px;
-}
-
-
-
-
-
-
-
+        

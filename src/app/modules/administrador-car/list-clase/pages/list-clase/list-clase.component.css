@@ -1,4 +1,3 @@
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -266,6 +265,7 @@ text-align: left;
   background-color: rgb(218, 211, 211);
   border-bottom-color: rgb(2, 2, 2);
   border-color: black;
+  color: black;
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 25px;
@@ -546,6 +546,7 @@ thead th.active,tbody td.active {
   text-align: left;
 
 
+
 }
 
 #firstName{
@@ -558,14 +559,18 @@ thead th.active,tbody td.active {
   border-bottom: 1px solid #d63031;
   border-radius: 15px;
   margin-block-end: 25px;
+  width: 350px;
 }
 
 
 #modFade{
   padding-top: 150px;
+
 }
 
 
-
-
-
+    /* Ajustar el tamaño del modal */
+    .modal-dialog {
+        max-width: 800px; /* El ancho máximo deseado */
+        margin: 0 auto; /* Centrar horizontalmente */
+    }

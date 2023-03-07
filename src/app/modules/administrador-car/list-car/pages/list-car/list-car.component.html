@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
 
 </head>
 
@@ -73,7 +76,9 @@
 
 
                                 <td>
-                                    <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Editar</button>
+                                    <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee">Editar</button>
+
+                                    <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee">Eliminar</button>
 
                                 </td>
                             </tr>
@@ -86,6 +91,7 @@
                               <td>{{ automovil.anio}} </td>
                               <td>{{ automovil.marca}} </td>
                               <td>{{ automovil.claseAutomovil.id_clase}} </td>
+                              
 
 
                                 <td>
@@ -212,14 +218,105 @@
             </main>
 
         </div>
+
+
+    <div class="modal fade" id="Employee" style="color: white;">
+        <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
+            <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
+                <form id="needs-validation" novalidate>
+                    <div class="modal-header" style="text-align: center;">
+                        <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Automóvil </span></h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Nº de Placa:</label>
+                                <input id="firstName" type="text" placeholder="Ingrese el Nº de Placa" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <div class="invalid-feedback">Nº de Placa</div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Modelo:</label>
+                                <input id="firstName" type="text" placeholder="Ingrese el Modelo" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <div class="invalid-feedback">Modelo</div>
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Color:</label>
+                                <input id="firstName" type="text" placeholder="Ingrese el Color" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <div class="invalid-feedback">Color</div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Marca:</label>
+                                <input id="firstName" type="text" placeholder="Ingrese la Marca" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <div class="invalid-feedback">Marca</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Año:</label>
+                                <input id="firstName" type="text" placeholder="Ingrese la Marca" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <div class="invalid-feedback">Marca</div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Tipo de Vehiculo:</label>
+                                <select name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                    <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                    <option value="Tipo A">Tipo A</option>
+                                    <option value="Tipo B">Tipo B</option>
+                                    <option value="Tipo C">Tipo C</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Estado del Vehiculo::</label>
+                                <select name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                    <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                    <option value="Tipo A">Tipo A</option>
+                                    <option value="Tipo B">Tipo B</option>
+                                    <option value="Tipo C">Tipo C</option>
+                                </select>
+                                
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Clase del Vehiculo::</label>
+                                <select name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                    <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                    <option value="Tipo A">Tipo A</option>
+                                    <option value="Tipo B">Tipo B</option>
+                                    <option value="Tipo C">Tipo C</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            
+                            <div  style="margin-top: 12px;" class="col-sm-6 col-md-6 col-xs-12">
+                                <label for="firstName">Foto del Vehiculo:</label>
+                                <button  style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                    <strong>Subir Foto   ⇩</strong>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div  class="modal-footer">
+                        <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Editar</button>
+
+                        <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
        
-
-        
-
-
-
-
-
 
 
 
