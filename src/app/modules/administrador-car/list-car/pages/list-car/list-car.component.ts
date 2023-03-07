@@ -191,5 +191,16 @@ editarauto(){
   )
 }
 
+eliminar(){
+  this.automovilService.deleteAutos(this.automovil.num_placa).subscribe(
+    data=>{
+      console.log(data);
+
+
+      this.automovil = data;
+    }
+  )
+   
+}
 
 }

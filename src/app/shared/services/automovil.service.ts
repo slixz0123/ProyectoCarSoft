@@ -44,7 +44,7 @@ export class AutomovilService {
   }
 
   deleteAutos(num_placa: string) {
-    return this.http.delete<boolean>(this.URL + `borrarAuto/${num_placa}`);
+    return this.http.delete<Automovil>(this.URL + `borrarAuto/${num_placa}`);
   }
 
   save(auto: Automovil) {
