@@ -55,6 +55,7 @@ seleccionarId(event: any) {
     this.automovil.modelo = '';
     this.automovil.tipo_vehiculo = '';
     this.automovil.foto = '';
+    this.automovil.matricula = '';
 
     this.clasesau.id_clase=0;
 
@@ -132,7 +133,7 @@ onSelectChange(eventTarget: EventTarget | null) {
   }
 
   registrarclase() {
-    this.automovil.num_placa=this.matricula;
+   // this.automovil.num_placa=this.matricula;
     this.automovil.claseAutomovil = this.selectedId
 
     this.automovilService.postAutos(this.automovil).subscribe(

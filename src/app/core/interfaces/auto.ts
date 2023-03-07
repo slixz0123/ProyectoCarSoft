@@ -12,6 +12,7 @@ export interface Auto {
   modelo?:string;
   tipo_vehiculo?:string;
   foto?: string;
+  matricula?:string;
 
   clase: Claseautomovil[];
 

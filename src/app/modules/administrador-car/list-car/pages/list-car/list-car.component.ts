@@ -191,8 +191,10 @@ editarauto(){
   )
 }
 
-eliminar(){
-  this.automovilService.deleteAutos(this.automovil.num_placa).subscribe(
+eliminar(num_placa: string){
+ // this.automovilService.getPorId()
+
+  this.automovilService.deleteAutos(num_placa).subscribe(
     data=>{
       console.log(data);
 
@@ -200,7 +202,19 @@ eliminar(){
       this.automovil = data;
     }
   )
-   
-}
 
 }
+buscarporid(num_placa: string){
+  this.automovil.num_placa = this.automovil.num_placa
+  this.automovilserv.getPorId(num_placa).subscribe(
+    data =>{
+      console.log(data)
+    }
+  )
+
+  }
+
+
+}
+
+

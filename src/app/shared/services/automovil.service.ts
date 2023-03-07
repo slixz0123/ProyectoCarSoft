@@ -15,6 +15,7 @@ export class AutomovilService {
   private URL = "http://localhost:8080/automovil";
 
   private URL2 = "http://localhost:8080/automovil/crear";
+  private UR3 = "http://localhost:8080/automovil/";
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +28,7 @@ export class AutomovilService {
   }
 
   getPorId(num_placa: string) {
-    return this.http.get<Automovil>(this.URL + num_placa);
+    return this.http.get<Automovil>(this.UR3 + num_placa);
   }
 
   postAutos(auto: Automovil): Observable<any> {
@@ -45,7 +46,7 @@ export class AutomovilService {
   }
 
   deleteAutos(num_placa: string) {
-    return this.http.delete<Automovil>(this.URL + `/borrarAuto/${num_placa}`);
+    return this.http.delete<Automovil>(this.URL + `/eliminar/${num_placa}`);
   }
 
   save(auto: Automovil) {

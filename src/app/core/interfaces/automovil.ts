@@ -12,6 +12,7 @@ export class Automovil{
    modelo?:string;
    tipo_vehiculo?:string;
    foto: string = "";
+   matricula: string = "";
 
 
 
