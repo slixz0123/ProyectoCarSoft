@@ -55,6 +55,7 @@
                         <tr>
                           <th> id <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Idper<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Apellido  <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Cedula<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
@@ -71,6 +72,7 @@
                         <tr>
                             <tr *ngFor="let user of usuariosFiltrados | buscare:buscar">
                               <td>{{ user.id}} </td>
+                              <td>{{ user.persona.id_persona}} </td>
                               <td>{{ user.persona.nombre}} </td>
                               <td>{{ user.persona.apellido}} </td>
                               <td>{{ user.persona.cedula}} </td>
@@ -81,7 +83,7 @@
                             <td>
                               <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee"  (click)="seleccionarUsuario(user,user.id)">Editar</button>
 
-                              <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee">Eliminar</button>
+                              <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee"  (click)="eliminar( user.persona.id_persona, user.id)" >Eliminar</button>
 
                             </td>
                         </tr>

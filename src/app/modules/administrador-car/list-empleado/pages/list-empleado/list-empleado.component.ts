@@ -92,7 +92,27 @@ export class ListEmpleadoComponent {
   }
 
 
+  eliminar(id_persona: number,id:number){
+    // this.automovilService.getPorId()
 
+    this.userService.deleteUsuario(id).subscribe(
+      data=>{
+        console.log(data);
+
+
+        this.usuario = data;
+      }
+    )
+    this.personaser.deletePersona(id_persona).subscribe(
+      data=>{
+        console.log(data);
+
+
+        this.persona = data;
+      }
+    )
+
+  }
 
 
 

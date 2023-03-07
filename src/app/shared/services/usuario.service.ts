@@ -35,7 +35,7 @@ export class UsuarioService {
   }
 
   deleteUsuario(idUsuario: number) {
-    return this.http.delete<boolean>(this.URL + `eliminar/${idUsuario}`);
+    return this.http.delete<Usuario>(this.URL + `eliminar/${idUsuario}`);
   }
 
   login(nombreUsuario: string, password: string) {

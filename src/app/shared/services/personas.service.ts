@@ -31,7 +31,7 @@ export class PersonasService {
   }
 
   deletePersona(idPersona: number) {
-    return this.http.delete<boolean>(this.URL + `eliminar/${idPersona}`);
+    return this.http.delete<Persona>(this.URL + `eliminar/${idPersona}`);
   }
 
   save(persona: Persona) {

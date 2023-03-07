@@ -14,7 +14,7 @@ export class Persona {
   telefono: string= "";
   foto: string= "";
 */
-  id_persona?: number;
+  id_persona: number =0;
   apellido?: string;
   cedula?: string;
   ciudad?: string;
