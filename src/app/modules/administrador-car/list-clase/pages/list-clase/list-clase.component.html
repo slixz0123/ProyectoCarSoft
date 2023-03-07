@@ -40,7 +40,7 @@
             <main class="table">
                 <section class="table__header">
                     <div class="input-group">
-                        <input type="search" placeholder="Buscar...">
+                        <input type="search" placeholder="Buscar..." [(ngModel)]="buscar">
                     </div>
                     <div>
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
@@ -61,10 +61,10 @@
 
 
                             
-                            <tr>
-                                <td> 01</td>
-                                <td> Clase A</td>
-                                <td> 50</td>
+                            <tr *ngFor="let clases of clases | buscar:buscar">
+                                <td>{{clases.id_clase}}</td>
+                                <td>{{clases.nombre}}</td>
+                                <td>{{clases.precio_alquiler_dia}}</td>
 
 
                                 <td>

@@ -43,7 +43,7 @@
                    <form  >
                        <p>
                            <label >Numero de placa:</label>
-                           <input id="num_placa"  placeholder="Ingrese el Nº de Placa" type="text" name="num_placa"    [(ngModel)]="automovil.num_placa"    required>
+                           <input id="num_placa"  maxlength="8" placeholder="Ingrese el Nº de Placa" type="text" name="num_placa"    [(ngModel)]="matricula"  (input)="convertir($event)"  required>
                        </p>
                        <p>
                            <label>Modelo:</label>
@@ -74,8 +74,8 @@
                         <label>Estado</label>
                         <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
                             <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
-                            <option value="Tipo A">Reservado</option>
-                            <option value="Tipo B">Sin Resarvar</option>
+                            <option value="Disponible">Disponible</option>
+                            <option value="No Disponible">No Disponible</option>
                         </select>
                     </div>
                     <div style="margin-left: 7px;">

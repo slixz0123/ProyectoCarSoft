@@ -14,7 +14,7 @@ import { ClasesCarroService } from 'src/app/shared/services/clases-carro.service
   styleUrls: ['./list-car.component.css']
 })
 export class ListCarComponent {
-
+  
   auto?: Automovil[];
   modelos: Claseautomovil[]= [];
   automoviles: Automovil = new Automovil(); //Inicialice el objeto automovil.
@@ -68,6 +68,7 @@ export class ListCarComponent {
       )
     }*/
   }
+
 
   mostrarNotificacion() {
     this.toastr.success('Mi mensaje', 'Mi título', {

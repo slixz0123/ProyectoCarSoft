@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EditCarRoutingModule } from './edit-car-routing.module';
 import { EditCarComponent } from './pages/edit-car/edit-car.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { EditCarComponent } from './pages/edit-car/edit-car.component';
   ],
   imports: [
     CommonModule,
-    EditCarRoutingModule
+    EditCarRoutingModule,
+    FormsModule
   ],
   exports:[
     EditCarComponent

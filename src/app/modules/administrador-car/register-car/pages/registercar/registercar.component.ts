@@ -28,6 +28,7 @@ import Swal from 'sweetalert2';
 })
 export class RegistercarComponent {
   autoForm!: FormGroup;
+  matricula: string='';
   selectedId: Claseautomovil = new Claseautomovil();
   auto!: Auto;
   clase : Claseautomovil[]=[]
@@ -122,7 +123,16 @@ onSelectChange(eventTarget: EventTarget | null) {
     });
   }
 
+  convertir(event: any) {
+    let valor = event.target.value.toUpperCase();
+    if (valor.length === 3) {
+      valor += '-';
+    }
+    this.matricula = valor;
+  }
+
   registrarclase() {
+    this.automovil.num_placa=this.matricula;
     this.automovil.claseAutomovil = this.selectedId
 
     this.automovilService.postAutos(this.automovil).subscribe(

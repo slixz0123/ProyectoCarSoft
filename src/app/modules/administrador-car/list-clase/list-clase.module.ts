@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 import { ListClaseRoutingModule } from './list-clase-routing.module';
 import { ListClaseComponent } from './pages/list-clase/list-clase.component';
 import { BuscarPipe } from './buscar.pipe';
@@ -13,7 +13,8 @@ import { BuscarPipe } from './buscar.pipe';
   ],
   imports: [
     CommonModule,
-    ListClaseRoutingModule
+    ListClaseRoutingModule,
+    FormsModule
   ],exports:[
     ListClaseComponent
   ]
