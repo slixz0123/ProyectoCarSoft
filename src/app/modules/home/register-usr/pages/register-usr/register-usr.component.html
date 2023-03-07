@@ -43,13 +43,13 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
 
                       <div class="input-field">
                           <label>Email</label>
-                          <input type="text" placeholder="Ingrese su email" required class={{verfCorreo}}
+                          <input type="email" placeholder="Ingrese su email" required class={{verfCorreo}}
                           [(ngModel)]="persona.correo" (ngModelChange)="validarCorreo()"  name="correp" pInputText>
                       </div>
 
                       <div class="input-field">
-                          <label>Numero Telefónico</label>
-                          <input type="Text" placeholder="Ingrese su numero Telefónico" required  class={{verftelefono}}
+                          <label>Número Telefónico</label>
+                          <input type="Text" maxlength="11" onkeypress="numeros()" placeholder="Ingrese su numero Telefónico" required  class={{verftelefono}}
                           [(ngModel)]="persona.telefono"  name="telefono" pInputText>
                       </div>
 
@@ -57,7 +57,7 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
 
 
 
-                          <label>Genero</label>
+                          <label>Género</label>
                           <select required style="background: rgba( 255, 255, 255, 0.25 ); color: black;"  [(ngModel)]="persona.genero">
                               <option disabled selected>Seleccione</option>
                               <option>Masculino</option>
@@ -68,7 +68,7 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
 
                       <div class="input-field">
                           <label>Cédula</label>
-                          <input type="text" placeholder="Ingrese su Cédula" required  class={{verfcedula}}
+                          <input type="text"  maxlength="10" onkeypress="numeros()" placeholder="Ingrese su Cédula" required  class={{verfcedula}}
                           [(ngModel)]="persona.cedula"  name="cedula" pInputText>
                       </div>
                   </div>
@@ -81,7 +81,7 @@ https://wallpapercave.com/dwp2x/wp7146225.jpg
 
                     <div class="input-field">
                           <label>Edad</label>
-                          <input type="text" placeholder="Ingrese su edad" required  class={{verfedad}}
+                          <input type="number" min="18" max="99" maxlength="2" placeholder="Ingrese su edad" required  class={{verfedad}}
                           [(ngModel)]="persona.edad"  name="edad" pInputText>
                       </div>
 

@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/app/core/enviroments/environment';
-import { Auto } from 'src/app/core/interfaces/auto';
+
 import { Automovil } from 'src/app/core/interfaces/automovil';
 
 @Injectable({
