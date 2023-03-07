@@ -46,7 +46,7 @@
             <main class="table">
                 <section class="table__header">
                     <div class="input-group">
-                        <input type="search" placeholder="Buscar...">
+                        <input type="search" placeholder="Buscar..." [(ngModel)]="buscar">
                     </div>
                     <div>
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
@@ -84,14 +84,15 @@
                             </tr>
 
 
-                            <tr *ngFor="let automovil of auto">
+                            <tr *ngFor="let automovil of auto | buscarcar:buscar">
                               <td>{{ automovil.foto}} </td>
                               <td>{{ automovil.num_placa}} </td>
                               <td>{{ automovil.modelo}} </td>
                               <td>{{ automovil.anio}} </td>
                               <td>{{ automovil.marca}} </td>
-                              <td>{{ automovil.claseAutomovil.id_clase}} </td>
-                              
+                              <ng-container *ngFor="let emp of modelos">
+                              <td *ngIf="automovil.claseAutomovil.id_clase===emp.id_clase;">{{ emp.nombre}} </td>
+                            </ng-container>
 
 
                                 <td>
@@ -134,18 +135,18 @@
                                                  <label>Tipo de vehiculo</label>
                                                  <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                                                      <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                                                     <option value="Tipo A">Tipo A</option>
-                                                     <option value="Tipo B">Tipo B</option>
-                                                     <option value="Tipo C">Tipo C</option>
+                                                     <option value="Camioneta">Camioneta</option>
+                                                     <option value="Compacto">Compacto</option>
+                                                     <option value="Todoterreno">Todoterreno (4x4)</option>
+                                                     <option value="De lujo">De lujo</option>
                                                  </select>
                                              </div>
                                                 <div class="input-field">
                                                  <label>Estado</label>
                                                  <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 500px;border-radius: 16px;">
                                                      <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
-                                                     <option value="Tipo A">Excelente</option>
-                                                     <option value="Tipo B">Regular</option>
-                                                     <option value="Tipo C">Deteriorado</option>
+                                                     <option value="Disponible">Disponible</option>
+                                                     <option value="No Disponible">No Disponible</option>
                                                  </select>
                                              </div>
                                              <div>

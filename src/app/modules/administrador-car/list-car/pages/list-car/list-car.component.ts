@@ -18,6 +18,7 @@ export class ListCarComponent {
   auto?: Automovil[];
   modelos: Claseautomovil[]= [];
   automoviles: Automovil = new Automovil(); //Inicialice el objeto automovil.
+  buscar='';
   constructor( private automovil: AutomovilService ,
       private automovilService: AutomovilService,
       private car: CargarscriptsService,

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-clase.component.css']
 })
 export class ListClaseComponent {
-
+buscar='';
 }

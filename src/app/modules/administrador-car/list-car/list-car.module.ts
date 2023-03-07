@@ -5,11 +5,13 @@ import { ListCarRoutingModule } from './list-car-routing.module';
 import { ListCarComponent } from './pages/list-car/list-car.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BuscarcarPipe } from './buscarcar.pipe';
 
 
 @NgModule({
   declarations: [
-    ListCarComponent
+    ListCarComponent,
+    BuscarcarPipe
   ],
   imports: [
     CommonModule,
