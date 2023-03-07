@@ -84,7 +84,7 @@
 
 
                                 <td>
-                                  <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="editopen(automovil)" >Editar</button>
+                                  <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="seleccionarPersona(automovil)" >Editar</button>
 
                                   <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary" (click)="eliminar(automovil.num_placa)"   data-target="#Employee">Eliminar</button>
 
@@ -106,7 +106,7 @@
     <div class="modal fade" id="Employee" style="color: white;">
         <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
             <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
-                <form id="needs-validation" novalidate>
+                <form id="needs-validation"   *ngIf="CarroSeleccionada" novalidate>
                     <div class="modal-header" style="text-align: center;">
                         <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Automóvil </span></h1>
                     </div>
@@ -114,12 +114,12 @@
                         <div class="form-row">
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Nº de Placa:</label>
-                                <input [(ngModel)]="automovil.num_placa"   id="firstName" type="text" placeholder="Ingrese el Nº de Placa" class="form-control" aria-describedby="inputGroupPrepend"   required/>
+                                <input [(ngModel)]="CarroSeleccionada.num_placa"  name="num_placa"   id="firstName" type="text" placeholder="Ingrese el Nº de Placa" class="form-control" aria-describedby="inputGroupPrepend"   required/>
                                 <div class="invalid-feedback">Nº de Placa</div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label  for="firstName">Modelo:</label>
-                                <input  [(ngModel)]="automovil.modelo" id="firstName" type="text" placeholder="Ingrese el Modelo" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <input  [(ngModel)]="CarroSeleccionada.modelo"    name="modelo" id="firstName" type="text" placeholder="Ingrese el Modelo" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                 <div class="invalid-feedback">Modelo</div>
                             </div>
 
@@ -128,12 +128,12 @@
 
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Color:</label>
-                                <input  [(ngModel)]="automovil.color" id="firstName" type="text" placeholder="Ingrese el Color" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <input  [(ngModel)]="CarroSeleccionada.color"   name="color" id="firstName" type="text" placeholder="Ingrese el Color" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                 <div class="invalid-feedback">Color</div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Marca:</label>
-                                <input  [(ngModel)]="automovil.marca" id="firstName" type="text" placeholder="Ingrese la Marca" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <input  [(ngModel)]="CarroSeleccionada.marca" id="firstName" name="marca"  type="text" placeholder="Ingrese la Marca" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                 <div class="invalid-feedback">Marca</div>
                             </div>
                         </div>
@@ -141,16 +141,16 @@
 
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Año:</label>
-                                <input  [(ngModel)]="automovil.anio" id="firstName" type="text" placeholder="Ingrese la Marca" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                <input  [(ngModel)]="CarroSeleccionada.anio"  name="anio" id="firstName" type="text" placeholder="Ingrese la Marca" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                 <div class="invalid-feedback">Marca</div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Tipo de Vehiculo:</label>
-                                <select  [(ngModel)]="automovil.tipo_vehiculo" name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                <select  [(ngModel)]="CarroSeleccionada.tipo_vehiculo" name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
                                     <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                                    <option value="Tipo A">Tipo A</option>
-                                    <option value="Tipo B">Tipo B</option>
-                                    <option value="Tipo C">Tipo C</option>
+                                    <option value="Tipo A">4x4</option>
+                                    <option value="Tipo B">Deportivo</option>
+                                    <option value="Tipo C">Familiar</option>
                                 </select>
 
                             </div>
@@ -159,19 +159,18 @@
 
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Estado del Vehiculo::</label>
-                                <select  [(ngModel)]="automovil.estado" name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                <select  [(ngModel)]="CarroSeleccionada.estado" name="estado" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
                                     <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                                    <option value="Tipo A">Tipo A</option>
-                                    <option value="Tipo B">Tipo B</option>
-                                    <option value="Tipo C">Tipo C</option>
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="No Disponible">No Disponible</option>
                                 </select>
 
                             </div>
                             <div class="col-sm-6 col-md-6 col-xs-12">
                                 <label for="firstName">Clase del Vehiculo::</label>
-                                <select  (change)="onSelectChange($event.target)" name="id_clase"  [(ngModel)]="automovil.claseAutomovil"   style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;" >
+                                <select  (change)="onSelectChange($event.target)" name="claseAutomovil"  [(ngModel)]="automovil.claseAutomovil"   style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;" >
                                   <option selected style="color: aliceblue;">Selecciona la clase</option>
-                                  <option  [(ngModel)]="automovil.claseAutomovil" *ngFor="let claseL of clase" [value]="claseL.id_clase">{{ claseL.nombre }} </option>
+                                  <option  [(ngModel)]="CarroSeleccionada.claseAutomovil" *ngFor="let claseL of clase" [value]="claseL.id_clase">{{ claseL.nombre }} </option>
                                 </select>
 
                             </div>

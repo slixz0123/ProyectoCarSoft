@@ -29,8 +29,45 @@ export class ListCarComponent {
   selectedId: Claseautomovil = new Claseautomovil();
   clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
   clase : Claseautomovil[]=[]
+  tableData: any[] = [];
 
   formData: any = {};
+
+  constructor( private automovilserv: AutomovilService ,
+    private automovilService: AutomovilService,
+    private car: CargarscriptsService,
+    private router : Router,
+    private toastr: ToastrService,
+    private ClasesCarro:ClasesCarroService
+ ){
+    { car.carga2 (["modal"])}
+  }
+
+ngOnInit(): void {
+  this.automovil.num_placa = '';
+  this.automovil.color = '';
+  this.automovil.estado = '';
+  this.automovil.marca = '';
+  this.automovil.modelo = '';
+  this.automovil.tipo_vehiculo = '';
+  this.automovil.foto = '';
+
+  this.clasesau.id_clase=0;
+  this.getClasescombo()
+  localStorage.removeItem('num_placa');
+  this.mostrarNotificacion();
+  this.getClasesAuto();
+  this.verclase();
+  this.automovilserv.listarAutos().subscribe(
+    res => this.auto = res
+
+
+  )
+
+  this.editopen(this.automovil)
+}
+
+
 seleccionarId(event: any) {
   this.selectedId = event.target?.value ?? 0;
 }
@@ -50,65 +87,29 @@ sendData(selectedValue: number) {
 
 
 
-verclase(){
-
-
+ verclase(){
 this.ClasesCarro.getAll().subscribe(
  result => {
 console.log(result)
 
-
-
    // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
  }
 )
-
 this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
 result => {
 console.log(result)
-
-
-
   // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
 }
 )
 }
 
 
-
-  constructor( private automovilserv: AutomovilService ,
-      private automovilService: AutomovilService,
-      private car: CargarscriptsService,
-      private router : Router,
-      private toastr: ToastrService,
-      private ClasesCarro:ClasesCarroService
-   ){
-      { car.carga2 (["modal"])}
-    }
-
-  ngOnInit(): void {
-    this.automovil.num_placa = '';
-    this.automovil.color = '';
-    this.automovil.estado = '';
-    this.automovil.marca = '';
-    this.automovil.modelo = '';
-    this.automovil.tipo_vehiculo = '';
-    this.automovil.foto = '';
-
-    this.clasesau.id_clase=0;
-    this.getClasescombo()
-    localStorage.removeItem('num_placa');
-    this.mostrarNotificacion();
-    this.getClasesAuto();
-    this.verclase();
-    this.automovilserv.listarAutos().subscribe(
-      res => this.auto = res
-
-
-    )
-
-
+  getTableData() {
+    this.automovilserv.listarAutos().subscribe((data: any[]) => {
+      this.tableData = data;
+    });
   }
+
   onSelectChange(eventTarget: EventTarget | null) {
     const selectElement = eventTarget as HTMLSelectElement;
     if (!selectElement) {
@@ -129,7 +130,7 @@ console.log(result)
   }
 
   registrarclase() {
-    this.automovil.num_placa=this.matricula;
+  //  this.automovil.num_placa=this.matricula;
     this.automovil.claseAutomovil = this.selectedId
 
     this.automovilService.postAutos(this.automovil).subscribe(
@@ -142,8 +143,6 @@ console.log(result)
             'Registro carro',
             'success'
           )
-
-
       }
 
     )
@@ -151,7 +150,11 @@ console.log(result)
 }
 
 
+CarroSeleccionada: Automovil  | undefined;
 
+seleccionarPersona(auti: Automovil) {
+  this.CarroSeleccionada = auti;
+}
 
 
 
@@ -198,6 +201,7 @@ console.log(result)
 editopen(automovil:any){
   this.formData = automovil;
 }
+
 editarauto(automovil:any){
   this.automovilService.updateAutos(this.automovil,this.automovil.num_placa).subscribe(
     data=>{
@@ -232,6 +236,40 @@ buscarporid(num_placa: string){
   )
 
   }
+
+
+  // actualizarEstado(mensaje: any) {
+  //   let accion: string;
+  //   let usuario: Usuario;
+  //   this.serviceClientes.porId(mensaje).subscribe(data => {
+  //     this.clientes = data
+  //     usuario = this.clientes.usuario!;
+  //     if (this.clientes.estado == true) {
+  //       this.clientes.estado = false;
+  //       usuario.estado = false;
+  //       accion = 'Cliente Deshabilitado';
+  //     } else if (this.clientes.estado == false) {
+  //       this.clientes.estado = true;
+  //       usuario.estado = true;
+  //       accion = 'Cliente Habilitado';
+  //     }
+  //     console.log(this.clientes)
+
+  //     this.usuarioService.updateUsuario(usuario, usuario.idUsuario).subscribe(
+  //       result => {
+  //         console.log(result);
+  //         this.serviceClientes.updateclientes(this.clientes, mensaje).subscribe(data => {
+  //           console.log(data)
+  //           this.toastr.warning(accion, 'Advertencia!')
+  //           this.listar()
+  //         })
+  //       }
+  //     );
+  //   })
+  // }
+
+
+
 
 
 }
