@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </head>
     <div class="fondobanner">
@@ -22,10 +22,10 @@
             <h1 class="logo" style="margin-block-end: 15px;">Lista Seguro <span>Automoviles </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
               <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección del listado de automóviles registrados en el sistema</p>
-              
+
               <div>
                 <p style="text-align: center;">
-                  
+
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
               </div>
             </div>
@@ -51,30 +51,28 @@
                                 <th> Codigo Seguro <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Nombre Seguro <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Precio Seguro  <span class="icon-arrow">&UpArrow;</span></th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            
-                            <tr>
-                                <td> 01</td>
-                                <td> Seguro de Vida</td>
-                                <td> 450$ </td>
-                               
-                                
-                                <td>
-                                    <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee">Editar</button>
 
-                                    <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee">Eliminar</button>
+                          <tr *ngFor="let Seguro of seguros | buscar:buscar">
+                            <td>{{Seguro.cod_seguro}}</td>
+                            <td>{{Seguro.nom_seguro}}</td>
+                            <td>{{Seguro.precio_seguro}}</td>
 
-                                </td>
-                            </tr> 
-                            
-                            
+
+                            <td>
+                              <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="seleccionarCarro(Seguro,Seguro.cod_seguro)" >Editar</button>
+
+                              <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary" (click)="eliminar(Seguro.cod_seguro)"   data-target="#Employee">Eliminar</button>
+
+                            </td>
+                        </tr>
+
                         </tbody>
                     </table>
-                </section> 
+                </section>
             </main>
 
         </div>
@@ -82,7 +80,7 @@
         <div class="modal fade" id="Employee" style="color: white;">
             <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
                 <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
-                    <form id="needs-validation" novalidate>
+                    <form *ngIf="seguroSeleccionada" id="needs-validation" novalidate>
                         <div class="modal-header" style="text-align: center;">
                             <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Seguro </span></h1>
                         </div>
@@ -90,31 +88,31 @@
                             <div class="form-row">
                                 <div class="col-sm-6 col-md-6 col-xs-12">
                                     <label for="firstName">Nombre del Seguro:</label>
-                                    <input id="firstName" type="text" placeholder="Ingrese el Nombre" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <input [(ngModel)]="seguroSeleccionada.nom_seguro" name="nom_seguro"  id="firstName" type="text" placeholder="Ingrese el Nombre" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                     <div class="invalid-feedback">Nº de Placa</div>
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-xs-12">
                                     <label for="firstName">Precio del Seguro:</label>
-                                    <input id="firstName" type="text" placeholder="Ingrese el Apellido" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <input [(ngModel)]="seguroSeleccionada.precio_seguro" name="precio_seguro"  id="firstName" type="text" placeholder="Ingrese el Apellido" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                     <div class="invalid-feedback">Modelo</div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div  class="modal-footer">
-                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Editar</button>
-    
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal" (click)="editarseguro(seguroSeleccionada,seguroSeleccionada.cod_seguro)">Editar</button>
+
                             <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        
-        
-        
-               
-     
+
+
+
+
+
 
 
 

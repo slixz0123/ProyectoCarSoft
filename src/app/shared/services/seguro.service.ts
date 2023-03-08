@@ -28,7 +28,7 @@ export class SeguroService {
   }
 
   delete( idseguro: any) {
-    return this.http.delete<boolean>(this.URL + `eliminar/${idseguro}`);
+    return this.http.delete<Seguro>(this.URL + `eliminar/${idseguro}`);
   }
 
 
