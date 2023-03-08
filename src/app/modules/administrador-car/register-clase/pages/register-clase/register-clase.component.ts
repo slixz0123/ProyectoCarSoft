@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 export class RegisterClaseComponent {
   seguro: Seguro = new Seguro();
   claseautomovil: Claseautomovil = new Claseautomovil();
-
+  
   constructor( private toastr: ToastrService, private ClasesCarro:ClasesCarroService , private SeguroServi:SeguroService) {}
 
 
@@ -35,43 +35,71 @@ export class RegisterClaseComponent {
   }
 
   registrarClase() {
-    if (this.claseautomovil.nombre === '') {
-      this.toastr.warning("Verifique que esten correctos los campos")
-    } else {
+    {
       this.ClasesCarro.post(this.claseautomovil).subscribe(
         result => {
           console.log(result);
           this.claseautomovil = result;
 
           Swal.fire(
-            'Exito!',
-            'Registro clase',
+            'Éxito!',
+            'Se ha registrado la clase',
             'success'
           )
-          this.toastr.success('seguro registrado correctamente');
         },
         error => {
-          console.log(error);
-          this.toastr.error('Error al registrar seguro');
+          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha ocurrido un error al registrar la clase!',
+            width: 600,
+            padding: '3em',
+            color: 'red',
+            background: '#fff url(assets/images/222.jpg)',
+            backdrop: `
+            rgba( 255, 255, 255, 0.25 )
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
         }
       )
     }
   }
   registrarSeguro() {
-    if (this.seguro.nom_seguro === '') {
-      this.toastr.warning("Verifique que esten correctos los campos")
-    } else {
+    
+    {
       this.SeguroServi.post(this.seguro).subscribe(
         result => {
           console.log(result);
           this.seguro = result;
           localStorage.setItem('cod_seguro', String(this.seguro.cod_seguro));
 
-          this.toastr.success('seguro registrado correctamente');
+          Swal.fire(
+            'Éxito!',
+            'Se ha registrado el seguro',
+            'success'
+          )
         },
         error => {
-          console.log(error);
-          this.toastr.error('Error al registrar seguro');
+          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha ocurrido un error al registrar el seguro!',
+            width: 600,
+            padding: '3em',
+            color: 'red',
+            background: '#fff url(assets/images/222.jpg)',
+            backdrop: `
+            rgba( 255, 255, 255, 0.25 )
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
         }
       )
     }

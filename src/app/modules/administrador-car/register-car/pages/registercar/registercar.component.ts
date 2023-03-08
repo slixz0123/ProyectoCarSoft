@@ -4,16 +4,10 @@ import { ToastrService } from 'ngx-toastr';
 import { AlertsService } from 'src/app/core/alerts/alerts.service';
 import { Auto } from 'src/app/core/interfaces/auto';
 import { Automovil } from 'src/app/core/interfaces/automovil';
-
-
 import { Claseautomovil } from 'src/app/core/models/claseautomovil';
-
-import { Usuario } from 'src/app/core/models/usuario';
 import { AutomovilService } from 'src/app/shared/services/automovil.service';
 import { ClasesCarroService } from 'src/app/shared/services/clases-carro.service';
 import { FotoService } from 'src/app/shared/services/foto.service';
-import { SharedService } from 'src/app/shared/services/shared.service';
-import { UsuarioService } from 'src/app/shared/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -31,7 +25,9 @@ export class RegistercarComponent {
   matricula: string='';
   selectedId: Claseautomovil = new Claseautomovil();
   auto!: Auto;
-  clase : Claseautomovil[]=[]
+  clase : Claseautomovil[]=[];
+  listafoto: any []=[];
+listafile: File []=[];
 seleccionarId(event: any) {
   this.selectedId = event.target?.value ?? 0;
 }
@@ -39,7 +35,8 @@ seleccionarId(event: any) {
   clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
 
   constructor(private automovilService: AutomovilService,
-    private fotoService: FotoService, private toastr: ToastrService, private ClasesCarro:ClasesCarroService) {}
+    private fotoService: FotoService, private toastr: ToastrService, private ClasesCarro:ClasesCarroService) {
+    }
 
   file: any = '';
 
@@ -143,12 +140,31 @@ onSelectChange(eventTarget: EventTarget | null) {
 
           Swal.fire(
             'Exito!',
-            'Registro carro',
+            'Se ha registrado la clase',
             'success'
           )
 
 
+      },
+      error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha ocurrido un error al registrar la clase!',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(src/assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
+
 
     )
 

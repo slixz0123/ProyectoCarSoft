@@ -3,6 +3,7 @@ import { Persona } from 'src/app/core/models/persona';
 import { Usuario } from 'src/app/core/models/usuario';
 import { PersonasService } from 'src/app/shared/services/personas.service';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-empleado',
@@ -65,9 +66,29 @@ export class ListEmpleadoComponent {
            this.usuario.nombreUsuario = data.nombreUsuario
            this.usuario.password = data.password
            this.usuario = data;
+           Swal.fire(
+            'Éxito!',
+            'Se ha editado el empleado',
+            'success'
+          )
          },
          error => {
           console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha ocurrido un error al editar el empleado!',
+            width: 600,
+            padding: '3em',
+            color: 'red',
+            background: '#fff url(assets/images/222.jpg)',
+            backdrop: `
+            rgba( 255, 255, 255, 0.25 )
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
         }
        )
        this.personaser.updatePersona( persona, idper).subscribe(
@@ -80,11 +101,31 @@ export class ListEmpleadoComponent {
           this.persona.direccion = data.direccion
           this.persona.genero = data.genero
           this.persona.telefono = data.telefono
+          Swal.fire(
+            'Éxito!',
+            'Se ha editado el empleado',
+            'success'
+          )
         }
        )
       },
       error => {
         console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha ocurrido un error al editar el empleado!',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
 
     )
@@ -101,6 +142,11 @@ export class ListEmpleadoComponent {
 
 
         this.usuario = data;
+        Swal.fire(
+          'Éxito!',
+          'Se ha editado el empleado',
+          'success'
+        )
       }
     )
     this.personaser.deletePersona(id_persona).subscribe(
@@ -109,6 +155,11 @@ export class ListEmpleadoComponent {
 
 
         this.persona = data;
+        Swal.fire(
+          'Éxito!',
+          'Se ha editado el empleado',
+          'success'
+        )
       }
     )
 

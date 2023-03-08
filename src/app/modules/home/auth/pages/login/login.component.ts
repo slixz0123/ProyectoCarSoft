@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
             width: 600,
             padding: '3em',
             color: 'red',
-            background: '#fff url(assets/images/cochenegro.jpg)',
+            background: '#fff url(assets/images/222.jpg)',
             backdrop: `
             rgba( 255, 255, 255, 0.25 )
               url("/images/nyan-cat.gif")
