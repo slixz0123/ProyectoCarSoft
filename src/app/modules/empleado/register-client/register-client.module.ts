@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterClientRoutingModule } from './register-client-routing.module';
 import { RegisterClientComponent } from './pages/register-client/register-client.component';
+import { FormsModule } from '@angular/forms';
 import { RegistercarComponent } from '../../administrador-car/register-car/pages/registercar/registercar.component';
 
 
@@ -12,7 +13,8 @@ import { RegistercarComponent } from '../../administrador-car/register-car/pages
   ],
   imports: [
     CommonModule,
-    RegisterClientRoutingModule
+    RegisterClientRoutingModule,
+    FormsModule,
   ],
   exports:[
     RegisterClientComponent
