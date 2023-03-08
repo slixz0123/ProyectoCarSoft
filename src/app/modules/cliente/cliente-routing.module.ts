@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import("./bienvenida-cliente/bienvenida-cliente.module").then(m => m.BienvenidaClienteModule)
+  },
 
   {
     path: 'catalogo-client',

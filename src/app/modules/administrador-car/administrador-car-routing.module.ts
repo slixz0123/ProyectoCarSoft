@@ -3,6 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
+  {
+    path: '',
+    loadChildren: () => import("./bienvenida-admin/bienvenida-admin.module").then(m => m.BienvenidaAdminModule)
+  },
+
+
 
     {
       path: 'register-car',

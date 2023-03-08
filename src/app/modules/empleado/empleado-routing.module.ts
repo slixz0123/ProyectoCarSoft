@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import("./bienvenida-empleado/bienvenida-empleado.module").then(m => m.BienvenidaEmpleadoModule)
+  },
+
+  {
     path: 'register-client',
     loadChildren: () => import("./register-client/register-client.module").then(m => m.RegisterClientModule)
   },
