@@ -1,1 +1,139 @@
-<p>catalogo-admin works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a contact Form 01</title>
+
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+</head>
+
+<body style="margin-top: 20px;">
+ <div class="panel panel-default">
+    <div class="fondobanner">
+        <div style="padding: 50px; ;">
+            <h1 class="logo" style="margin-block-end: 15px;">Catalogo  <span>SofCart </span></h1>
+            <div class="col-lg-6 col-md-8 mx-auto ">
+              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Ofrecemos un servicio de atención al cliente excepcional, con personal amable y profesional que está disponible las 24 horas del día para ayudarlo con cualquier pregunta o inquietud que tenga</p>
+
+              <div>
+                <p style="text-align: center;">
+
+                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Conoce mas sobre nosotros</a>
+                  <a id="btnnes" class="btn  "  href="#">Registrate</a>
+
+              </div>
+            </div>
+             </div>
+    </div>
+    <body class="bodyx2" style="padding: 50px; color: black;">
+        <div class="content">
+               <div class="contact-form animated bounceInUp">
+                <div style="margin: 25px;">
+                  <section class="table__header" style="border-radius:16px ;">
+                    <div class="input-group">
+                        <input type="search" placeholder="Buscar...">
+                    </div>
+
+                </section>
+
+
+                </div>
+
+
+                  <div class="container">
+
+                            <div id="tarjetascontenedor" class="row row-cols-auto row-cols-md-3 g-3">
+                              <div class="" *ngFor="let aut of automoviles" [class.selected]="aut.num_placa ">
+
+                                      <div class="product-card">
+                                          <div class="logo-cart">
+                                              <img  src="https://www.pngall.com/wp-content/uploads/5/Infinity-Symbol-PNG-Free-Image.png" width="30px" height="30px">
+                                            <i class='bx bx-shopping-bag'></i>
+                                          </div>
+
+                                          <div class="shoe-details">
+                                            <a class="pc-head-link dropdown-toggle arrow-none mr-0" data-toggle="dropdown"  role="button" aria-haspopup="false" aria-expanded="false">
+                                              <img [src]="'data:image/jpeg;base64,' + aut.foto" alt="" width="50px" height="50px"
+                                             alt="user-image" class="user-avtar">
+                                            </a>
+
+                                              <span class="shoe_name">{{ aut.modelo }}</span>
+
+                                              <p class="card-text" >
+                                                  {{ aut.claseAutomovil.precio_alquiler_dia }}
+
+                                          </div>
+
+                                          <div id="btnsedittbl" class="button">
+                                            <div class="button-layer"></div>
+                                            <button   class="btn btn-success" >Editar</button>
+                                          </div>
+                                        </div>
+
+                              </div>
+                          </div>
+
+
+
+
+                  </div>
+                 <div>
+                </div>
+               </div>
+             </div>
+             <div>
+
+           </div>
+
+       </body>
+     </div>
+
+
+   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+<div class="container22">
+
+
+  <div class="modal fade" id="dialogo1">
+    <div class="modal-dialog">
+      <div class="modal-content " style="background-color: black; color: white;">
+        <!-- cabecera del diálogo -->
+        <div class="modal-header">
+          <h4 class="modal-title">Vista Previa</h4>
+          <button type="button" class="close" data-dismiss="modal">X</button>
+        </div>
+        <!-- cuerpo del diálogo -->
+        <div class="modal-body">
+          <img src="https://media.revistagq.com/photos/5ca5e602944b834654eb8fe6/master/pass/los_10_coches_mas_caros_del_mundo_131086603.jpg" alt="" style="border-radius: 16px;">
+          <p><strong>Descripcion del Vehiculo</strong></p>
+          <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <!-- pie del diálogo -->
+        <div class="modal-footer">
+          <a id="btnnes" class="btn  "  href="#">Alquilar</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+</html>
+
+

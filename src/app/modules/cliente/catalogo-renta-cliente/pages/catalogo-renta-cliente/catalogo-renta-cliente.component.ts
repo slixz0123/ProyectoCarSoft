@@ -11,7 +11,7 @@ import { CargarscriptsService } from 'src/assets/cargarscripts.service';
   styleUrls: ['./catalogo-renta-cliente.component.css']
 })
 export class CatalogoRentaClienteComponent {
-
+informacionUser: any;
   constructor(
     private catalogo: CargarscriptsService,
     private automovilservice: AutomovilService,
@@ -19,14 +19,12 @@ export class CatalogoRentaClienteComponent {
   ){
     catalogo.carga(["Catalogo"]);
   }
-  @Input() imageLoader: any = `http://localhost:8080/image/verfoto/`;
+
   @Input() member: number = 0;
 
-  loading: boolean = true;
-  arraySelected:any;
+
   aut = new Automovil();
-  arrayExcel:any;
-  loaded = false;
+
   automoviles: Automovil[] = [];
   selectedId = 0;
   showMe!: boolean;
@@ -58,4 +56,18 @@ export class CatalogoRentaClienteComponent {
         },
       });
   }
+
+  obtenerUsuario() {
+
+
+      this.automovilservice.listarAutos().subscribe((data) => {
+        console.log(data);
+
+      });
+
+  }
+
+
+
+
 }

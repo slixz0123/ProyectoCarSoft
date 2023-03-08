@@ -145,7 +145,27 @@ onSelectChange(eventTarget: EventTarget | null) {
           )
 
 
+      },
+      error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: '<a href="">Why do I have this issue?</a>',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(src/assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
+
 
     )
 
@@ -201,6 +221,38 @@ onSelectChange(eventTarget: EventTarget | null) {
 
 
 
+    async loadAnimalPicture(event: any) {
+      const file = event.target.files[0];
+      const fileSize = file.size; // tamaño en bytes
+      if (fileSize > 1048576) {
+        // mensaje de error al usuario
+       // this.showError('El tamaño máximo de la foto debe ser de 1 MB.');
+        event.target.value = null;
+      } else {
+
+        try {
+          this.automovil.foto = await this.convertToBase64(file);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+    }
+
+    //carga foto
+    async convertToBase64(file: File): Promise<string> {
+      const reader = new FileReader();
+      return new Promise<string>((resolve, reject) => {
+        reader.onload = () => {
+          const result = btoa(reader.result as string);
+          resolve(result);
+        };
+        reader.onerror = () => {
+          reject(reader.error);
+        };
+        reader.readAsBinaryString(file);
+      });
+    }
 
 
 

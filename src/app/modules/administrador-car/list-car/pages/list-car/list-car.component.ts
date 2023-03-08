@@ -229,9 +229,11 @@ editarauto(automovil:Automovil,num_placa:string){
          this.automovil.modelo = data.modelo
          this.automovil.tipo_vehiculo = data.tipo_vehiculo
          this.automovil = data;
+
        },
        error => {
         console.error(error);
+
       }
      )
     },
@@ -253,6 +255,7 @@ eliminar(num_placa: string){
 
 
       this.automovil = data;
+
     }
   )
 
