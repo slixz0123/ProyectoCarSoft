@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 import { CargarscriptsService } from '../../../services/cargarjs.service';
 import { Alquiler } from 'src/app/core/models/alquiler';
 import { Seguro } from 'src/app/core/models/seguro';
+import { SeguroService } from 'src/app/shared/services/seguro.service';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
@@ -28,7 +29,8 @@ export class GenerarRentaClienteComponent {
       private fotoService: FotoService,
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
-       private alquilerService:AlquilerService
+       private alquilerService:AlquilerService,
+       private segurorService:SeguroService
 
 
 
@@ -95,6 +97,7 @@ export class GenerarRentaClienteComponent {
     selectedId: Claseautomovil = new Claseautomovil();
     auto!: Auto;
     clase : Claseautomovil[]=[]
+
     seleccionarId(event: any) {
     this.selectedId = event.target?.value ?? 0;
   }
@@ -123,6 +126,7 @@ export class GenerarRentaClienteComponent {
       this.mostrarNotificacion();
       this.getClasesAuto();
       this.verclase();
+     this.getseguro()
 
     }
 
@@ -212,6 +216,12 @@ export class GenerarRentaClienteComponent {
       this.ClasesCarro.getAll().subscribe(
        claseL =>this.clase = claseL
       );}
+
+      getseguro(){
+        this.segurorService.getAll().subscribe(
+          seguros =>this.listaseguro = seguros
+        );}
+
 
 
 
