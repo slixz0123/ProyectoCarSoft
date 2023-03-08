@@ -130,6 +130,18 @@ goToLogin($event: any) :void{
   console.log($event)
 
  }
+ goToCreaSeguro($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/register-auto'])
+  console.log($event)
+
+ }
+ goTolistSeguro($event: any) :void{
+
+  this.router.navigate(['/employee-carsoft/list-seguro'])
+  console.log($event)
+
+ }
 
  obtenerUsuario() {
   this.id = localStorage.getItem('id');

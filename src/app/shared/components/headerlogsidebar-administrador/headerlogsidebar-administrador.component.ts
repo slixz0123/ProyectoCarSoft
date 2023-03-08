@@ -130,6 +130,12 @@ this.obtenerUsuario();
   console.log($event)
 
  }
+ goTolistSeguro($event: any) :void{
+
+  this.router.navigate(['/admin-carsoft/list-seguro'])
+  console.log($event)
+
+ }
 
  obtenerUsuario() {
   this.id = localStorage.getItem('id');
