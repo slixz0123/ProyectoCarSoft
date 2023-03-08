@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { ListSeguroRoutingModule } from './list-seguro-routing.module';
 import { ListSeguroComponent } from './pages/list-seguro/list-seguro.component';
-import { BuscarPipe } from '../list-clase/buscar.pipe';
+
 import { FormsModule } from '@angular/forms';
+
+import { BuscarPipe } from './buscar.pipe';
 
 
 
