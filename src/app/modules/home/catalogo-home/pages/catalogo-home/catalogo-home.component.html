@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </head>
 
-<body style="margin-top: 20px;">
- <div class="panel panel-default">
     <div class="fondobanner">
         <div style="padding: 50px; ;">
             <h1 class="logo" style="margin-block-end: 15px;">Catalogo  <span>SofCart </span></h1>
@@ -55,8 +55,7 @@
 
                                       <div class="product-card">
                                           <div class="logo-cart">
-                                              <img  src="https://www.pngall.com/wp-content/uploads/5/Infinity-Symbol-PNG-Free-Image.png" width="30px" height="30px">
-                                            <i class='bx bx-shopping-bag'></i>
+                                            <img  src="http://images.squarespace-cdn.com/content/v1/56ae96aa859fd0b23b9aef2f/1555001641303-P290TUKFD5XW00F6ZK0C/Red+Eyes+Dragon+Boat+logo.png" width="30px" height="30px">
                                           </div>
 
                                           <div class="shoe-details">
@@ -68,17 +67,28 @@
                                                 </a>
                                               </div>
 
-                                              <span class="shoe_name">{{ aut.modelo }}</span>
+                                              <!-- <span class="shoe_name">{{ aut.modelo }}</span> -->
 
                                               <p class="card-text" >
-                                                  {{ aut.claseAutomovil.precio_alquiler_dia }}
+                                                <p style="font-size: 18px; color: white; " >   <strong> Caracteristicas:  </strong>  </p>
+                                                <div style="margin-top: 15px;margin-block-end: 15px;">
+                                                  <p style="font-size: 15px; color: white;" >   Nº Placa: {{ aut.num_placa}}  </p>
+                                                  <p style="font-size: 15px; color: white;" >   Modelo: {{ aut.modelo }}  </p>
+                                                  <p style="font-size: 15px; color: white;" >   Marca: {{ aut.marca }}  </p>
+                                                  <p style="font-size: 15px; color: white;" >   Año: {{ aut.anio }}  </p>
+
+                                                </div>
+                                                 
 
                                           </div>
 
-                                          <div id="btnsedittbl" class="button">
-                                            <div class="button-layer"></div>
-                                            <button  [routerLink]="['/empresa-adm/producto/detalle-producto', aut.num_placa]" class="btn btn-success" >Editar</button>
+                                          <div style="display: flex; justify-content: center;">
+                                            <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px; color: black;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee"  >Ver</button>
+                                            <a id="btnnes" class="btn  "  href="#">Editar</a>
                                           </div>
+
+                                          
+                                            
                                         </div>
 
                               </div>
@@ -97,7 +107,7 @@
            </div>
 
        </body>
-     </div>
+
 
 
    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
@@ -106,35 +116,24 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-</body>
 
 
-<div class="container22">
-
-
-  <div class="modal fade" id="dialogo1">
-    <div class="modal-dialog">
-      <div class="modal-content " style="background-color: black; color: white;">
-        <!-- cabecera del diálogo -->
-        <div class="modal-header">
-          <h4 class="modal-title">Vista Previa</h4>
-          <button type="button" class="close" data-dismiss="modal">X</button>
+  <div class="modal fade" id="Employee" style="color: white;">
+    <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
+        <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
+            <form id="needs-validation"  >
+                <div class="modal-header" style="text-align: center;">
+                    <h1 class="logo" style="margin-block-end: 15px;">Vista <span>Previa </span></h1>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div  class="modal-footer">
+                    <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
         </div>
-        <!-- cuerpo del diálogo -->
-        <div class="modal-body">
-          <img src="https://media.revistagq.com/photos/5ca5e602944b834654eb8fe6/master/pass/los_10_coches_mas_caros_del_mundo_131086603.jpg" alt="" style="border-radius: 16px;">
-          <p><strong>Descripcion del Vehiculo</strong></p>
-          <p class="card-text" style="margin-block-end: 10px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <!-- pie del diálogo -->
-        <div class="modal-footer">
-          <a id="btnnes" class="btn  "  href="#">Alquilar</a>
-        </div>
-
-      </div>
     </div>
-  </div>
-
 </div>
 
 
