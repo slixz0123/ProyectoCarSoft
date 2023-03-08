@@ -136,6 +136,12 @@ this.obtenerUsuario();
   console.log($event)
 
  }
+ goToCatalogo($event: any) :void{
+
+  this.router.navigate(['/admin-carsoft/catalogo-admin'])
+  console.log($event)
+
+ }
 
  obtenerUsuario() {
   this.id = localStorage.getItem('id');
