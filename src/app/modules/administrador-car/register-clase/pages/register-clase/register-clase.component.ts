@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 export class RegisterClaseComponent {
   seguro: Seguro = new Seguro();
   claseautomovil: Claseautomovil = new Claseautomovil();
-
+  
   constructor( private toastr: ToastrService, private ClasesCarro:ClasesCarroService , private SeguroServi:SeguroService) {}
 
 

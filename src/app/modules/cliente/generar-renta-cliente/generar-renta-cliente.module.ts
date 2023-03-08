@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GenerarRentaClienteRoutingModule } from './generar-renta-cliente-routing.module';
 import { GenerarRentaClienteComponent } from './pages/generar-renta-cliente/generar-renta-cliente.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { GenerarRentaClienteComponent } from './pages/generar-renta-cliente/gene
   ],
   imports: [
     CommonModule,
-    GenerarRentaClienteRoutingModule
+    GenerarRentaClienteRoutingModule,
+    FormsModule
   ],exports:[
     GenerarRentaClienteComponent
   ]

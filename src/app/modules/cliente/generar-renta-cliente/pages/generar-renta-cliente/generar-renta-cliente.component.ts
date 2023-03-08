@@ -13,12 +13,15 @@ import Swal from 'sweetalert2';
 
 import { CargarscriptsService } from '../../../services/cargarjs.service';
 import { Alquiler } from 'src/app/core/models/alquiler';
+import { Seguro } from 'src/app/core/models/seguro';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
   styleUrls: ['./generar-renta-cliente.component.css']
 })
 export class GenerarRentaClienteComponent {
+  alquiler: Alquiler=new Alquiler;
+  listaseguro:Seguro[]=[];
   constructor(
     private car: CargarscriptsService,
     private automovilService: AutomovilService,
@@ -96,7 +99,6 @@ export class GenerarRentaClienteComponent {
     this.selectedId = event.target?.value ?? 0;
   }
     automovil: Automovil = new Automovil;
-    alquiler: Alquiler = new Alquiler;
     clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
 
 
@@ -108,14 +110,13 @@ export class GenerarRentaClienteComponent {
 
 
     ngOnInit(): void {
-      this.automovil.num_placa = '';
-      this.automovil.color = '';
-      this.automovil.estado = '';
-      this.automovil.marca = '';
-      this.automovil.modelo = '';
-      this.automovil.tipo_vehiculo = '';
-      this.automovil.foto = '';
-
+      this.alquiler.id_alquiler;
+      this.alquiler.documento_garantia;
+      this.alquiler.fecha_salida;
+      this.alquiler.prox_fecha_entrega;
+      this.alquiler.Seguro.cod_seguro;
+      this.alquiler.rol.id_rol;
+      this.alquiler.usuario.id;
       this.clasesau.id_clase=0;
 
       localStorage.removeItem('num_placa');
@@ -186,14 +187,14 @@ export class GenerarRentaClienteComponent {
     registaralquiler() {
       this.automovil.claseAutomovil = this.selectedId
 
-      this.alquilerService.getAlquiler().subscribe(
+      this.alquilerService.postAlquiler(this.alquiler).subscribe(
         data => {
 
           console.log( data);
 
             Swal.fire(
               'Exito!',
-              'Registro carro',
+              'Alquiler solicitado',
               'success'
             )
 
