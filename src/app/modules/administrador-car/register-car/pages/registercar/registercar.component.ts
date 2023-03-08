@@ -148,7 +148,27 @@ onSelectChange(eventTarget: EventTarget | null) {
           )
 
 
+      },
+      error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: '<a href="">Why do I have this issue?</a>',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(src/assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
+
 
     )
 
