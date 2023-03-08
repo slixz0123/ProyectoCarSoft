@@ -14,9 +14,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     ClienteRoutingModule,
     SharedModule
-  ],
-  exports:[
-    WelcomeClienteComponent
   ]
+
 })
 export class ClienteModule { }

@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () => import("./bienvenida-admin/bienvenida-admin.module").then(m => m.BienvenidaAdminModule)
   },
 
+  {
+    path: 'catalogo-admin',
+    loadChildren: () => import("./catalogo-admin/catalogo-admin.module").then(m => m.CatalogoAdminModule)
+  },
+
 
 
     {
