@@ -15,8 +15,6 @@
 	<!-- [ navigation menu ] start -->
 	<nav class="pc-sidebar responsive-sidebar" style="margin-top: 120px;">
 		<div class="navbar-wrapper">
-
-
 			<div class="navbar-content">
 				<ul class="pc-navbar">
 					 <!-- 1 -->
@@ -24,27 +22,28 @@
 						<label class="titulo" >Menú de Empleado</label>
 					</li>
 					<li class="pc-item">
+            <a id="bienvenida" class="pc-link btns " href=""><i data-feather="home"></i><span class="pc-mtext">Home</span></a>
 
-            <a id="bienvenida" class="pc-link btns " href="">
-              <i data-feather="home"></i>
-              <span class="pc-mtext">Bienvenida</span>
-            </a>
+
+			
 
           </li>
           <!-- 2 -->
           <li class="pc-item pc-caption">
 						<label class="titulo">Cliente</label>
-
 					</li>
             <li class="pc-item">
+
+
               <a id="cliente"  (click)="goToRegisterClient($event)" class="pc-link "><i data-feather="edit-2"></i><span class="pc-mtext">Registro Cliente</span></a>
 
               <!-- <a id="cliente"  (click)="goToEdicionClient($event)" class="pc-link "><i data-feather="edit"></i><span class="pc-mtext">Edición Cliente</span></a> -->
               <a id="cliente"  (click)="goToListClient($event)" class="pc-link "><i data-feather="book-open"></i><span class="pc-mtext">Lista Cliente </span></a>
-			  <a  id="auto" (click)="goToCatalogot($event)" class="pc-link "><i data-feather="list"></i><span class="pc-mtext">Catálogo</span></a>
-              <a id="cliente"  (click)="goToListClient($event)" class="pc-link "><i data-feather="book-open"></i><span class="pc-mtext">Lista Cliente </span></a>
-			  <a  id="auto" (click)="goToCatalogot($event)" class="pc-link "><i data-feather="list"></i><span class="pc-mtext">Catalogo</span></a>
+			  <!-- <a  id="auto" (click)="goToCatalogot($event)" class="pc-link "><i data-feather="list"></i><span class="pc-mtext">Catálogo</span></a> -->
 			  <a id="cliente"  (click)="goToCrearAuto($event)" class="pc-link "><i data-feather="edit"></i><span class="pc-mtext">Registo Automovil</span></a>
+			  <!-- <a id="cliente"  (click)="goToListClient($event)" class="pc-link "><i data-feather="book-open"></i><span class="pc-mtext">Lista Cliente </span></a> -->
+			  <a  id="auto" (click)="goToCatalogot($event)" class="pc-link "><i data-feather="list"></i><span class="pc-mtext">Catalogo</span></a>
+			  
 			</li>
             <!-- 3 -->
           <li class="pc-item pc-caption">

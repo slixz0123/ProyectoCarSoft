@@ -1,69 +1,59 @@
-
-
-
-	<!-- [ Pre-loader ] start -->
-	<div class="loader-bg">
-		<div class="loader-track">
-			<div class="loader-fill"></div>
-		</div>
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+	<div class="loader-track">
+	  <div class="loader-fill"></div>
 	</div>
-	<!-- [ Pre-loader ] End -->
-	<!-- [ Mobile header ] start -->
-
-	<!-- [ Mobile header ] End -->
-
-	<!-- [ navigation menu ] start -->
-	<nav class="pc-sidebar responsive-sidebar" style="margin-top: 120px;">
-		<div class="navbar-wrapper">
-
-
-			<div class="navbar-content">
-				<ul class="pc-navbar">
-					 <!-- 1 -->
-          <li  class="pc-item pc-caption">
-						<label class="titulo" >Menú de Cliente</label>
-					</li>
-					<li class="pc-item">
-
-						<a  id="auto" href="" class="pc-link "><i data-feather="truck"></i><span class="pc-mtext">Home</span></a>
-          </li>
-
-          <li class="pc-item pc-caption">
-            <label class="titulo">Auto</label>
-
-            </li>
-            <li class="pc-item">
-              <a  id="auto" (click)="goToCatalogo($event)" class="pc-link "><i data-feather="truck"></i><span class="pc-mtext">Catálogo de Autos</span></a>
-
-         </li>
-          <!-- 2 -->
-          <li class="pc-item pc-caption">
-						<label class="titulo">Cliente</label>
-
-					</li>
-            <li class="pc-item">
-              <a id="cliente"  (click)="goToGenerarRent($event)" class="pc-link "><i data-feather="edit-2"></i><span class="pc-mtext">Generar Alquiler</span></a>
-              <a id="cliente"  (click)="goToSoli($event)" class="pc-link "><i data-feather="edit"></i><span class="pc-mtext">Solicitud Renta</span></a>
-
-             </li>
-            <!-- 3 -->
-
-
-
-				</ul>
-
-			</div>
-		</div>
-    <button id="scroll-to-top" onclick="topFunction()"><i class="fa fa-arrow-up"></i></button>
-	</nav>
-	<!-- [ navigation menu ] end -->
-	<!-- [ Header ] start -->
-	<header class="pc-header ">
-		<div class="header-wrapper">
-      <div class="fondobanner">
-        <button class="responsive-sidebar-toggle">
-          <i class="fas fa-bars" style="padding-left: 15px;"></i>
-        </button>
+  </div>
+  <!-- [ Pre-loader ] End -->
+  
+  <!-- [ Mobile header ] start -->
+  
+  <!-- [ Mobile header ] End -->
+  
+  <!-- [ navigation menu ] start -->
+  <nav class="pc-sidebar responsive-sidebar" style="margin-top: 120px;">
+	<div class="navbar-wrapper">
+	  <div class="navbar-content">
+		<ul class="pc-navbar">
+		  <!-- 1 -->
+		  <li class="pc-item pc-caption">
+			<label class="titulo">Menú de Cliente</label>
+			
+		  </li>
+		  <li class="pc-item">
+			<i data-feather="home"></i>
+			<a id="auto" href="" class="pc-link "><img src="assets/images/home.svg" alt="" style="width: 25px;height:25px; "><span class="pc-mtext">Home</span></a>
+		
+		</li>
+		  <li class="pc-item pc-caption">
+			<label class="titulo">Auto</label>
+		  </li>
+		  <li class="pc-item">
+			<a id="auto" (click)="goToCatalogo($event)" class="pc-link "><img src="assets/images/book-open%20(3).svg" alt="" style="width: 25px;height:25px; "><span class="pc-mtext">Catálogo de Autos</span></a>
+		  </li>
+		  <!-- 2 -->
+		  <li class="pc-item pc-caption">
+			<label class="titulo">Cliente</label>
+		  </li>
+		  <li class="pc-item">
+			<a id="cliente" (click)="goToGenerarRent($event)" class="pc-link "><img src="assets/images/book-open%20(3).svg" alt="" style="width: 25px;height:25px; "><span class="pc-mtext">Generar Alquiler</span></a>
+			<a id="cliente" (click)="goToSoli($event)" class="pc-link "><img src="assets/images/book-open%20(3).svg" alt="" style="width: 25px;height:25px; "><span class="pc-mtext">Solicitud Renta</span></a>
+		  </li>
+		  <!-- 3 -->
+		</ul>
+	  </div>
+	</div>
+	<button id="scroll-to-top" onclick="topFunction()"><i class="fa fa-arrow-up"></i></button>
+  </nav>
+  <!-- [ navigation menu ] end -->
+  
+  <!-- [ Header ] start -->
+  <header class="pc-header ">
+	<div class="header-wrapper">
+	  <div class="fondobanner">
+		<button class="responsive-sidebar-toggle">
+		  <i class="fas fa-bars" style="padding-left: 15px;"></i>
+		</button>
 		<img src="http://images.squarespace-cdn.com/content/v1/56ae96aa859fd0b23b9aef2f/1555001641303-P290TUKFD5XW00F6ZK0C/Red+Eyes+Dragon+Boat+logo.png" alt="" style="width: 80px;height: 80px; display: inline-block; margin-left: 25px;">
 		<h1 class="logo" style="margin: 25px 0 25px 10px; font-size: 40px; text-align: left; display: inline-block;">Car<span>Soft </span></h1>
 
