@@ -137,11 +137,11 @@ console.log(result)
 
         console.log( data);
 
-          Swal.fire(
-            'Exito!',
-            'Registro carro',
-            'success'
-          )
+        Swal.fire(
+          'Exito!',
+          'Se ha registrado el automóvil',
+          'success'
+        )
       }
 
     )
@@ -228,9 +228,29 @@ editarauto(automovil:Automovil,num_placa:string){
          this.automovil.modelo = data.modelo
          this.automovil.tipo_vehiculo = data.tipo_vehiculo
          this.automovil = data;
+         Swal.fire(
+          'Exito!',
+          'Se ha editado el automóvil',
+          'success'
+        )
        },
        error => {
         console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha ocurrido un error al editar el automóvil!',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
      )
     },
@@ -252,6 +272,11 @@ eliminar(num_placa: string){
 
 
       this.automovil = data;
+      Swal.fire(
+        'Exito!',
+        'Se ha eliminado el automóvil',
+        'success'
+      )
     }
   )
 

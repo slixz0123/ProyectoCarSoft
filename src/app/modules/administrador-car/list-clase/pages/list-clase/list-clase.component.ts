@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Claseautomovil } from 'src/app/core/models/claseautomovil';
 import { ClasesCarroService } from 'src/app/shared/services/clases-carro.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-clase',
@@ -52,9 +53,29 @@ editarclase(clasea:Claseautomovil,id_clase:number){
 
 
          this.clasea = data;
+         Swal.fire(
+          'Exito!',
+          'Se ha editado la clase',
+          'success'
+        )
        },
        error => {
         console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha ocurrido un error al editar la clase!',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(src/assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
      )
     },
@@ -79,6 +100,11 @@ eliminar(id_clase: string){
 
 
        this.clasea = data;
+       Swal.fire(
+        'Exito!',
+        'Se ha eliminado la clase',
+        'success'
+      )
      }
    )
 

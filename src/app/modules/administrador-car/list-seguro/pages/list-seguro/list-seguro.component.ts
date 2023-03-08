@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Seguro } from 'src/app/core/models/seguro';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-seguro',
@@ -45,14 +46,50 @@ export class ListSeguroComponent {
 
 
            this.segur = data;
+
+           Swal.fire(
+            'Éxito!',
+            'Se ha editado el seguro',
+            'success'
+          )
          },
          error => {
           console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha ocurrido un error al editar el seguro!',
+            width: 600,
+            padding: '3em',
+            color: 'red',
+            background: '#fff url(assets/images/222.jpg)',
+            backdrop: `
+            rgba( 255, 255, 255, 0.25 )
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
         }
        )
       },
       error => {
         console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha ocurrido un error al editar el seguro!',
+          width: 600,
+          padding: '3em',
+          color: 'red',
+          background: '#fff url(assets/images/222.jpg)',
+          backdrop: `
+          rgba( 255, 255, 255, 0.25 )
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
       }
 
     )
@@ -72,6 +109,11 @@ export class ListSeguroComponent {
 
 
          this.segur = data;
+         Swal.fire(
+          'Éxito!',
+          'Se ha eliminado el seguro',
+          'success'
+        )
        }
      )
 
