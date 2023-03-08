@@ -34,87 +34,98 @@
              </div>
     </div>
 
-    <div class="content">
-      <div class="contact-form animated bounceInUp">
-        <div>
-          <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong></p>
-        </div>
+        <div class="content">
+               <div class="contact-form animated bounceInUp">
+                   <div>
+                       <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
+                   </div>
 
-        <form>
-          <p>
-            <label>Numero de placa:</label>
-            <input id="placa" placeholder="Ingrese el Numero de placa" type="text" name="num_placa"  required>
-          </p>
+                   <form  >
+                       <p>
+                           <label >Numero de placa:</label>
+                           <input id="num_placa"  maxlength="8" placeholder="Ingrese el Nº de Placa" type="text" name="num_placa"    [(ngModel)]="automovil.num_placa"  (input)="convertir($event)"  required>
+                       </p>
+                       <p>
+                           <label>Modelo:</label>
+                           <input type="text"  placeholder="Ingrese el Modelo"  name="modelo"   [(ngModel)]="automovil.modelo"  >
+                       </p>
+                       <p>
+                           <label> Color:</label>
+                           <input type="text" placeholder="Ingrese el Color"  name="color"    [(ngModel)]="automovil.color">
+                       </p>
+                       <p>
+                        <label>Marca:</label>
+                        <input type="text" placeholder="Ingrese la Marca"  name="marca"   [(ngModel)]="automovil.marca">
+                    </p>
+                  <p>
+                      <label>Numero de Matricula :</label>
+                      <input type="text" placeholder="Ingrese la matricula"  name="matricula"   [(ngModel)]="automovil.matricula">
+                  </p>
+                     <p>
+                      <label>Año del vehiculo:</label>
+                      <input onkeypress="numeros()" type="text" placeholder="Ingrese el Año del Vehiculo"  name="anio"   [(ngModel)]="automovil.anio">
+                  </p>
+                       <div class="input-field">
+                        <label>Tipo de vehiculo</label>
+                        <select name="tipo_vahiculo" [(ngModel)]="automovil.tipo_vehiculo" required style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
+                            <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                            <option value="Tipo A">4x4</option>
+                            <option value="Tipo B">Deportivo</option>
+                            <option value="Tipo C">Familiar</option>
+                        </select>
+                    </div>
+                       <div class="input-field">
+                        <label>Estado</label>
+                        <select name="estado" [(ngModel)]="automovil.estado"  style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
+                            <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
+                            <option value="Disponible">Disponible</option>
+                            <option value="No Disponible">No Disponible</option>
+                        </select>
+                    </div>
+                    <div style="margin-left: 7px;">
+                        <label>Clase</label>
+                        <select  (change)="onSelectChange($event.target)" name="id_clase"  [(ngModel)]="automovil.claseAutomovil"   style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;" >
+                            <option selected style="color: aliceblue;">Selecciona la clase</option>
+                            <option  [(ngModel)]="automovil.claseAutomovil" *ngFor="let claseL of clase" [value]="claseL.id_clase">{{ claseL.nombre }} </option>
+                          </select>
+                    </div>
 
-          <p>
-            <label>Modelo:</label>
-            <input type="text" placeholder="Ingrese el Modelo" name="modelo" >
-          </p>
-
-          <p>
-            <label>Color:</label>
-            <input type="email" placeholder="Ingrese el Color"  name="color" >
-          </p>
-
-          <p>
-            <label>Marca:</label>
-            <input type="text" placeholder="Ingrese la Marca" name="marca" >
-          </p>
-
-          <p>
-            <label>Año del vehiculo:</label>
-            <input type="text" onkeypress="numeros()" placeholder="Ingrese el Año del Vehiculo" name="anio" >
-          </p>
-
-          <div class="input-field">
-            <label>Tipo de vehiculo</label>
-            <select name="tipo_vahiculo"  required style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
-              <option selected style="color: aliceblue;">Selecciona el tipo</option>
-              <option value="Tipo A">Tipo A</option>
-              <option value="Tipo B">Tipo B</option>
-              <option value="Tipo C">Tipo C</option>
-            </select>
-          </div>
-
-          <div class="input-field">
-            <label>Estado</label>
-            <select name="estado"  style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
-              <option disabled selected style="color: aliceblue;">Selecciona el estado</option>
-              <option value="Excelente">Excelente</option>
-              <option value="Regular">Regular</option>
-              <option value="Deteriorado">Deteriorado</option>
-            </select>
-          </div>
-
-          <div>
-            <label>Clase</label>
-            <select style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
-              <option selected style="color: aliceblue;">Selecciona la clase</option>
-              <!-- <option *ngFor="let clase of modelos" [value]="clase.id_clase">{{ clase.nombre }}</option> -->
-            </select>
-          </div>
-
-
+                    <div>
+                        <label>Imagen</label>
+                    <div class="input-group mb-3 mt-3">
 
 
-                        <button  style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
-                            <strong>Subir Foto   ⇩</strong>
-                        </button>
+<input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
+  class="form-control" id="inputGroupFile01" required />
+</div>
 
-                        <button >
-                            Guardar
-                        </button>
-                        <button>
+</div>
+
+
+
+<!-- <button  (click)="registrarclase()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
+  <strong>Subir Foto   ⇩</strong>
+</button> -->
+<div>
+<label class="input-group-text" for="inputGroupFile01">Imagen</label>
+<input [(ngModel)]="automovil.foto"  #foto formControlName="foto" (change)="imageSelected($event)" name="foto" type="file"
+  class="form-control" id="inputGroupFile01" required />
+</div>
+
+
+
+                    <button  (click)="  registrarclase()" >
+                      Guardar
+                  </button>
+                           <!-- <button>
                             Cancelar
-                        </button>
-
-                        </form>
-
-
+                        </button> -->
+                        <!-- <pre>
+                          {{automovil |  json}}
+                       </pre> -->
+                   </form>
                </div>
-
             </div>
-
    <div>
 
    </div>

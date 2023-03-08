@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterAutoRoutingModule } from './register-auto-routing.module';
 import { RegisterAutoComponent } from './pages/register-auto/register-auto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { RegisterAutoComponent } from './pages/register-auto/register-auto.compo
   ],
   imports: [
     CommonModule,
-    RegisterAutoRoutingModule
+    RegisterAutoRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],exports:[
     RegisterAutoComponent
   ]
