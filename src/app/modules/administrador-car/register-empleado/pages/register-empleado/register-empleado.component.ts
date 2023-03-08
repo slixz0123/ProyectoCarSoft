@@ -119,7 +119,21 @@ export class RegisterEmpleadoComponent {
 
     if (this.persona.apellido === '') {
 
-      this.toastr.warning("Verifique que esten correctos los campos")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Ha ocurrido un error al editar el empleado!',
+        width: 600,
+        padding: '3em',
+        color: 'red',
+        background: '#fff url(assets/images/222.jpg)',
+        backdrop: `
+        rgba( 255, 255, 255, 0.25 )
+          url("/images/nyan-cat.gif")
+          left top
+          no-repeat
+        `
+      })
     } else {
 
       this.usuarioService.verfUsername(this.usuario.nombreUsuario).subscribe(
@@ -156,7 +170,6 @@ export class RegisterEmpleadoComponent {
                           'Registro clase',
                           'success'
                         )
-                        this.toastr.success('Usuario registrado correctamente', 'Bienvenido!')
 
                        //location.replace('/df');
                       }
@@ -171,7 +184,21 @@ export class RegisterEmpleadoComponent {
 
 
           } else {
-            this.toastr.error("El username que eligio ya está en uso!", "Error");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Ha ocurrido un error al editar el empleado!',
+              width: 600,
+              padding: '3em',
+              color: 'red',
+              background: '#fff url(assets/images/222.jpg)',
+              backdrop: `
+              rgba( 255, 255, 255, 0.25 )
+                url("/images/nyan-cat.gif")
+                left top
+                no-repeat
+              `
+            })
             this.verfUsername = 'ng-invalid ng-dirty';
             this.usuario.nombreUsuario = '';
           }

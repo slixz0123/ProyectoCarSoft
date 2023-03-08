@@ -143,7 +143,7 @@ onSelectChange(eventTarget: EventTarget | null) {
 
           Swal.fire(
             'Exito!',
-            'Registro carro',
+            'Se ha registrado la clase',
             'success'
           )
 
@@ -154,8 +154,7 @@ onSelectChange(eventTarget: EventTarget | null) {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Something went wrong!',
-          footer: '<a href="">Why do I have this issue?</a>',
+          text: 'Ha ocurrido un error al registrar la clase!',
           width: 600,
           padding: '3em',
           color: 'red',
