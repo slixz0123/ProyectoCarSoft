@@ -111,7 +111,7 @@ export class LoginComponent implements OnInit {
             background: '#fff url(assets/images/222.jpg)',
             backdrop: `
             rgba( 255, 255, 255, 0.25 )
-              url("src/assets/images/222.jpg")
+              url("/images/nyan-cat.gif")
               left top
               no-repeat
             `
