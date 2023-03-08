@@ -15,6 +15,8 @@ import { CargarscriptsService } from '../../../services/cargarjs.service';
 import { Alquiler } from 'src/app/core/models/alquiler';
 import { Seguro } from 'src/app/core/models/seguro';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
+import { Usuario } from 'src/app/core/models/usuario';
+import { UsuarioService } from 'src/app/shared/services/usuario.service';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
@@ -23,6 +25,22 @@ import { SeguroService } from 'src/app/shared/services/seguro.service';
 export class GenerarRentaClienteComponent {
   alquiler: Alquiler=new Alquiler;
   listaseguro:Seguro[]=[];
+  id: any;
+
+  num_placa: any;
+
+  nombreUsuario: any;
+  nombreRol: any;
+  nombreFoto: any;
+  nombreLogo: any;
+
+  isSuperAdmin: boolean = false;
+  isClientAdmin: boolean = false;
+  isClient: boolean = false;
+  isPublic: boolean = false;
+
+  displayMaximizable: any;
+  isLogin: boolean = false;
   constructor(
     private car: CargarscriptsService,
     private automovilService: AutomovilService,
@@ -30,7 +48,9 @@ export class GenerarRentaClienteComponent {
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
        private alquilerService:AlquilerService,
-       private segurorService:SeguroService
+       private segurorService:SeguroService,
+       private usuarioservice :UsuarioService
+
 
 
 
@@ -94,7 +114,8 @@ export class GenerarRentaClienteComponent {
 
 
     autoForm!: FormGroup;
-    selectedId: Claseautomovil = new Claseautomovil();
+    selectedId: Seguro = new Seguro();
+    selectedIc: Claseautomovil = new Claseautomovil();
     auto!: Auto;
     clase : Claseautomovil[]=[]
 
@@ -103,6 +124,7 @@ export class GenerarRentaClienteComponent {
   }
     automovil: Automovil = new Automovil;
     clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
+    usuario: Usuario = new Usuario;
 
 
 
@@ -126,7 +148,8 @@ export class GenerarRentaClienteComponent {
       this.mostrarNotificacion();
       this.getClasesAuto();
       this.verclase();
-     this.getseguro()
+     this.getseguro();
+     this.obtenerUsuario();
 
     }
 
@@ -134,8 +157,8 @@ export class GenerarRentaClienteComponent {
 
     sendData(selectedValue: number) {
 
-      const payload = { id: selectedValue };
-      this.ClasesCarro.getPorId( payload).subscribe(
+      const payload = { cod_seguro: selectedValue };
+      this.segurorService.getPorId( payload).subscribe(
         (response) => {
           console.log('Solicitud POST enviada con éxito:', response);
         },
@@ -169,6 +192,8 @@ export class GenerarRentaClienteComponent {
     }
   )
   }
+
+
   onSelectChange(eventTarget: EventTarget | null) {
     const selectElement = eventTarget as HTMLSelectElement;
     if (!selectElement) {
@@ -177,8 +202,22 @@ export class GenerarRentaClienteComponent {
 
     const selectedValue = selectElement.value;
     console.log(selectedValue); // muestra el valor seleccionado en la consola
-    this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
+    this.selectedIc.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
   }
+
+
+
+  onSelectChangesegur(eventTarget: EventTarget | null) {
+    const selectElement = eventTarget as HTMLSelectElement;
+    if (!selectElement) {
+      return; // Salimos de la función si no hay ningún elemento seleccionado
+    }
+
+    const selectedValue = selectElement.value;
+    console.log(selectedValue); // muestra el valor seleccionado en la consola
+    this.selectedId.cod_seguro = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
+  }
+
 
 
     mostrarNotificacion() {
@@ -188,29 +227,46 @@ export class GenerarRentaClienteComponent {
       });
     }
 
-    registaralquiler() {
-      this.automovil.claseAutomovil = this.selectedId
-
-      this.alquilerService.postAlquiler(this.alquiler).subscribe(
-        data => {
-
-          console.log( data);
-
-            Swal.fire(
-              'Exito!',
-              'Alquiler solicitado',
-              'success'
-            )
 
 
-        }
 
-      )
+  obtenerUsuario() {
+    this.id = localStorage.getItem('id');
 
+
+    if (this.id != '' && this.id != undefined) {
+      this.usuarioservice.getPorId(this.id).subscribe((data) => {
+        console.log("estoy antes generar renta ")
+        console.log(data);
+        console.log("estoy en generar renta ")
+
+      });
+    }
   }
 
+  registaralquiler() {
+
+    this.alquiler.Seguro = this.selectedId;
+    this.alquiler.usuario.id = this.id;
+    this.num_placa = localStorage.getItem('num_placa');
+
+    this.alquilerService.postAlquiler(this.alquiler).subscribe(
+      data => {
+
+        console.log( data);
+
+          Swal.fire(
+            'Exito!',
+            'Alquiler solicitado',
+            'success'
+          )
 
 
+      }
+
+    )
+
+}
 
     getClasesAuto(){
       this.ClasesCarro.getAll().subscribe(

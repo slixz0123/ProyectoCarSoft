@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Automovil } from 'src/app/core/interfaces/automovil';
 import { AutomovilService } from 'src/app/shared/services/automovil.service';
@@ -15,6 +16,7 @@ informacionUser: any;
   constructor(
     private catalogo: CargarscriptsService,
     private automovilservice: AutomovilService,
+    private router: Router
 
   ){
     catalogo.carga(["Catalogo"]);
@@ -66,7 +68,12 @@ informacionUser: any;
       });
 
   }
+routereserva($event: any):void{
+  localStorage.setItem('num_placa', String(this.aut.num_placa));
+  console.log($event)
+  this.router.navigate(['client-carsoft/generar-rent-client'])
 
+}
 
 
 
