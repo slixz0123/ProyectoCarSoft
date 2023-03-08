@@ -91,26 +91,25 @@
                     </div>
 
                     <div>
-                        <label>Imagen</label>
-                    <div class="input-group mb-3 mt-3">
+                      <div class="row mt-2">
+                        <div class="col-md-12 d-flex justify-content-center align-items-center">
+                          <div class="text-center" style="border: 3px solid black;" class="row rounded"
+                            style="box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);">
+                            <img [src]="automovil.foto ?'data:image/jpeg;base64,' + automovil.foto : 'https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png'"
+                              alt="" (click)="fileInput.click()" [style.max-height]="'90px'"
+                              [style.min-height]="'90px'">
+                            <input type="file" #fileInput style="display: none;"
+                              accept="image/jpeg, image/jpg, image/png"
+                              (change)="loadAnimalPicture($event)">
+                          </div>
+                        </div>
+                      </div>
 
 
-<input #imagen formControlName="imagen" (change)="imageSelected($event)" name="imagen" type="file"
-  class="form-control" id="inputGroupFile01" required />
 </div>
 
-</div>
 
 
-
-<!-- <button  (click)="registrarclase()" style="background-color: black;color: white;  padding: 10PX; width: 725px;border-radius: 16px;">
-  <strong>Subir Foto   ⇩</strong>
-</button> -->
-<div>
-<label class="input-group-text" for="inputGroupFile01">Imagen</label>
-<input [(ngModel)]="automovil.foto"  #foto formControlName="foto" (change)="imageSelected($event)" name="foto" type="file"
-  class="form-control" id="inputGroupFile01" required />
-</div>
 
 
 
