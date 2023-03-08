@@ -60,7 +60,7 @@
                         <tbody>
 
 
-                            
+
                             <tr *ngFor="let clases of clases | buscar:buscar">
                                 <td>{{clases.id_clase}}</td>
                                 <td>{{clases.nombre}}</td>
@@ -68,9 +68,9 @@
 
 
                                 <td>
-                                    <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee">Editar</button>
+                                  <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="seleccionarCarro(clases,clases.id_clase)" >Editar</button>
 
-                                    <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee">Eliminar</button>
+                                  <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary" (click)="eliminar(clases.id_clase)"   data-target="#Employee">Eliminar</button>
 
                                 </td>
                             </tr>
@@ -84,7 +84,7 @@
         </div><div class="modal fade" id="Employee" style="color: white;">
             <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
                 <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
-                    <form id="needs-validation" novalidate>
+                    <form  *ngIf="ClaseSeleccionada" id="needs-validation" novalidate>
                         <div class="modal-header" style="text-align: center;">
                             <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Clases </span></h1>
                         </div>
@@ -92,28 +92,28 @@
                             <div class="form-row">
                                 <div class="col-sm-6 col-md-6 col-xs-12">
                                     <label for="firstName">Id de la Clase</label>
-                                    <input id="firstName" type="text" placeholder="Ingrese el id Clase" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <input [(ngModel)]="ClaseSeleccionada.id_clase" name="id_clase" id="firstName" type="text" placeholder="Ingrese el id Clase" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                     <div class="invalid-feedback">Ingrese el id clase</div>
                                 </div>
-                                
+
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-6 col-md-6 col-xs-12">
                                     <label for="firstName">Nombre</label>
-                                    <input id="firstName" type="text" placeholder="Ingrese el Nombre" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <input [(ngModel)]="ClaseSeleccionada.nombre" name="nombre"  id="firstName" type="text" placeholder="Ingrese el Nombre" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                     <div class="invalid-feedback">Ingrese el Nombre</div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-6 col-md-6 col-xs-12">
                                     <label for="firstName">Precio de alquiler</label>
-                                    <input id="firstName" type="text" placeholder="Ingrese el Precio" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <input id="firstName" [(ngModel)]="ClaseSeleccionada.precio_alquiler_dia" name="precio_alquiler_dia"  type="text" placeholder="Ingrese el Precio" class="form-control" aria-describedby="inputGroupPrepend" required/>
                                     <div class="invalid-feedback">Precio de alquiler </div>
                                 </div>
                             </div>
                         </div>
                         <div  class="modal-footer">
-                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Editar</button>
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal" (click)="editarclase(ClaseSeleccionada,ClaseSeleccionada.id_clase)">Editar</button>
 
                             <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
