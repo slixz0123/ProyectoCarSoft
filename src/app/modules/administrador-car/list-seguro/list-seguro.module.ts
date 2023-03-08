@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports:[
-    ListSeguroComponent
+    ListSeguroComponent,
+    BuscarPipe
   ]
 })
 export class ListSeguroModule { }
