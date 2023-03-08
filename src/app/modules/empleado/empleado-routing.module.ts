@@ -15,8 +15,8 @@ const routes: Routes = [
     loadChildren: () => import("./list-client/list-client.module").then(m => m.ListClientModule)
   },
   {
-    path: 'catalogo-renta',
-    loadChildren: () => import("./catalogo-renta/catalogo-renta-routing.module").then(m => m.CatalogoRentaRoutingModule)
+    path: 'catalogo-employee',
+    loadChildren: () => import("./catalogo-renta/catalogo-renta.module").then(m => m.CatalogoRentaModule)
   },
   {
     path: 'crear-renta',

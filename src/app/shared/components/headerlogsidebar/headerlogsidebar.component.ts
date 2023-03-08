@@ -108,7 +108,7 @@ goToLogin($event: any) :void{
 
  goToCatalogot($event: any) :void{
 
-  this.router.navigate(['/employee-carsoft/catalogo-client'])
+  this.router.navigate(['/employee-carsoft/catalogo-employee'])
   console.log($event)
 
  }
