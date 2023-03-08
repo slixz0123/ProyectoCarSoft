@@ -1,4 +1,3 @@
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -204,7 +203,7 @@ text-align: left;
   font-size: 16px;
   margin: 25px;
 
-  
+
 }
 
 .contact-form form button:hover,
@@ -213,7 +212,7 @@ text-align: left;
   color: #fff;
   transition: background-color 1s ease-out;
   outline: 0;
-  
+
 }
 
 /* CONTACT INFO */
@@ -223,7 +222,7 @@ text-align: left;
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {
-  text-align: ;
+
   margin: 0 0 1rem 0;
 }
 
@@ -266,6 +265,7 @@ text-align: left;
   background-color: rgb(218, 211, 211);
   border-bottom-color: rgb(2, 2, 2);
   border-color: black;
+  color: black;
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 25px;
@@ -361,7 +361,7 @@ main.table {
     width: 0.5rem;
     height: 0.5rem;
     background-color: rgba(0, 0, 0, .1);
-    
+
 }
 
 .table__body::-webkit-scrollbar-thumb{
@@ -370,7 +370,7 @@ main.table {
     visibility: hidden;
 }
 
-.table__body:hover::-webkit-scrollbar-thumb{ 
+.table__body:hover::-webkit-scrollbar-thumb{
     visibility: visible;
     background-color: rgba(0, 0, 0, .1);
 }
@@ -469,10 +469,10 @@ thead th span.icon-arrow {
   height: 1.3rem;
   border-radius: 50%;
   border: 1.4px solid transparent;
-  
+
   text-align: center;
   font-size: 1rem;
-  
+
   margin-left: .5rem;
   transition: .2s ease-in-out;
 }
@@ -524,3 +524,53 @@ thead th.active,tbody td.active {
 .card-button .fa {
   margin-left: 5px; /* Espacio entre el texto y el icono */
 }
+
+#Employee{
+  background-color: rgba(0, 0, 0, .1);
+
+}
+
+#needs-validation{
+  border-radius: 15px;
+  background: rgba(23, 21, 21, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(23, 21, 21, 0.3);
+  color: white;
+  color: #fff;
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 25px;
+  text-align: left;
+
+
+
+}
+
+#firstName{
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background: rgba(23, 21, 21, 0.56);
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid #d63031;
+  border-radius: 15px;
+  margin-block-end: 25px;
+  width: 350px;
+}
+
+
+#modFade{
+  padding-top: 150px;
+
+}
+
+
+    /* Ajustar el tamaño del modal */
+    .modal-dialog {
+        max-width: 800px; /* El ancho máximo deseado */
+        margin: 0 auto; /* Centrar horizontalmente */
+    }

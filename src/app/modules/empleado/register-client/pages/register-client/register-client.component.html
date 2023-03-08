@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Website with a contact Form 01</title>
-    <link rel="stylesheet" href="register-client.component.css">
+
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <!-- FONT AWESOME -->
@@ -20,83 +20,98 @@
  <div class="panel panel-default">
     <div class="fondobanner">
         <div style="padding: 50px; ;">
-            <h1 class="logo" style="margin-block-end: 15px;">Registro  <span>Usuario </span></h1>
+            <h1 class="logo" style="margin-block-end: 15px;">Registro Clientes  <span>Usuario </span></h1>
             <div class="col-lg-6 col-md-8 mx-auto ">
               <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección de registros de nuevos clientes</p>
-              
+
               <div>
                 <p style="text-align: center;">
                   <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
-
               </div>
             </div>
              </div>
     </div>
-   
+
         <div class="content">
-               <div class="contact-form animated bounceInUp">
-                   <div>
-                       <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
-                   </div>
-                   
-                   <form action="">
-                       <p>
-                           <label>Nombre:</label>
-                           <input placeholder="Ingrese el Nombre"  type="text" name="fullname">
-                       </p>
-                       <p>
-                           <label>Apellido:</label>
-                           <input placeholder="Ingrese el Apellido" type="text" name="fullname">
-                       </p>
-                       <p>
-                           <label>Cedula:</label>
-                           <input placeholder="Ingrese la Cedula"  type="text" name="fullname" onkeypress="numeros()">
-                       </p>
-                       <p>
-                           <label> Email:</label>
-                           <input placeholder="Ingrese la Email"  type="email" name="email">
-                       </p>
-                       <p>
-                           <label>Telefono :</label>
-                           <input placeholder="Ingrese el Telefono" type="tel" name="phone">
-                       </p>
-                       <p>
-                           <label>Edad:</label>
-                           <input onkeypress="numeros()" placeholder="Ingrese la Edad"  type="text" name="fullname">
-                       </p>
-                       <p>
-                           <label> Usuario:</label>
-                           <input placeholder="Ingrese el Usuario"  type="email" name="email">
-                       </p>
-                       <p>
-                        <label>Genero:</label>
-                          <select required  style="background-color: black;color: white;  padding: 10PX; width: 675px;border-radius: 16px;">
-                          <option disabled selected>Seleccione</option>
-                          <option>Masculino</option>
-                          <option>Femenino</option>
-                          <option>Otros</option>
-                         </select>
-                    </p>
-                       <p>
-                           <label>Ciudad:</label>
-                           <input placeholder="Ingrese la Ciudad"  type="text" name="affair">
-                       </p>
-                       <p>
-                           <label>Dirección:</label>
-                           <input placeholder="Ingrese la Dirección"  type="text" name="affair">
-                       </p>
-                       <p class="block">
-                           <button>
-                               Crear
-                           </button>
-                       </p>
-                   </form>
-               </div>
-            </div>  
+          <div class="contact-form animated bounceInUp">
+            <div>
+                <p style="padding: 20px; font-size: 20px;"><strong>Ingresar los siguientes datos:</strong> </p>
+            </div>
+
+            <form action="">
+                <p>
+                    <label>Nombre:</label>
+                    <input type="text" placeholder="Ingrese Su Nombre" required  class={{verfNombres}}
+                    [(ngModel)]="persona.nombre"  name="nombre" pInputTex>
+                </p>
+                <p>
+                    <label>Apellido:</label>
+                    <input type="text" placeholder="Ingrese Su Apellido" required class={{verfApellidos}}
+                    [(ngModel)]="persona.apellido"  name="apellido" pInputText>
+                </p>
+                <p>
+                 <label> Email:</label>
+                 <input type="email" placeholder="Ingrese su email" required class={{verfCorreo}}
+                 [(ngModel)]="persona.correo" (ngModelChange)="validarCorreo()"  name="correp" pInputText>
+                </p>
+                <p>
+                    <label>Cédula:</label>
+                    <input type="text" onkeypress="numeros()" placeholder="Ingrese su Cédula" required  maxlength="10" class={{verfcedula}}
+                    [(ngModel)]="persona.cedula"  name="cédula" pInputText>
+                </p>
+                <p>
+                    <label>Teléfono :</label>
+                    <input type="Text" onkeypress="numeros()" placeholder="Ingrese su número Telefónico" required  class={{verftelefono}}
+                    [(ngModel)]="persona.telefono"  name="teléfono" pInputText>
+                </p>
+
+                <p>
+                 <label>Género:</label>
+                   <select required style="background-color: black;color: white;  padding: 10PX; width: 575px;border-radius: 16px;">
+                   <option disabled selected>Seleccione</option>
+                   <option>Masculino</option>
+                   <option>Femenino</option>
+                   <option>Otros</option>
+                  </select>
+             </p>
+                <p>
+                    <label>Edad:</label>
+                    <input type="number"  maxlength="2" max="99" min="18" placeholder="Ingrese su edad" required  class={{verfedad}}
+                    [(ngModel)]="persona.edad"  name="edad" pInputText>
+                </p>
+                <p>
+                    <label> Usuario:</label>
+                    <input type="text" placeholder="Ingrese su nombre de usuario" required  class={{verfUsername}}
+                    [(ngModel)]="usuario.nombreUsuario"  name="nombreUsuario" pInputText>
+                </p>
+                <p>
+                 <label> Contraseña:</label>
+                 <input type="password" placeholder="Ingrese su contraseña" minlength="8" required class={{verfPassword}}
+                 [(ngModel)]="usuario.password" name="password" >
+             </p>
+                <p>
+                    <label>Ciudad:</label>
+                    <input type="text" placeholder="Ingresa tu ciudad" required class={{verfciudad}}
+                    [(ngModel)]="persona.ciudad"   name="ciudad">
+                </p>
+                <p>
+                    <label>Dirección:</label>
+                    <input type="text" placeholder="Ingresa tu dirección" required class={{verfdireccion}}
+                    [(ngModel)]="persona.direccion"   name="dirección">
+                </p>
+
+                <button class="nextBtn"   (click)="registrarUsuario()">
+                 <span class="btnText">Registrar</span>
+                 <i class="uil uil-navigator"></i>
+              </button>
+
+            </form>
+        </div>
+            </div>
    <div>
 
    </div>
-     
+
 
    </div>
 

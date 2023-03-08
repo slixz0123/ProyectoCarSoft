@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'search'
+  name: 'buscarcar'
 })
-export class BuscarPipe implements PipeTransform {
+export class BuscarcarPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     if(!value) return null;
@@ -13,5 +13,4 @@ export class BuscarPipe implements PipeTransform {
       return JSON.stringify(item).toLowerCase().includes(args);
     });
   }
-
 }

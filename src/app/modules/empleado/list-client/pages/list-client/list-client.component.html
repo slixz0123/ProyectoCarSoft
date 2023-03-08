@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -45,39 +48,43 @@
                         <button id="btn-abrir-popup" class="card-button">Crear</button>
                     </div>
                 </section>
+
                 <section class="table__body">
-   
                     <table>
                         <thead>
                             <tr>
+                              <th> Idusr <span class="icon-arrow">&UpArrow;</span></th>
+                              <th> Idper<span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Apellido  <span class="icon-arrow">&UpArrow;</span></th>
-                                <th> Cedula<span class="icon-arrow">&UpArrow;</span></th>
-                                <th> Telefono <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Cédula<span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
-                                <th> Direccion <span class="icon-arrow">&UpArrow;</span></th>
-                                <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Dirección <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Rol <span class="icon-arrow">&UpArrow;</span></th>
                                 <th> Acción <span class="icon-arrow">&UpArrow;</span></th>
+
                             </tr>
                         </thead>
                         <tbody>
 
 
+
                             <tr>
-                              <tr *ngFor="let user of usuariosFiltrados | buscar:buscar">
-                                
+                              <tr *ngFor="let user of usuariosFiltrados | search:buscar">
+                                <td>{{ user.id}} </td>
+                                <td>{{ user.persona.id_persona}} </td>
                                 <td>{{ user.persona.nombre}} </td>
                                 <td>{{ user.persona.apellido}} </td>
                                 <td>{{ user.persona.cedula}} </td>
-                                <td>{{ user.persona.telefono}} </td>
                                 <td>{{ user.persona.edad}} </td>
-                                <td> {{ user.persona.direccion}}</td>
-                                <td> {{ user.persona.correo}}</td>
+                                <td>{{ user.persona.direccion}} </td>
+                                <td>Cliente</td>
                                 <td>
-                                    <button id="btn-abrir-popup" class="card-button">Editar</button>
+                                  <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee" (click)="seleccionarUsuario(user,user.id)">Editar</button>
+
+                                  <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary"  data-target="#Employee" (click)="eliminar( user.persona.id_persona, user.id)">Eliminar</button>
 
                                 </td>
-                                
                             </tr>
 
 
@@ -87,5 +94,113 @@
             </main>
 
         </div>
+
+
+        <div class="modal fade" id="Employee" style="color: white;">
+            <div  id="modFade" class="modal-dialog justify-content-center align-items-center">
+                <div  class="modal-content" style="background-color: rgba(0, 0, 0, .1);">
+                    <form  *ngIf="userSeleccionada" id="needs-validation" novalidate>
+                        <div class="modal-header" style="text-align: center;">
+                            <h1 class="logo" style="margin-block-end: 15px;">Editar <span>Clientes </span></h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Nombre:</label>
+                                    <input [(ngModel)]="userSeleccionada.persona.nombre"  name="nombre"  id="firstName" type="text" placeholder="Ingrese el Nombre" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Nº de Placa</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Apellido:</label>
+                                    <input id="firstName" [(ngModel)]="userSeleccionada.persona.apellido"  name="apellido" type="text" placeholder="Ingrese el Apellido" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Modelo</div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Email:</label>
+                                    <input id="firstName"   [(ngModel)]="userSeleccionada.persona.correo"  name="correo" type="mail" placeholder="Ingrese el Email" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Color</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Cédula:</label>
+                                    <input id="firstName"  [(ngModel)]="userSeleccionada.persona.cedula"  name="cedula" type="text" placeholder="Ingrese la Cedula" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Teléfono:</label>
+                                    <input id="firstName" [(ngModel)]="userSeleccionada.persona.telefono"  name="telefono" type="text" placeholder="Ingrese el Telefono" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Género del Cliente:</label>
+                                    <select  [(ngModel)]="userSeleccionada.persona.genero"  name="genero" name="tipo_vahiculo" style="background-color: black;color: white;  padding: 10PX; width: 300px;border-radius: 16px;">
+                                        <option selected style="color: aliceblue;">Selecciona el tipo</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Otros">Otros</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Edad del cliente:</label>
+                                    <input type="number"  [(ngModel)]="userSeleccionada.persona.edad"  name="edad"  maxlength="2" max="99" min="18" placeholder="Ingrese su edad" required
+                                      name="edad" pInputText>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Usuario:</label>
+                                    <input id="firstName"  [(ngModel)]="userSeleccionada.nombreUsuario"  name="nombreUsuario" type="text" placeholder="Ingrese el Usuario" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Contraseña:</label>
+                                    <input id="firstName" [(ngModel)]="userSeleccionada.password"  name="password" type="text" placeholder="Ingrese la Contraseña" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Ciudad:</label>
+                                    <input id="firstName"  [(ngModel)]="userSeleccionada.persona.ciudad"  name="ciudad"  type="text" placeholder="Ingrese la Ciudad" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <label for="firstName">Dirección:</label>
+                                    <input id="firstName" type="text"  [(ngModel)]="userSeleccionada.persona.direccion"  name="direccion"  placeholder="Ingrese la Dirección" class="form-control" aria-describedby="inputGroupPrepend" required/>
+                                    <div class="invalid-feedback">Marca</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div  class="modal-footer">
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal"  (click)="editarusuario(userSeleccionada.persona  ,userSeleccionada,userSeleccionada.id) ">Editar</button>
+
+                            <button style="color: black; border-radius: 25px;" id="btnnes" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
 
 </html>

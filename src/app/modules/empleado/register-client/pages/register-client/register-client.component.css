@@ -204,7 +204,7 @@ text-align: left;
   font-size: 16px;
   margin: 25px;
 
-  
+
 }
 
 .contact-form form button:hover,
@@ -213,7 +213,7 @@ text-align: left;
   color: #fff;
   transition: background-color 1s ease-out;
   outline: 0;
-  
+
 }
 
 /* CONTACT INFO */
@@ -223,7 +223,7 @@ text-align: left;
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {
-  text-align: ;
+
   margin: 0 0 1rem 0;
 }
 
