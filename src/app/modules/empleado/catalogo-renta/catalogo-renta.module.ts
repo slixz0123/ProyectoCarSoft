@@ -12,9 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    CatalogoRentaRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
+    CatalogoRentaRoutingModule
   ],
   exports:[
     CatalogoRentaComponent
