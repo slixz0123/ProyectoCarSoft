@@ -45,6 +45,18 @@
 
                        <p>
 
+                           <label>Código de Reservación:</label>
+                           <input type="text" placeholder="Ingrese el Código de Reservación" [(ngModel)]="alquiler.id_alquiler" name="fullname">
+                       </p>
+                       <p>
+                           <label>Placa:</label>
+                           <input type="text"   [(ngModel)]="alquiler.usuario.persona.cedula" name="fullname">
+                       </p>
+                       <p>
+                        <label>Código Comprobante:</label>
+                        <input type="text"  placeholder="Ingrese el Código Comprobante"  name="fullname">
+                    </p>
+
 
                     <p>
                         <label for="fecha-inicial">Fecha:</label>
@@ -58,12 +70,22 @@
 
                     </p>
 
+                    
+                        <div style="color: white;">
+                            <label>Número de dias:</label>
+                            <p  id="resultado" style="color: white;font-size: 25px; "></p>
+
+
 
                         <p>
                             <label>Tipo de Seguro</label>
 
                             <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
+                            (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.Seguro" >
+
+                            <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
                             (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.seguro" >
+
 
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
                                 <option   [(ngModel)]="alquiler.seguro"  *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>

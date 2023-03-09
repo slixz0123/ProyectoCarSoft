@@ -104,6 +104,10 @@ export class GenerarRentaClienteComponent {
       this.mostrarNotificacion();
     //  this.getClasesAuto();
      // this.verclase();
+
+      //this.getClasesAuto();
+      //this.verclase();
+
      this.getseguro();
     // this.obtenerUsuario();
 this.obtenercarro();
@@ -128,6 +132,41 @@ this.obtenercarro();
     }
 
 
+
+
+  //  verclase(){
+
+
+  //   this.ClasesCarro.getAll().subscribe(
+  //    result => {
+  // console.log(result)
+
+
+
+  //      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+  //    }
+  //  )
+  //  this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
+  //   result => {
+  // console.log(result)
+
+
+  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+  //   }
+  // )
+ // }
+  // onSelectChange(eventTarget: EventTarget | null) {
+  //   const selectElement = eventTarget as HTMLSelectElement;
+  //   if (!selectElement) {
+  //     return; // Salimos de la función si no hay ningún elemento seleccionado
+  //   }
+
+  //   const selectedValue = selectElement.value;
+  //   console.log(selectedValue); // muestra el valor seleccionado en la consola
+  //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
+  // }
+      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+  
 
 
 
@@ -165,7 +204,22 @@ this.obtenercarro();
     }
 
 
+    /*registaralquiler() {
+     // this.automovil.claseAutomovil = this.selectedId
 
+      this.alquilerService.postAlquiler(this.alquiler).subscribe(
+        data => {
+
+          console.log( data);
+
+            Swal.fire(
+              'Exito!',
+              'Alquiler solicitado',
+              'success'
+            )
+
+
+            }}*/
 
   obtenerUsuario() {
     this.id = localStorage.getItem('id');
