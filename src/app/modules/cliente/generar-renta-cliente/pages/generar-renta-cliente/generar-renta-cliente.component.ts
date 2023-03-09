@@ -29,9 +29,6 @@ export class GenerarRentaClienteComponent {
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
        private alquilerService:AlquilerService
-
-
-
   )
 
   {
@@ -91,22 +88,22 @@ export class GenerarRentaClienteComponent {
   // }
 
 
-    autoForm!: FormGroup;
-    selectedId: Claseautomovil = new Claseautomovil();
-    auto!: Auto;
-    clase : Claseautomovil[]=[]
-    seleccionarId(event: any) {
-    this.selectedId = event.target?.value ?? 0;
-  }
-    automovil: Automovil = new Automovil;
-    clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
+  //   autoForm!: FormGroup;
+  //   selectedId: Claseautomovil = new Claseautomovil();
+  //   auto!: Auto;
+  //   clase : Claseautomovil[]=[]
+  //   seleccionarId(event: any) {
+  //   this.selectedId = event.target?.value ?? 0;
+  // }
+  //   automovil: Automovil = new Automovil;
+  //   clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
 
 
 
-    file: any = '';
+  //   file: any = '';
 
-    foto!: any;
-    values = [];
+  //   foto!: any;
+  //   values = [];
 
 
     ngOnInit(): void {
@@ -117,12 +114,12 @@ export class GenerarRentaClienteComponent {
       this.alquiler.Seguro.cod_seguro;
       this.alquiler.rol.id_rol;
       this.alquiler.usuario.id;
-      this.clasesau.id_clase=0;
+      //this.clasesau.id_clase=0;
 
       localStorage.removeItem('num_placa');
       this.mostrarNotificacion();
-      this.getClasesAuto();
-      this.verclase();
+     // this.getClasesAuto();
+     // this.verclase();
 
     }
 
@@ -143,38 +140,38 @@ export class GenerarRentaClienteComponent {
 
 
 
-   verclase(){
+  //  verclase(){
 
 
-    this.ClasesCarro.getAll().subscribe(
-     result => {
-  console.log(result)
-
-
-
-       // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-     }
-   )
-   this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
-    result => {
-  console.log(result)
+  //   this.ClasesCarro.getAll().subscribe(
+  //    result => {
+  // console.log(result)
 
 
 
-      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-    }
-  )
-  }
-  onSelectChange(eventTarget: EventTarget | null) {
-    const selectElement = eventTarget as HTMLSelectElement;
-    if (!selectElement) {
-      return; // Salimos de la función si no hay ningún elemento seleccionado
-    }
+  //      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+  //    }
+  //  )
+  //  this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
+  //   result => {
+  // console.log(result)
 
-    const selectedValue = selectElement.value;
-    console.log(selectedValue); // muestra el valor seleccionado en la consola
-    this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
-  }
+
+
+  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
+  //   }
+  // )
+ // }
+  // onSelectChange(eventTarget: EventTarget | null) {
+  //   const selectElement = eventTarget as HTMLSelectElement;
+  //   if (!selectElement) {
+  //     return; // Salimos de la función si no hay ningún elemento seleccionado
+  //   }
+
+  //   const selectedValue = selectElement.value;
+  //   console.log(selectedValue); // muestra el valor seleccionado en la consola
+  //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
+  // }
 
 
     mostrarNotificacion() {
@@ -185,7 +182,7 @@ export class GenerarRentaClienteComponent {
     }
 
     registaralquiler() {
-      this.automovil.claseAutomovil = this.selectedId
+     // this.automovil.claseAutomovil = this.selectedId
 
       this.alquilerService.postAlquiler(this.alquiler).subscribe(
         data => {
@@ -208,10 +205,10 @@ export class GenerarRentaClienteComponent {
 
 
 
-    getClasesAuto(){
-      this.ClasesCarro.getAll().subscribe(
-       claseL =>this.clase = claseL
-      );}
+    // getClasesAuto(){
+    //   this.ClasesCarro.getAll().subscribe(
+    //    claseL =>this.clase = claseL
+    //   );}
 
 
 
