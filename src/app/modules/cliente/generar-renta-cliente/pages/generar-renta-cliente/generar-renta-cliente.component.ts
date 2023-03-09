@@ -17,13 +17,16 @@ import { Seguro } from 'src/app/core/models/seguro';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
 import { Usuario } from 'src/app/core/models/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { DataService } from 'src/app/shared/services/DataService';
+import { Reserva } from 'src/app/core/models/reserva';
+import { ReservaService } from 'src/app/shared/services/reserva.service';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
   styleUrls: ['./generar-renta-cliente.component.css']
 })
 export class GenerarRentaClienteComponent {
-  alquiler: Alquiler=new Alquiler;
+  alquiler: Reserva=new Reserva;
   listaseguro:Seguro[]=[];
   id: any;
 
@@ -47,10 +50,10 @@ export class GenerarRentaClienteComponent {
       private fotoService: FotoService,
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
-       private alquilerService:AlquilerService
        private alquilerService:AlquilerService,
+       private reservaService:ReservaService,
        private segurorService:SeguroService,
-       private usuarioservice :UsuarioService
+       private usuarioservice :UsuarioService,private dataService: DataService
 
   )
 
@@ -142,21 +145,19 @@ export class GenerarRentaClienteComponent {
 
 
     ngOnInit(): void {
-      this.alquiler.id_alquiler;
-      this.alquiler.documento_garantia;
-      this.alquiler.fecha_salida;
-      this.alquiler.prox_fecha_entrega;
-      this.alquiler.Seguro.cod_seguro;
-      this.alquiler.rol.id_rol;
-      this.alquiler.usuario.id;
+      this.alquiler.cod_resv;
+      this.alquiler.alquiler?.documento_garantia;
+      this.alquiler.fecha_finresv;
+      this.alquiler.fecha_iniresv;
+      this.alquiler.forma_pago;
+      this.alquiler.automovil?.num_placa;
+      this.alquiler.usuarios?.id;
       //this.clasesau.id_clase=0;
 
       localStorage.removeItem('num_placa');
       this.mostrarNotificacion();
      // this.getClasesAuto();
      // this.verclase();
-      this.getClasesAuto();
-      this.verclase();
      this.getseguro();
      this.obtenerUsuario();
     }
@@ -210,9 +211,9 @@ export class GenerarRentaClienteComponent {
   //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
   // }
       // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-    }
-  )
-  }
+  //   }
+  // )
+  // }
 
 
   onSelectChange(eventTarget: EventTarget | null) {
@@ -248,20 +249,20 @@ export class GenerarRentaClienteComponent {
       });
     }
 
-    registaralquiler() {
-     // this.automovil.claseAutomovil = this.selectedId
+    // registaralquiler() {
+    //  // this.automovil.claseAutomovil = this.selectedId
 
-      this.alquilerService.postAlquiler(this.alquiler).subscribe(
-        data => {
+    //   this.alquilerService.postAlquiler(this.alquiler).subscribe(
+    //     data => {
 
-          console.log( data);
+    //       console.log( data);
 
-            Swal.fire(
-              'Exito!',
-              'Alquiler solicitado',
-              'success'
-            )
-
+    //         Swal.fire(
+    //           'Exito!',
+    //           'Alquiler solicitado',
+    //           'success'
+    //         )
+    //       }}
 
 
   obtenerUsuario() {
@@ -280,11 +281,11 @@ export class GenerarRentaClienteComponent {
 
   registaralquiler() {
 
-    this.alquiler.Seguro = this.selectedId;
-    this.alquiler.usuario.id = this.id;
+    this.alquiler.seguro = this.selectedId;
+    this.alquiler.usuarios!.id = this.id;
     this.num_placa = localStorage.getItem('num_placa');
 
-    this.alquilerService.postAlquiler(this.alquiler).subscribe(
+    this.reservaService.save(this.alquiler).subscribe(
       data => {
 
         console.log( data);

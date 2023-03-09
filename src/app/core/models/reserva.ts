@@ -1,4 +1,7 @@
+import { Automovil } from '../interfaces/automovil';
+import { Alquiler } from './alquiler';
 import { Seguro } from './seguro';
+import { Usuario } from './usuario';
 export class Reserva{
   cod_resv: number = 0;
   fecha_finresv?:Date;
@@ -9,4 +12,7 @@ export class Reserva{
 
   // relacion
   seguro?: Seguro; //cod_seguro codigo del seguro
+  automovil?:Automovil;
+  usuarios?:Usuario;
+  alquiler?:Alquiler;
 }
