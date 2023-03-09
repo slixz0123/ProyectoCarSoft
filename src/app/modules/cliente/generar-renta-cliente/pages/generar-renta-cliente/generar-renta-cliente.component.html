@@ -73,8 +73,13 @@
 
                         <p>
                             <label>Tipo de Seguro</label>
+
+                            <select name="nom_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
+                            >
+
                             <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
                             (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.Seguro" >
+
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
                                 <option [(ngModel)]="alquiler.Seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
                             </select>
