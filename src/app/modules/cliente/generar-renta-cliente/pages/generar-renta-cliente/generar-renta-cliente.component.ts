@@ -26,6 +26,7 @@ export class GenerarRentaClienteComponent {
   alquiler: Alquiler=new Alquiler;
   listaseguro:Seguro[]=[];
   id: any;
+  automoviles: Automovil[]=[];
 
   num_placa: any;
 
