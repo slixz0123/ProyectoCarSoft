@@ -41,18 +41,10 @@
                    </div>
 
                    <form action="">
+
+
                        <p>
-                           <label>Código de Reservación:</label>
-                           <input type="text" placeholder="Ingrese el Código de Reservación" [(ngModel)]="alquiler.alquiler!.id_alquiler" name="fullname">
-                       </p>
-                       <p>
-                           <label>Placa Vehiculo:</label>
-                           <input type="text" placeholder="Ingrese la Cédula"  [(ngModel)]="alquiler.automovil!.num_placa" name="fullname">
-                       </p>
-                       <p>
-                        <label>Código Comprobante:</label>
-                        <input type="text"  placeholder="Ingrese el Código Comprobante"  name="fullname">
-                    </p>
+
 
                     <p>
                         <label for="fecha-inicial">Fecha:</label>
@@ -65,20 +57,16 @@
                         <input type="date" id="fecha-final" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
 
                     </p>
-                        <div style="color: white;">
-                            <label>Número de dias:</label>
-                            <p  id="resultado" style="color: white;font-size: 25px; "></p>
 
-                        </div>
 
                         <p>
                             <label>Tipo de Seguro</label>
 
                             <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
-                            (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.seguro" >
+                            (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.Seguro" >
 
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                                <option [(ngModel)]="alquiler.seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
+                                <option [(ngModel)]="alquiler.Seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
                             </select>
                         </p>
 
@@ -86,7 +74,7 @@
                     <button style="background-color: white; color: black; "> <strong> Calcular Precio </strong> </button>
 
 
-                       <button>Reserva </button>
+                       <button  (click)=" registaralquiler()">Reserva </button>
                        <button>Cancelar </button>
 
 

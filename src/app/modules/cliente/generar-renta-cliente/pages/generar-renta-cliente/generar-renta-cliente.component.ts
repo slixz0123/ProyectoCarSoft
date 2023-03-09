@@ -17,19 +17,15 @@ import { Seguro } from 'src/app/core/models/seguro';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
 import { Usuario } from 'src/app/core/models/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
-import { DataService } from 'src/app/shared/services/DataService';
-import { Reserva } from 'src/app/core/models/reserva';
-import { ReservaService } from 'src/app/shared/services/reserva.service';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
   styleUrls: ['./generar-renta-cliente.component.css']
 })
 export class GenerarRentaClienteComponent {
-  alquiler: Reserva=new Reserva;
+  alquiler: Alquiler=new Alquiler;
   listaseguro:Seguro[]=[];
   id: any;
-  automoviles: Automovil[]=[];
 
   num_placa: string = '';
 
@@ -52,9 +48,11 @@ export class GenerarRentaClienteComponent {
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
        private alquilerService:AlquilerService,
-       private reservaService:ReservaService,
        private segurorService:SeguroService,
-       private usuarioservice :UsuarioService,private dataService: DataService
+       private usuarioservice :UsuarioService
+
+
+
 
   )
 
@@ -115,15 +113,6 @@ export class GenerarRentaClienteComponent {
   // }
 
 
-  //   autoForm!: FormGroup;
-  //   selectedId: Claseautomovil = new Claseautomovil();
-  //   auto!: Auto;
-  //   clase : Claseautomovil[]=[]
-  //   seleccionarId(event: any) {
-  //   this.selectedId = event.target?.value ?? 0;
-  // }
-  //   automovil: Automovil = new Automovil;
-  //   clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
     autoForm!: FormGroup;
     selectedId: Seguro = new Seguro();
     alqui: Alquiler = new Alquiler();
@@ -140,23 +129,13 @@ export class GenerarRentaClienteComponent {
 
 
 
-  //   file: any = '';
+    file: any = '';
 
-  //   foto!: any;
-  //   values = [];
+    foto!: any;
+    values = [];
 
 
     ngOnInit(): void {
-<<<<<<< Updated upstream
-      this.alquiler.cod_reserva;
-      this.alquiler.alquiler?.documento_garantia;
-      this.alquiler.fecha_finresv;
-      this.alquiler.fecha_iniresv;
-      this.alquiler.forma_pago;
-      this.alquiler.automovil?.num_placa;
-      this.alquiler.usuarios?.id;
-      //this.clasesau.id_clase=0;
-=======
       this.num_placa = localStorage.getItem('num_placa') ?? '';
       this.alquiler.id_alquiler;
       this.alquiler.documento_garantia;
@@ -166,16 +145,9 @@ export class GenerarRentaClienteComponent {
       this.alquiler.rol.id_rol;
       this.alquiler.usuario.id;
       this.clasesau.id_clase=0;
->>>>>>> Stashed changes
 
 
       this.mostrarNotificacion();
-<<<<<<< Updated upstream
-     // this.getClasesAuto();
-     // this.verclase();
-     this.getseguro();
-     this.obtenerUsuario();
-=======
     //  this.getClasesAuto();
      // this.verclase();
      this.getseguro();
@@ -184,7 +156,6 @@ this.obtenercarro();
      this.registaralquiler() ;
 
 
->>>>>>> Stashed changes
     }
 
 
@@ -221,25 +192,8 @@ this.obtenercarro();
   // console.log(result)
 
 
-  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //   }
-  // )
- // }
-  // onSelectChange(eventTarget: EventTarget | null) {
-  //   const selectElement = eventTarget as HTMLSelectElement;
-  //   if (!selectElement) {
-  //     return; // Salimos de la función si no hay ningún elemento seleccionado
-  //   }
 
-<<<<<<< Updated upstream
-  //   const selectedValue = selectElement.value;
-  //   console.log(selectedValue); // muestra el valor seleccionado en la consola
-  //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
-  // }
-      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-=======
   //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
->>>>>>> Stashed changes
   //   }
   // )
   // }
@@ -278,20 +232,7 @@ this.obtenercarro();
       });
     }
 
-    // registaralquiler() {
-    //  // this.automovil.claseAutomovil = this.selectedId
 
-    //   this.alquilerService.postAlquiler(this.alquiler).subscribe(
-    //     data => {
-
-    //       console.log( data);
-
-    //         Swal.fire(
-    //           'Exito!',
-    //           'Alquiler solicitado',
-    //           'success'
-    //         )
-    //       }}
 
 
   obtenerUsuario() {
@@ -324,28 +265,7 @@ this.obtenercarro();
 
   registaralquiler() {
 
-<<<<<<< Updated upstream
-    this.alquiler.seguro = this.selectedId;
-    this.alquiler.usuarios!.id = this.id;
-    this.num_placa = localStorage.getItem('num_placa');
-
-    this.reservaService.save(this.alquiler).subscribe(
-      data => {
-
-        console.log( data);
-
-          Swal.fire(
-            'Exito!',
-            'Alquiler solicitado',
-            'success'
-          )
-=======
     this.id = localStorage.getItem('id');
->>>>>>> Stashed changes
-
-
-
-
       this.usuarioservice.getPorId(this.id).subscribe((data) => {
 
         console.log(data);
@@ -357,29 +277,24 @@ this.obtenercarro();
           console.log(data);
           this.alqui.auto.num_placa = data.num_placa
 
+         this.alqui.Seguro = this.selectedId
+          this.alquilerService.postAlquiler(this.alquiler).subscribe(
+            data => {
 
+              console.log( data);
 
+                Swal.fire(
+                  'Exito!',
+                  'Alquiler solicitado',
+                  'success'
+                )
+            }
+
+          )
         });
 
 
       });
-
-    // this.alquilerService.postAlquiler(this.alquiler).subscribe(
-    //   data => {
-
-    //     console.log( data);
-
-    //       Swal.fire(
-    //         'Exito!',
-    //         'Alquiler solicitado',
-    //         'success'
-    //       )
-
-
-    //   }
-
-    // )
-
 }
 
     // getClasesAuto(){
