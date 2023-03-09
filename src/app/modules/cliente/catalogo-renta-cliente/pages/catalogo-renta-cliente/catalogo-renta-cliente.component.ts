@@ -25,7 +25,8 @@ informacionUser: any;
   @Input() member: number = 0;
 
 
-  aut = new Automovil();
+  aut : Automovil = new Automovil;
+
 
   automoviles: Automovil[] = [];
   selectedId = 0;
@@ -68,11 +69,11 @@ informacionUser: any;
       });
 
   }
-routereserva($event: any):void{
-  localStorage.setItem('num_placa', String(this.aut.num_placa));
-  console.log($event)
-  this.router.navigate(['client-carsoft/generar-rent-client'])
 
+ enviarNumeroPlaca(num_placa: string) {
+  localStorage.setItem('num_placa', num_placa);
+  console.log(num_placa)
+  this.router.navigate(['/client-carsoft/generar-rent-client'])
 }
 
 

@@ -40,10 +40,10 @@ export class CatalogoHomeComponent {
 
   }
 
-  rentarVehiculo() {
-    this.dataService.setNumPlaca(this.num_placa);
+  rentarVehiculo(placa: string) {
+    this.dataService.setNumPlaca(placa);
   }
-  
+
   obtenercaros() {
     this.automovilservice
     .listarAutos() .subscribe({

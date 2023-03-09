@@ -68,7 +68,7 @@
                                               <p class="card-text" >
                                                 <p style="font-size: 18px; color: white; " >   <strong> Caracteristicas:  </strong>  </p>
                                                 <div style="margin-top: 15px;margin-block-end: 15px;">
-                                                  <p style="font-size: 15px; color: white;" >   Nº Placa: {{ aut.num_placa}}  </p>
+                                                  <p  #num_placaElement style="font-size: 15px; color: white;" >{{ aut.num_placa}}</p>
                                                   <p style="font-size: 15px; color: white;" >   Modelo: {{ aut.modelo }}  </p>
                                                   <p style="font-size: 15px; color: white;" >   Marca: {{ aut.marca }}  </p>
                                                   <p style="font-size: 15px; color: white;" >   Año: {{ aut.anio }}  </p>
@@ -78,7 +78,7 @@
 
                                           <div style="display: flex; justify-content: center;">
                                             <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px; color: black;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee"  >Ver</button>
-                                            <a id="btnnes" class="btn  "  (click)="routereserva($event)" >Reservar</a>
+                                            <a id="btnnes" class="btn  "   (click)="enviarNumeroPlaca(num_placaElement.textContent ?? '')" >Reservar</a>
                                           </div>
                                         </div>
 

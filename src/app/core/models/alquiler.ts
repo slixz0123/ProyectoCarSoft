@@ -1,3 +1,4 @@
+import { Automovil } from "../interfaces/automovil";
 import { Comprobante } from "./comprobante";
 import { Reserva } from "./reserva";
 import { Rol } from "./rol";
@@ -16,6 +17,7 @@ export class Alquiler{
   //relacion
   usuario: Usuario = new Usuario(); // id de usuario
   rol: Rol = new Rol(); ///cod_comp codigo comprobante
-  Seguro: Seguro= new Seguro(); // cod_resv codigo de reserva
+  seguro: Seguro= new Seguro(); // cod_resv codigo de reserva
+  auto: Automovil= new Automovil();
 
 }
