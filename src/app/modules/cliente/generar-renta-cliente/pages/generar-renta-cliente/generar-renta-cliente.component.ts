@@ -29,7 +29,6 @@ export class GenerarRentaClienteComponent {
   alquiler: Reserva=new Reserva;
   listaseguro:Seguro[]=[];
   id: any;
-  automoviles: Automovil[]=[];
 
   num_placa: any;
 
