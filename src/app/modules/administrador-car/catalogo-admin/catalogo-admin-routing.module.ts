@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogoHomeComponent } from '../../home/catalogo-home/pages/catalogo-home/catalogo-home.component';
+import { CatalogoAdminComponent } from './pages/catalogo-admin/catalogo-admin.component';
+
 
 const routes: Routes = [
   {
     path:'',
-    component: CatalogoHomeComponent
+    component: CatalogoAdminComponent
   }
 ];
 
