@@ -65,52 +65,6 @@ export class GenerarRentaClienteComponent {
     }
   }
 
-  // {
-  //   "id_alquiler": 0,
-  //   "num_dias_alquiler": "string",
-  //   "fecha_salida": "2023-03-05T06:44:33.344Z",
-  //   "prox_fecha_entrega": "2023-03-05T06:44:33.344Z",
-  //   "documento_garantia": "string",
-  //   "comprobante": {
-  //     "cod_comp": 0,
-  //     "descripcion": "string",
-  //     "precio": 0
-  //   },
-  //     "seguro": {
-  //       "cod_seguro": 0,
-  //       "nom_seguro": "string",
-  //       "precio_seguro": 0
-  //     },
-  //     "alquileres": "string"
-  //   },
-  //   "usuarios": {
-  //     "id": 0,
-  //     "nombreUsuario": "string",
-  //     "password": "string",
-  //     "persona": {
-  //       "id_persona": 0,
-  //       "nombre": "string",
-  //       "apellido": "string",
-  //       "cedula": "string",
-  //       "direccion": "string",
-  //       "telefono": "string",
-  //       "correo": "string",
-  //       "edad": 0,
-  //       "ciudad": "string",
-  //       "genero": "string",
-  //       "foto": "string"
-  //     },
-  //     "rol": {
-  //       "id_rol": 0,
-  //       "nombre_Rol": "string"
-  //     }
-  //   },
-  //   "seguro": {
-  //     "cod_seguro": 0,
-  //     "nom_seguro": "string",
-  //     "precio_seguro": 0
-  //   }
-  // }
 
 
     autoForm!: FormGroup;
@@ -123,9 +77,9 @@ export class GenerarRentaClienteComponent {
     seleccionarId(event: any) {
     this.selectedId = event.target?.value ?? 0;
   }
-    automovil: Automovil = new Automovil;
+    automovil: Automovil = new Automovil();
     clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
-    usuario: Usuario = new Usuario;
+    usuario: Usuario = new Usuario ();
 
 
 
@@ -153,7 +107,7 @@ export class GenerarRentaClienteComponent {
      this.getseguro();
     // this.obtenerUsuario();
 this.obtenercarro();
-     this.registaralquiler() ;
+
 
 
     }
@@ -175,28 +129,6 @@ this.obtenercarro();
 
 
 
-  //  verclase(){
-
-
-  //   this.ClasesCarro.getAll().subscribe(
-  //    result => {
-  // console.log(result)
-
-
-
-  //      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //    }
-  //  )
-  //  this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
-  //   result => {
-  // console.log(result)
-
-
-
-  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //   }
-  // )
-  // }
 
 
   onSelectChange(eventTarget: EventTarget | null) {
@@ -268,27 +200,29 @@ this.obtenercarro();
     this.id = localStorage.getItem('id');
       this.usuarioservice.getPorId(this.id).subscribe((data) => {
 
-        console.log(data);
+        console.log(data.id);
         console.log("registaralquiler")
-        this.alqui.usuario.id = data.id
+        this.alquiler.usuario.id = data.id
 
         this.automovilService.getPorId( this.num_placa = localStorage.getItem('num_placa') ?? '').subscribe((data) => {
 
-          console.log(data);
-          this.alqui.auto.num_placa = data.num_placa
+          console.log(data.num_placa);
+          this.alquiler.auto.num_placa = data.num_placa
 
-         this.alqui.Seguro = this.selectedId
+
           this.alquilerService.postAlquiler(this.alquiler).subscribe(
             data => {
 
               console.log( data);
-
+              this.alquiler.Seguro = this.selectedId
+              this.alquiler = data
                 Swal.fire(
                   'Exito!',
                   'Alquiler solicitado',
                   'success'
                 )
             }
+
 
           )
         });
