@@ -146,7 +146,7 @@ export class GenerarRentaClienteComponent {
 
 
     ngOnInit(): void {
-      this.alquiler.cod_reserva;
+      this.alquiler.cod_resv;
       this.alquiler.alquiler?.documento_garantia;
       this.alquiler.fecha_finresv;
       this.alquiler.fecha_iniresv;
