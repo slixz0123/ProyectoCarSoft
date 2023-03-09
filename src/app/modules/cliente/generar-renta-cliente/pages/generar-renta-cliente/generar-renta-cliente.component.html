@@ -46,8 +46,8 @@
                            <input type="text" placeholder="Ingrese el Código de Reservación" [(ngModel)]="alquiler.id_alquiler" name="fullname">
                        </p>
                        <p>
-                           <label>Cédula:</label>
-                           <input type="text" placeholder="Ingrese la Cédula"  [(ngModel)]="alquiler.usuario.persona.cedula" name="fullname">
+                           <label>Placa:</label>
+                           <input type="text"   [(ngModel)]="alquiler.usuario.persona.cedula" name="fullname">
                        </p>
                        <p>
                         <label>Código Comprobante:</label>
@@ -65,6 +65,7 @@
                         <input type="date" id="fecha-final" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
 
                     </p>
+                    
                         <div style="color: white;">
                             <label>Número de dias:</label>
                             <p  id="resultado" style="color: white;font-size: 25px; "></p>
@@ -73,13 +74,8 @@
 
                         <p>
                             <label>Tipo de Seguro</label>
-
-                            <select name="nom_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
-                            >
-
                             <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
                             (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.Seguro" >
-
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
                                 <option [(ngModel)]="alquiler.Seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
                             </select>

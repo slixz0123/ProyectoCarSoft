@@ -48,7 +48,6 @@ export class GenerarRentaClienteComponent {
       private fotoService: FotoService,
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
-       private alquilerService:AlquilerService
        private alquilerService:AlquilerService,
        private segurorService:SeguroService,
        private usuarioservice :UsuarioService
@@ -156,8 +155,8 @@ export class GenerarRentaClienteComponent {
       this.mostrarNotificacion();
      // this.getClasesAuto();
      // this.verclase();
-      this.getClasesAuto();
-      this.verclase();
+      //this.getClasesAuto();
+      //this.verclase();
      this.getseguro();
      this.obtenerUsuario();
     }
@@ -211,9 +210,7 @@ export class GenerarRentaClienteComponent {
   //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
   // }
       // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-    }
-  )
-  }
+  
 
 
   onSelectChange(eventTarget: EventTarget | null) {
@@ -249,7 +246,7 @@ export class GenerarRentaClienteComponent {
       });
     }
 
-    registaralquiler() {
+    /*registaralquiler() {
      // this.automovil.claseAutomovil = this.selectedId
 
       this.alquilerService.postAlquiler(this.alquiler).subscribe(
@@ -263,7 +260,7 @@ export class GenerarRentaClienteComponent {
               'success'
             )
 
-
+            }}*/
 
   obtenerUsuario() {
     this.id = localStorage.getItem('id');
