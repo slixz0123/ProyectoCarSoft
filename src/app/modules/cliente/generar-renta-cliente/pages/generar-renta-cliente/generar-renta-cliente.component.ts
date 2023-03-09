@@ -95,7 +95,7 @@ export class GenerarRentaClienteComponent {
       this.alquiler.documento_garantia;
       this.alquiler.fecha_salida;
       this.alquiler.prox_fecha_entrega;
-      this.alquiler.Seguro.cod_seguro;
+      this.alquiler.seguro.cod_seguro;
       this.alquiler.rol.id_rol;
       this.alquiler.usuario.id;
       this.clasesau.id_clase=0;
@@ -210,25 +210,28 @@ this.obtenercarro();
           this.alquiler.auto.num_placa = data.num_placa
 
 
-          this.alquilerService.postAlquiler(this.alquiler).subscribe(
-            data => {
 
-              console.log( data);
-              this.alquiler.Seguro = this.selectedId
-              this.alquiler = data
-                Swal.fire(
-                  'Exito!',
-                  'Alquiler solicitado',
-                  'success'
-                )
-            }
-
-
-          )
         });
 
 
       });
+
+      this.alquilerService.postAlquiler(this.alquiler).subscribe(
+        data => {
+
+          console.log( data);
+          this.alquiler.seguro = this.selectedId
+          this.alquiler = data
+            Swal.fire(
+              'Exito!',
+              'Alquiler solicitado',
+              'success'
+            )
+        }
+
+
+      )
+
 }
 
     // getClasesAuto(){
