@@ -136,11 +136,11 @@ registrarclase() {
 
       console.log( data);
 
-        Swal.fire(
-          'Exito!',
-          'Registro carro',
-          'success'
-        )
+      Swal.fire(
+        'Exito!',
+        'Se ha registrado el automóvil',
+        'success'
+      )
 
 
     }

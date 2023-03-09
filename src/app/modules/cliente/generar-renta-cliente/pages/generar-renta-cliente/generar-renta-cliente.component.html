@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    
+
 </head>
 
 
@@ -53,37 +53,42 @@
                         <label>Código Comprobante:</label>
                         <input type="text"  placeholder="Ingrese el Código Comprobante"  name="fullname">
                     </p>
-                       
+
                     <p>
                         <label for="fecha-inicial">Fecha:</label>
                         <input type="date" placeholder="Ingrese el Nº de Placa"   id="fecha-inicial" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
-                        
+
                     </p>
-                    
+
                     <p>
                         <label for="fecha-final">Fecha entrega:</label>
                         <input type="date" id="fecha-final" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
-                        
+
                     </p>
                         <div style="color: white;">
                             <label>Número de dias:</label>
                             <p  id="resultado" style="color: white;font-size: 25px; "></p>
-    
+
                         </div>
-                              
+
                         <p>
                             <label>Tipo de Seguro</label>
+
                             <select name="nom_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
                             >
+
+                            <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
+                            (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.Seguro" >
+
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
                                 <option [(ngModel)]="alquiler.Seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
                             </select>
                         </p>
-                    
+
 
                     <button style="background-color: white; color: black; "> <strong> Calcular Precio </strong> </button>
-                    
-                  
+
+
                        <button>Reserva </button>
                        <button>Cancelar </button>
 

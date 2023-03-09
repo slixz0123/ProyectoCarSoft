@@ -403,11 +403,13 @@ border: 1px solid rgba(23, 21, 21, 0.3);
   width: 100%;
   border-radius: 25px;
   padding: 20px 30px 30px 30px;
-  background: #fff;
+  background: rgba(14, 12, 12, 0.56);
+  box-shadow: 0 0 6px rgb(179, 6, 6);
   z-index: 3;
   overflow: hidden;
   margin-bottom: 15px;
   margin-left: 15px;
+  color: rgba(23, 21, 21, 0.56);
 
 }
 .product-card .logo-cart{
