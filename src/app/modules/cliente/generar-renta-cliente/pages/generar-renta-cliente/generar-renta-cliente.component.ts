@@ -24,10 +24,12 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 })
 export class GenerarRentaClienteComponent {
   alquiler: Alquiler=new Alquiler;
+  claseA: Claseautomovil = new Claseautomovil;
   listaseguro:Seguro[]=[];
   id: any;
 
   num_placa: string = '';
+
 
   nombreUsuario: any;
   nombreRol: any;
@@ -49,9 +51,8 @@ export class GenerarRentaClienteComponent {
        private ClasesCarro:ClasesCarroService,
        private alquilerService:AlquilerService,
        private segurorService:SeguroService,
-       private usuarioservice :UsuarioService
-
-
+       private usuarioservice :UsuarioService,
+       private clase :ClasesCarroService
 
 
   )
@@ -91,11 +92,13 @@ export class GenerarRentaClienteComponent {
 
     ngOnInit(): void {
       this.num_placa = localStorage.getItem('num_placa') ?? '';
-      this.alquiler.id_alquiler;
+      this.alquiler.id_alquiler ;
       this.alquiler.documento_garantia;
       this.alquiler.fecha_finresv;
       this.alquiler.fecha_iniresv;
       this.alquiler.seguro.cod_seguro;
+
+      this.alquiler.auto.num_placa;
 
       this.alquiler.usuario.id;
       this.clasesau.id_clase=0;
@@ -130,43 +133,6 @@ this.obtenercarro();
         }
       );
     }
-
-
-
-
-  //  verclase(){
-
-
-  //   this.ClasesCarro.getAll().subscribe(
-  //    result => {
-  // console.log(result)
-
-
-
-  //      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //    }
-  //  )
-  //  this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
-  //   result => {
-  // console.log(result)
-
-
-  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //   }
-  // )
- // }
-  // onSelectChange(eventTarget: EventTarget | null) {
-  //   const selectElement = eventTarget as HTMLSelectElement;
-  //   if (!selectElement) {
-  //     return; // Salimos de la función si no hay ningún elemento seleccionado
-  //   }
-
-  //   const selectedValue = selectElement.value;
-  //   console.log(selectedValue); // muestra el valor seleccionado en la consola
-  //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
-  // }
-      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  
 
 
 
@@ -238,7 +204,6 @@ this.obtenercarro();
   obtenercarro() {
    // this.num_placa = localStorage.getItem('num_placa');
 
-
     if (this.id != '' && this.id != undefined) {
       this.usuarioservice.getPorId(this.id).subscribe((data) => {
 
@@ -254,37 +219,58 @@ this.obtenercarro();
     this.id = localStorage.getItem('id');
       this.usuarioservice.getPorId( this.id = localStorage.getItem('id')).subscribe((data) => {
 
-        console.log(data.id);
-        console.log("registaralquiler")
-        this.alquiler.usuario = data
+        console.log(data);
+        const id= data
+
+
+
+
 
         this.automovilService.getPorId( this.num_placa = localStorage.getItem('num_placa') ?? '').subscribe((data) => {
 
-          console.log(data.num_placa);
-          this.alquiler.auto= data
-        //  this.selectedId =  this.alquiler.seguro
-          this.alquilerService.postAlquiler(this.alquiler).subscribe(
-            data => {
-
-              console.log( data);
-
-              this.alquiler = data
-                Swal.fire(
-                  'Exito!',
-                  'Alquiler solicitado',
-                  'success'
-                )
-            }
+          console.log(data);
+          const num_placa= data.num_placa;
+          const id_clase= data.claseAutomovil.id_clase;
+        //  this.alquiler.usuario.id = id;
+        //  this.alquiler.auto.num_placa= num_placa
 
 
-          )
+
+         this.clase.getPorId(id_clase).subscribe(
+          data => {
+
+            console.log( data);
+           // this.alquiler.auto.claseAutomovil.id_clase= data.id_clase
+
+
+
+            this.alquilerService.postAlquiler(this.alquiler).subscribe(
+              data => {
+             this.alquiler.usuario = id
+              this.alquiler.auto.num_placa= num_placa
+              this.alquiler.auto.claseAutomovil.id_clase=id_clase
+
+                console.log( data);
+
+                this.alquiler = data
+                  Swal.fire(
+                    'Exito!',
+                    'Alquiler solicitado',
+                    'success'
+                  )
+              }
+            )
+
+
+
+          }
+        )
+
 
 
         });
 
-
       });
-
 
 }
 
