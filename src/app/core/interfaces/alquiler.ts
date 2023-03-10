@@ -6,8 +6,8 @@ import { Usuario } from "../models/usuario";
 export interface Alquiler{
   id_alquiler?: number;
   documento_garantia?:string;
-  fecha_salida?:Date;
-  prox_fecha_entrega?:Date;
+  fecha_iniresv?:Date;
+  fecha_finresv?:Date;
 
 
 

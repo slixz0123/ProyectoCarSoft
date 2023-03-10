@@ -93,10 +93,10 @@ export class GenerarRentaClienteComponent {
       this.num_placa = localStorage.getItem('num_placa') ?? '';
       this.alquiler.id_alquiler;
       this.alquiler.documento_garantia;
-      this.alquiler.fecha_salida;
-      this.alquiler.prox_fecha_entrega;
+      this.alquiler.fecha_finresv;
+      this.alquiler.fecha_iniresv;
       this.alquiler.seguro.cod_seguro;
-      this.alquiler.rol.id_rol;
+
       this.alquiler.usuario.id;
       this.clasesau.id_clase=0;
 
@@ -252,17 +252,32 @@ this.obtenercarro();
   registaralquiler() {
 
     this.id = localStorage.getItem('id');
-      this.usuarioservice.getPorId(this.id).subscribe((data) => {
+      this.usuarioservice.getPorId( this.id = localStorage.getItem('id')).subscribe((data) => {
 
         console.log(data.id);
         console.log("registaralquiler")
-        this.alquiler.usuario.id = data.id
+        this.alquiler.usuario = data
 
         this.automovilService.getPorId( this.num_placa = localStorage.getItem('num_placa') ?? '').subscribe((data) => {
 
           console.log(data.num_placa);
-          this.alquiler.auto.num_placa = data.num_placa
+          this.alquiler.auto= data
+        //  this.selectedId =  this.alquiler.seguro
+          this.alquilerService.postAlquiler(this.alquiler).subscribe(
+            data => {
 
+              console.log( data);
+
+              this.alquiler = data
+                Swal.fire(
+                  'Exito!',
+                  'Alquiler solicitado',
+                  'success'
+                )
+            }
+
+
+          )
 
 
         });
@@ -270,21 +285,6 @@ this.obtenercarro();
 
       });
 
-      this.alquilerService.postAlquiler(this.alquiler).subscribe(
-        data => {
-
-          console.log( data);
-          this.alquiler.seguro = this.selectedId
-          this.alquiler = data
-            Swal.fire(
-              'Exito!',
-              'Alquiler solicitado',
-              'success'
-            )
-        }
-
-
-      )
 
 }
 
