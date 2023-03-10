@@ -61,6 +61,10 @@ const routes: Routes = [
       path: 'register-cliente',
       loadChildren: () => import("./register-clientes/register-clientes.module").then(m => m.RegisterClientesModule)
     },
+    {
+      path: 'renta-aprov',
+      loadChildren: () => import("./listadorenta/listadorenta.module").then(m => m.ListadorentaModule)
+    },
 
 ];
 

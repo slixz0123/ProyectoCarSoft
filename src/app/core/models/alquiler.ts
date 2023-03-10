@@ -7,7 +7,7 @@ import { Usuario } from "./usuario";
 
 
 export class Alquiler{
-  id_alquiler?: number;
+  id_alquiler: number = 0;
   documento_garantia?:string;
   fecha_iniresv?:Date;
   fecha_finresv?:Date;

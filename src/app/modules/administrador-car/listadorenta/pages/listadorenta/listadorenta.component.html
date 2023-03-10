@@ -1,1 +1,108 @@
-<p>listadorenta works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a contact Form 01</title>
+
+    <!-- GOOGLE FONTs -->
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+
+
+
+
+    <div class="fondobanner">
+        <div style="padding: 50px; ;">
+            <h1 class="logo" style="margin-block-end: 15px;">Solicitud <span>Renta </span></h1>
+            <div class="col-lg-6 col-md-8 mx-auto ">
+              <p style="text-align: center; font-size: 15px;margin-block-end: 15px;">Sección del Solicitudes de renta </p>
+
+              <div>
+                <p style="text-align: center;">
+
+                  <a id="btnnes" class="btn  "  href="#" style="margin-right: 25px;">Menú Principal</a>
+              </div>
+            </div>
+             </div>
+    </div>
+
+
+
+        <div class="content">
+            <main class="table">
+                <section class="table__header">
+                    <div class="input-group">
+                        <input type="search" placeholder="Buscar...">
+                    </div>
+                    <div>
+                        <button id="btn-abrir-popup" class="card-button">Crear</button>
+                    </div>
+                </section>
+                <section class="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> Id Alquiler <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Fecha Inicio <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Fecha Fin  <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Marca<span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Color <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Modelo <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Nombre Seguro <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> precio del seguro<span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Cedula<span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Nombre<span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Apellido<span class="icon-arrow">&UpArrow;</span></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                          <tr *ngFor="let alquilera of alquiler ">
+                            <td>{{alquilera.id_alquiler}}</td>
+                            <td>{{alquilera.fecha_iniresv}}</td>
+                            <td>{{alquilera.fecha_iniresv}}</td>
+                            <td>{{alquilera.automovil.marca}}</td>
+                            <td>{{alquilera.automovil.color}}</td>
+                            <td>{{alquilera.automovil.modelo}}</td>
+                            <td>{{alquilera.seguro.nom_seguro}}</td>
+                            <td>{{alquilera.seguro.precio_seguro}}</td>
+                            <td>{{alquilera.usuarios.persona.cedula}}</td>
+                            <td>{{alquilera.usuarios.persona.nombre}}</td>
+                            <td>{{alquilera.usuarios.persona.apellido}}</td>
+
+
+
+                            <td>
+                              <button id="btnnes" style="padding-left: 25px; padding-right: 25px; border-radius: 25px; margin-right: 12px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Employee"  >Aceptar</button>
+                              <button id="btnnes" style="padding-left: 25px;padding-right: 25px;" type="button" class="btn btn-primary" (click)="eliminar(alquilera.id_alquiler)"  data-target="#Employee">Rechazar</button>
+
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+</html>

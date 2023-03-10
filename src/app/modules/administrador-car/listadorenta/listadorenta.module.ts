@@ -14,7 +14,7 @@ import { ListadorentaComponent } from './pages/listadorenta/listadorenta.compone
     ListadorentaRoutingModule
   ],
   exports:[
-
+ListadorentaComponent
   ]
 })
 export class ListadorentaModule { }
