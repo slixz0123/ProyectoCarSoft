@@ -60,13 +60,13 @@
 
                     <p>
                         <label for="fecha-inicial">Fecha:</label>
-                        <input [(ngModel)]="alquiler.fecha_iniresv" type="date" placeholder="Ingrese el Nº de Placa"   id="fecha-inicial" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
+                        <input [(ngModel)]="alquiler.fecha_salida" type="date" placeholder="Ingrese el Nº de Placa"   id="fecha-inicial" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
 
                     </p>
 
                     <p>
                         <label for="fecha-final">Fecha entrega:</label>
-                        <input  [(ngModel)]="alquiler.fecha_finresv" type="date" id="fecha-final" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
+                        <input  [(ngModel)]="alquiler.prox_fecha_entrega" type="date" id="fecha-final" oninput="calcularDias()" min="2023-03-02" max="2030-12-31"  />
 
                     </p>
 
@@ -88,7 +88,7 @@
 
 
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                                <option   [(ngModel)]="alquiler.seguro"  *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
+                                <option [(ngModel)]="alquiler.seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
                             </select>
                         </p>
 
