@@ -15,8 +15,8 @@ export class Alquiler{
 
 
   //relacion
-  usuario: Usuario = new Usuario(); // id de usuario
+  usuarios: Usuario = new Usuario(); // id de usuario
   seguro: Seguro= new Seguro(); // cod_resv codigo de reserva
-  auto: Automovil= new Automovil();
+  automovil: Automovil= new Automovil();
 
 }
