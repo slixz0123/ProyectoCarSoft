@@ -17,30 +17,19 @@ import { Seguro } from 'src/app/core/models/seguro';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
 import { Usuario } from 'src/app/core/models/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { forkJoin } from 'rxjs';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
   styleUrls: ['./generar-renta-cliente.component.css']
 })
 export class GenerarRentaClienteComponent {
-  alquiler: Alquiler=new Alquiler;
+  alquiler: Alquiler=new Alquiler();
   listaseguro:Seguro[]=[];
   id: any;
-
   num_placa: string = '';
+  selectedId: Seguro = new Seguro();
 
-  nombreUsuario: any;
-  nombreRol: any;
-  nombreFoto: any;
-  nombreLogo: any;
-
-  isSuperAdmin: boolean = false;
-  isClientAdmin: boolean = false;
-  isClient: boolean = false;
-  isPublic: boolean = false;
-
-  displayMaximizable: any;
-  isLogin: boolean = false;
   constructor(
     private car: CargarscriptsService,
     private automovilService: AutomovilService,
@@ -49,9 +38,8 @@ export class GenerarRentaClienteComponent {
        private ClasesCarro:ClasesCarroService,
        private alquilerService:AlquilerService,
        private segurorService:SeguroService,
-       private usuarioservice :UsuarioService
-
-
+       private usuarioservice :UsuarioService,
+       private clase :ClasesCarroService
 
 
   )
@@ -66,121 +54,25 @@ export class GenerarRentaClienteComponent {
   }
 
 
-
-    autoForm!: FormGroup;
-    selectedId: Seguro = new Seguro();
-    alqui: Alquiler = new Alquiler();
-    selectedIc: Claseautomovil = new Claseautomovil();
-    auto!: Auto;
-
-
-    seleccionarId(event: any) {
-    this.selectedId = event.target?.value ?? 0;
-  }
-    automovil: Automovil = new Automovil();
-    clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
-    usuario: Usuario = new Usuario ();
-
-
-
-    file: any = '';
-
-    foto!: any;
-    values = [];
-
-
     ngOnInit(): void {
       this.num_placa = localStorage.getItem('num_placa') ?? '';
-      this.alquiler.id_alquiler;
+      this.id = localStorage.getItem('id');
+      this.alquiler.id_alquiler ;
       this.alquiler.documento_garantia;
-      this.alquiler.fecha_salida;
-      this.alquiler.prox_fecha_entrega;
+      this.alquiler.fecha_finresv;
+      this.alquiler.fecha_iniresv;
       this.alquiler.seguro.cod_seguro;
-      this.alquiler.rol.id_rol;
-      this.alquiler.usuario.id;
-      this.clasesau.id_clase=0;
-
-
-      this.mostrarNotificacion();
-    //  this.getClasesAuto();
-     // this.verclase();
-
-      //this.getClasesAuto();
-      //this.verclase();
+      this.alquiler.automovil.num_placa;
+      this.alquiler.usuarios.id;
 
      this.getseguro();
-    // this.obtenerUsuario();
-this.obtenercarro();
 
 
 
     }
-
-
-
-    sendData(selectedValue: number) {
-
-      const payload = { cod_seguro: selectedValue };
-      this.segurorService.getPorId( payload).subscribe(
-        (response) => {
-          console.log('Solicitud POST enviada con éxito:', response);
-        },
-        (error) => {
-          console.log('Error al enviar la solicitud POST:', error);
-        }
-      );
+    seleccionarId(event: any) {
+      this.selectedId = event.target?.value ?? 0;
     }
-
-
-
-
-  //  verclase(){
-
-
-  //   this.ClasesCarro.getAll().subscribe(
-  //    result => {
-  // console.log(result)
-
-
-
-  //      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //    }
-  //  )
-  //  this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
-  //   result => {
-  // console.log(result)
-
-
-  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //   }
-  // )
- // }
-  // onSelectChange(eventTarget: EventTarget | null) {
-  //   const selectElement = eventTarget as HTMLSelectElement;
-  //   if (!selectElement) {
-  //     return; // Salimos de la función si no hay ningún elemento seleccionado
-  //   }
-
-  //   const selectedValue = selectElement.value;
-  //   console.log(selectedValue); // muestra el valor seleccionado en la consola
-  //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
-  // }
-      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  
-
-
-
-  onSelectChange(eventTarget: EventTarget | null) {
-    const selectElement = eventTarget as HTMLSelectElement;
-    if (!selectElement) {
-      return; // Salimos de la función si no hay ningún elemento seleccionado
-    }
-
-    const selectedValue = selectElement.value;
-    console.log(selectedValue); // muestra el valor seleccionado en la consola
-    this.selectedIc.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
-  }
-
 
 
   onSelectChangesegur(eventTarget: EventTarget | null) {
@@ -188,110 +80,58 @@ this.obtenercarro();
     if (!selectElement) {
       return; // Salimos de la función si no hay ningún elemento seleccionado
     }
-
     const selectedValue = selectElement.value;
     console.log(selectedValue); // muestra el valor seleccionado en la consola
     this.selectedId.cod_seguro = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
   }
 
 
-
-    mostrarNotificacion() {
-      this.toastr.success('Mi mensaje', 'Mi título', {
-        positionClass: 'toast-top-right',
-        timeOut: 3000,
-      });
-    }
-
-
-    /*registaralquiler() {
-     // this.automovil.claseAutomovil = this.selectedId
-
-      this.alquilerService.postAlquiler(this.alquiler).subscribe(
-        data => {
-
-          console.log( data);
-
-            Swal.fire(
-              'Exito!',
-              'Alquiler solicitado',
-              'success'
-            )
-
-
-            }}*/
-
-  obtenerUsuario() {
-    this.id = localStorage.getItem('id');
-
-
-    if (this.id != '' && this.id != undefined) {
-      this.usuarioservice.getPorId(this.id).subscribe((data) => {
-
-        console.log(data);
-
-
-      });
-    }
-  }
-
-  obtenercarro() {
-   // this.num_placa = localStorage.getItem('num_placa');
-
-
-    if (this.id != '' && this.id != undefined) {
-      this.usuarioservice.getPorId(this.id).subscribe((data) => {
-
-        console.log(data);
-
-
-      });
-    }
-  }
-
   registaralquiler() {
 
     this.id = localStorage.getItem('id');
-      this.usuarioservice.getPorId(this.id).subscribe((data) => {
+      this.usuarioservice.getPorId( this.id = localStorage.getItem('id')).subscribe((data) => {
 
-        console.log(data.id);
-        console.log("registaralquiler")
-        this.alquiler.usuario.id = data.id
+        console.log(data.nombreUsuario + "registaralquiler");
+        const id= data
 
         this.automovilService.getPorId( this.num_placa = localStorage.getItem('num_placa') ?? '').subscribe((data) => {
 
-          console.log(data.num_placa);
-          this.alquiler.auto.num_placa = data.num_placa
+          console.log(data.num_placa + "registaralquiler");
+          const num_placa= data.num_placa;
+          const id_clase= data.claseAutomovil.id_clase;
 
+        //  this.alquiler.usuario.id = id;
+        //  this.alquiler.auto.num_placa= num_placa
 
+         this.clase.getPorId(id_clase).subscribe(
+          data => {
+            console.log(data.nombre + "registaralquiler");
+           // this.alquiler.auto.claseAutomovil.id_clase= data.id_clase
+           this.alquiler.usuarios = id
+           this.alquiler.automovil.num_placa= num_placa
+           this.alquiler.automovil.claseAutomovil.id_clase=id_clase
 
+            this.alquilerService.postAlquiler(this.alquiler).subscribe(
+              data => {
+              console.log(data );
+              const seguro = data.seguro
+              this.alquiler.seguro = seguro
+                this.alquiler = data
+                  Swal.fire(
+                    'Exito!',
+                    'Alquiler solicitado',
+                    'success'
+                  )
+              }
+            )
+          }
+        )
         });
-
 
       });
 
-      this.alquilerService.postAlquiler(this.alquiler).subscribe(
-        data => {
-
-          console.log( data);
-          this.alquiler.seguro = this.selectedId
-          this.alquiler = data
-            Swal.fire(
-              'Exito!',
-              'Alquiler solicitado',
-              'success'
-            )
-        }
-
-
-      )
-
 }
 
-    // getClasesAuto(){
-    //   this.ClasesCarro.getAll().subscribe(
-    //    claseL =>this.clase = claseL
-    //   );}
 
       getseguro(){
         this.segurorService.getAll().subscribe(
@@ -300,8 +140,8 @@ this.obtenercarro();
 
 
 
-
   }
+
 
 
 
