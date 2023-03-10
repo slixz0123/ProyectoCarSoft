@@ -40,15 +40,16 @@ export class RegisterClaseComponent {
         result => {
           console.log(result);
           this.claseautomovil = result;
-
+          if (this.claseautomovil.nombre !== '' && this.claseautomovil.nombre !== null && this.claseautomovil.precio_alquiler_dia !== 0) {
           Swal.fire(
             'Éxito!',
             'Se ha registrado la clase',
             'success'
           )
-        },
+        }},
         error => {
           console.error(error);
+          if (this.claseautomovil.nombre === '' || this.claseautomovil.nombre === null || this.claseautomovil.precio_alquiler_dia !== 0) {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -65,6 +66,7 @@ export class RegisterClaseComponent {
             `
           })
         }
+      }
       )
     }
   }
@@ -76,15 +78,16 @@ export class RegisterClaseComponent {
           console.log(result);
           this.seguro = result;
           localStorage.setItem('cod_seguro', String(this.seguro.cod_seguro));
-
+          if (this.seguro.nom_seguro !== '' || this.seguro.nom_seguro !== null) {
           Swal.fire(
             'Éxito!',
             'Se ha registrado el seguro',
             'success'
           )
-        },
+        }},
         error => {
           console.error(error);
+          if (this.seguro.nom_seguro === '' || this.seguro.nom_seguro === null) {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -101,6 +104,7 @@ export class RegisterClaseComponent {
             `
           })
         }
+      }
       )
     }
   }

@@ -151,7 +151,7 @@ onSelectChange(eventTarget: EventTarget | null) {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Ha ocurrido un error al registrar la clase!',
+          text: 'Ha ocurrido un error al registrar el automóvil!',
           width: 600,
           padding: '3em',
           color: 'red',
