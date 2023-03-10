@@ -50,7 +50,7 @@
                        </p>
                        <p>
                            <label>Placa:</label>
-                           <input type="text"   [(ngModel)]="alquiler.usuario.persona.cedula" name="fullname">
+                           <input type="text"   [(ngModel)]="alquiler.usuarios.persona.cedula" name="fullname">
                        </p>
                        <p>
                         <label>Código Comprobante:</label>
@@ -84,19 +84,19 @@
 
 
                             <select name="cod_seguro"  style="background-color: black;color: white;  padding: 10PX; width: 730px;border-radius: 16px;"
-                            (change)="onSelectChange($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.seguro" >
+                            (change)="onSelectChangesegur($event.target)" name="cod_seguro"  [(ngModel)]="alquiler.seguro" >
 
                                 <option selected style="color: aliceblue;">Selecciona el tipo</option>
-                                <option   [(ngModel)]="alquiler.seguro"  *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
+                                <option [(ngModel)]="alquiler.seguro" *ngFor="let seguros of listaseguro" [value]="seguros.cod_seguro">{{seguros.nom_seguro}}</option>
                             </select>
                         </div>
 
 
                     <button style="background-color: white; color: black; "> <strong> Calcular Precio </strong> </button>
 
-                    <pre>
+                    <!-- <pre>
                       {{alquiler |  json}}
-                   </pre>
+                   </pre> -->
                        <button  (click)=" registaralquiler()">Reserva </button>
                        <button>Cancelar </button>
 
