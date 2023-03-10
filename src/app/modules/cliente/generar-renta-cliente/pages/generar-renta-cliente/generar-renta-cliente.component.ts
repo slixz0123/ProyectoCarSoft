@@ -17,20 +17,19 @@ import { Seguro } from 'src/app/core/models/seguro';
 import { SeguroService } from 'src/app/shared/services/seguro.service';
 import { Usuario } from 'src/app/core/models/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
-import { DataService } from 'src/app/shared/services/DataService';
-import { Reserva } from 'src/app/core/models/reserva';
-import { ReservaService } from 'src/app/shared/services/reserva.service';
 @Component({
   selector: 'app-generar-renta-cliente',
   templateUrl: './generar-renta-cliente.component.html',
   styleUrls: ['./generar-renta-cliente.component.css']
 })
 export class GenerarRentaClienteComponent {
-  alquiler: Reserva=new Reserva;
+  alquiler: Alquiler=new Alquiler;
+  claseA: Claseautomovil = new Claseautomovil;
   listaseguro:Seguro[]=[];
   id: any;
 
-  num_placa: any;
+  num_placa: string = '';
+
 
   nombreUsuario: any;
   nombreRol: any;
@@ -51,9 +50,10 @@ export class GenerarRentaClienteComponent {
       private toastr: ToastrService,
        private ClasesCarro:ClasesCarroService,
        private alquilerService:AlquilerService,
-       private reservaService:ReservaService,
        private segurorService:SeguroService,
-       private usuarioservice :UsuarioService,private dataService: DataService
+       private usuarioservice :UsuarioService,
+       private clase :ClasesCarroService
+
 
   )
 
@@ -66,100 +66,62 @@ export class GenerarRentaClienteComponent {
     }
   }
 
-  // {
-  //   "id_alquiler": 0,
-  //   "num_dias_alquiler": "string",
-  //   "fecha_salida": "2023-03-05T06:44:33.344Z",
-  //   "prox_fecha_entrega": "2023-03-05T06:44:33.344Z",
-  //   "documento_garantia": "string",
-  //   "comprobante": {
-  //     "cod_comp": 0,
-  //     "descripcion": "string",
-  //     "precio": 0
-  //   },
-  //     "seguro": {
-  //       "cod_seguro": 0,
-  //       "nom_seguro": "string",
-  //       "precio_seguro": 0
-  //     },
-  //     "alquileres": "string"
-  //   },
-  //   "usuarios": {
-  //     "id": 0,
-  //     "nombreUsuario": "string",
-  //     "password": "string",
-  //     "persona": {
-  //       "id_persona": 0,
-  //       "nombre": "string",
-  //       "apellido": "string",
-  //       "cedula": "string",
-  //       "direccion": "string",
-  //       "telefono": "string",
-  //       "correo": "string",
-  //       "edad": 0,
-  //       "ciudad": "string",
-  //       "genero": "string",
-  //       "foto": "string"
-  //     },
-  //     "rol": {
-  //       "id_rol": 0,
-  //       "nombre_Rol": "string"
-  //     }
-  //   },
-  //   "seguro": {
-  //     "cod_seguro": 0,
-  //     "nom_seguro": "string",
-  //     "precio_seguro": 0
-  //   }
-  // }
 
 
-  //   autoForm!: FormGroup;
-  //   selectedId: Claseautomovil = new Claseautomovil();
-  //   auto!: Auto;
-  //   clase : Claseautomovil[]=[]
-  //   seleccionarId(event: any) {
-  //   this.selectedId = event.target?.value ?? 0;
-  // }
-  //   automovil: Automovil = new Automovil;
-  //   clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
     autoForm!: FormGroup;
     selectedId: Seguro = new Seguro();
+    alqui: Alquiler = new Alquiler();
     selectedIc: Claseautomovil = new Claseautomovil();
     auto!: Auto;
-    clase : Claseautomovil[]=[]
+
 
     seleccionarId(event: any) {
     this.selectedId = event.target?.value ?? 0;
   }
-    automovil: Automovil = new Automovil;
+    automovil: Automovil = new Automovil();
     clasesau: Claseautomovil = new Claseautomovil; //Inicialice el objeto automovil.
-    usuario: Usuario = new Usuario;
+    usuario: Usuario = new Usuario ();
 
 
 
-  //   file: any = '';
+    file: any = '';
 
-  //   foto!: any;
-  //   values = [];
+    foto!: any;
+    values = [];
 
 
     ngOnInit(): void {
+
       this.alquiler.cod_resv;
       this.alquiler.alquiler?.documento_garantia;
+
+      this.num_placa = localStorage.getItem('num_placa') ?? '';
+      this.alquiler.id_alquiler ;
+      this.alquiler.documento_garantia;
+
       this.alquiler.fecha_finresv;
       this.alquiler.fecha_iniresv;
-      this.alquiler.forma_pago;
-      this.alquiler.automovil?.num_placa;
-      this.alquiler.usuarios?.id;
-      //this.clasesau.id_clase=0;
+      this.alquiler.seguro.cod_seguro;
 
-      localStorage.removeItem('num_placa');
+      this.alquiler.auto.num_placa;
+
+      this.alquiler.usuario.id;
+      this.clasesau.id_clase=0;
+
+
       this.mostrarNotificacion();
-     // this.getClasesAuto();
+    //  this.getClasesAuto();
      // this.verclase();
+
+      //this.getClasesAuto();
+      //this.verclase();
+
      this.getseguro();
-     this.obtenerUsuario();
+    // this.obtenerUsuario();
+this.obtenercarro();
+
+
+
     }
 
 
@@ -177,43 +139,6 @@ export class GenerarRentaClienteComponent {
       );
     }
 
-
-
-  //  verclase(){
-
-
-  //   this.ClasesCarro.getAll().subscribe(
-  //    result => {
-  // console.log(result)
-
-
-
-  //      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //    }
-  //  )
-  //  this.ClasesCarro.getPorId(this.clasesau.id_clase).subscribe(
-  //   result => {
-  // console.log(result)
-
-
-  //     // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //   }
-  // )
- // }
-  // onSelectChange(eventTarget: EventTarget | null) {
-  //   const selectElement = eventTarget as HTMLSelectElement;
-  //   if (!selectElement) {
-  //     return; // Salimos de la función si no hay ningún elemento seleccionado
-  //   }
-
-  //   const selectedValue = selectElement.value;
-  //   console.log(selectedValue); // muestra el valor seleccionado en la consola
-  //   this.selectedId.id_clase = Number(selectedValue);// this.automovil.claseautomovil.id_clase = Number(selectedValue);  // llama al método sendData y pasa el valor seleccionado
-  // }
-      // this.usuario.persona.id_persona =id_persona //asignacion id persona a la tabla usuario
-  //   }
-  // )
-  // }
 
 
   onSelectChange(eventTarget: EventTarget | null) {
@@ -249,21 +174,23 @@ export class GenerarRentaClienteComponent {
       });
     }
 
-    // registaralquiler() {
-    //  // this.automovil.claseAutomovil = this.selectedId
 
-    //   this.alquilerService.postAlquiler(this.alquiler).subscribe(
-    //     data => {
+    /*registaralquiler() {
+     // this.automovil.claseAutomovil = this.selectedId
 
-    //       console.log( data);
+      this.alquilerService.postAlquiler(this.alquiler).subscribe(
+        data => {
 
-    //         Swal.fire(
-    //           'Exito!',
-    //           'Alquiler solicitado',
-    //           'success'
-    //         )
-    //       }}
+          console.log( data);
 
+            Swal.fire(
+              'Exito!',
+              'Alquiler solicitado',
+              'success'
+            )
+
+
+            }}*/
 
   obtenerUsuario() {
     this.id = localStorage.getItem('id');
@@ -271,9 +198,22 @@ export class GenerarRentaClienteComponent {
 
     if (this.id != '' && this.id != undefined) {
       this.usuarioservice.getPorId(this.id).subscribe((data) => {
-        console.log("estoy antes generar renta ")
+
         console.log(data);
-        console.log("estoy en generar renta ")
+
+
+      });
+    }
+  }
+
+  obtenercarro() {
+   // this.num_placa = localStorage.getItem('num_placa');
+
+    if (this.id != '' && this.id != undefined) {
+      this.usuarioservice.getPorId(this.id).subscribe((data) => {
+
+        console.log(data);
+
 
       });
     }
@@ -281,25 +221,61 @@ export class GenerarRentaClienteComponent {
 
   registaralquiler() {
 
-    this.alquiler.seguro = this.selectedId;
-    this.alquiler.usuarios!.id = this.id;
-    this.num_placa = localStorage.getItem('num_placa');
+    this.id = localStorage.getItem('id');
+      this.usuarioservice.getPorId( this.id = localStorage.getItem('id')).subscribe((data) => {
 
-    this.reservaService.save(this.alquiler).subscribe(
-      data => {
-
-        console.log( data);
-
-          Swal.fire(
-            'Exito!',
-            'Alquiler solicitado',
-            'success'
-          )
+        console.log(data);
+        const id= data
 
 
-      }
 
-    )
+
+
+        this.automovilService.getPorId( this.num_placa = localStorage.getItem('num_placa') ?? '').subscribe((data) => {
+
+          console.log(data);
+          const num_placa= data.num_placa;
+          const id_clase= data.claseAutomovil.id_clase;
+        //  this.alquiler.usuario.id = id;
+        //  this.alquiler.auto.num_placa= num_placa
+
+
+
+         this.clase.getPorId(id_clase).subscribe(
+          data => {
+
+            console.log( data);
+           // this.alquiler.auto.claseAutomovil.id_clase= data.id_clase
+
+
+
+            this.alquilerService.postAlquiler(this.alquiler).subscribe(
+              data => {
+             this.alquiler.usuario = id
+              this.alquiler.auto.num_placa= num_placa
+              this.alquiler.auto.claseAutomovil.id_clase=id_clase
+
+                console.log( data);
+
+                this.alquiler = data
+                  Swal.fire(
+                    'Exito!',
+                    'Alquiler solicitado',
+                    'success'
+                  )
+              }
+            )
+
+
+
+          }
+        )
+
+
+
+        });
+
+      });
 
 }
 
