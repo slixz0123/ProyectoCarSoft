@@ -56,8 +56,7 @@ export class GenerarRentaClienteComponent {
 
     ngOnInit(): void {
 
-      this.alquiler.cod_resv;
-      this.alquiler.alquiler?.documento_garantia;
+
 
       this.num_placa = localStorage.getItem('num_placa') ?? '';
       this.id = localStorage.getItem('id');
