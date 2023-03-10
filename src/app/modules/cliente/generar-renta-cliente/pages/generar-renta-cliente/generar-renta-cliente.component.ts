@@ -55,10 +55,15 @@ export class GenerarRentaClienteComponent {
 
 
     ngOnInit(): void {
+
+      this.alquiler.cod_resv;
+      this.alquiler.alquiler?.documento_garantia;
+
       this.num_placa = localStorage.getItem('num_placa') ?? '';
       this.id = localStorage.getItem('id');
       this.alquiler.id_alquiler ;
       this.alquiler.documento_garantia;
+
       this.alquiler.fecha_finresv;
       this.alquiler.fecha_iniresv;
       this.alquiler.seguro.cod_seguro;
